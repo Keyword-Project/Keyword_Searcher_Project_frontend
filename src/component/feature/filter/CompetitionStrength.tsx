@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 
 export default function CompetitionStrength() {
   const [value, setValue] = useState([4, 6]);
 
-  function strengthhandleChange() {
+  function strengthhandleChange(val) {
     setValue(val);
    
   }

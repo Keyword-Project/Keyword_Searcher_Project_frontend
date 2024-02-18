@@ -7,7 +7,7 @@ export default function ItemCount() {
 
   
   const handleChange = (value) => setValue(value);
-  console.log(value)
+
   return (
     <>
       <div>상품수</div>

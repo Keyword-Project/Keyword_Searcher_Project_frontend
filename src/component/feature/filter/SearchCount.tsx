@@ -8,7 +8,6 @@ export default function SearchCount() {
   function handleChange(val) {
     setSearchValue(val);
   }
-  console.log(searchValue);
 
   return (
     <>
