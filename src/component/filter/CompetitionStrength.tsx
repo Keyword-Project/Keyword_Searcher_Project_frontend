@@ -9,7 +9,7 @@ export default function CompetitionStrength() {
     setValue(val);
    
   }
-
+console.log(value)
   return (
     <>
       <div>경쟁강도</div>
