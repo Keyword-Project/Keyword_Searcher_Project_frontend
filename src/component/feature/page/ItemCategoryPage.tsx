@@ -1,5 +1,5 @@
 
-import CategoryTable from "../../../CategoryTable";
+import CategoryBox from "../CategoryBox";
 import OutputTable from "../keywordOutput/OutputTable";
 import FilterBox from "../filter/FilterBox";
 
@@ -8,7 +8,7 @@ export default function ItemCategoryPage() {
     <div>
       <div>
     
-        <CategoryTable />
+        <CategoryBox />
       </div>
       <div>
         <FilterBox />
