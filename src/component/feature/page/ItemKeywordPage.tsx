@@ -7,7 +7,6 @@ import FilterBox from "../filter/FilterBox";
 export default function ItemKeywordPage() {
   return (
     <>
-      <p>키워드 검색 페이지</p>
       <p>키워드 검색</p>
 
       <InputGroup className="mb-3">

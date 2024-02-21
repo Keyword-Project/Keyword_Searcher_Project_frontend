@@ -1,0 +1,89 @@
+{
+  "firstCategories": [
+    {
+      "name": "뷰티",
+      "categoryId": "1765222222",
+      "secondCategories": [
+        {
+          "name": "스킨케어",
+          "categoryId": "1765311111",
+          "thirdCategories": [
+            {
+              "name": "스킨",
+              "categoryId": "1765580"
+            },
+            {
+              "name": "로션",
+              "categoryId": "1713661530"
+            },
+            {
+              "name": "에센스/세럼/엠플",
+              "categoryId": "176511730"
+            }
+          ]
+        },
+
+        {
+          "name": "클린/비건뷰티",
+          "categoryId": "509357431193",
+          "thirdCategories": [
+            {
+              "name": "클렌징",
+              "categoryId": "17654121124330"
+            },
+            {
+              "name": "바디워시",
+              "categoryId": "1712365123130"
+            },
+            {
+              "name": "샴푸",
+              "categoryId": "176y690345645530"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "전자제품",
+      "categoryId": "17642451522",
+      "secondCategories": [
+        {
+          "name": "노트북",
+          "categoryId": "1765343310",
+          "thirdCategories": [
+            {
+              "name": "맥북",
+              "categoryId": "1715851216530"
+            },
+            {
+              "name": "삼성",
+              "categoryId": "176539046340"
+            },
+            {
+              "name": "그램",
+              "categoryId": "173317615530"
+            }
+          ]
+        },
+        {
+          "name": "핸드폰",
+          "categoryId": "5093125293",
+          "thirdCategories": [
+            {
+              "name": "갤럭시",
+              "categoryId": "1764631530"
+            },
+            {
+              "name": "아이폰",
+              "categoryId": "1765341130"
+            },
+            {
+              "name": "샤오미",
+              "categoryId": "1765423354130"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

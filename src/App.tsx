@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { useParams } from "react-router-dom";
 import TabBox from "./component/feature/Tab/TabBox.tsx";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -8,6 +8,8 @@ import ItemKeywordPage from "./component/feature/page/ItemKeywordPage.tsx";
 import NotFound from "./component/feature/page/NotFound.tsx";
 
 function App() {
+  const { id } = useParams();
+  console.log(id, "url params 출력");
   return (
     <>
       <BrowserRouter>
@@ -22,6 +24,7 @@ function App() {
             element={<p>여긴 홈페이지 뭐 꾸며야하는거지??</p>}
           ></Route>
           {/* 상단에 위치하는 라우트들의 규칙을 모두 확인, 일치하는 라우트가 없는경우 처리 */}
+          <Route path="/:id" element={<ItemCategoryPage />}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>

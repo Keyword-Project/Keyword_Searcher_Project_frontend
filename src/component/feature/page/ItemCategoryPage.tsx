@@ -1,20 +1,18 @@
-
-import CategoryBox from "../CategoryBox";
+import CategoryBox from "../filter/CategoryBox";
 import OutputTable from "../keywordOutput/OutputTable";
 import FilterBox from "../filter/FilterBox";
+import { useParams } from "react-router-dom";
 
 export default function ItemCategoryPage() {
   return (
     <div>
       <div>
-    
         <CategoryBox />
       </div>
       <div>
         <FilterBox />
       </div>
-      <p>키워드 500개</p>
-      <p>상품 타이틀</p>
+      <p>상품 조회 결과</p>
       <OutputTable />
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ToggleButton from "react-bootstrap/ToggleButton";
 import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
 
-export default function SearchCount() {
+export default function SearchItemCount() {
   const [searchValue, setSearchValue] = useState([1, 3]);
 
   function handleChange(val) {
@@ -11,7 +11,7 @@ export default function SearchCount() {
 
   return (
     <>
-      <div>검색수</div>
+      <div>검색 상품 수</div>
 
       <ToggleButtonGroup
         type="checkbox"
@@ -19,13 +19,13 @@ export default function SearchCount() {
         onChange={handleChange}
       >
         <ToggleButton id="tbg-btn-7" value={1}>
-          0-500
+         30-100
         </ToggleButton>
         <ToggleButton id="tbg-btn-8" value={2}>
-          숫자
+          100 -1000
         </ToggleButton>
         <ToggleButton id="tbg-btn-9" value={3}>
-          숫자
+        1000-10000
         </ToggleButton>
       </ToggleButtonGroup>
     </>
