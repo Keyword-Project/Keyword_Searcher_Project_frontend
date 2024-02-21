@@ -1,5 +1,5 @@
 import CategoryBox from "../filter/CategoryBox";
-import OutputTable from "../keywordOutput/OutputTable";
+import OutputTable from "../Output/OutputTable";
 import FilterBox from "../filter/FilterBox";
 import { useParams } from "react-router-dom";
 

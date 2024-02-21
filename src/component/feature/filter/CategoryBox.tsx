@@ -1,16 +1,18 @@
 import Dropdown from "react-bootstrap/Dropdown";
 
-import { useState } from "react";
+import {
+  useEffect,
+  useState,
+} from "react";
 
 import data from "../../../../public/dummyData/CategoryList.json";
 
 export default function CategoryBox() {
-  const list = data.firstCategories;
+  useEffect(() => {
+    setFirCateList(data.firstCategories);
+  }, []);
 
-
-
-
-  const firCateList = [];
+  const [firCateList, setFirCateList] = useState([]);
   const [secCateList, setSecCateList] = useState([]);
   const [thrCateList, setThrCateList] = useState([]);
 
@@ -22,8 +24,6 @@ export default function CategoryBox() {
   const [secCateTitle, setSecCateTitle] = useState("2차분류");
 
   const [thrCateTitle, setThrCateTitle] = useState("3차분류");
-
-
 
   const thrDropdownSelecthandle = (eventKey) => {
     setThrCateTitle(eventKey);
@@ -43,7 +43,7 @@ export default function CategoryBox() {
 
   const firDropdownSelecthandle = (eventKey) => {
     setFirCateTitle(eventKey);
-    const List = list.find((item) => item.name == eventKey);
+    const List = firCateList.find((item) => item.name == eventKey);
 
     setIsSecCateDisabled(false);
     setSecCateList((prev) => (prev = List.secondCategories));
@@ -64,12 +64,11 @@ export default function CategoryBox() {
               {firCateTitle}
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              {list.map((item, idx) => {
+              {firCateList.map((item, idx) => {
                 return (
                   <Dropdown.Item eventKey={item.name} key={idx}>
-                  {item.name}
+                    {item.name}
                   </Dropdown.Item>
-                 
                 );
               })}
             </Dropdown.Menu>
@@ -89,9 +88,8 @@ export default function CategoryBox() {
               {secCateList.map((item, idx) => {
                 return (
                   <Dropdown.Item eventKey={item.name} key={idx}>
-               {item.name}
+                    {item.name}
                   </Dropdown.Item>
-                  
                 );
               })}
             </Dropdown.Menu>
@@ -110,7 +108,7 @@ export default function CategoryBox() {
               {thrCateList.map((item, idx) => {
                 return (
                   <Dropdown.Item eventKey={item.name} key={idx}>
-                  {item.name}
+                    {item.name}
                   </Dropdown.Item>
                 );
               })}

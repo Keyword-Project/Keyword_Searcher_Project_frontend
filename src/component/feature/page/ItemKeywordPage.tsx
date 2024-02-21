@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import OutputTable from "../keywordOutput/OutputTable";
+import OutputTable from "../Output/OutputTable";
 import FilterBox from "../filter/FilterBox";
 
 export default function ItemKeywordPage() {
@@ -19,10 +19,9 @@ export default function ItemKeywordPage() {
           Button
         </Button>
       </InputGroup>
-<FilterBox />
+      <FilterBox />
 
-      <OutputTable/>
-
+      <OutputTable />
     </>
   );
 }

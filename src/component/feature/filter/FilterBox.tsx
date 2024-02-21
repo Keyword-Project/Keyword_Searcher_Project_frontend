@@ -5,9 +5,6 @@ import PriceInputBox from "./PriceInputBox";
 import Button from "react-bootstrap/Button";
 import CustomCalendar from "./CustomCalendar";
 
-
-
-
 // import FilterBox from "../../../style/FilterBox.css"
 
 export default function FilterBox() {
@@ -15,20 +12,19 @@ export default function FilterBox() {
   return (
     <>
       <div>
-        <p>FilterTable</p>
-        <p>기간정하는 곳 (달력)</p>
+        <p>날짜 설정</p>
         <div>
-          <Button variant="primary">최근 30일</Button>
+          <Button>최근 14일</Button>
           <Button
             variant="secondary"
             onClick={() => {
               setIsCalendar(!isCalendar);
             }}
           >
-            과거 선택
+            기간 설정
           </Button>
         </div>
-        <div>{isCalendar ? <CustomCalendar /> : ""}</div>
+        <div>{isCalendar && <CustomCalendar />}</div>
         <div>
           <SearchItemCount />
 
