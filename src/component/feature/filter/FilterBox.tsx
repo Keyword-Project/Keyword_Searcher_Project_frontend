@@ -1,13 +1,32 @@
 import { useState } from "react";
-import SearchItemCount from "./SearchItemCount";
-import PriceInputBox from "./PriceInputBox";
+import { Link } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
 import CustomCalendar from "./CustomCalendar";
+import OutputTable from "../Output/OutputTable";
 
-// import FilterBox from "../../../style/FilterBox.css"
+import styled from "styled-components";
 
-export default function FilterBox() {
+const Input = styled.input`
+  margin: 4px;
+`;
+
+export default function FilterBox({ keywordName }) {
+  const [maxPrice, setMaxPrice] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [searchSize, setSearchSize] = useState("");
+
+  const searchSizeChange = (e) => {
+    setSearchSize(e.target.value);
+  };
+
+  const maxPriceChange = (e) => {
+    setMinPrice(e.target.value);
+  };
+  const minPriceChange = (e) => {
+    setMaxPrice(e.target.value);
+  };
+
   const [isCalendar, setIsCalendar] = useState(false);
   return (
     <>
@@ -26,11 +45,45 @@ export default function FilterBox() {
         </div>
         <div>{isCalendar && <CustomCalendar />}</div>
         <div>
-          <SearchItemCount />
+          <div>
+            <p>상품 개수 입력</p>
+            <Input
+              type="number"
+              name="itemSize"
+              onChange={searchSizeChange}
+            ></Input>
+          </div>
 
-          <PriceInputBox />
-          <Button variant="primary">조회 </Button>
+          <div>
+            <p>상품 가격 입력</p>
+            <Input
+              type="number"
+              name="minPrice"
+              onChange={minPriceChange}
+            ></Input>
+            <Input
+              type="number"
+              name="maxPrice"
+              onChange={maxPriceChange}
+            ></Input>
+          </div>
+          <Link
+            to={`/keyword/?q=${keywordName}${
+              minPrice ? `&minPrice=${minPrice}` : ""
+            }${maxPrice ? `&maxPrice=${maxPrice}` : ""}${
+              searchSize ? `&searchSize=${searchSize}` : ""
+            }`}
+          >
+            조회
+          </Link>
         </div>
+        <p>상품 조회 결과</p>
+        <OutputTable
+          keywordName={keywordName}
+          searchSize={searchSize}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+        />
       </div>
     </>
   );

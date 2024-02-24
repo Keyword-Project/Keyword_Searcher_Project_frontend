@@ -1,6 +1,6 @@
-import CategoryBox from "../filter/CategoryBox";
-import OutputTable from "../Output/OutputTable";
-import FilterBox from "../filter/FilterBox";
+import CategoryBox from "../feature/filter/CategoryBox";
+import OutputTable from "../feature/Output/OutputTable";
+import FilterBox from "../feature/filter/FilterBox";
 import { useParams } from "react-router-dom";
 
 export default function ItemCategoryPage() {

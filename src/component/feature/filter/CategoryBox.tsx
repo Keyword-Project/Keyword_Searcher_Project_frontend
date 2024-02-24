@@ -5,7 +5,7 @@ import {
   useState,
 } from "react";
 
-import data from "../../../../public/dummyData/CategoryList.json";
+import data from "../../../../src/dummyData/CategoryList.json";
 
 export default function CategoryBox() {
   useEffect(() => {
