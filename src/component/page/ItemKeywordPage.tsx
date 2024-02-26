@@ -1,13 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import FilterBox from "../feature/filter/FilterBox";
+import FilterResultBox from "../feature/filter/FilterResultBox";
 import { useState } from "react";
-
+import { Outlet } from "react-router-dom";
 
 export default function ItemKeywordPage() {
-
-
   const [keywordName, setKeywordName] = useState("");
 
   const keywordNameChange = (e) => {
@@ -26,12 +24,10 @@ export default function ItemKeywordPage() {
           onChange={keywordNameChange}
         />
         <Button variant="outline-secondary" id="button-addon2">
-          Button 이거필요한가..?
+          Button
         </Button>
       </InputGroup>
-      <FilterBox keywordName={keywordName} />
-  
-
+      <FilterResultBox slugName={keywordName} />
     </>
   );
 }

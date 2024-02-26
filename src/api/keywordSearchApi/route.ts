@@ -1,25 +1,28 @@
- import axios from "axios";
+import axios from "axios";
 
 export async function fetchKeywordData(
-  keywordName,
-  minPrice,
-  maxPrice,
-  searchSize
+  pathName: number,
+  minPrice: number,
+  maxPrice: number,
+  searchSize: number,
+  startDate: number,
+  los: number
 ) {
   console.log("fetchKeywordData");
+  console.log(pathName, minPrice, maxPrice, searchSize, startDate, los);
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/v1/keyword/?${keywordName ? `q=${keywordName}` : "" }${
-        minPrice ? `&minPrice=${minPrice}` : ""
-      }${maxPrice ? `&maxPrice=${maxPrice}` : ""}${
-        searchSize ? `&searchSize=${searchSize}` : ""
-      }`
+      `http://localhost:3000/api/v1/keyword?q=${pathName}${
+        startDate ? `&startDate=${startDate}` : ""
+      }&${los ? `&los=${los}` : ""}${minPrice ? `&minPrice=${minPrice}` : ""}${
+        maxPrice ? `&maxPrice=${maxPrice}` : ""
+      }${searchSize ? `&searchSize=${searchSize}` : ""}`
     );
 
-    console.log("응답은", response.data);
+    console.log("response.data", response.data);
     return response.data;
   } catch (error) {
-    console.error("Failed:", error);
-    throw new Error("Failed");
+    console.error("Fail:", error);
+    throw new Error("Fail");
   }
 }
