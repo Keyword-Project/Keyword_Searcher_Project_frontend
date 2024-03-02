@@ -1,0 +1,61 @@
+{
+  "itemList": [
+    {
+      "name": "apple",
+      "priceValue": 14000,
+      "deliveryType": "로켓배송",
+      "ratingSales" : 300,
+      "totalReview": 500,
+      "vipReview": 200,
+      "dataLink": "https://www.coupang.com/vp/products/7800909167?itemId=21127139188&vendorItemId=88538350911&q=%EC%95%9E%EC%B9%98%EB%A7%88&itemsCount=36&searchId=cc19338565f54fda8c5a7f5ba7b0eb2a&rank=15&isAddedCart=",
+      "ratingTotalCount": 152,
+      "ratingVipCount": 16,
+      "rocketImg": "https://image6.coupangcdn.com/image/cmg/icon/ios/logo_rocket_large@3x.png",
+      "recentReviewDate": "2024.02.15"
+
+    },
+    {
+      "name": "computer",
+      "priceValue": 96402100,
+      "deliveryType": "판매자배송",
+      "ratingSales" : 7200,
+      "totalReview": 1500,
+      "vipReview": 200,
+      "dataLink": "https://www.coupang.com/vp/products/7800909167?itemId=21127139188&vendorItemId=88538350911&q=%EC%95%9E%EC%B9%98%EB%A7%88&itemsCount=36&searchId=cc19338565f54fda8c5a7f5ba7b0eb2a&rank=15&isAddedCart=",
+      "ratingTotalCount": 139,
+      "ratingVipCount": 50,
+      "rocketImg": "https://image6.coupangcdn.com/image/cmg/icon/ios/logo_rocket_large@3x.png",
+      "recentReviewDate": "2024.02.15"
+
+    },
+    {
+      "name": "desk",
+      "priceValue": 138100,
+      "deliveryType": "로켓배송",
+      "ratingSales" : 4400,
+      "totalReview": 890,
+      "vipReview": 340,
+      "dataLink": "https://www.coupang.com/vp/products/7800909167?itemId=21127139188&vendorItemId=88538350911&q=%EC%95%9E%EC%B9%98%EB%A7%88&itemsCount=36&searchId=cc19338565f54fda8c5a7f5ba7b0eb2a&rank=15&isAddedCart=",
+      "ratingTotalCount": 44,
+      "ratingVipCount": 8,
+      "rocketImg": "https://image6.coupangcdn.com/image/cmg/icon/ios/logo_rocket_large@3x.png",
+      "recentReviewDate": "2024.01.30"
+
+    },
+    {
+      "name": "pencil",
+      "priceValue": 1100,
+      "deliveryType": "로켓와우",
+      "ratingSales" : 372,
+      "totalReview": 100,
+      "vipReview": 50,
+      "dataLink": "https://www.coupang.com/vp/products/7800909167?itemId=21127139188&vendorItemId=88538350911&q=%EC%95%9E%EC%B9%98%EB%A7%88&itemsCount=36&searchId=cc19338565f54fda8c5a7f5ba7b0eb2a&rank=15&isAddedCart=",
+      "ratingTotalCount": 45,
+      "ratingVipCount": 2,
+      "rocketImg": "https://image6.coupangcdn.com/image/cmg/icon/ios/logo_rocket_large@3x.png",
+      "recentReviewDate": "2024.01.18"
+
+    }
+   
+  ]
+}
