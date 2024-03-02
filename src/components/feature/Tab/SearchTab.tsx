@@ -1,7 +1,7 @@
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { Link } from "react-router-dom";
-export default function TabBox() {
+export default function SearchTab() {
   return (
     <>
       <Tabs

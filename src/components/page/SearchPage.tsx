@@ -1,18 +1,24 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { fetchKeywordData } from "../../../api/keywordSearchApi/route";
-import Table from "react-bootstrap/Table";
+import { fetchKeywordData } from "api/keywordSearchApi/route";
 
+import { Outlet } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import CustomCalendar from "./CustomCalendar";
-
+import CustomCalendar from "components/feature/filter/CustomCalendar";
+import SearchTab from "components/feature/Tab/SearchTab";
 import styled from "styled-components";
+import Result from "components/result/Result";
+import { useSelector } from "react-redux";
 
 const Input = styled.input`
   margin: 4px;
 `;
 
-export default function FilterResultBox({ pathName }) {
+export default function SearchPage() {
+  
+  const pathName = useSelector((state) => state.queryString.pathName);
+
+
   const [maxPrice, setMaxPrice] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [searchSize, setSearchSize] = useState("");
@@ -67,6 +73,8 @@ export default function FilterResultBox({ pathName }) {
 
   return (
     <>
+    <SearchTab />
+     <Outlet></Outlet>
       <div>
         <p>날짜 설정</p>
         <div>
@@ -113,32 +121,7 @@ export default function FilterResultBox({ pathName }) {
         >
           상품조회
         </button>
-        <Table responsive>
-          <thead>
-            <tr>
-              {filterType.map((item, index) => (
-                <th key={index}>{item}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {list &&
-              list?.map((item, idx) => {
-                return (
-                  <tr key={idx}>
-                    <td>{idx + 1}</td>
-                    <td>{item.name}</td>
-                    <td>{item.priceValue}</td>
-                    <td>{item.ratingTotalCount}</td>
-                    <td>
-                      <img src={item.rocketImg} />
-                    </td>
-                  </tr>
-                );
-              })}
-            {}
-          </tbody>
-        </Table>
+     <Result  filterType={filterType}  list={list}  />
       </div>
     </>
   );

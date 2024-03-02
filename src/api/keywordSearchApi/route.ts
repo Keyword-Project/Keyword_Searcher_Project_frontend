@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export async function fetchKeywordData(
-  pathName: number,
+  pathName: string,
   minPrice: number,
   maxPrice: number,
   searchSize: number,

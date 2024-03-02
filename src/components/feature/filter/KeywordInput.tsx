@@ -1,19 +1,18 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import FilterResultBox from "../feature/filter/FilterResultBox";
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
 
-export default function ItemKeywordPage() {
-  const [keywordName, setKeywordName] = useState("");
+import { useDispatch } from "react-redux";
+import { pathNameFetch } from "components/feature/FetchSlice";
 
+export default function KeywordInput() {
   const keywordNameChange = (e) => {
-    setKeywordName(e.target.value);
+    dispatch(pathNameFetch(e.target.value));
   };
+  const dispatch = useDispatch();
 
   return (
-    <>
+    <div>
       <p>키워드 검색</p>
 
       <InputGroup className="mb-3">
@@ -27,7 +26,6 @@ export default function ItemKeywordPage() {
           Button
         </Button>
       </InputGroup>
-      <FilterResultBox slugName={keywordName} />
-    </>
+    </div>
   );
 }

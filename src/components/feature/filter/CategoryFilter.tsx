@@ -1,16 +1,15 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import data from "../../dummyData/CategoryList.json";
-import FilterResultBox from "../feature/filter/FilterResultBox";
+import data from "dummyData/CategoryList.json";
+import { useDispatch } from "react-redux";
+import { pathNameFetch } from "components/feature/FetchSlice";
 
-
-
-
-
-export default function ItemCategoryPage() {
+export default function CategoryFilter() {
+  const dispatch = useDispatch();
   const { pathname } = useLocation();
   console.log(pathname);
+
   //pathname으로 category id값 뽑아내기 가능
   useEffect(() => {
     setFirCateList(data.firstCategories);
@@ -29,11 +28,12 @@ export default function ItemCategoryPage() {
 
   const [thrCateTitle, setThrCateTitle] = useState("3차분류");
 
-  const thrDropdownSelecthandle = (eventKey) => {
+  const thrDropdownSelecthandle = (eventKey: string) => {
     setThrCateTitle(eventKey);
+    dispatch(pathNameFetch(pathname));
   };
 
-  const secDropdownSelecthandle = (eventKey) => {
+  const secDropdownSelecthandle = (eventKey: string) => {
     setSecCateTitle(eventKey);
     const List = secCateList.find((item) => item.name == eventKey);
 
@@ -43,9 +43,10 @@ export default function ItemCategoryPage() {
     if (eventKey != secCateTitle) {
       setThrCateTitle("3차분류");
     }
+    dispatch(pathNameFetch(pathname));
   };
 
-  const firDropdownSelecthandle = (eventKey) => {
+  const firDropdownSelecthandle = (eventKey: string) => {
     setFirCateTitle(eventKey);
     const List = firCateList.find((item) => item.name == eventKey);
 
@@ -57,6 +58,7 @@ export default function ItemCategoryPage() {
       setThrCateTitle("3차분류");
       setIsThrCateDisabled(true);
     }
+    dispatch(pathNameFetch(pathname));
   };
 
   return (
@@ -135,7 +137,6 @@ export default function ItemCategoryPage() {
           </Dropdown>
         </div>
       </div>
-      <FilterResultBox slugName={pathname} />
     </>
   );
 }

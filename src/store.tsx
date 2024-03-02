@@ -1,8 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./component/feature/CounterSlice";
+import FetchSlice from "components/feature/FetchSlice";
 
 export default configureStore({
   reducer: {
-    inquiry: counterReducer,
-  },
-});
+    queryString: FetchSlice
+}});
