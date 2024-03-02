@@ -4,8 +4,13 @@ import { useEffect, useState } from "react";
 import data from "dummyData/CategoryList.json";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
+import { Outlet } from "react-router-dom";
 
 export default function CategoryFilter() {
+
+
+
+  
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   console.log(pathname);
@@ -136,6 +141,7 @@ export default function CategoryFilter() {
             </Dropdown.Menu>
           </Dropdown>
         </div>
+        <Outlet></Outlet>
       </div>
     </>
   );

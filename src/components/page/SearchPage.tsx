@@ -9,6 +9,7 @@ import SearchTab from "components/feature/Tab/SearchTab";
 import styled from "styled-components";
 import Result from "components/result/Result";
 import { useSelector } from "react-redux";
+import { fetchCategoryData } from "api/categorySearchApi/route";
 
 const Input = styled.input`
   margin: 4px;
@@ -16,14 +17,24 @@ const Input = styled.input`
 
 export default function SearchPage() {
   
+  const [isCalendar, setIsCalendar] = useState(false);
+
+  const [keywordObj, setKeywordObj] = useSearchParams();
+
   const pathName = useSelector((state) => state.queryString.pathName);
+
+
+
+  const date = useSelector((state) => state.queryString.date);
+const startDate = date.startDate.split("T")[0]
+const los = date.los.split("T")[0]
 
 
   const [maxPrice, setMaxPrice] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [searchSize, setSearchSize] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [los, setSLos] = useState("");
+
+
 
   const searchSizeChange = (e) => {
     setSearchSize(e.target.value);
@@ -36,11 +47,8 @@ export default function SearchPage() {
     setMinPrice(e.target.value);
   };
 
-  const [isCalendar, setIsCalendar] = useState(false);
 
-  const [keywordObj, setKeywordObj] = useSearchParams();
-
-  const dataRender = () => {
+  const keywordSearch = () => {
     setKeywordObj({
       q: pathName,
       minPrice: minPrice,
@@ -68,8 +76,43 @@ export default function SearchPage() {
     getKeywordResult();
   };
 
+
+
+
+  const categorySearch = () => {
+    setKeywordObj({
+      q: pathName,
+      minPrice: minPrice,
+      maxPrice: maxPrice,
+      searchSize: searchSize,
+      startDate: startDate,
+      los: los,
+    });
+
+    const getCategoryResult = async () => {
+      const res = await fetchCategoryData(
+        pathName,
+        minPrice,
+        maxPrice,
+        searchSize,
+        startDate,
+        los
+      );
+
+      console.log("res", res);
+
+      setList(res.body);
+    };
+
+    getCategoryResult();
+  };
+
+
+
+
+
   const [list, setList] = useState([]);
-  const filterType = ["순위", "키워드", "판매량", "상품경쟁력", "배송방식"];
+
 
   return (
     <>
@@ -116,12 +159,19 @@ export default function SearchPage() {
         <p>상품 조회 결과</p>
         <button
           onClick={() => {
-            dataRender();
+              if (typeof(pathName) == 'string') {
+                keywordSearch();
+              } else if (typeof(pathName) == 'number') {
+                categorySearch()
+              }
+
+
+           
           }}
         >
           상품조회
         </button>
-     <Result  filterType={filterType}  list={list}  />
+     <Result  list={list}  setList={setList}/>
       </div>
     </>
   );
