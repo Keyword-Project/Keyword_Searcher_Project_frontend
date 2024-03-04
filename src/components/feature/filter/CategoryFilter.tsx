@@ -10,19 +10,26 @@ import {
   ThirdCategory,
   SecondCategory,
 } from "type/categoryList";
+import { fetchCategoryList } from "api/categoryApi/route";
 
 type SelectCallback = (eventKey: string | null) => void;
 
-export default function CategoryFilter() {    
+export default function CategoryFilter() {
   const [firCateList, setFirCateList] = useState<FirstCategory[]>([]);
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  console.log(pathname);
+  // console.log(pathname);
 
   //pathname으로 category id값 뽑아내기 가능
+
   useEffect(() => {
-    setFirCateList(data.firstCategories);
+    const getCategoryList = async () => {
+      const res = await fetchCategoryList();
+
+      setFirCateList(res.body.firstCategories);
+    };
+    getCategoryList();
   }, []);
 
   const [secCateList, setSecCateList] = useState<SecondCategory[]>([]);
@@ -80,80 +87,78 @@ export default function CategoryFilter() {
   return (
     <>
       <div>
-        <div>
-          <Dropdown onSelect={firDropdownSelecthandle}>
-            <Dropdown.Toggle variant="" id="dropdown-basic">
-              {firCateTitle}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              {firCateList.map((item, idx) => {
-                return (
-                  <Dropdown.Item
-                    eventKey={item.name}
-                    key={idx}
-                    as={Link}
-                    to={item.categoryId}
-                  >
-                    {item.name}
-                  </Dropdown.Item>
-                );
-              })}
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
-        <div>
-          <Dropdown onSelect={secDropdownSelecthandle}>
-            <Dropdown.Toggle
-              variant=""
-              id="dropdown-basic"
-              disabled={isSecCateDisabled}
-            >
-              {secCateTitle}
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              {secCateList.map((item, idx) => {
-                return (
-                  <Dropdown.Item
-                    eventKey={item.name}
-                    key={idx}
-                    as={Link}
-                    to={item.categoryId}
-                  >
-                    {item.name}
-                  </Dropdown.Item>
-                );
-              })}
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
-        <div>
-          <Dropdown onSelect={thrDropdownSelecthandle}>
-            <Dropdown.Toggle
-              variant=""
-              id="dropdown-basic"
-              disabled={isThrCateDisabled}
-            >
-              {thrCateTitle}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              {thrCateList.map((item, idx) => {
-                return (
-                  <Dropdown.Item
-                    eventKey={item.name}
-                    key={idx}
-                    as={Link}
-                    to={item.categoryId}
-                  >
-                    {item.name}
-                  </Dropdown.Item>
-                );
-              })}
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
-        <Outlet></Outlet>
+        <Dropdown onSelect={firDropdownSelecthandle}>
+          <Dropdown.Toggle variant="" id="dropdown-basic">
+            {firCateTitle}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {firCateList.map((item, idx) => {
+              return (
+                <Dropdown.Item
+                  eventKey={item.name}
+                  key={idx}
+                  as={Link}
+                  to={item.categoryId}
+                >
+                  {item.name}
+                </Dropdown.Item>
+              );
+            })}
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
+      <div>
+        <Dropdown onSelect={secDropdownSelecthandle}>
+          <Dropdown.Toggle
+            variant=""
+            id="dropdown-basic"
+            disabled={isSecCateDisabled}
+          >
+            {secCateTitle}
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            {secCateList.map((item, idx) => {
+              return (
+                <Dropdown.Item
+                  eventKey={item.name}
+                  key={idx}
+                  as={Link}
+                  to={item.categoryId}
+                >
+                  {item.name}
+                </Dropdown.Item>
+              );
+            })}
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+      <div>
+        <Dropdown onSelect={thrDropdownSelecthandle}>
+          <Dropdown.Toggle
+            variant=""
+            id="dropdown-basic"
+            disabled={isThrCateDisabled}
+          >
+            {thrCateTitle}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {thrCateList.map((item, idx) => {
+              return (
+                <Dropdown.Item
+                  eventKey={item.name}
+                  key={idx}
+                  as={Link}
+                  to={item.categoryId}
+                >
+                  {item.name}
+                </Dropdown.Item>
+              );
+            })}
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
+      <Outlet></Outlet>
     </>
   );
 }
