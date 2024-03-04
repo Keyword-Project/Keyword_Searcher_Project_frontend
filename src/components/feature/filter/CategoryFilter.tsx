@@ -5,12 +5,17 @@ import data from "dummyData/CategoryList.json";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
 import { Outlet } from "react-router-dom";
+import {
+  FirstCategory,
+  ThirdCategory,
+  SecondCategory,
+} from "type/categoryList";
 
-export default function CategoryFilter() {
+type SelectCallback = (eventKey: string | null) => void;
 
+export default function CategoryFilter() {    
+  const [firCateList, setFirCateList] = useState<FirstCategory[]>([]);
 
-
-  
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   console.log(pathname);
@@ -20,9 +25,8 @@ export default function CategoryFilter() {
     setFirCateList(data.firstCategories);
   }, []);
 
-  const [firCateList, setFirCateList] = useState([]);
-  const [secCateList, setSecCateList] = useState([]);
-  const [thrCateList, setThrCateList] = useState([]);
+  const [secCateList, setSecCateList] = useState<SecondCategory[]>([]);
+  const [thrCateList, setThrCateList] = useState<ThirdCategory[]>([]);
 
   const [isSecCateDisabled, setIsSecCateDisabled] = useState(true);
   const [isThrCateDisabled, setIsThrCateDisabled] = useState(true);
@@ -33,17 +37,21 @@ export default function CategoryFilter() {
 
   const [thrCateTitle, setThrCateTitle] = useState("3차분류");
 
-  const thrDropdownSelecthandle = (eventKey: string) => {
+  const thrDropdownSelecthandle: SelectCallback = (eventKey: string) => {
     setThrCateTitle(eventKey);
     dispatch(pathNameFetch(pathname));
   };
 
-  const secDropdownSelecthandle = (eventKey: string) => {
+  const secDropdownSelecthandle: SelectCallback = (eventKey: string) => {
     setSecCateTitle(eventKey);
     const List = secCateList.find((item) => item.name == eventKey);
 
     setIsThrCateDisabled(false);
-    setThrCateList((prev) => (prev = List.thirdCategories));
+
+    if (List) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      setThrCateList((prev) => (prev = List.thirdCategories));
+    }
 
     if (eventKey != secCateTitle) {
       setThrCateTitle("3차분류");
@@ -51,12 +59,15 @@ export default function CategoryFilter() {
     dispatch(pathNameFetch(pathname));
   };
 
-  const firDropdownSelecthandle = (eventKey: string) => {
+  const firDropdownSelecthandle: SelectCallback = (eventKey: string) => {
     setFirCateTitle(eventKey);
     const List = firCateList.find((item) => item.name == eventKey);
 
     setIsSecCateDisabled(false);
-    setSecCateList((prev) => (prev = List.secondCategories));
+    if (List) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      setSecCateList((prev) => (prev = List.secondCategories));
+    }
 
     if (eventKey != firCateTitle) {
       setSecCateTitle("2차분류");
