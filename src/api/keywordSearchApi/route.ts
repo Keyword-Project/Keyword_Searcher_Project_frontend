@@ -1,13 +1,13 @@
 import axios from "axios";
 
-export async function fetchKeywordData(
+const fetchKeywordData = (
   pathName: string,
   minPrice: number,
   maxPrice: number,
   searchSize: number,
   startDate: number,
   los: number
-) {
+) =>  {
   console.log("fetchKeywordData");
   console.log(pathName, minPrice, maxPrice, searchSize, startDate, los);
   try {

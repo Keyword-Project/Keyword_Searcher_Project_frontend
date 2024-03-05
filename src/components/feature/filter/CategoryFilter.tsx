@@ -1,7 +1,6 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import data from "dummyData/CategoryList.json";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
 import { Outlet } from "react-router-dom";
@@ -19,7 +18,7 @@ export default function CategoryFilter() {
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  // console.log(pathname);
+  console.log(pathname);
 
   //pathname으로 category id값 뽑아내기 가능
 

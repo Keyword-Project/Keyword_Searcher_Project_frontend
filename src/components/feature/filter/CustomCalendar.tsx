@@ -24,7 +24,7 @@ export default function CustomCalendar() {
         //잘 모르겠음
         calendarIcon={"달력 아이콘!"}
         //달력 아이콘 설정
-        clearAriaLabel={"Clear value이게뭔데 씹덕아"}
+        clearAriaLabel={"Clear value이게뭔데"}
         closeCalendar={false}
         //날짜 선택 시 달력창 닫을지
         disableCalendar={false}
