@@ -29,6 +29,13 @@ export default function SearchPage() {
     setMinPrice(e.target.value);
   };
 
+  const csvData = [
+    ["firstname", "lastname", "email"],
+    ["Ahmed", "Tomi", "ah@smthing.co.com"],
+    ["Raed", "Labes", "rl@smthing.co.com"],
+    ["Yezzi", "Min l3b", "ymin@cocococo.com"],
+  ];
+
   const [resultVisible, setResultVisible] = useState(false);
 
   return (
@@ -83,7 +90,7 @@ export default function SearchPage() {
           상품조회
         </button>
 
-        <Suspense fallback={<p></p>}>
+        <Suspense fallback={<div></div>}>
           {resultVisible && (
             <Result
               searchSize={searchSize}
