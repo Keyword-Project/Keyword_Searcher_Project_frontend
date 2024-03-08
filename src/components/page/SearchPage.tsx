@@ -1,11 +1,12 @@
 import React, { useState, Suspense } from "react";
 
-import { Outlet } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import CustomCalendar from "components/feature/filter/CustomCalendar";
 import SearchTab from "components/feature/Tab/SearchTab";
 import styled from "styled-components";
 const Result = React.lazy(() => import("components/result/Result"));
+import { useSelector } from "react-redux";
+import { Outlet } from "react-router-dom";
 
 const Input = styled.input`
   margin: 4px;
@@ -14,9 +15,32 @@ const Input = styled.input`
 export default function SearchPage() {
   const [isCalendar, setIsCalendar] = useState(false);
 
+  //result로 전달할 객체
+  const [queryData, setQueryData] = useState({
+    pathName: "",
+    minPrice: "",
+    maxPrice: "",
+    searchSize: "",
+    startDate: "",
+    los: "",
+  });
+
+
+  
   const [maxPrice, setMaxPrice] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [searchSize, setSearchSize] = useState("");
+
+  const pathName = useSelector((state) => state.queryString.pathName);
+
+  const date = useSelector((state) => state.queryString.date);
+  const startDate = date.startDate.split("T")[0];
+  const los = date.los.split("T")[0];
+
+  const fetchQueryData = () => {
+    setQueryData({ pathName, minPrice, maxPrice, searchSize, startDate, los });
+    console.log("Updated Info:", setQueryData);
+  };
 
   const searchSizeChange = (e) => {
     setSearchSize(e.target.value);
@@ -29,19 +53,13 @@ export default function SearchPage() {
     setMinPrice(e.target.value);
   };
 
-  const csvData = [
-    ["firstname", "lastname", "email"],
-    ["Ahmed", "Tomi", "ah@smthing.co.com"],
-    ["Raed", "Labes", "rl@smthing.co.com"],
-    ["Yezzi", "Min l3b", "ymin@cocococo.com"],
-  ];
-
   const [resultVisible, setResultVisible] = useState(false);
 
   return (
     <>
       <SearchTab />
-      <Outlet></Outlet>
+      <Outlet />
+
       <div>
         <p>날짜 설정</p>
         <div>
@@ -62,6 +80,7 @@ export default function SearchPage() {
             <Input
               type="number"
               name="itemSize"
+              value={searchSize}
               onChange={searchSizeChange}
             ></Input>
           </div>
@@ -71,11 +90,13 @@ export default function SearchPage() {
             <Input
               type="number"
               name="minPrice"
+              value={minPrice}
               onChange={minPriceChange}
             ></Input>
             <Input
               type="number"
               name="maxPrice"
+              value={maxPrice}
               onChange={maxPriceChange}
             ></Input>
           </div>
@@ -83,6 +104,7 @@ export default function SearchPage() {
         <p>상품 조회 결과</p>
         <button
           onClick={() => {
+            fetchQueryData();
             setResultVisible(true);
             console.log("상품조회 클릭");
           }}
@@ -93,9 +115,8 @@ export default function SearchPage() {
         <Suspense fallback={<div></div>}>
           {resultVisible && (
             <Result
-              searchSize={searchSize}
-              minPrice={minPrice}
-              maxPrice={maxPrice}
+           
+              queryData={queryData}
             />
           )}
         </Suspense>

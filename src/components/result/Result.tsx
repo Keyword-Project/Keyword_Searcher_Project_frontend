@@ -1,31 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import Table from "react-bootstrap/Table";
 import { Link, useSearchParams } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
-import { useSelector } from "react-redux";
+
 import { CSVLink } from "react-csv";
 import axios from "axios";
 
-export default function Result({ minPrice, maxPrice, searchSize }) {
+export default function Result({ queryData }) {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [keywordObj, setKeywordObj] = useSearchParams();
 
-  const pathName = useSelector((state) => state.queryString.pathName);
-
-  const date = useSelector((state) => state.queryString.date);
-  const startDate = date.startDate.split("T")[0];
-  const los = date.los.split("T")[0];
-
   useEffect(() => {
     setKeywordObj({
-      q: pathName,
-      minPrice: minPrice,
-      maxPrice: maxPrice,
-      searchSize: searchSize,
-      startDate: startDate,
-      los: los,
+      q: queryData.pathName,
+      minPrice: queryData.minPrice,
+      maxPrice: queryData.maxPrice,
+      searchSize: queryData.searchSize,
+      startDate: queryData.startDate,
+      los: queryData.los,
     });
 
     const fetchKeywordData = async (
@@ -41,12 +35,12 @@ export default function Result({ minPrice, maxPrice, searchSize }) {
 
       await axios
         .get(
-          `http://localhost:3000/api/v1/keyword?q=${pathName}${
-            startDate ? `&startDate=${startDate}` : ""
-          }&${los ? `&los=${los}` : ""}${
-            minPrice ? `&minPrice=${minPrice}` : ""
-          }${maxPrice ? `&maxPrice=${maxPrice}` : ""}${
-            searchSize ? `&searchSize=${searchSize}` : ""
+          `http://localhost:3000/api/v1/keyword?q=${queryData.pathName}${
+            queryData.startDate ? `&startDate=${queryData.startDate}` : ""
+          }&${queryData.los ? `&los=${queryData.los}` : ""}${
+            queryData.minPrice ? `&minPrice=${queryData.minPrice}` : ""
+          }${queryData.maxPrice ? `&maxPrice=${queryData.maxPrice}` : ""}${
+            queryData.searchSize ? `&searchSize=${queryData.searchSize}` : ""
           }`
         )
         .then((response) => {
@@ -73,12 +67,12 @@ export default function Result({ minPrice, maxPrice, searchSize }) {
 
       await axios
         .get(
-          `http://localhost:3000/api/v1/categories/${pathName}?${
-            startDate ? `&startDate=${startDate}` : ""
-          }&${los ? `&los=${los}` : ""}${
-            minPrice ? `&minPrice=${minPrice}` : ""
-          }${maxPrice ? `&maxPrice=${maxPrice}` : ""}${
-            searchSize ? `&searchSize=${searchSize}` : ""
+          `http://localhost:3000/api/v1/categories/${queryData.pathName}?${
+            queryData.startDate ? `&startDate=${queryData.startDate}` : ""
+          }&${queryData.los ? `&los=${queryData.los}` : ""}${
+            queryData.minPrice ? `&minPrice=${queryData.minPrice}` : ""
+          }${queryData.maxPrice ? `&maxPrice=${queryData.maxPrice}` : ""}${
+            queryData.searchSize ? `&searchSize=${queryData.searchSize}` : ""
           }`
         )
         .then((response) => {
@@ -93,29 +87,29 @@ export default function Result({ minPrice, maxPrice, searchSize }) {
     };
 
     const resultRender = () => {
-      if (typeof pathName == "string") {
+      if (typeof queryData.pathName == "string") {
         fetchKeywordData(
-          pathName,
-          minPrice,
-          maxPrice,
-          searchSize,
-          startDate,
-          los
+          queryData.pathName,
+          queryData.minPrice,
+          queryData.maxPrice,
+          queryData.searchSize,
+          queryData.startDate,
+          queryData.los
         );
-      } else if (typeof pathName == "number") {
+      } else if (typeof queryData.pathName == "number") {
         fetchCategoryData(
-          pathName,
-          minPrice,
-          maxPrice,
-          searchSize,
-          startDate,
-          los
+          queryData.pathName,
+          queryData.minPrice,
+          queryData.maxPrice,
+          queryData.searchSize,
+          queryData.startDate,
+          queryData.los
         );
       }
     };
 
     resultRender();
-  }, []);
+  }, [queryData]);
 
   const sortByCompetitiveness = () => {
     const sorted = [...list].sort(
@@ -137,9 +131,8 @@ export default function Result({ minPrice, maxPrice, searchSize }) {
           <span className="visually-hidden">Loading...</span>
         </Spinner>
       ) : (
-
         <div>
-            <CSVLink data={list}>Download me</CSVLink>;
+          <CSVLink data={list}>Download me</CSVLink>;
           <Table responsive>
             <thead>
               <tr>
@@ -175,3 +168,5 @@ export default function Result({ minPrice, maxPrice, searchSize }) {
     </>
   );
 }
+
+export const MemoizedResult = React.memo(Result);
