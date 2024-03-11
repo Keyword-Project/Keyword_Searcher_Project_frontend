@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import useGetData from "useGetData";
-import { Link } from "react-router-dom";
 import { CSVLink } from "react-csv";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsUpDown } from "@fortawesome/free-solid-svg-icons";
 
 const ExcelDownloadBtnDiv = styled.div`
@@ -26,7 +24,7 @@ const TitleSpan = styled.span`
   }
 `;
 
-const KeywordLink = styled(Link)`
+const KeywordAtag = styled.a`
   color: black;
   text-decoration-line: none;
   &:hover {
@@ -230,9 +228,12 @@ let transformedData ;
                 <StyledResultTr key={idx}>
                   <StyleResultdTd>{idx + 1}</StyleResultdTd>
                   <StyleResultdTd>
-                    <KeywordLink to={`https://www.coupang.com/${item.uri}`}>
+                    <KeywordAtag 
+                    href={`https://www.coupang.com/${item.uri}`}
+                    target="_blank"
+                    >
                       {item.name}
-                    </KeywordLink>
+                    </KeywordAtag>
                   </StyleResultdTd>
                   <StyleResultdTd>{item.priceValue}</StyleResultdTd>
                   <StyleResultdTd>{item.ratingTotalCount}</StyleResultdTd>
