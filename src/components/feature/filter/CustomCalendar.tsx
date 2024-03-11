@@ -25,11 +25,51 @@ const StlyedDateRangePicker = styled(DateRangePicker)`
   .react-calendar {
     border-radius: 5px;
   }
+  .react-calendar__navigation {
+    background-color: #c8c8ff;
+  }
+  .react-calendar__navigation__label {
+    &:hover {
+      text-decoration-line: underline;
+      font-weight: bold;
+      background-color: #c8c8ff !important;
+    }
+  }
+  .react-calendar__navigation__arrow {
+    &:hover {
+      font-weight: bold;
+      background-color: #c8c8ff !important;
+    }
+  }
+  .react-calendar__tile {
+    //일반 타일 -> 호버하면 호버가 적용됨
+    &:hover {
+      background-color: #c8c8ff !important;
+    }
+  }
+  .react-calendar__tile--active {
+    //클릭 + 선택 왼료시 적용되는 스타일
+
+    background-color: #6e5bff !important;
+  }
+  .react-calendar__tile--range {
+    &:hover {
+      background-color: #c8c8ff !important;
+    }
+  }
+  /* .react-calendar__tile--rangeStart{
+    //range 선택 후 시작날짜의 색상 (호버아님 선택지정 후 색상)
+    background-color: #c8c8ff !important;
+  } */
+  .react-calendar__tile--hover {
+    //range 선택 시 시작날짜부터 종료날짜 사이의 호버된 날짜들의 색상(호버임)
+    background-color: #c8c8ff !important;
+  }
 `;
 
 const CalendarBox = styled.div`
-  margin: 0px 50px 40px 30px;
-  width: 40%;
+  margin: 0px 30px 40px 50px;
+  width: 30%;
 `;
 
 type ValuePiece = Date | null;
