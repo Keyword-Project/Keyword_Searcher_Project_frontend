@@ -1,172 +1,157 @@
-import React, { useEffect, useState, memo } from "react";
+import { useState } from "react";
 import Table from "react-bootstrap/Table";
-import { Link, useSearchParams } from "react-router-dom";
-import Spinner from "react-bootstrap/Spinner";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import styled from "styled-components";
+import useGetData from "useGetData";
+import { Link } from "react-router-dom";
 import { CSVLink } from "react-csv";
-import axios from "axios";
+import { faArrowsAltV } from '@fortawesome/free-solid-svg-icons'; 
+import { faArrowsAltV as farArrowsAltV } from '@fortawesome/free-regular-svg-icons';
+
+
+const TitleTh = styled.th`
+width : ${ props => props.width };
+`
+
+
+const TitleSpan =styled.span`
+ &:hover {
+ cursor : pointer;
+    }
+`
+
+const ExcelButton = styled.button`
+width : 140px;
+height : 30px;
+font-size: 12px;
+font-weight : bold;
+`
+
+const DeliveryImg = styled.img`
+width : 50px;
+height : 30px;
+`
+
+const StyledCSVLink = styled(CSVLink)`
+color : black;
+margin-left : 5px;
+text-decoration-line : none;
+
+`
 
 export default function Result({ queryData }) {
   const [list, setList] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  const [keywordObj, setKeywordObj] = useSearchParams();
+  let url = "";
+  if (typeof queryData.pathName == "string") {
+    url = `http://localhost:3000/api/v1/keyword?q=${queryData.pathName}${
+      queryData.startDate ? `&startDate=${queryData.startDate}` : ""
+    }&${queryData.los ? `&los=${queryData.los}` : ""}${
+      queryData.minPrice ? `&minPrice=${queryData.minPrice}` : ""
+    }${queryData.maxPrice ? `&maxPrice=${queryData.maxPrice}` : ""}${
+      queryData.searchSize ? `&searchSize=${queryData.searchSize}` : ""
+    }`;
+  } else if (typeof queryData.pathName == "number") {
+    url = `http://localhost:3000/api/v1/categories/${queryData.pathName}?${
+      queryData.startDate ? `&startDate=${queryData.startDate}` : ""
+    }&${queryData.los ? `&los=${queryData.los}` : ""}${
+      queryData.minPrice ? `&minPrice=${queryData.minPrice}` : ""
+    }${queryData.maxPrice ? `&maxPrice=${queryData.maxPrice}` : ""}${
+      queryData.searchSize ? `&searchSize=${queryData.searchSize}` : ""
+    }`;
+  }
 
-  useEffect(() => {
-    setKeywordObj({
-      q: queryData.pathName,
-      minPrice: queryData.minPrice,
-      maxPrice: queryData.maxPrice,
-      searchSize: queryData.searchSize,
-      startDate: queryData.startDate,
-      los: queryData.los,
-    });
+  const problemData = useGetData(url);
 
-    const fetchKeywordData = async (
-      pathName: string | number,
-      minPrice: number,
-      maxPrice: number,
-      searchSize: number,
-      startDate: number,
-      los: number
-    ) => {
-      console.log("fetchKeywordData");
-      console.log(pathName, minPrice, maxPrice, searchSize, startDate, los);
 
-      await axios
-        .get(
-          `http://localhost:3000/api/v1/keyword?q=${queryData.pathName}${
-            queryData.startDate ? `&startDate=${queryData.startDate}` : ""
-          }&${queryData.los ? `&los=${queryData.los}` : ""}${
-            queryData.minPrice ? `&minPrice=${queryData.minPrice}` : ""
-          }${queryData.maxPrice ? `&maxPrice=${queryData.maxPrice}` : ""}${
-            queryData.searchSize ? `&searchSize=${queryData.searchSize}` : ""
-          }`
-        )
-        .then((response) => {
-          setList(response.data.body);
-          setLoading(false);
-        })
+  const [sortBy, setSortBy] = useState(null);
+  const [sortOrder, setSortOrder] = useState('asc');
 
-        .catch((error) => {
-          console.error("Fail:", error);
-          throw new Error("Fail");
-        });
-    };
-
-    const fetchCategoryData = async (
-      pathName: string | number,
-      minPrice: number,
-      maxPrice: number,
-      searchSize: number,
-      startDate: number,
-      los: number
-    ) => {
-      console.log("fetchCategoryData");
-      console.log(pathName, minPrice, maxPrice, searchSize, startDate, los);
-
-      await axios
-        .get(
-          `http://localhost:3000/api/v1/categories/${queryData.pathName}?${
-            queryData.startDate ? `&startDate=${queryData.startDate}` : ""
-          }&${queryData.los ? `&los=${queryData.los}` : ""}${
-            queryData.minPrice ? `&minPrice=${queryData.minPrice}` : ""
-          }${queryData.maxPrice ? `&maxPrice=${queryData.maxPrice}` : ""}${
-            queryData.searchSize ? `&searchSize=${queryData.searchSize}` : ""
-          }`
-        )
-        .then((response) => {
-          setList(response.data.body);
-          setLoading(false);
-        })
-
-        .catch((error) => {
-          console.error("Fail:", error);
-          throw new Error("Fail");
-        });
-    };
-
-    const resultRender = () => {
-      if (typeof queryData.pathName == "string") {
-        fetchKeywordData(
-          queryData.pathName,
-          queryData.minPrice,
-          queryData.maxPrice,
-          queryData.searchSize,
-          queryData.startDate,
-          queryData.los
-        );
-      } else if (typeof queryData.pathName == "number") {
-        fetchCategoryData(
-          queryData.pathName,
-          queryData.minPrice,
-          queryData.maxPrice,
-          queryData.searchSize,
-          queryData.startDate,
-          queryData.los
-        );
-      }
-    };
-
-    resultRender();
-  }, [queryData]);
-
-  const sortByCompetitiveness = () => {
-    const sorted = [...list].sort(
-      (a, b) => b.ratingTotalCount - a.ratingTotalCount
-    );
-    setList(sorted);
+  const handleSort = (field) => {
+    if (sortBy === field) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortBy(field);
+      setSortOrder('asc');
+    }
   };
 
-  // 가격순 정렬
-  const sortByPrice = () => {
-    const sorted = [...list].sort((a, b) => b.priceValue - a.priceValue);
-    setList(sorted);
-  };
+  const sortedData = problemData?.body?.slice().sort((a, b) => {
+    const aValue = sortBy ? a[sortBy] : null;
+    const bValue = sortBy ? b[sortBy] : null;
+
+    if (sortBy === '상품경쟁력') {
+      const aCompetitiveness = (a.ratingVipCount / a.ratingTotalCount) * 100;
+      const bCompetitiveness = (b.ratingVipCount / b.ratingTotalCount) * 100;
+
+      return sortOrder === 'asc' ? aCompetitiveness - bCompetitiveness : bCompetitiveness - aCompetitiveness;
+    }
+
+    if (aValue === bValue) {
+      return 0;
+    }
+
+    if (sortOrder === 'asc') {
+      return aValue < bValue ? -1 : 1;
+    } else {
+      return aValue > bValue ? -1 : 1;
+    }
+  });
+
+  console.log('sortedData', sortedData)
+
+
 
   return (
     <>
-      {loading ? (
-        <Spinner animation="border" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </Spinner>
-      ) : (
-        <div>
-          <CSVLink data={list}>Download me</CSVLink>;
-          <Table responsive>
-            <thead>
-              <tr>
-                <th>순위</th>
-                <th>키워드</th>
-                <th onClick={sortByPrice}>판매량</th>
-                <th onClick={sortByCompetitiveness}>상품경쟁력</th>
-                <th>배송방식</th>
-              </tr>
-            </thead>
-            <tbody>
-              {list?.map((item, idx) => {
-                return (
-                  <tr key={idx}>
-                    <td>{idx + 1}</td>
-                    <td>
-                      <Link to={`https://www.coupang.com/${item.uri}`}>
-                        {item.name}
-                      </Link>
-                    </td>
-                    <td>{item.priceValue}</td>
-                    <td>{item.ratingTotalCount}</td>
-                    <td>
-                      <img src={item.rocketImg} />
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </Table>
-        </div>
+      <div>
+
+      {sortedData != undefined && (
+        <ExcelButton>
+        <FontAwesomeIcon icon={faDownload} />
+         
+          <StyledCSVLink data={sortedData}>엑셀 다운로드</StyledCSVLink>
+        </ExcelButton>
       )}
+      
+        <Table responsive>
+          <thead>
+            <tr>
+            <TitleTh width="10%">순위</TitleTh>
+          <TitleTh width="30%" >키워드</TitleTh>
+          <TitleTh  width="10%" cursor="pointer"  onClick={() => handleSort('priceValue')}> <FontAwesomeIcon icon={faArrowsUpDown} />  <TitleSpan>가격</TitleSpan>  </TitleTh>
+          <TitleTh  width="10%"  cursor="pointer" onClick={() => handleSort('ratingTotalCount')}> <FontAwesomeIcon icon={faArrowsUpDown} /> <TitleSpan>총 리뷰</TitleSpan> </TitleTh>
+          <TitleTh width="20%" cursor="pointer" onClick={() => handleSort('상품경쟁력')}> <FontAwesomeIcon icon={faArrowsUpDown} /> <TitleSpan>상품경쟁력</TitleSpan>   </TitleTh>
+              <TitleTh width="20%" >배송방식</TitleTh>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedData?.map((item, idx) => {
+              const ItemPower = (
+                (item.ratingVipCount / item.ratingTotalCount) *
+                100
+              ).toFixed(1);
+              return (
+                <tr key={idx}>
+                  <td>{idx + 1}</td>
+                  <td>
+                    <Link to={`https://www.coupang.com/${item.uri}`}>
+                      {item.name}
+                    </Link>
+                  </td>
+                  <td>{item.priceValue}</td>
+                  <td>{item.ratingTotalCount}</td>
+                  <td>{ItemPower}%</td>
+                  <td>
+                    <DeliveryImg src={item.rocketImg} />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </div>
     </>
   );
 }
-
-export const MemoizedResult = React.memo(Result);

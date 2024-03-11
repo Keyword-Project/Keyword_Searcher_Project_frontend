@@ -3,13 +3,67 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
-import { Outlet } from "react-router-dom";
 import {
   FirstCategory,
   ThirdCategory,
   SecondCategory,
 } from "type/categoryList";
 import { fetchCategoryList } from "api/categoryApi/route";
+import styled from "styled-components";
+
+
+const DropdownBoxDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  width: 50%;
+  height: 100%;
+`;
+
+const DropdownBox = styled.div`
+  display: flex;
+  width: 310px;
+  justify-content: space-between;
+  height: 80%;
+  margin-top: 5px;
+`;
+
+const DropdownHover = styled(Dropdown)`
+  width: 100px;
+  color: black;
+  background-color: #ecedee;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 3px;
+  border-collapse: collapse;
+`;
+
+const DropdownNoHover = styled(Dropdown.Toggle)`
+  color: black;
+  width: 100%;
+  padding: 0px;
+  background-color: white;
+  height: 100%;
+  font-size: 13px;
+  border-radius: 3px;
+  border-collapse: collapse;
+`;
+
+const DropdownMenu = styled(Dropdown.Menu)`
+  color: #5845eb;
+  font-size: 1em;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 0px;
+  background-color: white;
+  .dropdown-item {
+    &:hover {
+      background-color: #bfc6cc;
+      border: none;
+    }
+  }
+`;
 
 type SelectCallback = (eventKey: string | null) => void;
 
@@ -18,9 +72,6 @@ export default function CategoryFilter() {
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  console.log(pathname);
-
-  //pathname으로 category id값 뽑아내기 가능
 
   useEffect(() => {
     const getCategoryList = async () => {
@@ -85,79 +136,75 @@ export default function CategoryFilter() {
 
   return (
     <>
-      <div>
-        <Dropdown onSelect={firDropdownSelecthandle}>
-          <Dropdown.Toggle variant="" id="dropdown-basic">
-            {firCateTitle}
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {firCateList.map((item, idx) => {
-              return (
-                <Dropdown.Item
-                  eventKey={item.name}
-                  key={idx}
-                  as={Link}
-                  to={item.categoryId}
-                >
-                  {item.name}
-                </Dropdown.Item>
-              );
-            })}
-          </Dropdown.Menu>
-        </Dropdown>
-      </div>
-      <div>
-        <Dropdown onSelect={secDropdownSelecthandle}>
-          <Dropdown.Toggle
-            variant=""
-            id="dropdown-basic"
-            disabled={isSecCateDisabled}
-          >
-            {secCateTitle}
-          </Dropdown.Toggle>
-
-          <Dropdown.Menu>
-            {secCateList.map((item, idx) => {
-              return (
-                <Dropdown.Item
-                  eventKey={item.name}
-                  key={idx}
-                  as={Link}
-                  to={item.categoryId}
-                >
-                  {item.name}
-                </Dropdown.Item>
-              );
-            })}
-          </Dropdown.Menu>
-        </Dropdown>
-      </div>
-      <div>
-        <Dropdown onSelect={thrDropdownSelecthandle}>
-          <Dropdown.Toggle
-            variant=""
-            id="dropdown-basic"
-            disabled={isThrCateDisabled}
-          >
-            {thrCateTitle}
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {thrCateList.map((item, idx) => {
-              return (
-                <Dropdown.Item
-                  eventKey={item.name}
-                  key={idx}
-                  as={Link}
-                  to={item.categoryId}
-                >
-                  {item.name}
-                </Dropdown.Item>
-              );
-            })}
-          </Dropdown.Menu>
-        </Dropdown>
-      </div>
-      <Outlet></Outlet>
+      <DropdownBoxDiv>
+        <DropdownBox>
+          <DropdownHover onSelect={firDropdownSelecthandle}>
+            <DropdownNoHover variant="" id="dropdown-basic">
+              {firCateTitle}
+            </DropdownNoHover>
+            <DropdownMenu>
+              {firCateList.map((item, idx) => {
+                return (
+                  <Dropdown.Item
+                    eventKey={item.name}
+                    key={idx}
+                    as={Link}
+                    to={item.categoryId}
+                  >
+                    {item.name}
+                  </Dropdown.Item>
+                );
+              })}
+            </DropdownMenu>
+          </DropdownHover>
+          <DropdownHover onSelect={secDropdownSelecthandle}>
+            <DropdownNoHover
+              variant=""
+              id="dropdown-basic"
+              disabled={isSecCateDisabled}
+            >
+              {secCateTitle}
+            </DropdownNoHover>
+            <DropdownMenu>
+              {secCateList?.map((item, idx) => {
+                return (
+                  <Dropdown.Item
+                    eventKey={item.name}
+                    key={idx}
+                    as={Link}
+                    to={item.categoryId}
+                  >
+                    {item.name}
+                  </Dropdown.Item>
+                );
+              })}
+            </DropdownMenu>
+          </DropdownHover>
+          <DropdownHover onSelect={thrDropdownSelecthandle}>
+            <DropdownNoHover
+              variant=""
+              id="dropdown-basic"
+              disabled={isThrCateDisabled}
+            >
+              {thrCateTitle}
+            </DropdownNoHover>
+            <DropdownMenu>
+              {thrCateList?.map((item, idx) => {
+                return (
+                  <Dropdown.Item
+                    eventKey={item.name}
+                    key={idx}
+                    as={Link}
+                    to={item.categoryId}
+                  >
+                    {item.name}
+                  </Dropdown.Item>
+                );
+              })}
+            </DropdownMenu>
+          </DropdownHover>
+        </DropdownBox>
+      </DropdownBoxDiv>
     </>
   );
 }

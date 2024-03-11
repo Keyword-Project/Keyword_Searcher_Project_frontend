@@ -1,19 +1,95 @@
-import React, { useState, Suspense } from "react";
+import { useState, Suspense } from "react";
 
-import Button from "react-bootstrap/Button";
 import CustomCalendar from "components/feature/filter/CustomCalendar";
-import SearchTab from "components/feature/Tab/SearchTab";
 import styled from "styled-components";
-const Result = React.lazy(() => import("components/result/Result"));
 import { useSelector } from "react-redux";
-import { Outlet } from "react-router-dom";
+
+import { CSVLink } from "react-csv";
+import Result from "components/result/Result";
+import { useLocation } from "react-router-dom";
+import SpinnerBox from "components/feature/SpinnerBox";
+import SearchTab from "components/feature/Tab/SearchTab";
+import { Table } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+
+
+let TitleTh = styled.th`
+width : ${ props => props.width };
+`;
+
+
+
+
+const PriceBox = styled.div`
+  width: 200px;
+  margin-right: 50px;
+`;
+
+
+const FilterBox = styled.div`
+  display: flex;
+  background-color: #f5f8fb;
+  padding-top: 40px;
+`;
 
 const Input = styled.input`
-  margin: 4px;
+  border-radius: 3px;
+  width: 80px;
+  height: 20px;
+  padding-left: 5px;
+  font-size: 10px;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+`;
+
+const InquiryButton = styled.button`
+  border-radius: 10px;
+  color: black;
+  font-size: 15px;
+  margin-right: 50px;
+  padding: 0px 10px;
+  width: 100px;
+  font-weight: bold;
+  height: 70px;
+  border: none;
+  background-color: #c8c8ff;
+`;
+
+const Item = styled.p`
+  font-size: 13px;
+  font-weight: bold;
+`;
+
+const InputBox = styled.div`
+  width: 150px;
+  color: black;
+`;
+
+const ResultDiv = styled.div`
+  width: 100%;
+  height: 400px;
 `;
 
 export default function SearchPage() {
-  const [isCalendar, setIsCalendar] = useState(false);
+  let pathName = "";
+
+  const keywordInputValue = useSelector((state) => state.queryString.pathName);
+
+
+  const { pathname } = useLocation();
+  console.log(pathname);
+  const slug = pathname.split("/")[2];
+  console.log(slug);
+
+  if (slug == undefined) {
+    pathName = keywordInputValue;
+  } else if (typeof slug == "string") {
+    pathName = Number(slug);
+  }
 
   //result로 전달할 객체
   const [queryData, setQueryData] = useState({
@@ -25,21 +101,28 @@ export default function SearchPage() {
     los: "",
   });
 
-
-  
   const [maxPrice, setMaxPrice] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [searchSize, setSearchSize] = useState("");
 
-  const pathName = useSelector((state) => state.queryString.pathName);
-
   const date = useSelector((state) => state.queryString.date);
+
   const startDate = date.startDate.split("T")[0];
-  const los = date.los.split("T")[0];
+  const startDateByLos = new Date(date.startDate.split("T")[0]);
+
+  const endDate = new Date(date.endDate.split("T")[0]);
+  console.log("stateDate", startDate);
+  console.log("startDateByLos", startDateByLos);
+  console.log("endDate", endDate);
+
+  const differenceMs = Math.abs(endDate - startDateByLos);
+  console.log("differenceMs", differenceMs);
+
+  const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
+  console.log("los", los);
 
   const fetchQueryData = () => {
     setQueryData({ pathName, minPrice, maxPrice, searchSize, startDate, los });
-    console.log("Updated Info:", setQueryData);
   };
 
   const searchSizeChange = (e) => {
@@ -55,72 +138,162 @@ export default function SearchPage() {
 
   const [resultVisible, setResultVisible] = useState(false);
 
+  const test = [
+    {
+      name: "목걸이",
+      priceValue: 3000,
+      ratingTotalCount: 50000,
+      ratingVipCount : 42000,
+      rocketImg: "이미지사진",
+    },
+    {
+      name: "원피스",
+      priceValue: 707630,
+      ratingTotalCount: 265000,
+      ratingVipCount : 102341,
+      rocketImg: "이미지사진",
+    },
+    {
+      name: "구두",
+      priceValue: 410850,
+      ratingTotalCount: 5912300,
+      ratingVipCount : 100000,
+      rocketImg: "이미지사진",
+    },
+    {
+      name: "책상",
+      priceValue: 512000,
+      ratingTotalCount: 500,
+      ratingVipCount : 50,
+      rocketImg: "이미지사진",
+    },
+  ];
+
+
+
+  const [sortBy, setSortBy] = useState(null);
+  const [sortOrder, setSortOrder] = useState('asc');
+
+  const handleSort = (field) => {
+    if (sortBy === field) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortBy(field);
+      setSortOrder('asc');
+    }
+  };
+
+  const sortedData = test.slice().sort((a, b) => {
+    const aValue = sortBy ? a[sortBy] : null;
+    const bValue = sortBy ? b[sortBy] : null;
+
+    if (sortBy === '상품경쟁력') {
+      const aCompetitiveness = (a.ratingVipCount / a.ratingTotalCount) * 100;
+      const bCompetitiveness = (b.ratingVipCount / b.ratingTotalCount) * 100;
+
+      return sortOrder === 'asc' ? aCompetitiveness - bCompetitiveness : bCompetitiveness - aCompetitiveness;
+    }
+
+    if (aValue === bValue) {
+      return 0;
+    }
+
+    if (sortOrder === 'asc') {
+      return aValue < bValue ? -1 : 1;
+    } else {
+      return aValue > bValue ? -1 : 1;
+    }
+  });
+
+
+
   return (
     <>
       <SearchTab />
-      <Outlet />
+      <FilterBox>
+        <CustomCalendar />
 
-      <div>
-        <p>날짜 설정</p>
-        <div>
-          <Button>최근 14일</Button>
-          <Button
-            variant="secondary"
-            onClick={() => {
-              setIsCalendar(!isCalendar);
-            }}
-          >
-            기간 설정
-          </Button>
-        </div>
-        <div>{isCalendar && <CustomCalendar />}</div>
-        <div>
-          <div>
-            <p>상품 개수 입력</p>
-            <Input
-              type="number"
-              name="itemSize"
-              value={searchSize}
-              onChange={searchSizeChange}
-            ></Input>
-          </div>
+        <InputBox>
+          <Item>상품 개수</Item>
+          <Input
+            type="number"
+            name="itemSize"
+            value={searchSize}
+            onChange={searchSizeChange}
+            placeholder="상품 개수"
+          ></Input>
+        </InputBox>
 
-          <div>
-            <p>상품 가격 입력</p>
-            <Input
-              type="number"
-              name="minPrice"
-              value={minPrice}
-              onChange={minPriceChange}
-            ></Input>
-            <Input
-              type="number"
-              name="maxPrice"
-              value={maxPrice}
-              onChange={maxPriceChange}
-            ></Input>
-          </div>
-        </div>
-        <p>상품 조회 결과</p>
-        <button
+        <PriceBox>
+          <Item>상품 가격</Item>
+          <Input
+            type="number"
+            name="minPrice"
+            value={minPrice}
+            onChange={minPriceChange}
+            placeholder="최소 가격"
+          ></Input>
+          <span> - </span>
+          <Input
+            type="number"
+            name="maxPrice"
+            value={maxPrice}
+            onChange={maxPriceChange}
+            placeholder="최대 가격"
+          ></Input>
+        </PriceBox>
+
+        <InquiryButton
           onClick={() => {
-            fetchQueryData();
             setResultVisible(true);
-            console.log("상품조회 클릭");
+            fetchQueryData();
           }}
         >
           상품조회
-        </button>
+        </InquiryButton>
+     
+      </FilterBox>
 
-        <Suspense fallback={<div></div>}>
-          {resultVisible && (
-            <Result
-           
-              queryData={queryData}
-            />
-          )}
-        </Suspense>
-      </div>
+      <ResultDiv>
+        {resultVisible && (
+          <Suspense fallback={<SpinnerBox />}>
+            <Result queryData={queryData} />
+          </Suspense>
+        )}
+      </ResultDiv>
+      <Table responsive>9
+      <thead>
+        <tr>
+          <TitleTh width="10%" >순위</TitleTh>
+          <TitleTh  width="30%">키워드</TitleTh>
+          <TitleTh width="10%" >가격</TitleTh>
+          <TitleTh  width="10%">총 리뷰</TitleTh>
+          <TitleTh  width="20%">상품경쟁력</TitleTh>
+          <TitleTh  width="20%">배송방식</TitleTh>
+        </tr>
+      </thead>
+      <tbody>
+        {sortedData.map((item, idx) => {
+          const ItemPower = ((item.ratingVipCount / item.ratingTotalCount) * 100).toFixed(1);
+
+          return (
+            <tr key={idx}>
+              <td>{idx + 1}</td>
+              <td>
+                <Link to={`https://www.coupang.com/`}>{item.name}</Link>
+              </td>
+              <td>{item.priceValue}</td>
+              <td>{item.ratingTotalCount}</td>
+              <td>{ItemPower}</td>
+              <td>
+                <img src={item.rocketImg} />
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </Table>
+  
     </>
   );
 }

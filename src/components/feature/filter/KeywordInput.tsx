@@ -1,9 +1,27 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
-
+import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
+
+const InputDivBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+  width: 50%;
+  height: 100%;
+`;
+
+const Input = styled.input`
+  border-radius: 10px;
+  width: 300px;
+  height: 40px;
+  padding-left: 15px;
+  margin: 10px 0px 40px 0px;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+`;
 
 export default function KeywordInput() {
   const keywordNameChange = (e) => {
@@ -12,20 +30,11 @@ export default function KeywordInput() {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <p>키워드 검색</p>
-
-      <InputGroup className="mb-3">
-        <Form.Control
-          placeholder="키워드를 입력해보세요. 예) 원피스"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-          onChange={keywordNameChange}
-        />
-        <Button variant="outline-secondary" id="button-addon2">
-          Button
-        </Button>
-      </InputGroup>
-    </div>
+    <InputDivBox>
+      <Input
+        placeholder="키워드"
+        onChange={keywordNameChange}
+      />
+    </InputDivBox>
   );
 }

@@ -5,7 +5,7 @@ export const FetchSlice = createSlice({
   name: "queryString",
   initialState: {
     pathName: "",
-    date: { startDate: "", los : ''},
+    date: { startDate: "", endDate : ''},
   },
   reducers: {
     pathNameFetch: (state, action) => {
