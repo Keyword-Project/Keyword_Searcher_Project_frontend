@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import useGetData from "useGetData";
+import { useSearchParams } from "react-router-dom";
 import { CSVLink } from "react-csv";
 import { faArrowsUpDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -94,8 +95,25 @@ const StyleResultdTd = styled.td`
 `;
 
 export default function Result({ queryData }) {
+
+  const [keywordObj, setKeywordObj] = useSearchParams();
+
+ 
+
   let url = "";
   if (typeof queryData.pathName == "string") {
+
+    setKeywordObj({
+      q: queryData.pathName,
+      minPrice: queryData.minPrice,
+      maxPrice: queryData.maxPrice,
+      searchSize: queryData.searchSize,
+      startDate: queryData.startDate,
+      los: queryData.los,
+    });
+   
+
+
     url = `http://localhost:3000/api/v1/keyword?q=${queryData.pathName}${
       queryData.startDate ? `&startDate=${queryData.startDate}` : ""
     }&${queryData.los ? `&los=${queryData.los}` : ""}${
@@ -104,6 +122,16 @@ export default function Result({ queryData }) {
       queryData.searchSize ? `&searchSize=${queryData.searchSize}` : ""
     }`;
   } else if (typeof queryData.pathName == "number") {
+    setKeywordObj({
+      q: queryData.pathName,
+      minPrice: queryData.minPrice,
+      maxPrice: queryData.maxPrice,
+      searchSize: queryData.searchSize,
+      startDate: queryData.startDate,
+      los: queryData.los,
+    });
+
+
     url = `http://localhost:3000/api/v1/categories/${queryData.pathName}?${
       queryData.startDate ? `&startDate=${queryData.startDate}` : ""
     }&${queryData.los ? `&los=${queryData.los}` : ""}${
@@ -229,7 +257,7 @@ let transformedData ;
                   <StyleResultdTd>{idx + 1}</StyleResultdTd>
                   <StyleResultdTd>
                     <KeywordAtag 
-                    href={`https://www.coupang.com/${item.uri}`}
+                    href={`https://www.coupang.com${item.uri}`}
                     target="_blank"
                     >
                       {item.name}
