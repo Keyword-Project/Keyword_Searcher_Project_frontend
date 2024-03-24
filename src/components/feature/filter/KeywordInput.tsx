@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
+import React from "react";
 
 const InputDivBox = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ const Input = styled.input`
 `;
 
 export default function KeywordInput() {
-  const keywordNameChange = (e) => {
+  const keywordNameChange = (e : React.ChangeEvent<HTMLInputElement>) => {
     dispatch(pathNameFetch(e.target.value));
   };
   const dispatch = useDispatch();

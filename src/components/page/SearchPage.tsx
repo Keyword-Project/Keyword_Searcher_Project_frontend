@@ -101,14 +101,14 @@ const ResultDiv = styled.div`
 `;
 
 export default function SearchPage() {
-  let pathName = "";
+  let pathName : string | number = "";
 
   const keywordInputValue = useSelector((state) => state.queryString.pathName);
 
   const { pathname } = useLocation();
-  console.log(pathname);
+  // console.log(pathname);
   const slug = pathname.split("/")[2];
-  console.log(slug);
+  // console.log(slug);
 
   if (slug == undefined) {
     pathName = keywordInputValue;
@@ -136,15 +136,15 @@ export default function SearchPage() {
   const startDateByLos = new Date(date.startDate.split("T")[0]);
 
   const endDate = new Date(date.endDate.split("T")[0]);
-  console.log("stateDate", startDate);
-  console.log("startDateByLos", startDateByLos);
-  console.log("endDate", endDate);
+  // console.log("stateDate", startDate);
+  // console.log("startDateByLos", startDateByLos);
+  // console.log("endDate", endDate);
 
   const differenceMs = Math.abs(endDate - startDateByLos);
-  console.log("differenceMs", differenceMs);
+  // console.log("differenceMs", differenceMs);
 
   const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
-  console.log("los", los);
+  // console.log("los", los);
 
   const fetchQueryData = () => {
     setQueryData({ pathName, minPrice, maxPrice, searchSize, startDate, los });

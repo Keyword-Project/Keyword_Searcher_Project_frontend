@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { access } from "fs";
 
 export const FetchSlice = createSlice({
   name: "queryString",

@@ -11,7 +11,6 @@ import {
 import { fetchCategoryList } from "api/categoryApi/route";
 import styled from "styled-components";
 
-
 const DropdownBoxDiv = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -65,7 +64,10 @@ const DropdownMenu = styled(Dropdown.Menu)`
   }
 `;
 
-type SelectCallback = (eventKey: string | null) => void;
+export type SelectCallback = (
+  eventKey: string | null,
+  e: React.SyntheticEvent<unknown>
+) => void;
 
 export default function CategoryFilter() {
   const [firCateList, setFirCateList] = useState<FirstCategory[]>([]);
@@ -94,12 +96,12 @@ export default function CategoryFilter() {
 
   const [thrCateTitle, setThrCateTitle] = useState("3차분류");
 
-  const thrDropdownSelecthandle: SelectCallback = (eventKey: string) => {
+  const thrDropdownSelecthandle = (eventKey: SelectCallback) => {
     setThrCateTitle(eventKey);
     dispatch(pathNameFetch(pathname));
   };
 
-  const secDropdownSelecthandle: SelectCallback = (eventKey: string) => {
+  const secDropdownSelecthandle = (eventKey) => {
     setSecCateTitle(eventKey);
     const List = secCateList.find((item) => item.name == eventKey);
 
@@ -116,8 +118,9 @@ export default function CategoryFilter() {
     dispatch(pathNameFetch(pathname));
   };
 
-  const firDropdownSelecthandle: SelectCallback = (eventKey: string) => {
+  const firDropdownSelecthandle = (eventKey) => {
     setFirCateTitle(eventKey);
+    console.log("첫번째 분류 선택시 eventKey", eventKey);
     const List = firCateList.find((item) => item.name == eventKey);
 
     setIsSecCateDisabled(false);

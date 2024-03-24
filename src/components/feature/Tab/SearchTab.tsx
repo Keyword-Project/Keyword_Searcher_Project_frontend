@@ -53,11 +53,6 @@ const CustomTabs = styled(Tabs)`
   }
 `;
 
-const LogoImg = styled.img`
-  width: 20px;
-  height: 20px;
-  margin: 15px 0px 13px 15px;
-`;
 
 const StyledLink = styled(Link)`
   color: black;
