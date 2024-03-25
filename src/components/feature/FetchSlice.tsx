@@ -1,17 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface Date {
+  startDate : string,
+  endDate : string
+  
+}
 
 export const FetchSlice = createSlice({
   name: "queryString",
   initialState: {
     pathName: "",
-    date: { startDate: "", endDate : ''},
+    date: { startDate: "", endDate: "" },
   },
   reducers: {
-    pathNameFetch: (state, action) => {
+    pathNameFetch: (state, action: PayloadAction<string>) => {
       state.pathName = action.payload;
     },
-    dateFetch: (state, action) => {
-      state.date = action.payload
+    dateFetch: (state, action: PayloadAction<Date>) => {
+      state.date = action.payload;
     },
   },
 });

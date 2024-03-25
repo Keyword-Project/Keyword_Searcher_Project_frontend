@@ -8,6 +8,18 @@ import { useSearchParams } from "react-router-dom";
 import { CSVLink } from "react-csv";
 import { faArrowsUpDown } from "@fortawesome/free-solid-svg-icons";
 
+interface sortedData {
+  dataIsRocket : boolean
+  dataProductId: string;
+  name: string;
+
+  priceValue: number;
+  ratingTotalCount: number;
+  ratingVipCount: number;
+  rocketImg: string;
+  uri : string;
+}
+
 const ExcelDownloadBtnDiv = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -15,7 +27,7 @@ const ExcelDownloadBtnDiv = styled.div`
   margin: 20px 0px;
 `;
 
-const TitleTh = styled.th`
+const TitleTh = styled.th<{ width: string }>`
   width: ${(props) => props.width};
 `;
 
@@ -40,11 +52,10 @@ const ExcelButton = styled.button`
   font-weight: bold;
 `;
 
-const StyledTitleTr =  styled.tr`
- border-top-width: thick;
- border-top-color: black;
-`
-
+const StyledTitleTr = styled.tr`
+  border-top-width: thick;
+  border-top-color: black;
+`;
 
 const DeliveryImg = styled.img.attrs({ alt: "로켓배송 이미지" })`
   width: 100px;
@@ -70,17 +81,13 @@ const StyledCSVLink = styled(CSVLink)`
 // `
 
 const StyledResultTr = styled.tr`
-
   background-color: white;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
 
- 
   &:hover {
     background-color: lightgray;
   }
 `;
-
-
 
 // Define a styled table data cell component
 const StyleResultdTd = styled.td`
@@ -94,15 +101,21 @@ const StyleResultdTd = styled.td`
   }
 `;
 
-export default function Result({ queryData }) {
+export interface QueryData {
+  pathName: string;
+  minPrice: string;
+  maxPrice: string;
+  searchSize: string;
+  startDate: string;
+  los: string;
+}
 
+export default function Result({ queryData }: { queryData: QueryData }) {
   const [keywordObj, setKeywordObj] = useSearchParams();
-
- 
+  console.log(keywordObj);
 
   let url = "";
   if (typeof queryData.pathName == "string") {
-
     setKeywordObj({
       q: queryData.pathName,
       minPrice: queryData.minPrice,
@@ -111,8 +124,6 @@ export default function Result({ queryData }) {
       startDate: queryData.startDate,
       los: queryData.los,
     });
-   
-
 
     url = `http://localhost:3000/api/v1/keyword?q=${queryData.pathName}${
       queryData.startDate ? `&startDate=${queryData.startDate}` : ""
@@ -131,7 +142,6 @@ export default function Result({ queryData }) {
       los: queryData.los,
     });
 
-
     url = `http://localhost:3000/api/v1/categories/${queryData.pathName}?${
       queryData.startDate ? `&startDate=${queryData.startDate}` : ""
     }&${queryData.los ? `&los=${queryData.los}` : ""}${
@@ -143,10 +153,10 @@ export default function Result({ queryData }) {
 
   const problemData = useGetData(url);
 
-  const [sortBy, setSortBy] = useState(null);
+  const [sortBy, setSortBy] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState("asc");
 
-  const handleSort = (field) => {
+  const handleSort = (field: string) => {
     if (sortBy === field) {
       setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     } else {
@@ -155,7 +165,9 @@ export default function Result({ queryData }) {
     }
   };
 
-  const sortedData = problemData?.body?.slice().sort((a, b) => {
+  const sortedData = problemData?.body?.slice().sort((a : sortedData, b : sortedData) => {
+    console.log('problemData body 의 a', a)
+    console.log('problemData body 의 b', b)
     const aValue = sortBy ? a[sortBy] : null;
     const bValue = sortBy ? b[sortBy] : null;
 
@@ -179,20 +191,21 @@ export default function Result({ queryData }) {
     }
   });
 
-
-
   console.log("sortedData", sortedData);
-let transformedData ;
+  let transformedData;
   if (sortedData != undefined) {
-   transformedData = sortedData.map(item => ({
-      '키워드': item.name,
-      '가격': item.priceValue,
+    transformedData = sortedData.map((item : sortedData) => ({
+      키워드: item.name,
+      가격: item.priceValue,
       "총 리뷰 수": item.ratingTotalCount,
-      "상품경쟁력": `${((item.ratingVipCount / item.ratingTotalCount) * 100).toFixed(1)}%`,
-      "로켓배송": item.dataIsRocket ? '가능' : '불가능'
+      상품경쟁력: `${(
+        (item.ratingVipCount / item.ratingTotalCount) *
+        100
+      ).toFixed(1)}%`,
+      로켓배송: item.dataIsRocket ? "가능" : "불가능",
     }));
-    
-    console.log('transformedData',transformedData);
+
+    console.log("transformedData", transformedData);
   }
 
   return (
@@ -203,7 +216,9 @@ let transformedData ;
             <ExcelButton>
               <FontAwesomeIcon icon={faDownload} />
 
-              <StyledCSVLink data={transformedData}>엑셀 다운로드</StyledCSVLink>
+              <StyledCSVLink data={transformedData}>
+                엑셀 다운로드
+              </StyledCSVLink>
             </ExcelButton>
           )}
         </ExcelDownloadBtnDiv>
@@ -215,7 +230,7 @@ let transformedData ;
               <TitleTh width="30%">키워드</TitleTh>
               <TitleTh
                 width="10%"
-                cursor="pointer"
+                // cursor="pointer"
                 onClick={() => handleSort("priceValue")}
               >
                 <TitleSpan>
@@ -225,7 +240,7 @@ let transformedData ;
               </TitleTh>
               <TitleTh
                 width="10%"
-                cursor="pointer"
+                // cursor="pointer"
                 onClick={() => handleSort("ratingTotalCount")}
               >
                 <TitleSpan>
@@ -235,7 +250,7 @@ let transformedData ;
               </TitleTh>
               <TitleTh
                 width="20%"
-                cursor="pointer"
+                // cursor="pointer"
                 onClick={() => handleSort("상품경쟁력")}
               >
                 <TitleSpan>
@@ -247,7 +262,7 @@ let transformedData ;
             </StyledTitleTr>
           </thead>
           <tbody>
-            {sortedData?.map((item, idx) => {
+            {sortedData?.map((item : sortedData, idx: number) => {
               const ItemPower = (
                 (item.ratingVipCount / item.ratingTotalCount) *
                 100
@@ -256,9 +271,9 @@ let transformedData ;
                 <StyledResultTr key={idx}>
                   <StyleResultdTd>{idx + 1}</StyleResultdTd>
                   <StyleResultdTd>
-                    <KeywordAtag 
-                    href={`https://www.coupang.com${item.uri}`}
-                    target="_blank"
+                    <KeywordAtag
+                      href={`https://www.coupang.com${item.uri}`}
+                      target="_blank"
                     >
                       {item.name}
                     </KeywordAtag>

@@ -110,15 +110,14 @@ export default function CustomCalendar() {
         //옵션이 "true"로 설정된 경우 날짜가 "2022-01-05"와 같이 두 자리 수로 표시됩니다. 하지만 이 옵션이 "false"로 설정된 경우 날짜가 "2022-1-5"와 같이 한 자리 수로 표시됩니다.
 
         onCalendarClose={() => {
-          if (value != null) {
-            dispatch(
-              dateFetch({
-                startDate: value[0]?.toISOString() && "",
-                endDate: value[1]?.toISOString() && "",
-              })
-            );
-            console.log(value);
-          }
+          dispatch(
+            dateFetch({
+              startDate: value[0]?.toISOString(),
+              endDate: value[1]?.toISOString(),
+
+            })
+          );
+          console.log(value);
           
         }}
       />

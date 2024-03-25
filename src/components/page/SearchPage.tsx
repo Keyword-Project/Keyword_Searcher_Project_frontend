@@ -8,43 +8,11 @@ import Result from "components/result/Result";
 import { useLocation } from "react-router-dom";
 import SpinnerBox from "components/feature/SpinnerBox";
 import SearchTab from "components/feature/Tab/SearchTab";
-// import { Table } from "react-bootstrap";
-// import { Link } from "react-router-dom";
+import {RootState} from 'main'
+import  QueryData from 'components/result/Result'
 
-// const TitleTh = styled.th`
-//   width: ${(props) => props.width};
-// `;
 
-// const test = [
-//   {
-//     name: "목걸이",
-//     priceValue: 3000,
-//     ratingTotalCount: 50000,
-//     ratingVipCount: 42000,
-//     rocketImg: "이미지사진",
-//   },
-//   {
-//     name: "원피스",
-//     priceValue: 707630,
-//     ratingTotalCount: 265000,
-//     ratingVipCount: 102341,
-//     rocketImg: "이미지사진",
-//   },
-//   {
-//     name: "구두",
-//     priceValue: 410850,
-//     ratingTotalCount: 5912300,
-//     ratingVipCount: 100000,
-//     rocketImg: "이미지사진",
-//   },
-//   {
-//     name: "책상",
-//     priceValue: 512000,
-//     ratingTotalCount: 500,
-//     ratingVipCount: 50,
-//     rocketImg: "이미지사진",
-//   },
-// ];
+
 
 const PriceBox = styled.div`
   width: 200px;
@@ -101,9 +69,10 @@ const ResultDiv = styled.div`
 `;
 
 export default function SearchPage() {
-  let pathName : string | number = "";
+  let pathName : string | number  = "";
 
-  const keywordInputValue = useSelector((state) => state.queryString.pathName);
+  const keywordInputValue = useSelector((state : RootState) => state.queryString.pathName);
+
 
   const { pathname } = useLocation();
   // console.log(pathname);
@@ -123,48 +92,48 @@ export default function SearchPage() {
     maxPrice: "",
     searchSize: "",
     startDate: "",
-    los: "",
+    los: 0,
   });
 
   const [maxPrice, setMaxPrice] = useState("");
   const [minPrice, setMinPrice] = useState("");
   const [searchSize, setSearchSize] = useState("");
 
-  const date = useSelector((state) => state.queryString.date);
+  const date = useSelector((state : RootState) => state.queryString.date);
+
+  console.log('date', date)
 
   const startDate = date.startDate.split("T")[0];
   const startDateByLos = new Date(date.startDate.split("T")[0]);
 
   const endDate = new Date(date.endDate.split("T")[0]);
   // console.log("stateDate", startDate);
-  // console.log("startDateByLos", startDateByLos);
-  // console.log("endDate", endDate);
+  console.log("startDateByLos", startDateByLos);
+  console.log("endDate", endDate);
 
-  const differenceMs = Math.abs(endDate - startDateByLos);
+  const differenceMs = Math.abs(endDate.valueOf() - startDateByLos.valueOf());
   // console.log("differenceMs", differenceMs);
 
-  const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
+  const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24))
   // console.log("los", los);
 
   const fetchQueryData = () => {
     setQueryData({ pathName, minPrice, maxPrice, searchSize, startDate, los });
   };
 
-  const searchSizeChange = (e) => {
+  const searchSizeChange = (e : React.ChangeEvent<HTMLInputElement>) => {
     setSearchSize(e.target.value);
   };
 
-  const maxPriceChange = (e) => {
+  const maxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMaxPrice(e.target.value);
   };
-  const minPriceChange = (e) => {
+  const minPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMinPrice(e.target.value);
   };
 
   const [resultVisible, setResultVisible] = useState(false);
 
-  const [sortBy, setSortBy] = useState(null);
-  const [sortOrder, setSortOrder] = useState("asc");
 
   // const handleSort = (field) => {
   //   if (sortBy === field) {
