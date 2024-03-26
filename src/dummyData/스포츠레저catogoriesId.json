@@ -1,1126 +1,918 @@
 {
   "firstCategories": [
     {
-      "name": "가전/디지털",
+      "name": "스포츠/레저",
       "categoryId": "178255",
       "secondCategories": [
         {
-          "name": "TV/영상가전",
+          "name": "캠핑전문관",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "TV",
+              "name": "백패킹",
               "categoryId": "176530"
             },
             {
-              "name": "미러링/스트리밍",
+              "name": "미니멀캠핑",
               "categoryId": "176530"
             },
             {
-              "name": "TV 액세서리",
+              "name": "오토캠핑",
               "categoryId": "176530"
             },
             {
-              "name": "블루레이/DVD/DivX",
+              "name": "먹거리",
               "categoryId": "176530"
             },
             {
-              "name": "빔/프로젝터/스크린",
+              "name": "텐트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "타프/그늘막",
+              "categoryId": "176530"
+            },
+            {
+              "name": "의자/테이블",
+              "categoryId": "176530"
+            },
+            {
+              "name": "텐트/타프 부품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "침낭/매트/해먹",
+              "categoryId": "176530"
+            },
+            {
+              "name": "캠핑주방용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "수납/정리소품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "랜턴/조명",
+              "categoryId": "176530"
+            },
+            {
+              "name": "캠핑공구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "응급/안전용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "화장실/샤워용품",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "냉장고",
+          "name": "홈트레이닝",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "3/4도어냉장고",
+              "name": "스트레칭/마사지",
               "categoryId": "176530"
             },
             {
-              "name": "양문형냉장고",
+              "name": "유산소",
               "categoryId": "176530"
             },
             {
-              "name": "일반냉장고",
+              "name": "근력",
               "categoryId": "176530"
             },
             {
-              "name": "미니냉장고",
-              "categoryId": "176530"
-            },
-            {
-              "name": "김치냉장고",
-              "categoryId": "176530"
-            },
-            {
-              "name": "냉동고",
-              "categoryId": "176530"
-            },
-            {
-              "name": "전용냉장고",
+              "name": "보호대/체중계",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "세탁기/건조기",
+          "name": "수영/수상스포츠",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "세탁기건조기셑",
+              "name": "비치웨어/래쉬가드",
               "categoryId": "176530"
             },
             {
-              "name": "세탁기",
+              "name": "수영용품",
               "categoryId": "176530"
             },
             {
-              "name": "건조기",
+              "name": "물놀이용품",
               "categoryId": "176530"
             },
             {
-              "name": "의류관리기",
+              "name": "아쿠아슈즈",
               "categoryId": "176530"
             },
             {
-              "name": "신발건조기",
+              "name": "스노클링/다이빙",
               "categoryId": "176530"
             },
             {
-              "name": "탈수기",
+              "name": "서핑/수상스키",
               "categoryId": "176530"
             },
             {
-              "name": "액세서리",
+              "name": "고무보트/카누",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "생활가전",
+          "name": "골프",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "공기청정기",
+              "name": "골프클럽",
               "categoryId": "176530"
             },
             {
-              "name": "다리미/재봉/보풀",
+              "name": "골프백",
               "categoryId": "176530"
             },
             {
-              "name": "도어록/비디오폰",
+              "name": "피팅/관리용품",
               "categoryId": "176530"
             },
             {
-              "name": "비데/온수기",
+              "name": "골프웨어",
               "categoryId": "176530"
             },
             {
-              "name": "전동칫솔/살균기",
+              "name": "골프장갑/장화",
               "categoryId": "176530"
             },
             {
-              "name": "학습용 스탠드",
+              "name": "골프화",
               "categoryId": "176530"
             },
             {
-              "name": "전화기/무전기",
+              "name": "골프공",
+              "categoryId": "176530"
+            },
+            {
+              "name": "필드용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "연습용품",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "청소기",
+          "name": "자전거",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "먼지비움청소기",
+              "name": "자전거",
               "categoryId": "176530"
             },
             {
-              "name": "스틱청소기",
+              "name": "보호장비",
               "categoryId": "176530"
             },
             {
-              "name": "진공청소기",
+              "name": "자전거 악세서리",
               "categoryId": "176530"
             },
             {
-              "name": "로봇청소기",
+              "name": "자전거부품",
               "categoryId": "176530"
             },
             {
-              "name": "물걸레청소기",
+              "name": "자전거의류",
               "categoryId": "176530"
             },
             {
-              "name": "침구청소기",
+              "name": "자전거장갑/잡화",
               "categoryId": "176530"
             },
             {
-              "name": "핸디청소기",
+              "name": "자전거가방/수납",
               "categoryId": "176530"
             },
             {
-              "name": "스팀청소기",
+              "name": "자전거신발",
               "categoryId": "176530"
             },
             {
-              "name": "차량용청소기",
+              "name": "정비용품",
               "categoryId": "176530"
             },
             {
-              "name": "업소용청소기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "필터/액세서리",
+              "name": "거치대/트레이너",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "계절가전",
+          "name": "킥보드/스케이트",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "공기청정기",
+              "name": "킥보드/트라이더",
               "categoryId": "176530"
             },
             {
-              "name": "선풍기",
+              "name": "전동휠/보드",
               "categoryId": "176530"
             },
             {
-              "name": "에어컨",
+              "name": "스케이트보드",
               "categoryId": "176530"
             },
             {
-              "name": "제습기",
+              "name": "인라인스케이트",
               "categoryId": "176530"
             },
             {
-              "name": "서큘레이터",
-              "categoryId": "176530"
-            },
-            {
-              "name": "냉풍기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "건조기/탈수기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "모기/해충 퇴치기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "가습기/에어워셔",
-              "categoryId": "176530"
-            },
-
-            {
-              "name": "전기요/매트",
-              "categoryId": "176530"
-            },
-            {
-              "name": "냉온수매트",
-              "categoryId": "176530"
-            },
-            {
-              "name": "히터/온풍기",
-              "categoryId": "176530"
-            },
-
-            {
-              "name": "손난로/발난로",
+              "name": "보호장비",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "뷰티/헤어가전",
+          "name": "낚시",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "헤어드라이어",
+              "name": "바다낚시",
               "categoryId": "176530"
             },
             {
-              "name": "고데기/매직기",
+              "name": "민물낚시",
               "categoryId": "176530"
             },
             {
-              "name": "헤어스타일러",
+              "name": "낚싯대",
               "categoryId": "176530"
             },
             {
-              "name": "두피/헤어관리",
+              "name": "낚시릴",
               "categoryId": "176530"
             },
             {
-              "name": "피부관리기기",
+              "name": "줄/바늘/채비",
               "categoryId": "176530"
             },
             {
-              "name": "면도기/이발기",
+              "name": "미기/떡밥/루어",
               "categoryId": "176530"
             },
             {
-              "name": "제모기",
+              "name": "낚시 가방/잡화",
               "categoryId": "176530"
             },
             {
-              "name": "눈썹/네일관리",
+              "name": "낚시복/장화",
+              "categoryId": "176530"
+            },
+            {
+              "name": "낚시장비/그물",
+              "categoryId": "176530"
+            },
+            {
+              "name": "낚시공구/소품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "좌대/야외용품",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "건강가전",
+          "name": "등산/아웃도어",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "안마의자",
+              "name": "남성등산의류",
               "categoryId": "176530"
             },
             {
-              "name": "안마/찜질기",
+              "name": "여성등산의류",
               "categoryId": "176530"
             },
             {
-              "name": "전동칫솔/구강가전",
+              "name": "유아동등산의류",
               "categoryId": "176530"
             },
             {
-              "name": "비데",
+              "name": "등산배낭/소품",
               "categoryId": "176530"
             },
             {
-              "name": "건강측정/의료기",
+              "name": "등산스틱",
               "categoryId": "176530"
             },
             {
-              "name": "살균/소독기",
+              "name": "등산화/아이젠",
               "categoryId": "176530"
             },
             {
-              "name": "손소독기/소독기",
+              "name": "등산모자/잡화",
+              "categoryId": "176530"
+            },
+            {
+              "name": "등산용품/랜턴",
+              "categoryId": "176530"
+            },
+            {
+              "name": "나침반/망원경",
+              "categoryId": "176530"
+            },
+            {
+              "name": "암벽/등반 장비",
+              "categoryId": "176530"
+            },
+            {
+              "name": "빙벽/겨울용품",
               "categoryId": "176530"
             }
           ]
         },
 
         {
-          "name": "주방가전",
+          "name": "스포츠신발",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "전기밥솥",
+              "name": "런닝화/운동화",
               "categoryId": "176530"
             },
             {
-              "name": "전자레인지",
+              "name": "샌들/슬리퍼",
               "categoryId": "176530"
             },
             {
-              "name": "오븐",
+              "name": "아쿠아슈즈",
               "categoryId": "176530"
             },
             {
-              "name": "가스레인지",
+              "name": "등산화",
               "categoryId": "176530"
             },
             {
-              "name": "식기세척/건조기",
+              "name": "골프화",
               "categoryId": "176530"
             },
             {
-              "name": "믹서기/블렌더",
+              "name": "축구화",
               "categoryId": "176530"
             },
             {
-              "name": "커피메이커/머신",
+              "name": "야구화",
               "categoryId": "176530"
             },
             {
-              "name": "빙수기/제빙기",
+              "name": "농구화",
               "categoryId": "176530"
             },
             {
-              "name": "전기포트",
+              "name": "배구화",
               "categoryId": "176530"
             },
             {
-              "name": "에어프라이어",
+              "name": "족구화",
               "categoryId": "176530"
             },
             {
-              "name": "튀김기",
+              "name": "볼링화",
               "categoryId": "176530"
             },
             {
-              "name": "토스터",
+              "name": "배드민턴화",
               "categoryId": "176530"
             },
             {
-              "name": "간식메이커",
+              "name": "테니스화",
               "categoryId": "176530"
             },
             {
-              "name": "전기그릴/팬",
+              "name": "탁구화",
               "categoryId": "176530"
             },
             {
-              "name": "전기쿠커",
+              "name": "자전거신발",
               "categoryId": "176530"
             },
             {
-              "name": "정수기/냉온수기",
+              "name": "발레/댄스화",
               "categoryId": "176530"
             },
             {
-              "name": "식품건조기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "진공포장기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "음식물처리기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "약탕기/영양식제조",
-              "categoryId": "176530"
-            },
-            {
-              "name": "환풍기/레인지후드",
-              "categoryId": "176530"
-            },
-            {
-              "name": "측량계랑/기타가전",
-              "categoryId": "176530"
-            },
-            {
-              "name": "업소용 주방가전",
-              "categoryId": "176530"
-            },
-            {
-              "name": "설치 주방가전",
-              "categoryId": "176530"
-            }
-
-
-
-          ]
-        },
-
-        {
-          "name": "노트북",
-          "categoryId": "176530",
-          "thirdCategories": [
-          //없음
-          ]
-        },
-
-
-        {
-          "name": "데스크탑",
-          "categoryId": "176530",
-          "thirdCategories": [
-            {
-              "name": "브랜드PC",
-              "categoryId": "176530"
-            },
-            {
-              "name": "일체형PC",
-              "categoryId": "176530"
-            },
-            {
-              "name": "조립PC",
-              "categoryId": "176530"
-            },
-            {
-              "name": "미니PC",
-              "categoryId": "176530"
-            }
-           
-          ]
-        },
-
-
-        {
-          "name": "모니터",
-          "categoryId": "176530",
-          "thirdCategories": [
-            {
-              "name": "일반 모니터",
-              "categoryId": "176530"
-            },
-            {
-              "name": "휴대용 모니터",
-              "categoryId": "176530"
-            },
-            {
-              "name": "스마트 모니터",
-              "categoryId": "176530"
-            },
-            {
-              "name": "게이밍 모니터",
-              "categoryId": "176530"
-            }
-           
-          ]
-        },
-
-
-
-
-
-        {
-          "name": "휴대폰",
-          "categoryId": "176530",
-          "thirdCategories": [
-          //없음
-          ]
-        },
-
-
-
-
-
-
-        {
-          "name": "태블릿PC",
-          "categoryId": "176530",
-          "thirdCategories": [
-            {
-              "name": "태블릿PC",
-              "categoryId": "176530"
-            },
-            {
-              "name": "액세서리",
-              "categoryId": "176530"
-            }
-          
-          ]
-        },
-
-
-
-
-
-        {
-          "name": "스마트워치/밴드",
-          "categoryId": "176530",
-          "thirdCategories": [
-            {
-              "name": "스마트워치",
-              "categoryId": "176530"
-            },
-            {
-              "name": "스마트밴드",
-              "categoryId": "176530"
-            },
-            {
-              "name": "액세서리",
+              "name": "기타스포츠화",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
         {
-          "name": "게임",
+          "name": "남성스포츠의류",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "게이밍노트북",
+              "name": "속옷/언더레이어",
               "categoryId": "176530"
             },
             {
-              "name": "게이밍데스트탑",
+              "name": "스포츠 티셔츠",
               "categoryId": "176530"
             },
             {
-              "name": "게이밍모니터",
+              "name": "스포츠 자켓/집업",
               "categoryId": "176530"
             },
             {
-              "name": "마우스/키보드/헤드셋",
+              "name": "스포츠 바지/하의",
               "categoryId": "176530"
             },
             {
-              "name": "그래픽카드/메인보드",
+              "name": "상하의 세트",
               "categoryId": "176530"
             },
             {
-              "name": "PC타이틀/주변기기",
+              "name": "골프의류",
               "categoryId": "176530"
             },
             {
-              "name": "플레이스테이션",
+              "name": "등산의류",
               "categoryId": "176530"
             },
             {
-              "name": "닌텐도",
+              "name": "자전거의류",
               "categoryId": "176530"
             },
             {
-              "name": "XBOX",
+              "name": "수영복/래쉬가드",
               "categoryId": "176530"
             },
             {
-              "name": "레트로/기타게임",
+              "name": "스키/보드복",
               "categoryId": "176530"
             },
             {
-              "name": "휴대폰게임",
-              "categoryId": "176530"
-            }
-
-          ]
-        },
-
-
-
-
-
-
-
-
-
-
-        {
-          "name": "키보드/마우스",
-          "categoryId": "176530",
-          "thirdCategories": [
-            {
-              "name": "마우스",
+              "name": "축구복",
               "categoryId": "176530"
             },
             {
-              "name": "키보드",
+              "name": "야구복",
               "categoryId": "176530"
             },
             {
-              "name": "키보드+마우스세트",
+              "name": "배드민턴복",
               "categoryId": "176530"
             },
             {
-              "name": "타블렛(디지타이저)",
+              "name": "탁구복",
               "categoryId": "176530"
             },
             {
-              "name": "마우스패드/손목받침",
+              "name": "테니스복",
               "categoryId": "176530"
             },
             {
-              "name": "프리젠터",
+              "name": "댄스스포츠복",
               "categoryId": "176530"
             },
             {
-              "name": "터치패드",
+              "name": "기타 유니폼",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
         {
-          "name": "저장장치",
+          "name": "여성스포츠의류",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "외장하드",
+              "name": "속옷/언더레이어",
               "categoryId": "176530"
             },
             {
-              "name": "외장SSD",
+              "name": "스포츠 티셔츠",
               "categoryId": "176530"
             },
             {
-              "name": "외장 케이스",
+              "name": "스포츠 자켓/집업",
               "categoryId": "176530"
             },
             {
-              "name": "NAS",
+              "name": "스포츠 바지/하의",
               "categoryId": "176530"
             },
             {
-              "name": "HDD",
+              "name": "상하의 세트",
               "categoryId": "176530"
             },
             {
-              "name": "SSD",
+              "name": "요가복",
               "categoryId": "176530"
             },
             {
-              "name": "USB메모리",
+              "name": "골프의류",
               "categoryId": "176530"
             },
             {
-              "name": "메모리카드",
+              "name": "등산의류",
               "categoryId": "176530"
             },
             {
-              "name": "리더기",
+              "name": "자전거의류",
               "categoryId": "176530"
             },
             {
-              "name": "ODD",
+              "name": "수영복/래쉬가드",
               "categoryId": "176530"
             },
             {
-              "name": "공디스크",
+              "name": "스키/보드복",
               "categoryId": "176530"
             },
             {
-              "name": "CD케이스",
+              "name": "발레복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "배드민턴",
+              "categoryId": "176530"
+            },
+            {
+              "name": "탁구복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "테니스복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "댄스스포츠복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "밸리댄스복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "에어로빅복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "기타 유니폼",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
         {
-          "name": "프린터/복합기",
+          "name": "유아스포츠의류",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "잉크젯 복합기",
+              "name": "스포츠 티셔츠",
               "categoryId": "176530"
             },
             {
-              "name": "잉크젯 프린터",
+              "name": "스포츠 자켓/집업",
               "categoryId": "176530"
             },
             {
-              "name": "레이저 복합기",
+              "name": "스포츠 바지/하의",
               "categoryId": "176530"
             },
             {
-              "name": "레이저 프린터",
+              "name": "상하의 세트",
               "categoryId": "176530"
             },
             {
-              "name": "잉크/토너",
+              "name": "골프의류",
               "categoryId": "176530"
             },
             {
-              "name": "포토프린터",
+              "name": "등산의류",
               "categoryId": "176530"
             },
             {
-              "name": "포토용지/인화지",
+              "name": "수영복/래쉬가드",
               "categoryId": "176530"
             },
             {
-              "name": "라벨/바코드 프린터",
+              "name": "스키/보드복",
               "categoryId": "176530"
             },
             {
-              "name": "스캐너",
+              "name": "축구복",
               "categoryId": "176530"
             },
             {
-              "name": "복사기",
+              "name": "야구복",
               "categoryId": "176530"
             },
             {
-              "name": "POS/바코드스캔",
+              "name": "발레복",
               "categoryId": "176530"
             },
             {
-              "name": "기타프린터",
-              "categoryId": "176530"
-            }
-
-          ]
-        },
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {
-          "name": "PC부품",
-          "categoryId": "176530",
-          "thirdCategories": [
-            {
-              "name": "CPU",
-              "categoryId": "176530"
-            },
-            {
-              "name": "RAM",
-              "categoryId": "176530"
-            },
-            {
-              "name": "그래픽카드",
-              "categoryId": "176530"
-            },
-            {
-              "name": "메인보드",
-              "categoryId": "176530"
-            },
-            {
-              "name": "케이스/파워",
-              "categoryId": "176530"
-            },
-            {
-              "name": "쿨러",
-              "categoryId": "176530"
-            },
-            {
-              "name": "ODD",
-              "categoryId": "176530"
-            },
-            {
-              "name": "USB허브/케이블/젠더",
+              "name": "기타 유니폼",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
-
-
-
-
-
         {
-          "name": "PC주변기기",
+          "name": "스포츠잡화",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "헤드셋/스피커",
+              "name": "가방/파우치",
               "categoryId": "176530"
             },
             {
-              "name": "웹캠",
+              "name": "모자",
               "categoryId": "176530"
             },
             {
-              "name": "공유기/네트워크",
+              "name": "고글/선글라스",
               "categoryId": "176530"
             },
             {
-              "name": "소프트웨어",
+              "name": "장갑",
               "categoryId": "176530"
             },
             {
-              "name": "액세서리",
+              "name": "양말/타이즈",
+              "categoryId": "176530"
+            },
+            {
+              "name": "팔토시/워머",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스카프/넥워머",
+              "categoryId": "176530"
+            },
+            {
+              "name": "보호대/아대",
+              "categoryId": "176530"
+            },
+            {
+              "name": "시계",
+              "categoryId": "176530"
+            },
+            {
+              "name": "벨트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "안전밴드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "액세서리 기타",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
-
-
-
-
-
-        
         {
-          "name": "음향기기",
+          "name": "구기스포츠",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "이어폰",
+              "name": "축구",
               "categoryId": "176530"
             },
             {
-              "name": "헤드폰",
+              "name": "야구",
               "categoryId": "176530"
             },
             {
-              "name": "스피커",
+              "name": "농구",
               "categoryId": "176530"
             },
             {
-              "name": "홈시어터/오디오",
+              "name": "배구/피구/족구",
               "categoryId": "176530"
             },
             {
-              "name": "라디오/카세트/MP3",
+              "name": "볼링",
               "categoryId": "176530"
             },
             {
-              "name": "녹음/어학/사전",
+              "name": "당구/포켓볼",
               "categoryId": "176530"
             },
             {
-              "name": "PA/마이크/레코딩",
+              "name": "기타 구기스포츠",
               "categoryId": "176530"
             },
             {
-              "name": "음향 액세서리",
+              "name": "훈련/연습용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "심판의류/용품",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
-
-
         {
-          "name": "카메라",
+          "name": "라켓스포츠",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "DSLR",
+              "name": "배드민턴",
               "categoryId": "176530"
             },
             {
-              "name": "DSLR 렌즈",
+              "name": "테니스",
               "categoryId": "176530"
             },
             {
-              "name": "미러리스",
+              "name": "스쿼시",
               "categoryId": "176530"
             },
             {
-              "name": "미러리스 렌즈",
+              "name": "탁구",
               "categoryId": "176530"
             },
             {
-              "name": "하이엔드/컴팩트",
+              "name": "기타 라켓스포츠",
               "categoryId": "176530"
             },
             {
-              "name": "카메라 액세서리",
+              "name": "훈련/연습용품",
               "categoryId": "176530"
             },
             {
-              "name": "액션캠/캠코더",
-              "categoryId": "176530"
-            },
-            {
-              "name": "즉석/기타카메라",
-              "categoryId": "176530"
-            },
-            {
-              "name": "포토프린터/용지",
-              "categoryId": "176530"
-            }
-
-          ]
-        },
-
-
-
-
-
-
-
-
-
-
-        {
-          "name": "전동킥보드/자전거",
-          "categoryId": "176530",
-          "thirdCategories": [
-            {
-              "name": "전동킥보드",
-              "categoryId": "176530"
-            },
-            {
-              "name": "전동휠",
-              "categoryId": "176530"
-            },
-            {
-              "name": "전기자전거",
-              "categoryId": "176530"
-            },
-            {
-              "name": "배터리/충전기",
+              "name": "심판의류/용품",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
-
-
         {
-          "name": "차량용 디지털",
+          "name": "헬스/요가/댄스",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "내비게이션",
+              "name": "요가/필라테스",
               "categoryId": "176530"
             },
             {
-              "name": "블랙박스",
+              "name": "요가복",
               "categoryId": "176530"
             },
             {
-              "name": "하이패스",
+              "name": "근력운동",
               "categoryId": "176530"
             },
             {
-              "name": "후방카메라/감지기",
+              "name": "유산소운동",
               "categoryId": "176530"
             },
             {
-              "name": "경보기/스마트키",
+              "name": "스트레칭/균형",
               "categoryId": "176530"
             },
             {
-              "name": "차량용음향기기",
+              "name": "댄스/에어로빅",
               "categoryId": "176530"
             },
             {
-              "name": "차량용거치대",
+              "name": "헬스소품/보호대",
               "categoryId": "176530"
             },
             {
-              "name": "차량용 충전기",
+              "name": "운동측정용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "부위별 운동용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "헬스보충식품",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
-
-
-
-
         {
-          "name": "1인방송 전문관",
+          "name": "복싱/검도/태권도",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "카메라",
+              "name": "복싱/격투기",
               "categoryId": "176530"
             },
             {
-              "name": "마이크/믹서",
+              "name": "검도",
               "categoryId": "176530"
             },
             {
-              "name": "삼각대/셀카봉",
+              "name": "태권도",
               "categoryId": "176530"
             },
             {
-              "name": "조명/배경",
-              "categoryId": "176530"
-            },
-            {
-              "name": "저장장치/배터리",
+              "name": "쌍절곤/기타무술",
               "categoryId": "176530"
             }
           ]
         },
 
-
-
-
-
-
-
-
-
-
-
-
         {
-          "name": "휴대폰 액세서리",
+          "name": "기타스포츠",
           "categoryId": "176530",
           "thirdCategories": [
             {
-              "name": "휴대폰 케이스",
+              "name": "육상/체조",
               "categoryId": "176530"
             },
             {
-              "name": "보호필름",
+              "name": "양궁/사격/승마",
               "categoryId": "176530"
             },
             {
-              "name": "셀카봉/거치대",
+              "name": "다트/레저",
               "categoryId": "176530"
             },
             {
-              "name": "보조배터리",
+              "name": "서바이벌게임",
               "categoryId": "176530"
             },
             {
-              "name": "케이블/충전기",
-              "categoryId": "176530"
-            },
-            {
-              "name": "메모리카드",
-              "categoryId": "176530"
-            },
-            {
-              "name": "방수팩/방수케이스",
-              "categoryId": "176530"
-            },
-            {
-              "name": "USIM칩",
-              "categoryId": "176530"
-            },
-            {
-              "name": "기타 액세서리",
+              "name": "철인3종경기",
               "categoryId": "176530"
             }
-       
+          ]
+        },
+
+        {
+          "name": "스키/겨울스포츠",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "남성스키복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "여성스키복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "남성보드복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "여성보드복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "유아스키/보드복",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스키 장비",
+              "categoryId": "176530"
+            },
+            {
+              "name": "보드 장비",
+              "categoryId": "176530"
+            },
+            {
+              "name": "보호대/안전용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "방한용품/잡화",
+              "categoryId": "176530"
+            },
+            {
+              "name": "빙상스포츠/썰매",
+              "categoryId": "176530"
+            }
           ]
         }
       ]
     }
-  
   ]
 }

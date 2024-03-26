@@ -1,6 +1,6 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react"
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
 import {
@@ -10,6 +10,7 @@ import {
 } from "type/categoryList";
 import { fetchCategoryList } from "api/categoryApi/route";
 import styled from "styled-components";
+
 
 const DropdownBoxDiv = styled.div`
   display: flex;
@@ -64,10 +65,7 @@ const DropdownMenu = styled(Dropdown.Menu)`
   }
 `;
 
-export type SelectCallback = (
-  eventKey: string | null,
-  e: React.SyntheticEvent<unknown>
-) => void;
+
 
 export default function CategoryFilter() {
   const [firCateList, setFirCateList] = useState<FirstCategory[]>([]);
@@ -101,7 +99,7 @@ export default function CategoryFilter() {
     dispatch(pathNameFetch(pathname));
   };
 
-  const secDropdownSelecthandle = (eventKey) => {
+  const secDropdownSelecthandle = (eventKey: SelectCallback) => {
     setSecCateTitle(eventKey);
     const List = secCateList.find((item) => item.name == eventKey);
 
@@ -118,7 +116,7 @@ export default function CategoryFilter() {
     dispatch(pathNameFetch(pathname));
   };
 
-  const firDropdownSelecthandle = (eventKey) => {
+  const firDropdownSelecthandle = (eventKey: SelectCallback) => {
     setFirCateTitle(eventKey);
     console.log("첫번째 분류 선택시 eventKey", eventKey);
     const List = firCateList.find((item) => item.name == eventKey);
