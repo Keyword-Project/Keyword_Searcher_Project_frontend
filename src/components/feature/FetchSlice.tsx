@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Date {
-  startDate : string,
-  endDate : string
-  
+  startDate: string | undefined;
+  endDate: string | undefined;
 }
 
 export const FetchSlice = createSlice({
@@ -17,7 +16,9 @@ export const FetchSlice = createSlice({
       state.pathName = action.payload;
     },
     dateFetch: (state, action: PayloadAction<Date>) => {
-      state.date = action.payload;
+      if (typeof state.date == "string") {
+        state.date = action.payload;
+      }
     },
   },
 });

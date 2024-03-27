@@ -8,11 +8,8 @@ import Result from "components/result/Result";
 import { useLocation } from "react-router-dom";
 import SpinnerBox from "components/feature/SpinnerBox";
 import SearchTab from "components/feature/Tab/SearchTab";
-import {RootState} from 'main'
-import  QueryData from 'components/result/Result'
-
-
-
+import { RootState } from "main";
+import Layout from "Layout";
 
 const PriceBox = styled.div`
   width: 200px;
@@ -69,10 +66,11 @@ const ResultDiv = styled.div`
 `;
 
 export default function SearchPage() {
-  let pathName : string | number  = "";
+  let pathName: string | number = "";
 
-  const keywordInputValue = useSelector((state : RootState) => state.queryString.pathName);
-
+  const keywordInputValue = useSelector(
+    (state: RootState) => state.queryString.pathName
+  );
 
   const { pathname } = useLocation();
   // console.log(pathname);
@@ -99,9 +97,9 @@ export default function SearchPage() {
   const [minPrice, setMinPrice] = useState("");
   const [searchSize, setSearchSize] = useState("");
 
-  const date = useSelector((state : RootState) => state.queryString.date);
+  const date = useSelector((state: RootState) => state.queryString.date);
 
-  console.log('date', date)
+  console.log("date", date);
 
   const startDate = date.startDate.split("T")[0];
   const startDateByLos = new Date(date.startDate.split("T")[0]);
@@ -114,14 +112,14 @@ export default function SearchPage() {
   const differenceMs = Math.abs(endDate.valueOf() - startDateByLos.valueOf());
   // console.log("differenceMs", differenceMs);
 
-  const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24))
+  const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
   // console.log("los", los);
 
   const fetchQueryData = () => {
     setQueryData({ pathName, minPrice, maxPrice, searchSize, startDate, los });
   };
 
-  const searchSizeChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+  const searchSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchSize(e.target.value);
   };
 
@@ -133,7 +131,6 @@ export default function SearchPage() {
   };
 
   const [resultVisible, setResultVisible] = useState(false);
-
 
   // const handleSort = (field) => {
   //   if (sortBy === field) {
@@ -171,6 +168,7 @@ export default function SearchPage() {
   return (
     <>
       <SearchTab />
+
       <FilterBox>
         <CustomCalendar />
 

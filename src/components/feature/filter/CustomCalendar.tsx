@@ -72,11 +72,33 @@ const CalendarBox = styled.div`
   width: 30%;
 `;
 
+
+function isValuePieceArray(value: Value): value is [ValuePiece, ValuePiece] {
+  return Array.isArray(value);
+}
+
+
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function CustomCalendar() {
+
+
+
+  const onCalendarClose = () => {
+    if (isValuePieceArray(value)) {
+      // value가 [ValuePiece, ValuePiece] 인 경우
+      dispatch(
+        dateFetch({
+          // 필요에 따라 Nullish Coalescing 추가
+          startDate: value[0]?.toISOString(),
+          endDate: value[1]?.toISOString(),
+        }),
+      );
+    }
+  };
+
   const dispatch = useDispatch();
   const [value, onChange] = useState<Value>([new Date(), new Date()]);
 
@@ -109,17 +131,7 @@ export default function CustomCalendar() {
         showLeadingZeros={true}
         //옵션이 "true"로 설정된 경우 날짜가 "2022-01-05"와 같이 두 자리 수로 표시됩니다. 하지만 이 옵션이 "false"로 설정된 경우 날짜가 "2022-1-5"와 같이 한 자리 수로 표시됩니다.
 
-        onCalendarClose={() => {
-          dispatch(
-            dateFetch({
-              startDate: value[0]?.toISOString(),
-              endDate: value[1]?.toISOString(),
-
-            })
-          );
-          console.log(value);
-          
-        }}
+        onCalendarClose={onCalendarClose}
       />
     </CalendarBox>
   );
