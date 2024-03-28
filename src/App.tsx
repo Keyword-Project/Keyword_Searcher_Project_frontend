@@ -6,6 +6,7 @@ import SearchPage from "components/page/SearchPage";
 import CategoryFilter from "components/feature/filter/CategoryFilter";
 import Layout from "Layout";
 
+
 function App() {
   return (
     <>
