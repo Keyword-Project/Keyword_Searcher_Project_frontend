@@ -7,17 +7,19 @@ import CategoryFilter from "components/feature/filter/CategoryFilter";
 import Layout from "Layout";
 
 
+
+
 function App() {
   return (
     <>
-    <Layout>
-      <Routes>
-        <Route path="/" element={<SearchPage />}>
-          <Route path="keyword" element={<KeywordInput />}></Route>
-          <Route path="/category/*" element={<CategoryFilter />}></Route>
-        </Route>
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<SearchPage />}>
+            <Route path="keyword" element={<KeywordInput />}></Route>
+            <Route path="/category/*" element={<CategoryFilter />}></Route>
+          </Route>
+          <Route path="*" element={<NotFound />}></Route>
+        </Routes>
       </Layout>
     </>
   );

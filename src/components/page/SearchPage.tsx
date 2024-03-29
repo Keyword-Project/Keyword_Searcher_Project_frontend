@@ -1,4 +1,4 @@
-import { useState, Suspense } from "react";
+import { useState } from "react";
 
 import CustomCalendar from "components/feature/filter/CustomCalendar";
 import styled from "styled-components";
@@ -6,10 +6,8 @@ import { useSelector } from "react-redux";
 
 import Result from "components/result/Result";
 import { useLocation } from "react-router-dom";
-import SpinnerBox from "components/feature/SpinnerBox";
 import SearchTab from "components/feature/Tab/SearchTab";
 import { RootState } from "main";
-import Layout from "Layout";
 
 const PriceBox = styled.div`
   width: 200px;
@@ -212,13 +210,7 @@ export default function SearchPage() {
         </InquiryButton>
       </FilterBox>
 
-      <ResultDiv>
-        {resultVisible && (
-          <Suspense fallback={<SpinnerBox />}>
-            <Result queryData={queryData} />
-          </Suspense>
-        )}
-      </ResultDiv>
+      <ResultDiv>{resultVisible && <Result queryData={queryData} />}</ResultDiv>
       {/* <Table responsive>
         <thead>
           <tr>
