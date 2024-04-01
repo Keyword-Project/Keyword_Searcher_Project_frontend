@@ -9,6 +9,7 @@ import { CSVLink } from "react-csv";
 import { faArrowsUpDown } from "@fortawesome/free-solid-svg-icons";
 import SpinnerBox from "components/feature/SpinnerBox";
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 interface sortedData {
   dataIsRocket: boolean;
@@ -146,10 +147,13 @@ export default function Result({ queryData }: { queryData: QueryData }) {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
-    queryFn: () =>
-      fetch(url).then(
-        (res) => res.json()
-      ),
+    queryFn: async () =>{
+      const res = await axios.get(
+        url
+      )
+      return res.data
+    }
+     
   });
 
   const problemData = data
