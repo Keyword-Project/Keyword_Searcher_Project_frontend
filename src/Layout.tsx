@@ -1,7 +1,7 @@
 import styled from "styled-components";
-
+import SearchTab from "components/feature/Tab/SearchTab";
 const LayoutBox = styled.div`
-  margin: 0px 20%;
+  padding: 50px 20% 0px 20%;
   background-color: #f5f8fb;
 `;
 
@@ -43,6 +43,7 @@ export default function Layout(props) {
         <Subtitle>
           쿠팡 리뷰 수 기반으로 쉽고 똑똑하게 판매아이템 발굴하자!
         </Subtitle>
+        <SearchTab />
       </Header>
       <LayoutBox>{props.children}</LayoutBox>
     </>

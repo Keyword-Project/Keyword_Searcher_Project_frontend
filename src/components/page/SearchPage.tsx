@@ -1,31 +1,45 @@
 import { useState } from "react";
-
 import CustomCalendar from "components/feature/filter/CustomCalendar";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-
+import Button from "components/common/Button";
 import Result from "components/result/Result";
 import { useLocation } from "react-router-dom";
-import SearchTab from "components/feature/Tab/SearchTab";
+// import SearchTab from "components/feature/Tab/SearchTab";
 import { RootState } from "main";
+import KeywordInput from "components/feature/filter/KeywordInput";
+
+const KeywordNcateContainer = styled.div`
+  display: flex;
+`;
 
 const PriceBox = styled.div`
-  width: 200px;
-  margin-right: 30px;
+  width: 226px;
 `;
 
 const FilterBox = styled.div`
   display: flex;
+  justify-content: space-between;
   background-color: #f5f8fb;
   padding-top: 40px;
+  width: 100%;
+`;
+
+const ItemCountSeletor = styled.select`
+  border-radius: 10px;
+  width: 100%;
+  height: 41px;
+  box-shadow: 0px 4px 10px 0px gray;
 `;
 
 const Input = styled.input`
-  border-radius: 3px;
-  width: 90px;
-  height: 30px;
+  border-radius: 10px;
+  width: 97px;
+  height: 41px;
   padding-left: 5px;
-  font-size: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px 0px gray;
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -35,26 +49,24 @@ const Input = styled.input`
 
 const InquiryButton = styled.button`
   border-radius: 10px;
-  color: black;
+  color: white;
   font-size: 15px;
-
-  margin: 20px 30px 0px 30px;
-
+  margin-top: 20px;
   padding: 0px 10px;
   width: 100px;
   font-weight: bold;
-  height: 50px;
+  height: 41px;
   border: none;
-  background-color: #c8c8ff;
+  background-color: #747578;
 `;
 
 const Item = styled.p`
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
 `;
 
 const InputBox = styled.div`
-  width: 130px;
+  width: 144px;
   color: black;
 `;
 
@@ -97,15 +109,17 @@ export default function SearchPage() {
 
   const date = useSelector((state: RootState) => state.queryString.date);
 
-  console.log("date", date);
+  // console.log("date", date);
+
+  console.log("search페이지 리 렌더링 확인용");
 
   const startDate = date.startDate.split("T")[0];
   const startDateByLos = new Date(date.startDate.split("T")[0]);
 
   const endDate = new Date(date.endDate.split("T")[0]);
   // console.log("stateDate", startDate);
-  console.log("startDateByLos", startDateByLos);
-  console.log("endDate", endDate);
+  // console.log("startDateByLos", startDateByLos);
+  // console.log("endDate", endDate);
 
   const differenceMs = Math.abs(endDate.valueOf() - startDateByLos.valueOf());
   // console.log("differenceMs", differenceMs);
@@ -165,26 +179,31 @@ export default function SearchPage() {
 
   return (
     <>
-      <SearchTab />
-
+      {/* <SearchTab /> */}
+      <KeywordNcateContainer>
+        <Button title="카테고리" />
+        <KeywordInput />
+      </KeywordNcateContainer>
       <FilterBox>
         <CustomCalendar />
 
         <InputBox>
-          <Item>상품 개수</Item>
-          <Input
-            type="number"
-            name="itemSize"
-            value={searchSize}
-            onChange={searchSizeChange}
-            placeholder="상품 개수"
-          ></Input>
+          <Item>상품 조회 개수</Item>
+          <ItemCountSeletor
+          // name="itemSize"
+          // value={searchSize}
+          // onChange={searchSizeChange}
+          >
+            <option value="30개씩 보기">30개씩 보기</option>
+            <option value="30개씩 보기">50개씩 보기</option>
+            <option value="100개씩 보기">100개씩 보기</option>
+          </ItemCountSeletor>
         </InputBox>
 
         <PriceBox>
           <Item>상품 가격</Item>
           <Input
-            type="number"
+            type="dropdown"
             name="minPrice"
             value={minPrice}
             onChange={minPriceChange}

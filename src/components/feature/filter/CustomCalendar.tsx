@@ -11,16 +11,18 @@ import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 const Calendar = styled.p`
   font-size: 13px;
   font-weight: bold;
-  margin-left: 15px;
 `;
 
 const StlyedDateRangePicker = styled(DateRangePicker)`
+  height: 41px;
   width: 50px;
-  height: 50px;
 
   .react-daterange-picker__wrapper {
     border-radius: 5px;
-    padding: 0px 10px;
+    padding: 0px 5px;
+    width: 150px;
+    font-size: 12px;
+    box-shadow: 0px 4px 10px 0px gray;
   }
   .react-calendar {
     border-radius: 5px;
@@ -68,24 +70,20 @@ const StlyedDateRangePicker = styled(DateRangePicker)`
 `;
 
 const CalendarBox = styled.div`
-  margin: 0px 30px 40px 50px;
-  width: 30%;
+  margin-bottom: 40px;
+  width: 209px;
+  height: 64px;
 `;
-
 
 function isValuePieceArray(value: Value): value is [ValuePiece, ValuePiece] {
   return Array.isArray(value);
 }
-
 
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function CustomCalendar() {
-
-
-
   const onCalendarClose = () => {
     if (isValuePieceArray(value)) {
       // value가 [ValuePiece, ValuePiece] 인 경우
@@ -94,7 +92,7 @@ export default function CustomCalendar() {
           // 필요에 따라 Nullish Coalescing 추가
           startDate: value[0]?.toISOString(),
           endDate: value[1]?.toISOString(),
-        }),
+        })
       );
     }
   };

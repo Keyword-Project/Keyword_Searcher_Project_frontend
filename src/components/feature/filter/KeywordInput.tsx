@@ -2,21 +2,33 @@ import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "components/feature/FetchSlice";
 import React from "react";
+import Magnifier from "assets/icons/magnifier.svg?react";
 
-const InputDivBox = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 40px;
-  width: 50%;
-  height: 100%;
+const InputDiv = styled.div`
+  position: relative;
+  height: 41px;
+  width: 690px;
+  margin-left: 12px;
+`;
+
+const StyledMagnifier = styled(Magnifier)`
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  & :hover {
+    cursor: pointer;
+  }
 `;
 
 const Input = styled.input`
   border-radius: 10px;
-  width: 300px;
-  height: 40px;
+  width: 100%;
+  height: 41px;
+  border-width: 1.5px;
+  padding: 8px 16px 10px 14px;
   padding-left: 15px;
-  margin: 10px 0px 40px 0px;
+  border-color: #ff782b;
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -25,17 +37,20 @@ const Input = styled.input`
 `;
 
 export default function KeywordInput() {
-  const keywordNameChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+  const keywordNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(pathNameFetch(e.target.value));
   };
   const dispatch = useDispatch();
 
   return (
-    <InputDivBox>
-      <Input
-        placeholder="키워드"
-        onChange={keywordNameChange}
-      />
-    </InputDivBox>
+    <>
+      <InputDiv>
+        <Input
+          placeholder="검색할 상품/키워드를 입력해주세요."
+          onChange={keywordNameChange}
+        />
+        <StyledMagnifier width="22" height="22" />
+      </InputDiv>
+    </>
   );
 }

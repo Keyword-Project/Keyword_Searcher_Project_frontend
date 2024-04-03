@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
@@ -114,8 +114,13 @@ export interface QueryData {
 }
 
 export default function Result({ queryData }: { queryData: QueryData }) {
+
+
+
+
   const [keywordObj, setKeywordObj] = useSearchParams();
-  console.log(keywordObj);
+  console.log(keywordObj, "result 컴포넌트 리 렌더링 확인용");
+  // console.log(queryData, 'queryData -> 도대체 뭐 떄문에 리렌더링이 나는거야 열받게')
 
   setKeywordObj({
     q: queryData.pathName,
@@ -147,16 +152,15 @@ export default function Result({ queryData }: { queryData: QueryData }) {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"],
-    queryFn: async () =>{
-      const res = await axios.get(
-        url
-      )
-      return res.data
-    }
-     
+    queryFn: async () => {
+      const res = await axios.get(url);
+      return res.data;
+    },
+     refetchOnWindowFocus: false,
   });
 
-  const problemData = data
+  const problemData = data;
+  console.log('data', data)
 
   const [sortBy, setSortBy] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState("asc");
@@ -173,8 +177,8 @@ export default function Result({ queryData }: { queryData: QueryData }) {
   const sortedData = problemData?.body
     ?.slice()
     .sort((a: sortedData, b: sortedData) => {
-      console.log("problemData body 의 a", a);
-      console.log("problemData body 의 b", b);
+      // console.log("problemData body 의 a", a);
+      // console.log("problemData body 의 b", b);
       const aValue = sortBy ? a[sortBy] : null;
       const bValue = sortBy ? b[sortBy] : null;
 
@@ -198,7 +202,7 @@ export default function Result({ queryData }: { queryData: QueryData }) {
       }
     });
 
-  console.log("sortedData", sortedData);
+  // console.log("sortedData", sortedData);
   let transformedData;
   if (sortedData != undefined) {
     transformedData = sortedData.map((item: sortedData) => ({
@@ -212,7 +216,7 @@ export default function Result({ queryData }: { queryData: QueryData }) {
       로켓배송: item.dataIsRocket ? "가능" : "불가능",
     }));
 
-    console.log("transformedData", transformedData);
+    // console.log("transformedData", transformedData);
   }
 
   if (isPending) return <SpinnerBox></SpinnerBox>;
