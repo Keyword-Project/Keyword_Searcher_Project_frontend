@@ -3,24 +3,26 @@ import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
 import "react-calendar/dist/Calendar.css";
 import { useDispatch } from "react-redux";
-import { dateFetch } from "components/feature/FetchSlice";
+import { dateFetch } from "lib/FetchSlice";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 
 const Calendar = styled.p`
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
 `;
 
 const StlyedDateRangePicker = styled(DateRangePicker)`
   height: 41px;
-  width: 50px;
 
   .react-daterange-picker__wrapper {
-    border-radius: 5px;
+    border-radius: 10px;
+    border-color: #bdbdbd;
+    border-style: solid;
+    border-width: 2px;
     padding: 0px 5px;
-    width: 150px;
+    width: 220px;
     font-size: 12px;
     box-shadow: 0px 4px 10px 0px gray;
   }
@@ -71,7 +73,7 @@ const StlyedDateRangePicker = styled(DateRangePicker)`
 
 const CalendarBox = styled.div`
   margin-bottom: 40px;
-  width: 209px;
+  width: 220px;
   height: 64px;
 `;
 

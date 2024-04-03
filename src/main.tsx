@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "App.tsx";
 import { Provider } from "react-redux";
-import store from "store.js";
+import store from "store/store.js";
 import { BrowserRouter } from "react-router-dom";
 import GlobalFont from "styles/GlobalFont";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";

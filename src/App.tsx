@@ -2,21 +2,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import KeywordInput from "components/feature/filter/KeywordInput";
 import NotFound from "components/page/NotFound.tsx";
-import SearchPage from "components/page/SearchPage";
-import CategoryFilter from "components/feature/filter/CategoryFilter";
+import MainPage from "components/page/MainPage";
 import Layout from "Layout";
-
-
-
+import CategoryContainer from "components/feature/filter/CategoryContainer";
 
 function App() {
   return (
     <>
       <Layout>
         <Routes>
-          <Route path="/" element={<SearchPage />}>
+          <Route path="/" element={<MainPage />}>
             <Route path="keyword" element={<KeywordInput />}></Route>
-            <Route path="/category/*" element={<CategoryFilter />}></Route>
+            <Route path="/category/*" element={<CategoryContainer />}></Route>
           </Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

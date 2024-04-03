@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import FetchSlice from "components/feature/FetchSlice";
-
-
+import FetchSlice from "lib/FetchSlice";
 
 export default configureStore({
   reducer: {
-    queryString: FetchSlice
-}});
+    queryString: FetchSlice,
+  },
+});

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { pathNameFetch } from "components/feature/FetchSlice";
+import { pathNameFetch } from "lib/FetchSlice";
 import React from "react";
 import Magnifier from "assets/icons/magnifier.svg?react";
 
@@ -8,7 +8,6 @@ const InputDiv = styled.div`
   position: relative;
   height: 41px;
   width: 690px;
-  margin-left: 12px;
 `;
 
 const StyledMagnifier = styled(Magnifier)`
@@ -24,7 +23,7 @@ const Input = styled.input`
   border-radius: 10px;
   width: 100%;
   height: 41px;
-  border-width: 1.5px;
+  border-width: 2px;
   padding: 8px 16px 10px 14px;
   padding-left: 15px;
   border-color: #ff782b;

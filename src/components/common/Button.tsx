@@ -7,6 +7,7 @@ const ButtonDiv = styled.div`
   border-radius: 10px;
   padding: 8px 8px 10px 11px;
   background-color: #ff782b;
+
   span {
     font-weight: 500;
     font-size: 14px;

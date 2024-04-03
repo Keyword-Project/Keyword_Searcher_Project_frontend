@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Table from "react-bootstrap/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+// import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-// import useGetData from "useGetData";
 import { useSearchParams } from "react-router-dom";
 import { CSVLink } from "react-csv";
 import { faArrowsUpDown } from "@fortawesome/free-solid-svg-icons";
-import SpinnerBox from "components/feature/SpinnerBox";
+import SpinnerBox from "components/feature/result/SpinnerBox";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import ExcelDownloader from "./ExcelDownloader";
 
 interface sortedData {
   dataIsRocket: boolean;
@@ -71,17 +71,6 @@ const StyledCSVLink = styled(CSVLink)`
   text-decoration-line: none;
 `;
 
-// const StyledTable = styled(Table)`
-// ${StyledTr} {
-//   :hover {
-//     background-color: lightgray;
-//   }
-//   ${StyledTr} td {
-//   :hover {
-//     background-color: lightgray;
-//   }
-//     }
-// `
 
 const StyledResultTr = styled.tr`
   background-color: white;
@@ -202,7 +191,8 @@ export default function Result({ queryData }: { queryData: QueryData }) {
       }
     });
 
-  // console.log("sortedData", sortedData);
+
+
   let transformedData;
   if (sortedData != undefined) {
     transformedData = sortedData.map((item: sortedData) => ({
@@ -216,7 +206,6 @@ export default function Result({ queryData }: { queryData: QueryData }) {
       로켓배송: item.dataIsRocket ? "가능" : "불가능",
     }));
 
-    // console.log("transformedData", transformedData);
   }
 
   if (isPending) return <SpinnerBox></SpinnerBox>;
@@ -226,17 +215,7 @@ export default function Result({ queryData }: { queryData: QueryData }) {
   return (
     <>
       <div>
-        <ExcelDownloadBtnDiv>
-          {transformedData != undefined && (
-            <ExcelButton>
-              <FontAwesomeIcon icon={faDownload} />
-
-              <StyledCSVLink data={transformedData}>
-                엑셀 다운로드
-              </StyledCSVLink>
-            </ExcelButton>
-          )}
-        </ExcelDownloadBtnDiv>
+        <ExcelDownloader transformedData={transformedData} />
 
         <Table responsive>
           <thead>
