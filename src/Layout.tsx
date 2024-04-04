@@ -14,7 +14,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.p`
-  color: #ff782b;
+  color: var(--Orange500);
   text-shadow: 2px 4px 6px rgba(37, 36, 62, 0.15);
   font-family: "Paytone One";
   font-size: 4.5rem;

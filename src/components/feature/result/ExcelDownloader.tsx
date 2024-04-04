@@ -2,6 +2,7 @@ import { CSVLink } from "react-csv";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { sortedData } from "type/resultData";
 
 
 const ExcelDownloadBtnDiv = styled.div`
@@ -24,7 +25,24 @@ const StyledCSVLink = styled(CSVLink)`
   text-decoration-line: none;
 `;
 
-export default function ExcelDownloader( {transformedData} ) {
+export default function ExcelDownloader( {problemData} ) {
+
+
+  let transformedData;
+
+  if ( problemData?.body  != undefined) {
+    transformedData = problemData?.body.map((item: sortedData) => ({
+      키워드: item.name,
+      가격: item.priceValue,
+      "총 리뷰 수": item.ratingTotalCount,
+      상품경쟁력: `${(
+        (item.ratingVipCount / item.ratingTotalCount) *
+        100
+      ).toFixed(1)}%`,
+      로켓배송: item.dataIsRocket ? "가능" : "불가능",
+    }));
+  }
+
   return (
     <>
       <ExcelDownloadBtnDiv>

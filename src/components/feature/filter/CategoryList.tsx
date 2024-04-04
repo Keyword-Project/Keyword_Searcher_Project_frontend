@@ -6,8 +6,8 @@ const CategoriesContainer = styled.div`
   border-radius: 10px;
   border-width: 2px;
   border-style: solid;
-  border-color: #ff782b;
-  background-color: #ff782b;
+  border-color: var(--Orange500);
+  background-color: var(--Orange500);
   margin-top: 5px;
   display: flex;
 `;
@@ -33,7 +33,7 @@ const FirstCategoryBox = styled.div`
   &:hover {
     background-color: white;
     p {
-      color: #ff782b;
+      color: var(--Orange500);
     }
   }
 `;
@@ -52,7 +52,7 @@ export default function CategoryList() {
     <>
       <CategoriesContainer>
         <ClassifiedCategoriesContainer
-          backgroundColor="#ff782b"
+          backgroundColor="var(--Orange500);"
           width="33%"
           borderRadius="10px 0px 0px 10px"
           borderRight="none"

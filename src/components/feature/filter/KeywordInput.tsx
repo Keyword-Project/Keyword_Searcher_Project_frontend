@@ -26,7 +26,7 @@ const Input = styled.input`
   border-width: 2px;
   padding: 8px 16px 10px 14px;
   padding-left: 15px;
-  border-color: #ff782b;
+  border-color: var(--Orange500);
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {

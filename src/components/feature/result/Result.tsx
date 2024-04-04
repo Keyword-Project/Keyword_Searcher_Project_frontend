@@ -1,15 +1,15 @@
 import { useState } from "react";
 import Table from "react-bootstrap/Table";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faDownload } from "@fortawesome/free-solid-svg-icons";
+
 import styled from "styled-components";
 import { useSearchParams } from "react-router-dom";
-import { CSVLink } from "react-csv";
 import { faArrowsUpDown } from "@fortawesome/free-solid-svg-icons";
 import SpinnerBox from "components/feature/result/SpinnerBox";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import ExcelDownloader from "./ExcelDownloader";
+import ResultTable from "./ResultTable";
 
 interface sortedData {
   dataIsRocket: boolean;
@@ -22,13 +22,6 @@ interface sortedData {
   rocketImg: string;
   uri: string;
 }
-
-const ExcelDownloadBtnDiv = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin: 20px 0px;
-`;
 
 const TitleTh = styled.th<{ width: string }>`
   width: ${(props) => props.width};
@@ -48,13 +41,6 @@ const KeywordAtag = styled.a`
   }
 `;
 
-const ExcelButton = styled.button`
-  width: 140px;
-  height: 30px;
-  font-size: 12px;
-  font-weight: bold;
-`;
-
 const StyledTitleTr = styled.tr`
   border-top-width: thick;
   border-top-color: black;
@@ -64,13 +50,6 @@ const DeliveryImg = styled.img.attrs({ alt: "로켓배송 이미지" })`
   width: 100px;
   height: 30px;
 `;
-
-const StyledCSVLink = styled(CSVLink)`
-  color: black;
-  margin-left: 5px;
-  text-decoration-line: none;
-`;
-
 
 const StyledResultTr = styled.tr`
   background-color: white;
@@ -103,10 +82,6 @@ export interface QueryData {
 }
 
 export default function Result({ queryData }: { queryData: QueryData }) {
-
-
-
-
   const [keywordObj, setKeywordObj] = useSearchParams();
   console.log(keywordObj, "result 컴포넌트 리 렌더링 확인용");
   // console.log(queryData, 'queryData -> 도대체 뭐 떄문에 리렌더링이 나는거야 열받게')
@@ -145,57 +120,14 @@ export default function Result({ queryData }: { queryData: QueryData }) {
       const res = await axios.get(url);
       return res.data;
     },
-     refetchOnWindowFocus: false,
+    refetchOnWindowFocus: false,
   });
 
   const problemData = data;
-  console.log('data', data)
-
-  const [sortBy, setSortBy] = useState<string | null>(null);
-  const [sortOrder, setSortOrder] = useState("asc");
-
-  const handleSort = (field: string) => {
-    if (sortBy === field) {
-      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
-    } else {
-      setSortBy(field);
-      setSortOrder("asc");
-    }
-  };
-
-  const sortedData = problemData?.body
-    ?.slice()
-    .sort((a: sortedData, b: sortedData) => {
-      // console.log("problemData body 의 a", a);
-      // console.log("problemData body 의 b", b);
-      const aValue = sortBy ? a[sortBy] : null;
-      const bValue = sortBy ? b[sortBy] : null;
-
-      if (sortBy === "상품경쟁력") {
-        const aCompetitiveness = (a.ratingVipCount / a.ratingTotalCount) * 100;
-        const bCompetitiveness = (b.ratingVipCount / b.ratingTotalCount) * 100;
-
-        return sortOrder === "asc"
-          ? aCompetitiveness - bCompetitiveness
-          : bCompetitiveness - aCompetitiveness;
-      }
-
-      if (aValue === bValue) {
-        return 0;
-      }
-
-      if (sortOrder === "asc") {
-        return aValue < bValue ? -1 : 1;
-      } else {
-        return aValue > bValue ? -1 : 1;
-      }
-    });
-
-
 
   let transformedData;
-  if (sortedData != undefined) {
-    transformedData = sortedData.map((item: sortedData) => ({
+  if ( problemData?.body  != undefined) {
+    transformedData = problemData?.body.map((item: sortedData) => ({
       키워드: item.name,
       가격: item.priceValue,
       "총 리뷰 수": item.ratingTotalCount,
@@ -205,7 +137,6 @@ export default function Result({ queryData }: { queryData: QueryData }) {
       ).toFixed(1)}%`,
       로켓배송: item.dataIsRocket ? "가능" : "불가능",
     }));
-
   }
 
   if (isPending) return <SpinnerBox></SpinnerBox>;
@@ -215,74 +146,8 @@ export default function Result({ queryData }: { queryData: QueryData }) {
   return (
     <>
       <div>
-        <ExcelDownloader transformedData={transformedData} />
-
-        <Table responsive>
-          <thead>
-            <StyledTitleTr>
-              <TitleTh width="10%">순위</TitleTh>
-              <TitleTh width="30%">키워드</TitleTh>
-              <TitleTh
-                width="10%"
-                // cursor="pointer"
-                onClick={() => handleSort("priceValue")}
-              >
-                <TitleSpan>
-                  {" "}
-                  <FontAwesomeIcon icon={faArrowsUpDown} /> 가격
-                </TitleSpan>{" "}
-              </TitleTh>
-              <TitleTh
-                width="10%"
-                // cursor="pointer"
-                onClick={() => handleSort("ratingTotalCount")}
-              >
-                <TitleSpan>
-                  {" "}
-                  <FontAwesomeIcon icon={faArrowsUpDown} /> 총 리뷰
-                </TitleSpan>{" "}
-              </TitleTh>
-              <TitleTh
-                width="20%"
-                // cursor="pointer"
-                onClick={() => handleSort("상품경쟁력")}
-              >
-                <TitleSpan>
-                  {" "}
-                  <FontAwesomeIcon icon={faArrowsUpDown} /> 상품경쟁력
-                </TitleSpan>{" "}
-              </TitleTh>
-              <TitleTh width="20%">배송방식</TitleTh>
-            </StyledTitleTr>
-          </thead>
-          <tbody>
-            {sortedData?.map((item: sortedData, idx: number) => {
-              const ItemPower = (
-                (item.ratingVipCount / item.ratingTotalCount) *
-                100
-              ).toFixed(1);
-              return (
-                <StyledResultTr key={idx}>
-                  <StyleResultdTd>{idx + 1}</StyleResultdTd>
-                  <StyleResultdTd>
-                    <KeywordAtag
-                      href={`https://www.coupang.com${item.uri}`}
-                      target="_blank"
-                    >
-                      {item.name}
-                    </KeywordAtag>
-                  </StyleResultdTd>
-                  <StyleResultdTd>{item.priceValue}</StyleResultdTd>
-                  <StyleResultdTd>{item.ratingTotalCount}</StyleResultdTd>
-                  <StyleResultdTd>{ItemPower}%</StyleResultdTd>
-                  <StyleResultdTd>
-                    {item.rocketImg && <DeliveryImg src={item.rocketImg} />}
-                  </StyleResultdTd>
-                </StyledResultTr>
-              );
-            })}
-          </tbody>
-        </Table>
+        <ExcelDownloader transformedData={transformedData} problemData={problemData}/>
+        <ResultTable problemData={problemData} />
       </div>
     </>
   );
