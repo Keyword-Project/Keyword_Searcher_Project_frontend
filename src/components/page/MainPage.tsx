@@ -10,7 +10,7 @@ import PriceRange from "components/feature/filter/PriceRange";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
-  font-size: 20px;
+  font-size: var(--font-size-medium);
   font-weight: bold;
 `;
 
@@ -31,7 +31,7 @@ const Input = styled.input`
   border-width: 2px;
   padding-left: 8px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-size-primary);
   box-shadow: 0px 4px 10px 0px gray;
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -50,7 +50,7 @@ const InquiryButton = styled.button`
   font-weight: bold;
   height: 41px;
   border: none;
-  background-color: #747578;
+  background-color: var(--Gray700);
 `;
 
 

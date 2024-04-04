@@ -8,7 +8,7 @@ const InputBox = styled.div`
 
 
 const Item = styled.p`
-  font-size: 16px;
+  font-size: var(--font-size-primary);
   font-weight: bold;
 `;
 

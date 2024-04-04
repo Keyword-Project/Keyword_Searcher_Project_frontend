@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 
 const Calendar = styled.p`
-  font-size: 16px;
+  font-size: var(--font-size-primary);
   font-weight: bold;
 `;
 

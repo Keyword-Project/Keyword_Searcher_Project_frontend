@@ -40,8 +40,7 @@ const FirstCategoryBox = styled.div`
 
 const CategoryTitle = styled.p`
   color: ${(props) => props.color};
-  font-size: 16px;
-  color
+  font-size: var(--font-size-primary);
 `;
 
 export default function CategoryList() {
@@ -71,7 +70,7 @@ export default function CategoryList() {
           backgroundColor="white"
           width="33%"
           borderRadius="0px"
-          borderRight="2px solid #747578"
+          borderRight="2px solid var(--Gray700)"
         >
           {" "}
           <FirstCategoriesList>

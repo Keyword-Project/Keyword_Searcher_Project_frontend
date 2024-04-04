@@ -5,7 +5,7 @@ const PriceContainer = styled.div`
 `;
 
 const InputTitle = styled.p`
-  font-size: 16px;
+  font-size: var(--font-size-primary);
   font-weight: bold;
 `;
 
@@ -18,7 +18,7 @@ const Input = styled.input`
   border-width: 2px;
   padding-left: 8px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-size-primary);
   box-shadow: 0px 4px 10px 0px gray;
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
