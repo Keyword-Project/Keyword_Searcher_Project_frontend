@@ -2377,6 +2377,1327 @@
           ]
         }
       ]
+    },
+    {
+      "name": "완구취미",
+      "categoryId": "178255",
+      "secondCategories": [
+        {
+          "name": "캐릭터별완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "뽀로로",
+              "categoryId": "176530"
+            },
+            {
+              "name": "타요",
+              "categoryId": "176530"
+            },
+            {
+              "name": "로보카폴리",
+              "categoryId": "176530"
+            },
+            {
+              "name": "신비아파트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "콩순이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "시크릿쥬쥬",
+              "categoryId": "176530"
+            },
+            {
+              "name": "헬로카봇",
+              "categoryId": "176530"
+            },
+            {
+              "name": "빠샤메카드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "요괴메카드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "베이블레이드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "실바니안패밀리",
+              "categoryId": "176530"
+            },
+            {
+              "name": "미미",
+              "categoryId": "176530"
+            },
+            {
+              "name": "바비",
+              "categoryId": "176530"
+            },
+            {
+              "name": "디즈니프린세스",
+              "categoryId": "176530"
+            },
+            {
+              "name": "코코밍",
+              "categoryId": "176530"
+            },
+            {
+              "name": "미니특공대",
+              "categoryId": "176530"
+            },
+            {
+              "name": "또봇",
+              "categoryId": "176530"
+            },
+            {
+              "name": "퍼피구조대",
+              "categoryId": "176530"
+            },
+            {
+              "name": "마블",
+              "categoryId": "176530"
+            },
+            {
+              "name": "건담",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "신생아/영아완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "모빌",
+              "categoryId": "176530"
+            },
+            {
+              "name": "초점책/헝겊책",
+              "categoryId": "176530"
+            },
+            {
+              "name": "딸랑이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "치발기/케이스",
+              "categoryId": "176530"
+            },
+            {
+              "name": "오뚝이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "멜로디/러닝완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "목욕놀이완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "애착/수면인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "아기공",
+              "categoryId": "176530"
+            },
+            {
+              "name": "아기체육관/러닝홈",
+              "categoryId": "176530"
+            },
+            {
+              "name": "바운서",
+              "categoryId": "176530"
+            },
+            {
+              "name": "쏘서/점퍼루/보행기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "걸음마보조기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "베이비룸",
+              "categoryId": "176530"
+            },
+            {
+              "name": "감각발달완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "블록완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "링쌓기/컵쌓기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "풀백장난감",
+              "categoryId": "176530"
+            },
+            {
+              "name": "망치놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "시계놀이/셈놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "흔들목마/붕붕카",
+              "categoryId": "176530"
+            },
+            {
+              "name": "악기완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "유모차/카시트완구",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "로봇/작동완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "로봇",
+              "categoryId": "176530"
+            },
+            {
+              "name": "베이블레이드/배틀팽이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "교통수단",
+              "categoryId": "176530"
+            },
+            {
+              "name": "동물",
+              "categoryId": "176530"
+            },
+            {
+              "name": "장난감총/칼",
+              "categoryId": "176530"
+            },
+            {
+              "name": "작동완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "어린이RC완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "풀백장난감",
+              "categoryId": "176530"
+            },
+            {
+              "name": "태엽장난감",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "역할장난감",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "주방놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "소꿉놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "공구놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "마트/계산대놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "화장/꾸미기놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "아기돌보기놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "병원놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "청소놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "만들기토이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "악기놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "모래놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "낚시놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "장난감총/칼",
+              "categoryId": "176530"
+            },
+            {
+              "name": "종이인형/코디북",
+              "categoryId": "176530"
+            },
+            {
+              "name": "인형극인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "직업놀이의상/소품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "코스튬의상",
+              "categoryId": "176530"
+            },
+            {
+              "name": "코스튬소품",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "블록놀이",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "레고",
+              "categoryId": "176530"
+            },
+            {
+              "name": "옥스포드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "플레이모빌",
+              "categoryId": "176530"
+            },
+            {
+              "name": "사각/십자블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "원목블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "자석블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "소프트블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "벽돌블록/빅블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "기어블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "마블런/레일블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "나사조립블록",
+              "categoryId": "176530"
+            },
+            {
+              "name": "도미노",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "인형",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "봉제인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "작동동물인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "마론인형/옷",
+              "categoryId": "176530"
+            },
+            {
+              "name": "인형집",
+              "categoryId": "176530"
+            },
+            {
+              "name": "아기인형/유모차",
+              "categoryId": "176530"
+            },
+            {
+              "name": "종이인형/코디북",
+              "categoryId": "176530"
+            },
+            {
+              "name": "구체관절인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "손가락인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "마리오네트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "전통인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "목각인형",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "물놀이/계절완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "튜브",
+              "categoryId": "176530"
+            },
+            {
+              "name": "비치볼",
+              "categoryId": "176530"
+            },
+            {
+              "name": "풀장/수영장",
+              "categoryId": "176530"
+            },
+            {
+              "name": "착용형 보조용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "암링",
+              "categoryId": "176530"
+            },
+            {
+              "name": "물놀이보트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "에어펌프",
+              "categoryId": "176530"
+            },
+            {
+              "name": "킥판/킥보드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스노클링/다이빙",
+              "categoryId": "176530"
+            },
+            {
+              "name": "오리발/물갈퀴",
+              "categoryId": "176530"
+            },
+            {
+              "name": "물총",
+              "categoryId": "176530"
+            },
+            {
+              "name": "모래놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "목욕놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "눈썰매",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "승용완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "자전거",
+              "categoryId": "176530"
+            },
+            {
+              "name": "전동차/전동휠",
+              "categoryId": "176530"
+            },
+            {
+              "name": "킥보드/트라이더",
+              "categoryId": "176530"
+            },
+            {
+              "name": "전동휠/보드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스카이콩콩",
+              "categoryId": "176530"
+            },
+            {
+              "name": "인라인/롤러스케이트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스케이트보드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "웨건/트레일러",
+              "categoryId": "176530"
+            },
+            {
+              "name": "붕붕카",
+              "categoryId": "176530"
+            },
+            {
+              "name": "지붕차",
+              "categoryId": "176530"
+            },
+            {
+              "name": "실내승용완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "헬멧/보호대",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "스포츠/야외완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "구기종목",
+              "categoryId": "176530"
+            },
+            {
+              "name": "양궁/사격/다트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "유아동장난감총",
+              "categoryId": "176530"
+            },
+            {
+              "name": "비누방울/버블건",
+              "categoryId": "176530"
+            },
+            {
+              "name": "물총",
+              "categoryId": "176530"
+            },
+            {
+              "name": "모래놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "자전거/승용완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "트램펄린",
+              "categoryId": "176530"
+            },
+            {
+              "name": "훌라후프/줄넘기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "펀치백",
+              "categoryId": "176530"
+            },
+            {
+              "name": "점핑볼",
+              "categoryId": "176530"
+            },
+            {
+              "name": "캐치볼/원반던지기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "요요/액세서리",
+              "categoryId": "176530"
+            },
+            {
+              "name": "연날리기/전통놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "헬멧/보호장비",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스포츠/액션게임",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "실내대형완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "다기능놀이터",
+              "categoryId": "176530"
+            },
+            {
+              "name": "미끄럼틀",
+              "categoryId": "176530"
+            },
+            {
+              "name": "그네/그네봉",
+              "categoryId": "176530"
+            },
+            {
+              "name": "시소",
+              "categoryId": "176530"
+            },
+            {
+              "name": "볼풀/볼텐트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "볼풀공",
+              "categoryId": "176530"
+            },
+            {
+              "name": "놀이터널",
+              "categoryId": "176530"
+            },
+            {
+              "name": "놀이집/놀이텐트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "트램펄린",
+              "categoryId": "176530"
+            },
+            {
+              "name": "베이비룸",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "STEAM완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "과학(S)",
+              "categoryId": "176530"
+            },
+            {
+              "name": "기술(T)",
+              "categoryId": "176530"
+            },
+            {
+              "name": "공학(E)",
+              "categoryId": "176530"
+            },
+            {
+              "name": "예술(A)",
+              "categoryId": "176530"
+            },
+            {
+              "name": "수학(M)",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "학습완구/교구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "과학/자연학습",
+              "categoryId": "176530"
+            },
+            {
+              "name": "기술/공학완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "미술/점토",
+              "categoryId": "176530"
+            },
+            {
+              "name": "음악/악기놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "수학/도형완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "언어학습완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "학습카드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "학습벽보",
+              "categoryId": "176530"
+            },
+            {
+              "name": "원목교구/가베",
+              "categoryId": "176530"
+            },
+            {
+              "name": "퍼즐",
+              "categoryId": "176530"
+            },
+            {
+              "name": "디지털학습완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "교육용 보드게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "자석/학습보드",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "보드게임",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "멘사추천/학습게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "두뇌게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "균형/순발력게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "추리/전략게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "복불복/룰렛게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "캐릭터/마술/타로카드",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스포츠/액션게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "바둑/체스/윷놀이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "화투/트럼프/마작",
+              "categoryId": "176530"
+            },
+            {
+              "name": "기타보드게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "보드게임액세서리",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "RC완구/부품",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "RC드론/쿼드콥터",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC카",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC헬기/비행기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC보트/잠수함",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC탱크",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC바이크/오토바이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC로봇",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC부품/액세서리",
+              "categoryId": "176530"
+            },
+            {
+              "name": "어린이RC완구",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "퍼즐/큐브/피젯토이",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "직소퍼즐",
+              "categoryId": "176530"
+            },
+            {
+              "name": "구슬퍼즐",
+              "categoryId": "176530"
+            },
+            {
+              "name": "입체퍼즐",
+              "categoryId": "176530"
+            },
+            {
+              "name": "유아동퍼즐",
+              "categoryId": "176530"
+            },
+            {
+              "name": "캐스트/유레카퍼즐",
+              "categoryId": "176530"
+            },
+            {
+              "name": "IQ퍼즐/스도쿠",
+              "categoryId": "176530"
+            },
+            {
+              "name": "퍼즐액세서리",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "프라모델",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "건담",
+              "categoryId": "176530"
+            },
+            {
+              "name": "탱크/지프/밀리터리",
+              "categoryId": "176530"
+            },
+            {
+              "name": "자동차/트럭/기차",
+              "categoryId": "176530"
+            },
+            {
+              "name": "비행기/전투기/헬기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "배/전함/잠수함",
+              "categoryId": "176530"
+            },
+            {
+              "name": "건물/빌딩/성",
+              "categoryId": "176530"
+            },
+            {
+              "name": "로봇/우주선",
+              "categoryId": "176530"
+            },
+            {
+              "name": "캐릭터/애니메이션",
+              "categoryId": "176530"
+            },
+            {
+              "name": "공룡/동물",
+              "categoryId": "176530"
+            },
+            {
+              "name": "4WD미니카",
+              "categoryId": "176530"
+            },
+            {
+              "name": "디오라마재료",
+              "categoryId": "176530"
+            },
+            {
+              "name": "도료/공구/기타",
+              "categoryId": "176530"
+            },
+            {
+              "name": "서바이벌건/BB탄총",
+              "categoryId": "176530"
+            },
+            {
+              "name": "모형칼/검",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "피규어/다이캐스트",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "원피스피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "인물피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "동물/공룡피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "실바니안피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "게임/영화피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "애니메이션피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "성인캐릭터피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "성인용(19)피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "건물피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "로봇피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "교통수단피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "밀리터리피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스포츠피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "악기피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "플레이모빌",
+              "categoryId": "176530"
+            },
+            {
+              "name": "베이브릭/랜덤/캡슐피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "다이캐스트/모형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "케이스/장식장",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "콘솔/휴대용게임기",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "플레이스테이션",
+              "categoryId": "176530"
+            },
+            {
+              "name": "닌텐도",
+              "categoryId": "176530"
+            },
+            {
+              "name": "XBOX",
+              "categoryId": "176530"
+            },
+            {
+              "name": "레트로/기타게임",
+              "categoryId": "176530"
+            },
+            {
+              "name": "휴대폰게임",
+              "categoryId": "176530"
+            }
+          ]
+        },
+
+        {
+          "name": "파티/마술용품",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "파티용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "마술용품",
+              "categoryId": "176530"
+            }
+          ]
+        },
+        {
+          "name": "DIY",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "태교바느질DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "신생아완구DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "피젯스피너DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "그림그리기DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "자수DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "손뜨개DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "비누DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "캔들DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "디퓨저DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "구슬/비즈DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "미니어쳐DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "펠트DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "퀄트DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "석고방향제DIY",
+              "categoryId": "176530"
+            },
+            {
+              "name": "가죽공예",
+              "categoryId": "176530"
+            },
+            {
+              "name": "점토공예",
+              "categoryId": "176530"
+            },
+            {
+              "name": "DIY도서",
+              "categoryId": "176530"
+            },
+            {
+              "name": "스크랩북/스탬프",
+              "categoryId": "176530"
+            }
+          ]
+        },
+        {
+          "name": "악기/음향기기",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "전자악기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "학습/교육용악기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "기타/우쿨렐레",
+              "categoryId": "176530"
+            },
+            {
+              "name": "건반악기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "현악기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "관악기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "타악기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "국악기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "악기소품/용품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "음향기자재",
+              "categoryId": "176530"
+            },
+            {
+              "name": "악보",
+              "categoryId": "176530"
+            }
+          ]
+        },
+        {
+          "name": "원예/가드닝",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "다육이/선인장",
+              "categoryId": "176530"
+            },
+            {
+              "name": "식물/나무",
+              "categoryId": "176530"
+            },
+            {
+              "name": "화분/화병",
+              "categoryId": "176530"
+            },
+            {
+              "name": "씨앗/텃밭세트",
+              "categoryId": "176530"
+            },
+            {
+              "name": "흙/영양제/살충",
+              "categoryId": "176530"
+            },
+            {
+              "name": "원예도구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "야외가구/소품",
+              "categoryId": "176530"
+            },
+            {
+              "name": "잔디/농기구",
+              "categoryId": "176530"
+            }
+          ]
+        },
+        {
+          "name": "수집품",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "수석",
+              "categoryId": "176530"
+            },
+            {
+              "name": "기념주화/화폐",
+              "categoryId": "176530"
+            },
+            {
+              "name": "화병/도자기",
+              "categoryId": "176530"
+            },
+            {
+              "name": "냉장고자석",
+              "categoryId": "176530"
+            },
+            {
+              "name": "그림/포스터",
+              "categoryId": "176530"
+            },
+            {
+              "name": "엽서",
+              "categoryId": "176530"
+            },
+            {
+              "name": "구체관절인형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "피젯토이",
+              "categoryId": "176530"
+            },
+            {
+              "name": "RC완구",
+              "categoryId": "176530"
+            },
+            {
+              "name": "피규어",
+              "categoryId": "176530"
+            },
+            {
+              "name": "다이캐스트/모형",
+              "categoryId": "176530"
+            },
+            {
+              "name": "프라모델/미니카",
+              "categoryId": "176530"
+            },
+            {
+              "name": "서바이벌건/BB탄총",
+              "categoryId": "176530"
+            },
+            {
+              "name": "CD/LP",
+              "categoryId": "176530"
+            },
+            {
+              "name": "우표/씰",
+              "categoryId": "176530"
+            },
+            {
+              "name": "종교용품",
+              "categoryId": "176530"
+            }
+          ]
+        },
+        {
+          "name": "연령별완구",
+          "categoryId": "176530",
+          "thirdCategories": [
+            {
+              "name": "24개월이하",
+              "categoryId": "176530"
+            },
+            {
+              "name": "2~5세",
+              "categoryId": "176530"
+            },
+            {
+              "name": "5~8세",
+              "categoryId": "176530"
+            },
+            {
+              "name": "8~12세",
+              "categoryId": "176530"
+            },
+            {
+              "name": "13세이상",
+              "categoryId": "176530"
+            }
+          ]
+        },
+        {
+          "name": "키털트샵",
+          "categoryId": "176530",
+          "thirdCategories": [""]
+        }
+      ]
     }
   ]
 }

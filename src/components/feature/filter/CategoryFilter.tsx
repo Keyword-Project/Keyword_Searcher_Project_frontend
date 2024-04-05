@@ -65,7 +65,7 @@ const DropdownMenu = styled(Dropdown.Menu)`
 `;
 
 export default function CategoryFilter() {
-  const [firCateList, setFirCateList] = useState<FirstCategory[]>([]);
+  const [firCateList, setFirCate List] = useState<FirstCategory[]>([]);
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();

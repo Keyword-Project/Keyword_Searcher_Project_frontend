@@ -12,6 +12,9 @@ const ButtonContainer = styled.div`
   background-color: ${(props) => props.BackGroundColor};
   border-radius: 0.625rem;
 border: 1.5px solid ${(props) => props.borderColor};
+&:hover {
+  cursor: pointer;
+}
 
 /* ButtonShadow1 */
 box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.10);
@@ -24,7 +27,7 @@ const ButtonTitle = styled.span`
   margin-left: 6px;
 `;
 
-export default function Button({ ...props }) {
+export default function Button(props) {
   return (
     <>
       <ButtonContainer BackGroundColor={props.BackGroundColor} borderColor={props.borderColor}>

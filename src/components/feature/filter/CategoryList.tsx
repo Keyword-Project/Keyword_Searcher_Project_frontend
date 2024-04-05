@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import data from "dummyData/CategoriesData.json";
-
+import { useState } from "react";
 
 const CategoriesContainer = styled.div`
   width: 216px;
@@ -13,7 +13,9 @@ const CategoriesContainer = styled.div`
   border-right: ${(props) => props.borderRight};
   padding: 12px 0px 12px 12px;
   position: absolute;
-
+  visibility: ${(props) => (props.isVisible ? "visible" : "hidden")};
+  opacity: ${(props) => (props.isVisible ? "1" : "0")};
+  transition: visibility 0.3s ease, opacity 0.3s ease;
 `;
 
 const CategoriesListBox = styled.div`
@@ -39,26 +41,52 @@ const CategoryTitle = styled.p`
 `;
 
 export default function CategoryList() {
-  
+  const [firstIsHovered, setFirstIsHovered] = useState(false);
+  const [secondIsHovered, setSecondIsHovered] = useState(false);
+  const [thirdIsHovered, setThirdIsHovered] = useState(false);
+  const [secondCategory, setSecondCategory] = useState([]);
+  const [thirdCategory, setThirdCategory] = useState([]);
 
-  const List1 = ["aa", "aa", "aa", "aa", "aa", "aa", "aa", "aa"];
-  const List2 = ["bb", "bb", "bb", "bb", "bb", "bb", "bb", "bb"];
-  const List3 = ["cc", "cc", "cc", "cc", "cc", "cc", "cc", "cc"];
+  const firCateHoverHandler = (index) => {
+    setSecondCategory(
+      (prev) => (prev = data.firstCategories[index].secondCategories)
+    );
+  };
+
+
+  const secCateHoverHandler = (index) => {
+    setThirdCategory(
+      (prev) => (prev = secondCategory[index].thirdCategories)
+    );
+  };
+
+
   return (
     <>
+      <button
+        onMouseEnter={() => setFirstIsHovered(true)}
+        // onMouseLeave={() => setIsHovered(false)}
+      >
+        실험용 버튼
+      </button>
       <CategoriesContainer
-        backgroundColor="var(--Orange500);"
+        backgroundColor="var(--Orange500)"
         borderRadius="10px 0px 0px 10px"
         borderRight="none"
         left="216px"
-
-     
+        isVisible={firstIsHovered}
+        onMouseEnter={() => setSecondIsHovered(true)}
       >
         <CategoriesListBox>
-          {List1.map((item, idx) => {
+          {data.firstCategories.map((item, index) => {
             return (
-              <Category key={idx}>
-                <CategoryTitle color="white">{item}</CategoryTitle>
+              <Category key={index}>
+                <CategoryTitle
+                  onMouseEnter={() => firCateHoverHandler(index)}
+                  color="white"
+                >
+                  {item.name}
+                </CategoryTitle>
               </Category>
             );
           })}
@@ -69,13 +97,14 @@ export default function CategoryList() {
         borderRadius="0px"
         borderRight="2px solid var(--Gray700)"
         left="432px"
+        isVisible={secondIsHovered}
+        onMouseEnter={() => setThirdIsHovered(true)}
       >
-        {" "}
         <CategoriesListBox>
-          {List2.map((item, idx) => {
+          {secondCategory?.map((item, index) => {
             return (
-              <Category key={idx}>
-                <CategoryTitle color="black">{item}</CategoryTitle>
+              <Category key={index}>
+                <CategoryTitle color="black"   onMouseEnter={() => secCateHoverHandler(index)}>{item.name}</CategoryTitle>
               </Category>
             );
           })}
@@ -86,13 +115,14 @@ export default function CategoryList() {
         borderRight="none"
         borderRadius="0px 10px 10px 0px"
         left="648px"
+        isVisible={thirdIsHovered}
       >
         {" "}
         <CategoriesListBox>
-          {List3.map((item, idx) => {
+          {thirdCategory?.map((item, index) => {
             return (
-              <Category key={idx}>
-                <CategoryTitle color="black">{item}</CategoryTitle>
+              <Category key={index}>
+                <CategoryTitle color="black">{item.name}</CategoryTitle>
               </Category>
             );
           })}

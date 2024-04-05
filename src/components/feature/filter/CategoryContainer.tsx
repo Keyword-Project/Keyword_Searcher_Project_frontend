@@ -5,6 +5,7 @@ import CategoryList from "./CategoryList";
 
 export default function CategoryContainer() {
 
+
   return (
     <>
       <Button
@@ -13,8 +14,7 @@ export default function CategoryContainer() {
         color="white"
         borderColor="var(--Orange500)"
       />
-
-      <CategoryList />
+      <CategoryList/>
     </>
   );
 }

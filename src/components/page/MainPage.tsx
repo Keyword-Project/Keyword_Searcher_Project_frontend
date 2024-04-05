@@ -7,7 +7,6 @@ import { useLocation, Outlet } from "react-router-dom";
 import { RootState } from "main";
 import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
-import Test from "components/feature/filter/Test";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
