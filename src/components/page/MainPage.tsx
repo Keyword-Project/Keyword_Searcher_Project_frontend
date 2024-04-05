@@ -7,6 +7,7 @@ import { useLocation, Outlet } from "react-router-dom";
 import { RootState } from "main";
 import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
+import Test from "components/feature/filter/Test";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -52,7 +53,6 @@ const InquiryButton = styled.button`
   border: none;
   background-color: var(--Gray700);
 `;
-
 
 const ResultDiv = styled.div`
   width: 100%;
@@ -115,7 +115,6 @@ export default function MainPage() {
   return (
     <>
       <Outlet />
-
       <FilterBox>
         <CustomCalendar />
 

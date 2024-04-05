@@ -1,33 +1,28 @@
 import styled from "styled-components";
+import data from "dummyData/CategoriesData.json";
+
 
 const CategoriesContainer = styled.div`
-  width: 639px;
-  height: 456px;
-  border-radius: 10px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--Orange500);
-  background-color: var(--Orange500);
+  width: 216px;
   margin-top: 5px;
-  display: flex;
-`;
-
-const ClassifiedCategoriesContainer = styled.div`
-  width: ${(props) => props.width};
-  height: 100%;
+  z-index: 2;
+  height: 456px;
+  left: ${(props) => props.left};
   background-color: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderRadius};
   border-right: ${(props) => props.borderRight};
   padding: 12px 0px 12px 12px;
+  position: absolute;
+
 `;
 
-const FirstCategoriesList = styled.div`
+const CategoriesListBox = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const FirstCategoryBox = styled.div`
-  width: 206px;
+const Category = styled.div`
+  width: 100%;
   height: 36px;
   padding: 7px 8px;
   &:hover {
@@ -44,62 +39,64 @@ const CategoryTitle = styled.p`
 `;
 
 export default function CategoryList() {
+  
+
   const List1 = ["aa", "aa", "aa", "aa", "aa", "aa", "aa", "aa"];
   const List2 = ["bb", "bb", "bb", "bb", "bb", "bb", "bb", "bb"];
   const List3 = ["cc", "cc", "cc", "cc", "cc", "cc", "cc", "cc"];
   return (
     <>
-      <CategoriesContainer>
-        <ClassifiedCategoriesContainer
-          backgroundColor="var(--Orange500);"
-          width="33%"
-          borderRadius="10px 0px 0px 10px"
-          borderRight="none"
-        >
-          <FirstCategoriesList>
-            {List1.map((item, idx) => {
-              return (
-                <FirstCategoryBox key={idx}>
-                  <CategoryTitle color="white">{item}</CategoryTitle>
-                </FirstCategoryBox>
-              );
-            })}
-          </FirstCategoriesList>
-        </ClassifiedCategoriesContainer>
-        <ClassifiedCategoriesContainer
-          backgroundColor="white"
-          width="33%"
-          borderRadius="0px"
-          borderRight="2px solid var(--Gray700)"
-        >
-          {" "}
-          <FirstCategoriesList>
-            {List2.map((item, idx) => {
-              return (
-                <FirstCategoryBox key={idx}>
-                  <CategoryTitle color="black">{item}</CategoryTitle>
-                </FirstCategoryBox>
-              );
-            })}
-          </FirstCategoriesList>
-        </ClassifiedCategoriesContainer>
-        <ClassifiedCategoriesContainer
-          backgroundColor="white"
-          width="34%"
-          borderRight="none"
-          borderRadius="0px 10px 10px 0px"
-        >
-          {" "}
-          <FirstCategoriesList>
-            {List3.map((item, idx) => {
-              return (
-                <FirstCategoryBox key={idx}>
-                  <CategoryTitle color="black">{item}</CategoryTitle>
-                </FirstCategoryBox>
-              );
-            })}
-          </FirstCategoriesList>
-        </ClassifiedCategoriesContainer>
+      <CategoriesContainer
+        backgroundColor="var(--Orange500);"
+        borderRadius="10px 0px 0px 10px"
+        borderRight="none"
+        left="216px"
+
+     
+      >
+        <CategoriesListBox>
+          {List1.map((item, idx) => {
+            return (
+              <Category key={idx}>
+                <CategoryTitle color="white">{item}</CategoryTitle>
+              </Category>
+            );
+          })}
+        </CategoriesListBox>
+      </CategoriesContainer>
+      <CategoriesContainer
+        backgroundColor="white"
+        borderRadius="0px"
+        borderRight="2px solid var(--Gray700)"
+        left="432px"
+      >
+        {" "}
+        <CategoriesListBox>
+          {List2.map((item, idx) => {
+            return (
+              <Category key={idx}>
+                <CategoryTitle color="black">{item}</CategoryTitle>
+              </Category>
+            );
+          })}
+        </CategoriesListBox>
+      </CategoriesContainer>
+      <CategoriesContainer
+        backgroundColor="white"
+        borderRight="none"
+        borderRadius="0px 10px 10px 0px"
+        left="648px"
+      >
+        {" "}
+        <CategoriesListBox>
+          {List3.map((item, idx) => {
+            return (
+              <Category key={idx}>
+                <CategoryTitle color="black">{item}</CategoryTitle>
+              </Category>
+            );
+          })}
+        </CategoriesListBox>
       </CategoriesContainer>
     </>
   );

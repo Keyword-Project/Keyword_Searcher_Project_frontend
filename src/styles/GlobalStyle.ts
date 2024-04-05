@@ -6,6 +6,8 @@ export const GlobalStyles = createGlobalStyle`
 
         --Orange500: #FF782B;
         --Gray700 :  #747578;
+        --Gray500 : #BDBDBD;
+        --Gray800 :  #5E5F63;
 
         --white-color-100: #fff;
         --white-color-200: #f4f4f4;

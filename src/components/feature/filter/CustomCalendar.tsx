@@ -24,7 +24,7 @@ const StlyedDateRangePicker = styled(DateRangePicker)`
     padding: 0px 5px;
     width: 220px;
     font-size: 12px;
-    box-shadow: 0px 4px 10px 0px gray;
+    box-shadow: 0px 4px 10px 0px  rgba(34, 39, 47, 0.1);
   }
   .react-calendar {
     border-radius: 5px;
@@ -108,7 +108,7 @@ export default function CustomCalendar() {
       <StlyedDateRangePicker
         onChange={onChange}
         value={value}
-        autoFocus={true}
+        autoFocus={false}
         //달력 open시 자동 focus
         calendarAriaLabel={"Toggle calendar"}
         //잘 모르겠음

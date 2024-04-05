@@ -13,13 +13,11 @@ const Input = styled.input`
   border-radius: 10px;
   width: 97px;
   height: 41px;
-  border-color: #bdbdbd;
-  border-style: solid;
-  border-width: 2px;
+  border : 2px solid  var(--Gray500);
   padding-left: 8px;
   font-weight: 500;
   font-size: var(--font-size-primary);
-  box-shadow: 0px 4px 10px 0px gray;
+  box-shadow: 0px 4px 10px 0px  rgba(34, 39, 47, 0.1);
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
