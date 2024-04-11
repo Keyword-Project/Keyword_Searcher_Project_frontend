@@ -16,24 +16,22 @@ const Header = styled.div`
 const Title = styled.p`
   color: var(--Orange500);
   text-shadow: 2px 4px 6px rgba(37, 36, 62, 0.15);
-  font-family: "Paytone One";
   font-size: var(--font-size-title);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.18rem;
   text-align: center;
+  font-family: PaytoneOne;
 `;
 
 const Subtitle = styled.p`
   color: #35231f;
-  font-family: "Noto Sans KR";
   font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
   text-align: center;
 `;
+
+
 
 export default function Layout(props) {
   return (

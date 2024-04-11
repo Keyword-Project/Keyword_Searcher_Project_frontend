@@ -10,10 +10,7 @@ export type RootState = ReturnType<typeof store.getState>;
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: {
-      staleTime: 1000 * 60 * 60,
-      gcTime: 1000 * 60 * 60,
-    },
+    queries: {},
   },
 });
 

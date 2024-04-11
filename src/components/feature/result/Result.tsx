@@ -1,15 +1,10 @@
-import { useState } from "react";
-import Table from "react-bootstrap/Table";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import styled from "styled-components";
 import { useSearchParams } from "react-router-dom";
-import { faArrowsUpDown } from "@fortawesome/free-solid-svg-icons";
 import SpinnerBox from "components/feature/result/SpinnerBox";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import ExcelDownloader from "./ExcelDownloader";
 import ResultTable from "./ResultTable";
+import { useEffect } from "react";
 
 interface sortedData {
   dataIsRocket: boolean;
@@ -22,55 +17,6 @@ interface sortedData {
   rocketImg: string;
   uri: string;
 }
-
-const TitleTh = styled.th<{ width: string }>`
-  width: ${(props) => props.width};
-`;
-
-const TitleSpan = styled.span`
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const KeywordAtag = styled.a`
-  color: black;
-  text-decoration-line: none;
-  &:hover {
-    text-decoration-line: underline;
-  }
-`;
-
-const StyledTitleTr = styled.tr`
-  border-top-width: thick;
-  border-top-color: black;
-`;
-
-const DeliveryImg = styled.img.attrs({ alt: "로켓배송 이미지" })`
-  width: 100px;
-  height: 30px;
-`;
-
-const StyledResultTr = styled.tr`
-  background-color: white;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: lightgray;
-  }
-`;
-
-// Define a styled table data cell component
-const StyleResultdTd = styled.td`
-  padding: 8px;
-  border: 1px solid #dddddd;
-  text-align: left;
-
-  /* Apply background color change to cells within hovered row */
-  ${StyledResultTr}:hover & {
-    background-color: lightgray;
-  }
-`;
 
 export interface QueryData {
   pathName: string;
@@ -123,21 +69,9 @@ export default function Result({ queryData }: { queryData: QueryData }) {
     refetchOnWindowFocus: false,
   });
 
-  const problemData = data;
 
-  let transformedData;
-  if ( problemData?.body  != undefined) {
-    transformedData = problemData?.body.map((item: sortedData) => ({
-      키워드: item.name,
-      가격: item.priceValue,
-      "총 리뷰 수": item.ratingTotalCount,
-      상품경쟁력: `${(
-        (item.ratingVipCount / item.ratingTotalCount) *
-        100
-      ).toFixed(1)}%`,
-      로켓배송: item.dataIsRocket ? "가능" : "불가능",
-    }));
-  }
+
+  const problemData = data;
 
   if (isPending) return <SpinnerBox></SpinnerBox>;
 
@@ -146,7 +80,7 @@ export default function Result({ queryData }: { queryData: QueryData }) {
   return (
     <>
       <div>
-        <ExcelDownloader transformedData={transformedData} problemData={problemData}/>
+        <ExcelDownloader problemData={problemData} />
         <ResultTable problemData={problemData} />
       </div>
     </>

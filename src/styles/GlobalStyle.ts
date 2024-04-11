@@ -1,6 +1,15 @@
 import { createGlobalStyle } from "styled-components";
-
+import PaytoneOne from 'assets/fonts/PaytoneOne.woff'
 export const GlobalStyles = createGlobalStyle`
+
+@font-face {
+        font-family: 'PaytoneOne';
+        src: local('PaytoneOne'), local('PaytoneOne');
+        font-style: normal;
+        src: url(${PaytoneOne}) format('truetype');
+  }
+
+
     :root {
    
 
