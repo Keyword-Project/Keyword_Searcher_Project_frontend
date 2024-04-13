@@ -25,13 +25,13 @@ const Item = styled.p`
 // `;
 
 
-export default function ItemSearchCount() {
+export default function ItemSearchCount({isFetching}) {
   const dropdownList = ['30개씩 보기', '50개씩 보기','100개씩 보기',]
   return (
     <>
        <InputBox>
           <Item>상품 조회 개수</Item>
-          <Dropdown List={dropdownList}  />
+          <Dropdown List={dropdownList} isFetching={isFetching} />
         
         </InputBox>
     </>

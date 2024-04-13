@@ -43,15 +43,15 @@ const StyledSelect = styled.select`
   box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.1);
 `;
 
-export default function Dropdown(props) {
+export default function Dropdown({List, isFetching}) {
   const [showCate, setShowCate] = useState<boolean>(false);
 
   return (
     <>
       <StyledFieldset onClick={() => setShowCate(!showCate)}>
         <StyledSelectArea>
-          <StyledSelect>
-            {props.List.map((item) => {
+          <StyledSelect disabled={isFetching}>
+            {List.map((item) => {
               return <option value="30">{item}</option>;
             })}
           </StyledSelect>

@@ -30,6 +30,7 @@ export default function PriceRange({
   setMinPrice,
   maxPrice,
   setMaxPrice,
+  isFetching
 }) {
   const maxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setMaxPrice(e.target.value);
@@ -48,6 +49,7 @@ export default function PriceRange({
           value={minPrice}
           onChange={minPriceChange}
           placeholder="최소 가격"
+          disabled={isFetching}
         ></Input>
         <span> - </span>
         <Input
@@ -56,6 +58,7 @@ export default function PriceRange({
           value={maxPrice}
           onChange={maxPriceChange}
           placeholder="최대 가격"
+          disabled={isFetching}
         ></Input>
       </PriceContainer>
     </>

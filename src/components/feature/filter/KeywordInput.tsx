@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { pathNameFetch } from "lib/FetchSlice";
 import React from "react";
 import Magnifier from "assets/icons/magnifier.svg?react";
+import { useOutletContext } from "react-router-dom";
 
 const InputDiv = styled.div`
   position: relative;
@@ -36,6 +37,9 @@ const Input = styled.input`
 `;
 
 export default function KeywordInput() {
+
+  const isFetching = useOutletContext();
+
   const keywordNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(pathNameFetch(e.target.value));
   };
@@ -47,6 +51,7 @@ export default function KeywordInput() {
         <Input
           placeholder="검색할 상품/키워드를 입력해주세요."
           onChange={keywordNameChange}
+         
         />
         <StyledMagnifier width="22" height="22" />
       </InputDiv>

@@ -7,6 +7,8 @@ import { useLocation, Outlet } from "react-router-dom";
 import { RootState } from "main";
 import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -59,6 +61,19 @@ const ResultDiv = styled.div`
 `;
 
 export default function MainPage() {
+  const { error, data, refetch, isFetching } = useQuery({
+    queryKey: ["repoData"],
+    queryFn: async () => {
+      const res = await axios.get(url);
+      console.log(res.data);
+      return res.data;
+    },
+    refetchOnWindowFocus: false,
+    enabled: false,
+  });
+
+  const problemData = data;
+
   let pathName: string | number = "";
 
   const keywordInputValue = useSelector(
@@ -66,25 +81,15 @@ export default function MainPage() {
   );
 
   const { pathname } = useLocation();
-  console.log(pathname);
+  // console.log(pathname);
   const slug = pathname.split("/")[2];
-  console.log(slug);
+  // console.log(slug);
 
   if (slug == undefined) {
     pathName = keywordInputValue;
   } else if (typeof slug == "string") {
     pathName = Number(slug);
   }
-
-  //result로 전달할 객체
-  const [queryData, setQueryData] = useState({
-    pathName: "",
-    minPrice: "",
-    maxPrice: "",
-    searchSize: "",
-    startDate: "",
-    los: 0,
-  });
 
   const [maxPrice, setMaxPrice] = useState("");
   const [minPrice, setMinPrice] = useState("");
@@ -101,37 +106,54 @@ export default function MainPage() {
 
   const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
 
-  const fetchQueryData = () => {
-    setQueryData({ pathName, minPrice, maxPrice, searchSize, startDate, los });
-  };
-
   const searchSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchSize(e.target.value);
+  };
+
+  let url = "";
+  if (typeof pathName == "string") {
+    url = `http://localhost:3000/api/v1/keyword?q=${pathName}${
+      startDate ? `&startDate=${startDate}` : ""
+    }&${los ? `&los=${los}` : ""}${minPrice ? `&minPrice=${minPrice}` : ""}${
+      maxPrice ? `&maxPrice=${maxPrice}` : ""
+    }${searchSize ? `&searchSize=${searchSize}` : ""}`;
+  } else if (typeof pathName == "number") {
+    url = `http://localhost:3000/api/v1/categories/${pathName}?${
+      startDate ? `&startDate=${startDate}` : ""
+    }&${los ? `&los=${los}` : ""}${minPrice ? `&minPrice=${minPrice}` : ""}${
+      maxPrice ? `&maxPrice=${maxPrice}` : ""
+    }${searchSize ? `&searchSize=${searchSize}` : ""}`;
+  }
+
+  const handleSearch = () => {
+    refetch();
   };
 
   const [resultVisible, setResultVisible] = useState(false);
 
   return (
     <>
-      <Outlet />
+      <Outlet  context={{isFetching}} />
       <FilterBox>
         <CustomCalendar />
 
-        <ItemSearchCount />
+        <ItemSearchCount isFetching={isFetching} />
         <PriceRange
           minPrice={minPrice}
           setMinPrice={setMinPrice}
           maxPrice={maxPrice}
           setMaxPrice={setMaxPrice}
+          isFetching={isFetching}
         />
 
         <InquiryButton
+          disabled={isFetching}
           onClick={() => {
             setResultVisible(true);
-            fetchQueryData();
+            handleSearch();
           }}
         >
-          상품조회
+          {isFetching ? "로딩중.." : "상품조회"}
         </InquiryButton>
       </FilterBox>
 
@@ -141,11 +163,20 @@ export default function MainPage() {
         name="itemSize"
         value={searchSize}
         onChange={searchSizeChange}
+        disabled={isFetching}
       />
 
       <SearchResultWord>상품 검색 결과</SearchResultWord>
 
-      <ResultDiv>{resultVisible && <Result queryData={queryData} />}</ResultDiv>
+      <ResultDiv>
+        {resultVisible && (
+          <Result
+            problemData={problemData}
+            error={error}
+            isFetching={isFetching}
+          />
+        )}
+      </ResultDiv>
     </>
   );
 }
