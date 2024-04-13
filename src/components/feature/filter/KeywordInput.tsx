@@ -51,7 +51,6 @@ export default function KeywordInput() {
         <Input
           placeholder="검색할 상품/키워드를 입력해주세요."
           onChange={keywordNameChange}
-         
         />
         <StyledMagnifier width="22" height="22" />
       </InputDiv>
