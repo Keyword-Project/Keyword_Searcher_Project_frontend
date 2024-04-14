@@ -29,6 +29,7 @@ const Subtitle = styled.p`
   color: #35231f;
   font-size: 1rem;
   text-align: center;
+  font-weight: bold;
 `;
 
 

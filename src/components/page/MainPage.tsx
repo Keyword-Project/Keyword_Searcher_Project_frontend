@@ -9,6 +9,7 @@ import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import InitialResult from "components/feature/result/InitialResult";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -55,12 +56,8 @@ const InquiryButton = styled.button`
   background-color: var(--Gray700);
 `;
 
-const ResultDiv = styled.div`
-  width: 100%;
-  height: 400px;
-`;
-
 export default function MainPage() {
+  const [resultVisible, setResultVisible] = useState(false);
   const { error, data, refetch, isFetching } = useQuery({
     queryKey: ["repoData"],
     queryFn: async () => {
@@ -126,17 +123,19 @@ export default function MainPage() {
   }
 
   const handleSearch = () => {
-    refetch();
+    if (pathName == "") {
+      console.log("keyword를 입력하세요");
+    } else {
+      setResultVisible(true);
+      refetch();
+    }
   };
-
-  const [resultVisible, setResultVisible] = useState(false);
 
   return (
     <>
-      <Outlet  context={{isFetching}} />
+      <Outlet context={{ isFetching }} />
       <FilterBox>
         <CustomCalendar />
-
         <ItemSearchCount isFetching={isFetching} />
         <PriceRange
           minPrice={minPrice}
@@ -149,7 +148,6 @@ export default function MainPage() {
         <InquiryButton
           disabled={isFetching}
           onClick={() => {
-            setResultVisible(true);
             handleSearch();
           }}
         >
@@ -168,15 +166,15 @@ export default function MainPage() {
 
       <SearchResultWord>상품 검색 결과</SearchResultWord>
 
-      <ResultDiv>
-        {resultVisible && (
-          <Result
-            problemData={problemData}
-            error={error}
-            isFetching={isFetching}
-          />
-        )}
-      </ResultDiv>
+      {resultVisible ? (
+        <Result
+          problemData={problemData}
+          error={error}
+          isFetching={isFetching}
+        />
+      ) : (
+        <InitialResult />
+      )}
     </>
   );
 }

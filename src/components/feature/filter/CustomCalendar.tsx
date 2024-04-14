@@ -7,6 +7,7 @@ import { dateFetch } from "lib/FetchSlice";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
+import { NotEnterdDescription } from "./PriceRange";
 
 const Calendar = styled.p`
   font-size: var(--font-size-primary);
@@ -133,6 +134,7 @@ export default function CustomCalendar() {
 
         onCalendarClose={onCalendarClose}
       />
+      <NotEnterdDescription>미설정 시 최근 14일 내역이 조회됩니다.</NotEnterdDescription>
     </CalendarBox>
   );
 }

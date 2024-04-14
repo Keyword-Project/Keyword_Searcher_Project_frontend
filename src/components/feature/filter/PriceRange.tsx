@@ -3,6 +3,12 @@ import styled from "styled-components";
 const PriceContainer = styled.div`
   width: 226px;
 `;
+export const NotEnterdDescription = styled.p`
+  margin-top: 5px;
+  color: var(--Gray500);
+  font-size: var(--font-size-small);
+
+`
 
 const InputTitle = styled.p`
   font-size: var(--font-size-primary);
@@ -72,6 +78,7 @@ export default function PriceRange({
           placeholder="최대 가격"
           disabled={isFetching}
         ></Input>
+        <NotEnterdDescription>미입력 시 10000~무한 범위 내 <br></br> 조회됩니다.</NotEnterdDescription>
       </PriceContainer>
     </>
   );

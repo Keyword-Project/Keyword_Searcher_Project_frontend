@@ -29,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
         --font-size-large: 2.5rem;
         --font-size-medium: 1.25rem;
         --font-size-primary: 1rem;
+        --font-size-small : 0.75rem;
     }
 
 
