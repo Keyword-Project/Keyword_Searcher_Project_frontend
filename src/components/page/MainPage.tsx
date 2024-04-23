@@ -9,7 +9,7 @@ import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import InitialResult from "components/feature/result/InitialResult";
+import EmptyResult from "components/feature/result/EmptyResult";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -173,7 +173,7 @@ export default function MainPage() {
           isFetching={isFetching}
         />
       ) : (
-        <InitialResult />
+        <EmptyResult />
       )}
     </>
   );

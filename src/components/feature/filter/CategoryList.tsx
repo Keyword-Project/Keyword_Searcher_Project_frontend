@@ -87,6 +87,7 @@ export default function CategoryList() {
   const [IsArrowVisible, setIsArrowVisible] = useState(null);
 
 
+  
   const arrowVisibleHandler = (index, func) => {
     func(index);
   };
@@ -124,7 +125,9 @@ export default function CategoryList() {
     <>
       <CategoryContainer onMouseLeave={() => everyCategoryFieldClose()}>
         <ButtonBox
-          onMouseOver={() => setFirstIsHovered(true)}
+          onMouseOver={() => setFirstIsHovered(true)
+            
+          }
           onMouseLeave={() => leaveCategoryButton()}
         >
           <button>실험용 버튼</button>
