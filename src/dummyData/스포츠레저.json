@@ -1,0 +1,318 @@
+{
+  "firstCategories": [
+    {
+      "name": "스포츠/레저",
+      "categoryId": "317778",
+      "secondCategories": [
+        {
+          "name": "캠핑전문관",
+          "categoryId": "328790",
+          "thirdCategories": [
+            { "name": "텐트", "categoryId": "328791" },
+            { "name": "타프/그늘막", "categoryId": "328798" },
+            { "name": "텐트/타프 부품", "categoryId": "328807" },
+            { "name": "의자/테이블", "categoryId": "328821" },
+            { "name": "침낭/매트/해먹", "categoryId": "328828" },
+            { "name": "캠핑주방용품", "categoryId": "328860" },
+            { "name": "수납/정리소품", "categoryId": "328852" },
+            { "name": "랜턴/조명", "categoryId": "328846" },
+            { "name": "캠핑공구", "categoryId": "328907" },
+            { "name": "응급/안전용품", "categoryId": "328917" },
+            { "name": "화장실/샤워용품", "categoryId": "328924" }
+          ]
+        },
+        {
+          "name": "홈트레이닝",
+          "categoryId": "413812",
+          "thirdCategories": [
+            { "name": "스트레칭/마사지", "categoryId": "413813" },
+            { "name": "유산소", "categoryId": "413821" },
+            { "name": "근력", "categoryId": "413828" },
+            { "name": "보호대/체중계", "categoryId": "413837" }
+          ]
+        },
+        {
+          "name": "수영/수상스포츠",
+          "categoryId": "421032",
+          "thirdCategories": [
+            { "name": "실내 수영복", "categoryId": "421033" },
+            { "name": "비치웨어/래쉬가드", "categoryId": "421045" },
+            { "name": "수영용품", "categoryId": "421070" },
+            { "name": "물놀이용품", "categoryId": "421087" },
+            { "name": "아쿠아슈즈", "categoryId": "421110" },
+            { "name": "스노클링/다이빙", "categoryId": "421113" },
+            { "name": "서핑/수상스키", "categoryId": "421136" },
+            { "name": "고무보트/카누", "categoryId": "421143" }
+          ]
+        },
+        {
+          "name": "골프",
+          "categoryId": "328930",
+          "thirdCategories": [
+            { "name": "골프클럽", "categoryId": "328931" },
+            { "name": "골프백", "categoryId": "328946" },
+            { "name": "피팅/관리용품", "categoryId": "328940" },
+            { "name": "골프웨어", "categoryId": "429690" },
+            { "name": "골프장갑/잡화", "categoryId": "328995" },
+            { "name": "골프화", "categoryId": "328990" },
+            { "name": "골프공", "categoryId": "329012" },
+            { "name": "필드용품", "categoryId": "329013" },
+            { "name": "연습용품", "categoryId": "329028" }
+          ]
+        },
+        {
+          "name": "자전거",
+          "categoryId": "329040",
+          "thirdCategories": [
+            { "name": "자전거", "categoryId": "396896" },
+            { "name": "보호장비", "categoryId": "329058" },
+            { "name": "자전거 악세서리", "categoryId": "329063" },
+            { "name": "자전거부품", "categoryId": "329132" },
+            { "name": "자전거의류", "categoryId": "396912" },
+            { "name": "자전거장갑/잡화", "categoryId": "329122" },
+            { "name": "자전거가방/수납", "categoryId": "329111" },
+            { "name": "자전거신발", "categoryId": "329105" },
+            { "name": "정비용품", "categoryId": "329183" },
+            { "name": "거치대/트레이너", "categoryId": "329176" }
+          ]
+        },
+        {
+          "name": "킥보드/스케이트",
+          "categoryId": "329189",
+          "thirdCategories": [
+            { "name": "킥보드/트라이더", "categoryId": "329190" },
+            { "name": "전동휠/보드", "categoryId": "329198" },
+            { "name": "스케이트보드", "categoryId": "329202" },
+            { "name": "인라인스케이트", "categoryId": "329215" },
+            { "name": "보호장비", "categoryId": "329222" }
+          ]
+        },
+        {
+          "name": "낚시",
+          "categoryId": "329372",
+          "thirdCategories": [
+            { "name": "바다낚시", "categoryId": "329373" },
+            { "name": "민물낚시", "categoryId": "329399" },
+            { "name": "낚싯대", "categoryId": "329425" },
+            { "name": "낚시릴", "categoryId": "329434" },
+            { "name": "줄/바늘/채비", "categoryId": "329444" },
+            { "name": "미끼/떡밥/루어", "categoryId": "329455" },
+            { "name": "낚시 가방/잡화", "categoryId": "329463" },
+            { "name": "낚시복/장화", "categoryId": "329472" },
+            { "name": "낚시장비/그물", "categoryId": "329478" },
+            { "name": "낚시공구/소품", "categoryId": "329494" },
+            { "name": "좌대/야외용품", "categoryId": "329508" }
+          ]
+        },
+        {
+          "name": "등산/아웃도어",
+          "categoryId": "431783",
+          "thirdCategories": [
+            { "name": "남성등산의류", "categoryId": "431784" },
+            { "name": "여성등산의류", "categoryId": "431794" },
+            { "name": "유아동등산의류", "categoryId": "431806" },
+            { "name": "등산배낭/소품", "categoryId": "431811" },
+            { "name": "등산스틱", "categoryId": "431821" },
+            { "name": "등산화/아이젠", "categoryId": "431823" },
+            { "name": "등산모자/잡화", "categoryId": "431920" },
+            { "name": "등산용품/랜턴", "categoryId": "431848" },
+            { "name": "나침반/망원경", "categoryId": "431861" },
+            { "name": "암벽/등반 장비", "categoryId": "431865" },
+            { "name": "빙벽/겨울용품", "categoryId": "431886" }
+          ]
+        },
+        {
+          "name": "스포츠신발",
+          "categoryId": "328601",
+          "thirdCategories": [
+            { "name": "런닝화/운동화", "categoryId": "328602" },
+            { "name": "샌들/슬리퍼", "categoryId": "328605" },
+            { "name": "아쿠아슈즈", "categoryId": "328608" },
+            { "name": "등산화", "categoryId": "328609" },
+            { "name": "골프화", "categoryId": "328615" },
+            { "name": "축구화", "categoryId": "328616" },
+            { "name": "야구화", "categoryId": "328617" },
+            { "name": "농구화", "categoryId": "328618" },
+            { "name": "배구화", "categoryId": "328619" },
+            { "name": "족구화", "categoryId": "328620" },
+            { "name": "볼링화", "categoryId": "328621" },
+            { "name": "배드민턴화", "categoryId": "328622" },
+            { "name": "테니스화", "categoryId": "328623" },
+            { "name": "탁구화", "categoryId": "328624" },
+            { "name": "자전거신발", "categoryId": "328625" },
+            { "name": "발레/댄스화", "categoryId": "328631" },
+            { "name": "기타스포츠화", "categoryId": "328636" }
+          ]
+        },
+        {
+          "name": "남성스포츠의류",
+          "categoryId": "328339",
+          "thirdCategories": [
+            { "name": "속옷/언더레이어", "categoryId": "328340" },
+            { "name": "스포츠 티셔츠", "categoryId": "328343" },
+            { "name": "스포츠 자켓/집업", "categoryId": "328346" },
+            { "name": "스포츠 바지/하의", "categoryId": "328352" },
+            { "name": "상하의 세트", "categoryId": "328355" },
+            { "name": "골프의류", "categoryId": "328356" },
+            { "name": "등산의류", "categoryId": "328365" },
+            { "name": "자전거의류", "categoryId": "328375" },
+            { "name": "수영복/래쉬가드", "categoryId": "328384" },
+            { "name": "스키/보드복", "categoryId": "328393" },
+            { "name": "축구복", "categoryId": "328402" },
+            { "name": "야구복", "categoryId": "328409" },
+            { "name": "배드민턴복", "categoryId": "328415" },
+            { "name": "탁구복", "categoryId": "328419" },
+            { "name": "테니스복", "categoryId": "328423" },
+            { "name": "댄스스포츠복", "categoryId": "365909" },
+            { "name": "기타 유니폼", "categoryId": "328430" }
+          ]
+        },
+        {
+          "name": "여성스포츠의류",
+          "categoryId": "328435",
+          "thirdCategories": [
+            { "name": "속옷/언더레이어", "categoryId": "328436" },
+            { "name": "스포츠 티셔츠", "categoryId": "328440" },
+            { "name": "스포츠 자켓/집업", "categoryId": "328443" },
+            { "name": "스포츠 바지/하의", "categoryId": "328449" },
+            { "name": "상하의 세트", "categoryId": "328454" },
+            { "name": "요가복", "categoryId": "328455" },
+            { "name": "골 프의류", "categoryId": "328463" },
+            { "name": "등산의류", "categoryId": "328474" },
+            { "name": "자전거의류", "categoryId": "328486" },
+            { "name": "수영복/래쉬가드", "categoryId": "328495" },
+            { "name": "스키/보드복", "categoryId": "328505" },
+            { "name": "발레복", "categoryId": "328514" },
+            { "name": "배드민턴", "categoryId": "328515" },
+            { "name": "탁구복", "categoryId": "328520" },
+            { "name": "테니스복", "categoryId": "328525" },
+            { "name": "댄스스포츠복", "categoryId": "328530" },
+            { "name": "밸리댄스복", "categoryId": "328535" },
+            { "name": "에어로빅복", "categoryId": "328536" },
+            { "name": "기타 유니폼", "categoryId": "328537" }
+          ]
+        },
+        {
+          "name": "유아스포츠의류",
+          "categoryId": "328542",
+          "thirdCategories": [
+            { "name": "스포츠 티셔츠", "categoryId": "328543" },
+            { "name": "스포츠 자켓/집업", "categoryId": "328546" },
+            { "name": "스포츠 바지/하의", "categoryId": "328550" },
+            { "name": "상하의 세트", "categoryId": "328554" },
+            { "name": "골프의류", "categoryId": "365910" },
+            { "name": "등산의류", "categoryId": "328566" },
+            { "name": "수영복/래쉬가드", "categoryId": "328571" },
+            { "name": "스키/보드복", "categoryId": "328575" },
+            { "name": "축구복", "categoryId": "328579" },
+            { "name": "야구복", "categoryId": "365918" },
+            { "name": "발레복", "categoryId": "328590" },
+            { "name": "기타 유니폼", "categoryId": "328598" }
+          ]
+        },
+        {
+          "name": "스포츠잡화",
+          "categoryId": "328637",
+          "thirdCategories": [
+            { "name": "가방/파우치", "categoryId": "328638" },
+            { "name": "모자", "categoryId": "328646" },
+            { "name": "고글/선글라스", "categoryId": "328647" },
+            { "name": "장갑", "categoryId": "328648" },
+            { "name": "양말/타이즈", "categoryId": "328649" },
+            { "name": "팔토시/워머", "categoryId": "328650" },
+            { "name": "스카프/넥워머", "categoryId": "328651" },
+            { "name": "보호대/아대", "categoryId": "328655" },
+            { "name": "시계", "categoryId": "328658" },
+            { "name": "벨트", "categoryId": "328659" },
+            { "name": "안전밴드", "categoryId": "328660" },
+            { "name": "액세서리 기타", "categoryId": "328661" }
+          ]
+        },
+        {
+          "name": "구기스포츠",
+          "categoryId": "329515",
+          "thirdCategories": [
+            { "name": "축구", "categoryId": "329516" },
+            { "name": "야구", "categoryId": "329546" },
+            { "name": "농구", "categoryId": "329582" },
+            { "name": "배구/피구/족구", "categoryId": "329597" },
+            { "name": "볼링", "categoryId": "329614" },
+            { "name": "당구/포켓볼", "categoryId": "329625" },
+            { "name": "기타 구기스포츠", "categoryId": "329690" },
+            { "name": "훈련/연습용품", "categoryId": "405207" },
+            { "name": "심판의류/용품", "categoryId": "329712" }
+          ]
+        },
+        {
+          "name": "라켓스포츠",
+          "categoryId": "400957",
+          "thirdCategories": [
+            { "name": "배드민턴", "categoryId": "400958" },
+            { "name": "테니스", "categoryId": "400971" },
+            { "name": "스쿼시", "categoryId": "400989" },
+            { "name": "탁구", "categoryId": "400996" },
+            { "name": "기타 라켓스포츠", "categoryId": "401013" },
+            { "name": "훈련/연습용품", "categoryId": "401014" },
+            { "name": "심판 의류/용품", "categoryId": "401018" }
+          ]
+        },
+        {
+          "name": "헬스/요가/댄스",
+          "categoryId": "329225",
+          "thirdCategories": [
+            { "name": "요가/필라테스", "categoryId": "329226" },
+            { "name": "요가복", "categoryId": "329240" },
+            { "name": "근력운동", "categoryId": "329251" },
+            { "name": "유산소운동", "categoryId": "329279" },
+            { "name": "스트레칭/균형", "categoryId": "329294" },
+            { "name": "댄스/에어로빅", "categoryId": "329302" },
+            { "name": "헬스소품/보호대", "categoryId": "329323" },
+            { "name": "운동측정용품", "categoryId": "329334" },
+            { "name": "부위별 운동용품", "categoryId": "376475" },
+            { "name": "헬스보충식품", "categoryId": "427699" }
+          ]
+        },
+
+        {
+          "name": "복싱/검도/태권도",
+          "categoryId": "329726",
+          "thirdCategories": [
+            { "name": "복싱/격투기", "categoryId": "329741" },
+            { "name": "검도", "categoryId": "329727" },
+            { "name": "태권도", "categoryId": "329734" },
+            { "name": "쌍절곤/기타무술", "categoryId": "329752" }
+          ]
+        },
+
+        {
+          "name": "기타스포츠",
+          "categoryId": "329927",
+          "thirdCategories": [
+            { "name": "육상/체조", "categoryId": "329928" },
+            { "name": "양궁/사격/승마", "categoryId": "329944" },
+            { "name": "다트/레저", "categoryId": "329948" },
+            { "name": "서바이벌게임", "categoryId": "329957" },
+            { "name": "철인3종경기", "categoryId": "329963" }
+          ]
+        },
+
+        {
+          "name": "스키/겨울스포츠",
+          "categoryId": "329757",
+          "thirdCategories": [
+            { "name": "남성스키복", "categoryId": "329758" },
+            { "name": "여성스키복", "categoryId": "329763" },
+            { "name": "남성보드복", "categoryId": "329768" },
+            { "name": "여성보드복", "categoryId": "329774" },
+            { "name": "유아스키/보드복", "categoryId": "329780" },
+            { "name": "스키 장비", "categoryId": "329784" },
+            { "name": "보드 장비", "categoryId": "329792" },
+            { "name": "보호대/안전용품", "categoryId": "329799" },
+            { "name": "방한용품/잡화", "categoryId": "329803" },
+            { "name": "빙상스포츠/썰매", "categoryId": "329819" }
+          ]
+        }
+      ]
+    }
+  ]
+}

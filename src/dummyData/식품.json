@@ -1,0 +1,322 @@
+{
+  "firstCategories": [
+    {
+      "name": "식품",
+      "categoryId": "194276",
+      "secondCategories": [
+        {
+          "name": "과일",
+          "categoryId": "194282",
+          "thirdCategories": [
+            { "name": "사과/배", "categoryId": "194284" },
+            { "name": "귤/한라봉/감귤류", "categoryId": "194288" },
+            { "name": "감/홍시/곶감", "categoryId": "194294" },
+            { "name": "키위/ 참다래", "categoryId": "194300" },
+            { "name": "토마토/자두/복숭아/포도", "categoryId": "194306" },
+            { "name": "수박/메론/참외", "categoryId": "194315" },
+            { "name": "딸기/블루베리/베리류", "categoryId": "194320" },
+            { "name": "바나나/오렌지/파인애플", "categoryId": "194326" },
+            { "name": "자몽/레몬/라임/석류", "categoryId": "194331" },
+            { "name": "망고/체리/아보카도/기타", "categoryId": "194337" },
+            { "name": "냉동과일/간편과일", "categoryId": "194358" },
+            { "name": "과일선물세트", "categoryId": "194368" }
+          ]
+        },
+        {
+          "name": "견과/건과",
+          "categoryId": "194373",
+          "thirdCategories": [
+            { "name": "땅콩/호두", "categoryId": "194376" },
+            { "name": "밤/잣/은행", "categoryId": "194381" },
+            { "name": "아몬드/피스타치오", "categoryId": "194387" },
+            { "name": "기타견과류", "categoryId": "194392" },
+            { "name": "호박씨/ 해바라기씨", "categoryId": "194401" },
+            { "name": "기타씨앗", "categoryId": "194405" },
+            { "name": "혼합견과/세트", "categoryId": "194407" },
+            { "name": "건과일/건채소", "categoryId": "194411" },
+            { "name": "과일가루", "categoryId": "394584" }
+          ]
+        },
+        {
+          "name": "채소",
+          "categoryId": "194432",
+          "thirdCategories": [
+            { "name": "두부/콩나물", "categoryId": "194434" },
+            { "name": "감자/고구마", "categoryId": "194445" },
+            { "name": "당근/뿌리채소", "categoryId": "194454" },
+            { "name": "오이/고추/열매채소", "categoryId": "194485" },
+            { "name": "양파/마늘/파", "categoryId": "194505" },
+            { "name": "배추/무/김장채소", "categoryId": "194516" },
+            { "name": "시금치/나물/잎줄기채소", "categoryId": "194537" },
+            { "name": "상추/깻잎/쌈채소", "categoryId": "194569" },
+            { "name": "샐러드/손질채소", "categoryId": "194575" },
+            { "name": "새송이/버섯류", "categoryId": "194584" },
+            { "name": "인삼/건강차재료", "categoryId": "194603" },
+            { "name": "기타채소", "categoryId": "194619" },
+            { "name": "건나물/건채소", "categoryId": "194620" },
+            { "name": "버섯/채소선물세트", "categoryId": "194622" }
+          ]
+        },
+        {
+          "name": "쌀/잡곡",
+          "categoryId": "194627",
+          "thirdCategories": [
+            { "name": "백미", "categoryId": "194629" },
+            { "name": "현미/찹쌀/흑미", "categoryId": "194630" },
+            { "name": "기능성쌀/기타쌀", "categoryId": "194635" },
+            { "name": "콩/팥/보리", "categoryId": "194640" },
+            { "name": "조/수수/깨", "categoryId": "194652" },
+            { "name": "기타잡곡/혼합곡", "categoryId": "194661" },
+            { "name": "슈퍼곡물", "categoryId": "194668" },
+            { "name": "기타씨앗", "categoryId": "194679" },
+            { "name": "쌀/잡곡 가루", "categoryId": "194680" },
+            { "name": "곡류선물세트", "categoryId": "194687" }
+          ]
+        },
+        {
+          "name": "축산/계란",
+          "categoryId": "194688",
+          "thirdCategories": [
+            { "name": "소고기", "categoryId": "194690" },
+            { "name": "돼지고기", "categoryId": "194726" },
+            { "name": "닭/오리고기", "categoryId": "194756" },
+            { "name": "양/말고기", "categoryId": "194792" },
+            { "name": "기타 육고기", "categoryId": "194805" },
+            { "name": "계란/알류/가공란", "categoryId": "194810" },
+            { "name": "축산선물세트", "categoryId": "194817" }
+          ]
+        },
+        {
+          "name": "수산물/건어물",
+          "categoryId": "194829",
+          "thirdCategories": [
+            { "name": "생선", "categoryId": "194831" },
+            { "name": "오징어/낙지/연체류", "categoryId": "194889" },
+            { "name": "새우/게/갑각류", "categoryId": "194898" },
+            { "name": "전복/굴/조개류", "categoryId": "194907" },
+            { "name": "멸치/다시팩/기타", "categoryId": "194931" },
+            { "name": " 김/미역/해조류", "categoryId": "194938" },
+            { "name": "건오징어/쥐포/어포", "categoryId": "194961" },
+            { "name": "황태/진미채", "categoryId": "194975" },
+            { "name": "생선알", "categoryId": "194980" },
+            { "name": "기타수산물/건어물", "categoryId": "194988" },
+            { "name": "수산물선물세트", "categoryId": "195000" }
+          ]
+        },
+        {
+          "name": "생수/음료",
+          "categoryId": "195006",
+          "thirdCategories": [
+            { "name": "생수", "categoryId": "195008" },
+            { "name": "탄산수", "categoryId": "497920" },
+            { "name": "과일/야채음료", "categoryId": "195015" },
+            { "name": "탄산/스포츠음료", "categoryId": "195050" },
+            { "name": "커피음료/차음료", "categoryId": "195062" },
+            { "name": "두유", "categoryId": "195080" },
+            { "name": "냉장우유", "categoryId": "445905" },
+            { "name": "멸균우유", "categoryId": "195088" },
+            { "name": "숙취/건강음료", "categoryId": "195104" },
+            { "name": "어린이음료", "categoryId": "195124" },
+            { "name": "음료선물세트", "categoryId": "195141" },
+            { "name": "무/비알콜음료", "categoryId": "497899" },
+            { "name": "전통주", "categoryId": "311357" }
+          ]
+        },
+        {
+          "name": "커피/원두/차",
+          "categoryId": "195142",
+          "thirdCategories": [
+            { "name": "커피믹스", "categoryId": "429888" },
+            { "name": "원두/생두", "categoryId": "429889" },
+            { "name": "캡슐/더치/티백", "categoryId": "429890" },
+            { "name": "녹차/메밀차", "categoryId": "486104" },
+            { "name": "둥글레/옥수수차", "categoryId": "195168" },
+            { "name": "보리/우엉/결명자", "categoryId": "195172" },
+            { "name": "도라지/작두콩차", "categoryId": "486111" },
+            { "name": "홍차/밀크티", "categoryId": "486114" },
+            { "name": "유자/과일차", "categoryId": "486118" },
+            { "name": "율무/전통차", "categoryId": "486131" },
+            { "name": "허브/콤부/꽃차", "categoryId": "195232" },
+            { "name": "코코아/라떼/기타분말", "categoryId": "195254" },
+            { "name": "커피/차 선물세트", "categoryId": "195262" },
+            { "name": "방탄/기타커피", "categoryId": "509581" },
+            { "name": "타피오카펄/시럽", "categoryId": "509586" }
+          ]
+        },
+        {
+          "name": "과자/초콜릿/시리얼",
+          "categoryId": "195266",
+          "thirdCategories": [
+            { "name": "과자", "categoryId": "195268" },
+            { "name": "비스킷/크래커", "categoryId": "195282" },
+            { "name": "쿠키/파이", "categoryId": "195291" },
+            { "name": "전통과자/떡", "categoryId": "195398" },
+            { "name": "초콜릿", "categoryId": "195297" },
+            { "name": "젤리/캐러멜", "categoryId": "431978" },
+            { "name": "사탕/껌", "categoryId": "195303" },
+            { "name": "시리얼", "categoryId": "195322" },
+            { "name": "베이커리/잼", "categoryId": "195328" },
+            { "name": "육포/원물간식", "categoryId": "195388" },
+            { "name": "과자/간식세트", "categoryId": "195428" },
+            { "name": "어린이간식", "categoryId": "497936" }
+          ]
+        },
+        {
+          "name": "면/통조림/가공식품",
+          "categoryId": "195443",
+          "thirdCategories": [
+            { "name": "라면/컵 라면", "categoryId": "486355" },
+            { "name": "면류/파스타", "categoryId": "486403" },
+            { "name": "참치/햄/통조림", "categoryId": "195484" },
+            { "name": "즉석밥/누룽지", "categoryId": "486855" },
+            { "name": "카레/짜장/양념", "categoryId": "486581" },
+            { "name": "즉석국/간편조리", "categoryId": "486582" }
+          ]
+        },
+        {
+          "name": "가루/조미료/오일",
+          "categoryId": "195576",
+          "thirdCategories": [
+            { "name": "가루/분말류", "categoryId": "195578" },
+            { "name": "설탕/소금/조미료", "categoryId": "195621" },
+            { "name": "식용유/오일", "categoryId": "195669" }
+          ]
+        },
+        {
+          "name": "장/소스/드레싱/식초",
+          "categoryId": "195694",
+          "thirdCategories": [
+            { "name": "장류", "categoryId": "195696" },
+            { "name": "케찹/마요네즈", "categoryId": "195716" },
+            { "name": "머스타드", "categoryId": "195720" },
+            { "name": "소스", "categoryId": "195721" },
+            { "name": "드레싱", "categoryId": "195747" },
+            { "name": "식초/미림", "categoryId": "195756" },
+            { "name": "물엿/올리고당/조청", "categoryId": "195767" },
+            { "name": "육수/액젓", "categoryId": "195772" },
+            { "name": "꿀", "categoryId": "195778" }
+          ]
+        },
+        {
+          "name": "유제품/아이스크림",
+          "categoryId": "195783",
+          "thirdCategories": [
+            { "name": "냉장우유", "categoryId": "445928" },
+            { "name": "멸균우유", "categoryId": "195786" },
+            { "name": "두유", "categoryId": "195802" },
+            { "name": "요구르트", "categoryId": "384976" },
+            { "name": "치즈", "categoryId": "195824" },
+            { "name": "버터/마가린", "categoryId": "195866" },
+            { "name": "생크림/휘핑크림", "categoryId": "195870" },
+            { "name": "연유", "categoryId": "195874" },
+            { "name": "기타유가공품", "categoryId": "195875" },
+            { "name": "유제품가정배달", "categoryId": "195876" },
+            { "name": "아이스크림", "categoryId": "195877" },
+            { "name": "기타 디저트", "categoryId": "195889" }
+          ]
+        },
+        {
+          "name": "냉장/냉동/간편요리",
+          "categoryId": "225461",
+          "thirdCategories": [
+            { "name": "밀키트", "categoryId": "486687" },
+            { "name": "즉석밥/볶음밥", "categoryId": "446032" },
+            { "name": "즉석국/탕/찌개", "categoryId": "446035" },
+            { "name": "고기/해물/기타요리", "categoryId": "225504" },
+            { "name": "면류", "categoryId": "446038" },
+            { "name": "떡류", "categoryId": "446051" },
+            { "name": "만두/돈까스/치킨", "categoryId": "225481" },
+            { "name": "분식/피자/핫도그", "categoryId": "225491" },
+            { "name": "김치/젓갈/장류", "categoryId": "225537" },
+            { "name": "반찬/절임", "categoryId": "225576" },
+            { "name": "햄/어묵/맛살", "categoryId": "225609" },
+            { "name": "두부/샐러드/도시락", "categoryId": "225626" }
+          ]
+        },
+        {
+          "name": "건강식품",
+          "categoryId": "196076",
+          "thirdCategories": [
+            { "name": "어린이 건강식품", "categoryId": "502184" },
+            { "name": "홍삼/인삼", "categoryId": "196126" },
+            { "name": "건강즙/음료", "categoryId": "196136" },
+            { "name": "비타민/미네랄", "categoryId": "306726" },
+            { "name": "영양제", "categoryId": "306749" },
+            { "name": "헬스보충식품", "categoryId": "306808" },
+            { "name": "다이어트/이너뷰티", "categoryId": "306831" },
+            { "name": "영양식/선식", "categoryId": "196183" },
+            { "name": "꿀/프로폴리스", "categoryId": "196189" },
+            { "name": "건강차 원물", "categoryId": "196195" },
+            { "name": "건강분말/건강환", "categoryId": "196207" },
+            { "name": "한방재료", "categoryId": "196211" }
+          ]
+        },
+        {
+          "name": "분유/어린이식품",
+          "categoryId": "196236",
+          "thirdCategories": [
+            { "name": "분유", "categoryId": "196316" },
+            { "name": "이유식", "categoryId": "446069" },
+            { "name": "미음/죽/분말", "categoryId": "196337" },
+            { "name": "양념/식재료", "categoryId": "196345" },
+            { "name": "국/반찬", "categoryId": "196353" },
+            { "name": "간식/음료", "categoryId": "196361" },
+            { "name": "건강식품", "categoryId": "196387" }
+          ]
+        },
+        {
+          "name": "선물세트관",
+          "categoryId": "196393",
+          "thirdCategories": [
+            { "name": "과일", "categoryId": "196395" },
+            { "name": "나물/버섯", "categoryId": "196401" },
+            { "name": "견과", "categoryId": "196406" },
+            { "name": "정육", "categoryId": "196407" },
+            { "name": "수산/건어물", "categoryId": "196417" },
+            { "name": "커피/차/음료", "categoryId": "196423" },
+            { "name": "과자/간식", "categoryId": "196428" },
+            { "name": "즉석/가공식품", "categoryId": "196436" },
+            { "name": "건강", "categoryId": "196444" }
+          ]
+        },
+
+        {
+          "name": "반찬/간편식/대용식",
+          "categoryId": "432480",
+          "thirdCategories": [
+            { "name": "샐러드/닭가슴살", "categoryId": "432481" },
+            { "name": "간편과일/후레쉬컷", "categoryId": "432506" },
+            { "name": "시리얼/쉐이크/선식", "categoryId": "432531" },
+            { "name": "즉석밥/도시락", "categoryId": "432554" },
+            { "name": "즉석죽/스프", "categoryId": "432568" },
+            { "name": "라면/파스타/면", "categoryId": "432572" },
+            { "name": "김 치/반찬/김", "categoryId": "432595" },
+            { "name": "국/탕/찌개", "categoryId": "432669" },
+            { "name": "고기/해물/간편조리", "categoryId": "432672" },
+            { "name": "분식/튀김/피자", "categoryId": "432740" },
+            { "name": "햄버거/베이커리/떡", "categoryId": "432765" },
+            { "name": "이유식/어린이식품", "categoryId": "432814" }
+          ]
+        },
+        {
+          "name": "곤약/방탄커피 외",
+          "categoryId": "492629",
+          "thirdCategories": [
+            { "name": "과일", "categoryId": "492630" },
+            { "name": "견과", "categoryId": "492646" },
+            { "name": "채소", "categoryId": "492655" },
+            { "name": "축산/계란", "categoryId": "492731" },
+            { "name": "수산물/건어물", "categoryId": "492786" },
+            { "name": "생수/음료", "categoryId": "492891" },
+            { "name": "커피/원두/차", "categoryId": "492910" },
+            { "name": "초콜릿/젤리/간식", "categoryId": "492973" },
+            { "name": "조미료/오일/소스", "categoryId": "492991" },
+            { "name": "유제품/치즈/버터", "categoryId": "493039" },
+            { "name": "곤약/샐러드/가공", "categoryId": "493081" },
+            { "name": "건강식품", "categoryId": "493119" }
+          ]
+        }
+      ]
+    }
+  ]
+}

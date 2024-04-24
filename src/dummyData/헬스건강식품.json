@@ -1,0 +1,270 @@
+{
+  "firstCategories": [
+    {
+      "name": "헬스/건강식품",
+      "categoryId": "305798",
+      "secondCategories": [
+        {
+          "name": "어린이 건강식품",
+          "categoryId": "501398",
+          "thirdCategories": [
+            { "name": "비타민/미네랄", "categoryId": "501399" },
+            { "name": "홍삼", "categoryId": "501400" },
+            { "name": "칼슘", "categoryId": "501401" },
+            { "name": "유산균/초유", "categoryId": "501402" },
+            { "name": "오메가", "categoryId": "501403" },
+            { "name": "기타 건강식품", "categoryId": "501404" }
+          ]
+        },
+        {
+          "name": "비타민/미네랄",
+          "categoryId": "310632",
+          "thirdCategories": [
+            { "name": "멀티비타민", "categoryId": "310633" },
+            { "name": "비타민A", "categoryId": "310634" },
+            { "name": "비타민B", "categoryId": "310635" },
+            { "name": "비오틴", "categoryId": "310636" },
+            { "name": "비타민C", "categoryId": "310637" },
+            { "name": "비타민D", "categoryId": "310638" },
+            { "name": "비타민E", "categoryId": "310639" },
+            { "name": "비타민K", "categoryId": "310640" },
+            { "name": "칼슘", "categoryId": "310641" },
+            { "name": "마그네슘", "categoryId": "310642" },
+            { "name": "아연", "categoryId": "310643" },
+            { "name": "철분", "categoryId": "310644" },
+            { "name": "요오드", "categoryId": "310645" },
+            { "name": "엽산", "categoryId": "310646" },
+            { "name": "셀레늄", "categoryId": "310647" },
+            { "name": "크롬", "categoryId": "310648" },
+            { "name": "어린이 비타민/미네랄", "categoryId": "310649" },
+            { "name": "기타비타민/미네랄", "categoryId": "310654" }
+          ]
+        },
+        {
+          "name": "영양제",
+          "categoryId": "310655",
+          "thirdCategories": [
+            { "name": "유산균", "categoryId": "310656" },
+            { "name": "루테인", "categoryId": "310657" },
+            { "name": "밀크시슬", "categoryId": "310658" },
+            { "name": "오메가/크릴오일", "categoryId": "509614" },
+            { "name": "DHA", "categoryId": "310660" },
+            { "name": "코엔자임Q10", "categoryId": "310661" },
+            { "name": "히알루론산/콜라겐", "categoryId": "310662" },
+            { "name": "효소", "categoryId": "310663" },
+            { "name": "폴리코사놀", "categoryId": "310664" },
+            { "name": "글루코사민", "categoryId": "310665" },
+            { "name": "프로폴리스", "categoryId": "310666" },
+            { "name": "쏘팔메토", "categoryId": "310667" },
+            { "name": "보스웰리아", "categoryId": "509625" },
+            { "name": "크레아틴", "categoryId": "310668" },
+            { "name": "아미노산", "categoryId": "310669" },
+            { "name": "MSM 식이유황", "categoryId": "310681" },
+            { "name": "커큐민", "categoryId": "310682" },
+            { "name": "레시틴", "categoryId": "310683" },
+            { "name": "SAM-E 메티오닌", "categoryId": "310684" },
+            { "name": "퀘세틴", "categoryId": "310685" },
+            { "name": "트리뷸러스", "categoryId": "310686" },
+            { "name": "레스베라트롤", "categoryId": "310687" },
+            { "name": "초유", "categoryId": "310688" },
+            { "name": "어린이 유산균/오메가 등", "categoryId": "310689" },
+            { "name": "기타영양제", "categoryId": "501405" }
+          ]
+        },
+        {
+          "name": "허브/식물추출물",
+          "categoryId": "310694",
+          "thirdCategories": [
+            { "name": "석류", "categoryId": "310704" },
+            { "name": "아사이베리", "categoryId": "310711" },
+            { "name": "크랜베리", "categoryId": "310712" },
+            { "name": "블루베리", "categoryId": "310713" },
+            { "name": "클로렐라", "categoryId": "310705" },
+            { "name": "쏘팔메토", "categoryId": "310719" },
+            { "name": "루테인", "categoryId": "310718" },
+            { "name": "빌베리", "categoryId": "310714" },
+            { "name": "프로폴리스", "categoryId": "310717" },
+            { "name": "로열젤리/벌화분", "categoryId": "310702" },
+            { "name": "밀크시슬", "categoryId": "310716" },
+            { "name": "징코", "categoryId": "310697" },
+            { "name": "마카", "categoryId": "310698" },
+            { "name": "마늘", "categoryId": "310699" },
+            { "name": "커큐민", "categoryId": "310700" },
+            { "name": "녹차", "categoryId": "310701" },
+            { "name": "알로에베라", "categoryId": "310703" },
+            { "name": "감마리놀렌산", "categoryId": "310706" },
+            { "name": "플라워치료", "categoryId": "310707" },
+            { "name": "아유르베다", "categoryId": "310708" },
+            { "name": "스피루리나", "categoryId": "310709" },
+            { "name": "삼부커스", "categoryId": "310710" },
+            { "name": "카무카무", "categoryId": "310715" },
+            { "name": "트리뷸러스", "categoryId": "310720" },
+            { "name": "감초 DGL", "categoryId": "310696" },
+            { "name": "MCT오일", "categoryId": "497963" },
+            { "name": "기타허브/식물추출물", "categoryId": "310721" }
+          ]
+        },
+        {
+          "name": "홍삼/인삼",
+          "categoryId": "311209",
+          "thirdCategories": [
+            { "name": "홍삼농축액/홍삼정", "categoryId": "311210" },
+            { "name": "홍삼진액/파우치", "categoryId": "311211" },
+            { "name": "홍삼정과/절편", "categoryId": "311212" },
+            { "name": "홍삼캡슐", "categoryId": "311213" },
+            { "name": "홍삼환", "categoryId": "311214" },
+            { "name": "홍삼캔디/젤리", "categoryId": "311215" },
+            { "name": "어린이홍삼", "categoryId": "311216" },
+            { "name": "기타 홍삼", "categoryId": "311217" },
+            { "name": "인삼/수삼/장뇌삼", "categoryId": "311218" }
+          ]
+        },
+        {
+          "name": "건강즙/음료",
+          "categoryId": "311219",
+          "thirdCategories": [
+            { "name": "배즙/도라지즙", "categoryId": "311223" },
+            { "name": "양배추즙", "categoryId": "486650" },
+            { "name": "비트/호박즙", "categoryId": "486651" },
+            { "name": "ABC/석류/사과/포도", "categoryId": "311220" },
+            { "name": "양파즙/마늘즙", "categoryId": "311224" },
+            { "name": "기타건강즙", "categoryId": "311227" },
+            { "name": "건강음료", "categoryId": "501428" }
+          ]
+        },
+        {
+          "name": "꿀/프로폴리스",
+          "categoryId": "501440",
+          "thirdCategories": [
+            { "name": "일반꿀", "categoryId": "501441" },
+            { "name": "벌집꿀", "categoryId": "501442" },
+            { "name": "로얄젤리", "categoryId": "501443" },
+            { "name": "허니파우더/벌화분", "categoryId": "501444" },
+            { "name": "프로폴리스", "categoryId": "501445" }
+          ]
+        },
+        {
+          "name": "건강분말/건강환",
+          "categoryId": "501446",
+          "thirdCategories": [
+            { "name": "건강환", "categoryId": "501447" },
+            { "name": "건강분말", "categoryId": "501448" }
+          ]
+        },
+        {
+          "name": "헬스보충식품",
+          "categoryId": "310722",
+          "thirdCategories": [
+            { "name": "프로틴", "categoryId": "310723" },
+            { "name": "크레아틴", "categoryId": "310731" },
+            { "name": "아미노산", "categoryId": "310732" },
+            { "name": "기타헬스보조제", "categoryId": "310744" }
+          ]
+        },
+        {
+          "name": "다이어트/이너뷰티",
+          "categoryId": "310745",
+          "thirdCategories": [
+            { "name": "탄수화물차단제", "categoryId": "310746" },
+            { "name": "체지방감소제", "categoryId": "310750" },
+            { "name": "다이어트 쉐이크", "categoryId": "310759" },
+            { "name": "과일/야채음료", "categoryId": "501449" },
+            { "name": "히알루론산/콜라겐", "categoryId": "501450" },
+            { "name": "석류", "categoryId": "501451" },
+            { "name": "기타다이어트식품", "categoryId": "310760" }
+          ]
+        },
+        {
+          "name": "홈트레이닝",
+          "categoryId": "501452",
+          "thirdCategories": [
+            { "name": "스트레칭/마사지", "categoryId": "501453" },
+            { "name": "유산소", "categoryId": "501462" },
+            { "name": "근력", "categoryId": "501469" },
+            { "name": "보호대/체중계", "categoryId": "501478" }
+          ]
+        },
+        {
+          "name": "헬스/요가용품",
+          "categoryId": "334193",
+          "thirdCategories": [
+            { "name": "요가/필라테스", "categoryId": "334194" },
+            { "name": "근력운동", "categoryId": "334208" },
+            { "name": "유산소운동", "categoryId": "334236" },
+            { "name": "스트레칭/균형", "categoryId": "334251" },
+            { "name": "헬스소품/보호대", "categoryId": "334259" },
+            { "name": "운동측정용품", "categoryId": "334270" },
+            { "name": "부위별 운동용품", "categoryId": "376551" }
+          ]
+        },
+        {
+          "name": "건강가전",
+          "categoryId": "310834",
+          "thirdCategories": [
+            { "name": "안마/찜질기", "categoryId": "310835" },
+            { "name": "공기청정기/가습기", "categoryId": "501485" },
+            { "name": "손소독/살균기", "categoryId": "310850" },
+            { "name": "전동칫솔/살균기", "categoryId": "310841" },
+            { "name": "비데", "categoryId": "310846" }
+          ]
+        },
+        {
+          "name": "건강도서",
+          "categoryId": "310856",
+          "thirdCategories": [
+            { "name": "다이어트", "categoryId": "310857" },
+            { "name": "요가/체조/기타", "categoryId": "310858" },
+            { "name": "한의학/한방치료", "categoryId": "310860" },
+            { "name": "건강에세이", "categoryId": "310861" },
+            { "name": "건강/다이어트요리", "categoryId": "310862" },
+            { "name": "해외건강도서", "categoryId": "310863" }
+          ]
+        },
+        {
+          "name": "건강/의료용품",
+          "categoryId": "310885",
+          "thirdCategories": [
+            { "name": "눈건강/렌즈관리", "categoryId": "310886" },
+            { "name": "마스크", "categoryId": "310894" },
+            { "name": "자세교정/보호대", "categoryId": "310897" },
+            { "name": "운동/건강측정용품", "categoryId": "310903" },
+            { "name": "마사지/찜질/부항", "categoryId": "310909" },
+            { "name": "호흡/수면건강", "categoryId": "310916" },
+            { "name": "가정의료용품", "categoryId": "310920" },
+            { "name": "전문의료용품", "categoryId": "501552" },
+            { "name": "금연용품", "categoryId": "310928" }
+          ]
+        },
+        {
+          "name": "곤약/방탄커피 외",
+          "categoryId": "501555",
+          "thirdCategories": [
+            { "name": "과일", "categoryId": "501556" },
+            { "name": "견과", "categoryId": "501572" },
+            { "name": "채소", "categoryId": "501583" },
+            { "name": "축산/계란", "categoryId": "501659" },
+            { "name": "수산물/건어물", "categoryId": "501714" },
+            { "name": "생수/음료", "categoryId": "501819" },
+            { "name": "커피/원두/차", "categoryId": "501838" },
+            { "name": "초콜릿/젤리/간식", "categoryId": "501899" },
+            { "name": "조미료/오일/소스", "categoryId": "501917" },
+            { "name": "유제품/치즈/버터", "categoryId": "501965" },
+            { "name": "곤약/샐러드/가공", "categoryId": "502007" },
+            { "name": "건강식품", "categoryId": "502045" }
+          ]
+        },
+        {
+          "name": "샐러드/닭가슴살",
+          "categoryId": "502133",
+          "thirdCategories": [
+            { "name": "간편식샐러드", "categoryId": "502134" },
+            { "name": "샐러드/손질채소", "categoryId": "502135" },
+            { "name": "닭가슴살/구운계란", "categoryId": "502142" },
+            { "name": "샐러드과일/토핑", "categoryId": "502149" },
+            { "name": "드레싱", "categoryId": "502168" }
+          ]
+        }
+      ]
+    }
+  ]
+}

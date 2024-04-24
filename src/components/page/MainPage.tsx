@@ -3,7 +3,7 @@ import CustomCalendar from "components/feature/filter/CustomCalendar";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Result from "components/feature/result/Result";
-import { useLocation, Outlet } from "react-router-dom";
+import { useLocation, Outlet, useNavigate } from "react-router-dom";
 import { RootState } from "main";
 import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
@@ -68,6 +68,13 @@ export default function MainPage() {
     refetchOnWindowFocus: false,
     enabled: false,
   });
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    // 쿼리 문자열 업데이트
+    history.push("/watch?v=46YNAP5Gg3k");
+  };
 
   const problemData = data;
 
@@ -163,7 +170,9 @@ export default function MainPage() {
         onChange={searchSizeChange}
         disabled={isFetching}
       />
-
+    <button onClick={() => { navigate('/category?v=46YNAP5Gg3k') }}>
+  어바웃 페이지로 이동하기
+</button>
       <SearchResultWord>상품 검색 결과</SearchResultWord>
 
       {resultVisible ? (

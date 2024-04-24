@@ -1,7 +1,9 @@
 from bs4 import BeautifulSoup
 import re
 
+
 # html 변수에 할당하기
+# 페이지 소스코드 보기 html 코드 참고
 html = """<li class="car">
   <a
     href="/np/categories/184060"
@@ -776,4 +778,4 @@ print(jsonData)
 
 # 파싱 후 실제 쿠팡 카테고리목록과 일치하는지 확인할 것.
 # 쿠팡 홈페이지 hover 카테고리 컴포넌트기준 '더보기' 이후로는 html에서 추출 불가. 
-# 더보기 이후 카테고리들은 직접 추가해야한다.
+# 더보기 이후 카테고리들은 moreParser.py 이용할 것.

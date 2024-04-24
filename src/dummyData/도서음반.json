@@ -1,0 +1,565 @@
+{
+  "firstCategories": [
+    {
+      "name": "도서/음반/DVD",
+      "categoryId": "317777",
+      "secondCategories": [
+        {
+          "name": "유아/어린이",
+          "categoryId": "39984",
+          "thirdCategories": [
+            { "name": "그림책", "categoryId": "329985" },
+            { "name": "어린이 문학", "categoryId": "329996" },
+            { "name": "초점책/영아책", "categoryId": "330004" },
+            { "name": "놀이책/토이북", "categoryId": "330008" },
+            { "name": "학습/교양", "categoryId": "330019" },
+            { "name": "만화/애니메이션", "categoryId": "330078" },
+            { "name": "전집/세트", "categoryId": "330084" },
+            { "name": "어린이 잡지", "categoryId": "330099" },
+            { "name": "유아동 해외도서", "categoryId": "365590" },
+            { "name": "음반/DVD", "categoryId": "365867" },
+            { "name": "누리과정 주제", "categoryId": "371605" },
+            { "name": "교과서수록도서", "categoryId": "371611" },
+            { "name": "STEAM도서", "categoryId": "374080" },
+            { "name": "유아동 할인관", "categoryId": "394826" }
+          ]
+        },
+        {
+          "name": "소설/에세이/시",
+          "categoryId": "330184",
+          "thirdCategories": [
+            { "name": "소설", "categoryId": "330185" },
+            { "name": "장르소설", "categoryId": "330201" },
+            { "name": "테마소설", "categoryId": "330211" },
+            { "name": "고전문학/신화", "categoryId": "330239" },
+            { "name": "문학전집", "categoryId": "330253" },
+            { "name": "에세이", "categoryId": "330216" },
+            { "name": "시", "categoryId": "330233" },
+            { "name": "희곡/시나리오", "categoryId": "330238" },
+            { "name": "문학잡지", "categoryId": "330254" }
+          ]
+        },
+        {
+          "name": "초중고참고서",
+          "categoryId": "331062",
+          "thirdCategories": [
+            { "name": "초등학생", "categoryId": "331064" },
+            { "name": "중학생", "categoryId": "331076" },
+            { "name": "고등학생", "categoryId": "331085" }
+          ]
+        },
+        {
+          "name": "가정 살림",
+          "categoryId": "330112",
+          "thirdCategories": [
+            { "name": "요리", "categoryId": "330113" },
+            { "name": "임신/출산/태교", "categoryId": "330147" },
+            { "name": "결혼/가족", "categoryId": "330152" },
+            { "name": "육아/교육", "categoryId": "330157" },
+            { "name": "자녀 학습/학교", "categoryId": "330165" },
+            { "name": "살림/정리수납", "categoryId": "330174" },
+            { "name": "집/인테리어", "categoryId": "330178" },
+            { "name": "원예/조경/텃밭", "categoryId": "330183" }
+          ]
+        },
+        {
+          "name": "건강 취미",
+          "categoryId": "330320",
+          "thirdCategories": [
+            { "name": "다이어트/미용", "categoryId": "330321" },
+            { "name": "요가/체조/기타", "categoryId": "330324" },
+            { "name": "스포츠/오락", "categoryId": "330325" },
+            { "name": "등산/낚시/바둑", "categoryId": "330332" },
+            { "name": "건강정 보", "categoryId": "330333" },
+            { "name": "의학/약학", "categoryId": "330337" },
+            { "name": "질병과 치료법", "categoryId": "330338" },
+            { "name": "한의학/한방치료", "categoryId": "330354" },
+            { "name": "컬러링북", "categoryId": "330355" },
+            { "name": "공예/DIY", "categoryId": "330356" },
+            { "name": "원예", "categoryId": "330364" },
+            { "name": "패션/뷰티", "categoryId": "330365" },
+            { "name": "퍼즐/스도쿠", "categoryId": "330371" },
+            { "name": "반려동물", "categoryId": "330372" },
+            { "name": "기타 취미", "categoryId": "330378" }
+          ]
+        },
+        {
+          "name": "경제 경영",
+          "categoryId": "330255",
+          "thirdCategories": [
+            { "name": "경제", "categoryId": "330256" },
+            { "name": "경영", "categoryId": "330265" },
+            { "name": "마케팅/세일즈", "categoryId": "330279" },
+            { "name": "투자/재테크", "categoryId": "330285" },
+            { "name": "인터넷비즈니스", "categoryId": "330290" },
+            { "name": "창업/취업/은퇴", "categoryId": "330293" },
+            { "name": "성공스토리", "categoryId": "330297" },
+            { "name": "경제/시사잡지", "categoryId": "330298" },
+            { "name": "총람/간행물", "categoryId": "330301" }
+          ]
+        },
+        {
+          "name": "과학/공학",
+          "categoryId": "330795",
+          "thirdCategories": [
+            { "name": "기초과학/교양과학", "categoryId": "330796" },
+            { "name": "과학자", "categoryId": "330800" },
+            { "name": "뇌과학", "categoryId": "330801" },
+            { "name": "의학/법의학", "categoryId": "330804" },
+            { "name": " 생명과학", "categoryId": "330805" },
+            { "name": "화학", "categoryId": "330815" },
+            { "name": "수학", "categoryId": "330821" },
+            { "name": "물리", "categoryId": "330828" },
+            { "name": "지구과학", "categoryId": "330834" },
+            { "name": "천문학", "categoryId": "330838" },
+            { "name": "인체", "categoryId": "330842" },
+            { "name": "공학", "categoryId": "330845" },
+            { "name": "농/축/수산학", "categoryId": "330852" },
+            { "name": "나노과학", "categoryId": "330853" },
+            { "name": "불가사의/미스테리", "categoryId": "330854" }
+          ]
+        },
+        {
+          "name": "국어/외국어/사전",
+          "categoryId": "330972",
+          "thirdCategories": [
+            { "name": "국어", "categoryId": "330973" },
+            { "name": "한자", "categoryId": "330983" },
+            { "name": "영어", "categoryId": "330986" },
+            { "name": "영어시험대비", "categoryId": "330998" },
+            { "name": "일본어", "categoryId": "331027" },
+            { "name": "중국어", "categoryId": "331035" },
+            { "name": "중동/아랍어", "categoryId": "331043" },
+            { "name": "독일어", "categoryId": "331044" },
+            { "name": "프랑스어", "categoryId": "331045" },
+            { "name": "이탈리아어", "categoryId": "331046" },
+            { "name": "스페인어", "categoryId": "331047" },
+            { "name": "러시아어", "categoryId": "331048" },
+            { "name": "기타 동양어", "categoryId": "331049" },
+            { "name": "기타 서양어", "categoryId": "330972" },
+            { "name": "여행회화", "categoryId": "331051" },
+            { "name": "어학연수", "categoryId": "331052" },
+            { "name": "비즈니스 회화", "categoryId": "331053" },
+            { "name": "통역/번역", "categoryId": "331054" },
+            { "name": "어학 사전", "categoryId": "331055" },
+            { "name": "어학교육 수강권", "categoryId": "403265" }
+          ]
+        },
+        {
+          "name": "대학교재",
+          "categoryId": "331100",
+          "thirdCategories": [
+            { "name": "인문학 계열", "categoryId": "331101" },
+            { "name": "어문학 계열", "categoryId": "331111" },
+            { "name": "자연과학 계열", "categoryId": "331126" },
+            { "name": "의약학/간호 계열", "categoryId": "331136" },
+            { "name": "사범대 계열", "categoryId": "331189" },
+            { "name": "농축산학 계열", "categoryId": "331199" },
+            { "name": "경상계열", "categoryId": "331203" },
+            { "name": "예체능/문화/기타 계열", "categoryId": "331246" },
+            { "name": "사회과학 계열", "categoryId": "331255" },
+            { "name": "법학계열", "categoryId": "331269" },
+            { "name": "공학계열", "categoryId": "331285" }
+          ]
+        },
+        {
+          "name": "만화/라이트노벨",
+          "categoryId": "330646",
+          "thirdCategories": [
+            { "name": "만화 비평/작법", "categoryId": "330647" },
+            { "name": "애니메이션", "categoryId": "330650" },
+            { "name": "예술만화/교양만화", "categoryId": "330651" },
+            { "name": "시사/풍자만화", "categoryId": "330652" },
+            { "name": "취미/직업만화", "categoryId": "330653" },
+            { "name": "역사만화", "categoryId": "330654" },
+            { "name": "코믹/명랑만화", "categoryId": "330655" },
+            { "name": "스포츠만화", "categoryId": "330656" },
+            { "name": "소년만화", "categoryId": "330657" },
+            { "name": "장르만화", "categoryId": "330661" },
+            { "name": "드라마만화", "categoryId": "330665" },
+            { "name": "성인만화", "categoryId": "330666" },
+            { "name": "순정만화", "categoryId": "330667" },
+            { "name": "그래픽노블", "categoryId": "330668" },
+            { "name": "라이트노벨", "categoryId": "330669" },
+            { "name": "BL(보이즈러브)", "categoryId": "330670" },
+            { "name": "웹툰/영상만화", "categoryId": "330671" },
+            { "name": "유럽/서구만화", "categoryId": "330672" },
+            { "name": "화보집/캘린더", "categoryId": "330673" }
+          ]
+        },
+        {
+          "name": "사회 정치",
+          "categoryId": "330585",
+          "thirdCategories": [
+            { "name": "생태/환경", "categoryId": "330586" },
+            { "name": "사 회학", "categoryId": "330587" },
+            { "name": "사회비평/비판", "categoryId": "330593" },
+            { "name": "정치/외교", "categoryId": "330594" },
+            { "name": "북한/통일", "categoryId": "330602" },
+            { "name": "행정", "categoryId": "330603" },
+            { "name": "국방/군사", "categoryId": "330607" },
+            { "name": "법과 생활", "categoryId": "330611" },
+            { "name": "여성/젠더", "categoryId": "330625" },
+            { "name": "언론/미디어", "categoryId": "330629" },
+            { "name": "교육", "categoryId": "330636" },
+            { "name": "사회단체/NGO", "categoryId": "330643" },
+            { "name": "지리학/지정학", "categoryId": "330644" },
+            { "name": "미래학", "categoryId": "330645" }
+          ]
+        },
+        {
+          "name": "수험서/자격증",
+          "categoryId": "331298",
+          "thirdCategories": [
+            { "name": "공무원 준비관", "categoryId": "331299" },
+            { "name": "교원임용시험", "categoryId": "331348" },
+            { "name": "한국사능력검정시험", "categoryId": "331356" },
+            { "name": "한국어능력검정시험", "categoryId": "331360" },
+            { "name": "한자시험", "categoryId": "331361" },
+            { "name": "취업/상식/적성", "categoryId": "331362" },
+            { "name": "경제/금융/회계", "categoryId": "331367" },
+            { "name": "공인중개/주택 관리", "categoryId": "331424" },
+            { "name": "법/인문/사회/고시", "categoryId": "331427" },
+            { "name": "보건/위생/의학", "categoryId": "331443" },
+            { "name": "한국산업인력공단", "categoryId": "331454" },
+            { "name": "편입/검정고시/독학사", "categoryId": "331574" },
+            { "name": "LEET:법학적성시험", "categoryId": "331591" },
+            { "name": "Meet/Deet/Peet", "categoryId": "331597" },
+            { "name": "PSAT (행시/외시/7급)", "categoryId": "331604" },
+            { "name": "운전면허", "categoryId": "331609" },
+            { "name": "컴퓨터수험서", "categoryId": "331610" },
+            { "name": "기타 수험서/자격증", "categoryId": "331629" },
+            { "name": "교육수강권", "categoryId": "403273" }
+          ]
+        },
+        {
+          "name": "여행",
+          "categoryId": "330379",
+          "thirdCategories": [
+            { "name": "해외여행", "categoryId": "330380" },
+            { "name": "국내여행", "categoryId": "330408" },
+            { "name": "테마여행", "categoryId": "330418" },
+            { "name": "지도/지리", "categoryId": "330428" },
+            { "name": "여행회화", "categoryId": "330432" },
+            { "name": "워킹 홀리데이", "categoryId": "330433" },
+            { "name": "유학/해외연수/이민", "categoryId": "330434" },
+            { "name": "여행 에세이", "categoryId": "330435" }
+          ]
+        },
+        {
+          "name": "역사",
+          "categoryId": "330521",
+          "thirdCategories": [
+            { "name": "한국사일반", "categoryId": "330522" },
+            { "name": "한국고대/고려사", "categoryId": "330523" },
+            { "name": "조선사", "categoryId": "330527" },
+            { "name": "한국근현대사", "categoryId": "330528" },
+            { "name": "한국문화", "categoryId": "330532" },
+            { "name": "북한사", "categoryId": "330533" },
+            { "name": "일본사", "categoryId": "330534" },
+            { "name": "중국사", "categoryId": "330540" },
+            { "name": "아시아사", "categoryId": "330546" },
+            { "name": "서양사", "categoryId": "330552" },
+            { "name": "유럽사", "categoryId": "330555" },
+            { "name": "아메리카사/기타", "categoryId": "330562" },
+            { "name": "아프리카/오세아니아사", "categoryId": "330565" },
+            { "name": "이슬람/중동/이스라엘", "categoryId": "330566" },
+            { "name": "세계사", "categoryId": "330567" },
+            { "name": "고고학", "categoryId": "330568" },
+            { "name": "역사와문명 교양", "categoryId": "330569" },
+            { "name": "역사학 이론/비평", "categoryId": "330570" },
+            { "name": "테마로 읽는 역사", "categoryId": "330571" }
+          ]
+        },
+        {
+          "name": "예술",
+          "categoryId": "330674",
+          "thirdCategories": [
+            { "name": "건축", "categoryId": "330675" },
+            { "name": "미술", "categoryId": "330678" },
+            { "name": "음악", "categoryId": "330689" },
+            { "name": "사진", "categoryId": "330704" },
+            { "name": "무용", "categoryId": "330710" },
+            { "name": "연극/공연", "categoryId": "330713" },
+            { "name": "영화/비디오", "categoryId": "330717" },
+            { "name": "대중음악", "categoryId": "330721" },
+            { "name": "예술/대중문화 이해", "categoryId": "330725" },
+            { "name": "TV/라디오", "categoryId": "330728" },
+            { "name": "예술치료", "categoryId": "330729" },
+            { "name": "예술기행", "categoryId": "330730" },
+            { "name": "연예인 화보집", "categoryId": "330731" }
+          ]
+        },
+        {
+          "name": "인문",
+          "categoryId": "330479",
+          "thirdCategories": [
+            { "name": "인문 일반", "categoryId": "330480" },
+            { "name": "철학/사상 일반", "categoryId": "330486" },
+            { "name": "심리학/심리일반", "categoryId": "330487" },
+            { "name": "기호학/언어학", "categoryId": "330494" },
+            { "name": "종교학/신화학", "categoryId": "330497" },
+            { "name": "한국철학", "categoryId": "330503" },
+            { "name": "동양철학", "categoryId": "330507" },
+            { "name": "서양철학", "categoryId": "330514" },
+            { "name": "논리학", "categoryId": "330519" },
+            { "name": "윤리학", "categoryId": "330520" },
+            { "name": "비평/창작/이론", "categoryId": "497970" }
+          ]
+        },
+        {
+          "name": "자기계발",
+          "categoryId": "330304",
+          "thirdCategories": [
+            {
+              "name": "인간관계",
+              "categoryId": "330305"
+            },
+            {
+              "name": "성공/경력관리",
+              "categoryId": "330309"
+            },
+            {
+              "name": "기획/시간관리",
+              "categoryId": "330310"
+            },
+            {
+              "name": "화술/협상/회의",
+              "categoryId": "330311"
+            },
+            {
+              "name": "취업/유망직업",
+              "categoryId": "330312"
+            },
+            {
+              "name": "처세술/삶의 자세",
+              "categoryId": "330313"
+            },
+            {
+              "name": "창의력/두뇌계발",
+              "categoryId": "330314"
+            },
+            {
+              "name": "유학/이민",
+              "categoryId": "330315"
+            },
+            {
+              "name": "성공스토리",
+              "categoryId": "330316"
+            },
+            {
+              "name": "여성 자기계발",
+              "categoryId": "330317"
+            },
+            {
+              "name": "중년/퇴직/은퇴",
+              "categoryId": "330318"
+            },
+            {
+              "name": "노후생활/귀농/귀촌",
+              "categoryId": "330319"
+            }
+          ]
+        },
+
+        {
+          "name": "잡지",
+          "categoryId": "330436",
+          "thirdCategories": [
+            {
+              "name": "경제/시사",
+              "categoryId": "330440"
+            },
+            {
+              "name": "결혼/리빙/육아",
+              "categoryId": "330437"
+            },
+            {
+              "name": "여성/남성/패션",
+              "categoryId": "330443"
+            },
+            {
+              "name": "어린이/청소년",
+              "categoryId": "330446"
+            },
+            {
+              "name": "문예지",
+              "categoryId": "330449"
+            },
+            {
+              "name": "어학/방송교재",
+              "categoryId": "330450"
+            },
+            {
+              "name": "연예/영화/만화",
+              "categoryId": "330454"
+            },
+            {
+              "name": "예술/사진/건축",
+              "categoryId": "330457"
+            },
+            {
+              "name": "여행/취미/스포츠",
+              "categoryId": "330462"
+            },
+            {
+              "name": "요리/건강",
+              "categoryId": "330467"
+            },
+            {
+              "name": "자동차/과학/기술",
+              "categoryId": "330468"
+            },
+            {
+              "name": "IT/게임/그래픽",
+              "categoryId": "330471"
+            },
+            {
+              "name": "종교",
+              "categoryId": "330475"
+            },
+            {
+              "name": "성인잡지",
+              "categoryId": "330476"
+            },
+            {
+              "name": "정기구독",
+              "categoryId": "330477"
+            },
+            {
+              "name": "과월호 잡지",
+              "categoryId": "330478"
+            }
+          ]
+        },
+
+        {
+          "name": "종교",
+          "categoryId": "330732",
+          "thirdCategories": [
+            { "name": "종교", "categoryId": "330732" },
+            { "name": "종교 일반", "categoryId": "330733" },
+            { "name": "기독교(개신교)", "categoryId": "330736" },
+            { "name": "기독교(천주교)", "categoryId": "330761" },
+            { "name": "불교", "categoryId": "330770" },
+            { "name": "유대교", "categoryId": "330777" },
+            { "name": "이슬람교", "categoryId": "330778" },
+            { "name": "유교/도교", "categoryId": "330779" },
+            { "name": "증산도", "categoryId": "330780" },
+            { "name": "원불교", "categoryId": "330781" },
+            { "name": " 천도교", "categoryId": "330782" },
+            { "name": "힌두교", "categoryId": "330783" },
+            { "name": "기타 종교", "categoryId": "330784" },
+            { "name": "사주/역학", "categoryId": "330785" },
+            { "name": "명상/선", "categoryId": "330794" }
+          ]
+        },
+        {
+          "name": "청소년",
+          "categoryId": "330100",
+          "thirdCategories": [
+            { "name": "공부법", "categoryId": "330101" },
+            { "name": "문학", "categoryId": "330102" },
+            { "name": "인문/사회/경제", "categoryId": "330103" },
+            { "name": "수학/과학", "categoryId": "330104" },
+            { "name": "문화/예술", "categoryId": "330105" },
+            { "name": "역사/인물", "categoryId": "330106" },
+            { "name": "철학/종교/윤리", "categoryId": "330107" },
+            { "name": "생활/자기관리", "categoryId": "330108" },
+            { "name": "청소년 전집", "categoryId": "330109" },
+            { "name": "논술대비", "categoryId": "330110" },
+            { "name": "조기유학 성공기", "categoryId": "330111" }
+          ]
+        },
+        {
+          "name": "해외도서",
+          "categoryId": "335889",
+          "thirdCategories": [
+            { "name": "유아동", "categoryId": "339647" },
+            { "name": "청소년", "categoryId": "341248" },
+            { "name": "문학/소설", "categoryId": "337742" },
+            { "name": "취미/실용/스포츠", "categoryId": "341601" },
+            { "name": "만화/애니메이션", "categoryId": "337620" },
+            { "name": "엔터테인먼트", "categoryId": "338467" },
+            { "name": "가정/가족", "categoryId": "336066" },
+            { "name": "요리", "categoryId": "339312" },
+            { "name": "건강/다이어트", "categoryId": "336189" },
+            { "name": "경제/경영", "categoryId": "336310" },
+            { "name": "자기계발", "categoryId": "340880" },
+            { "name": "여행", "categoryId": "338650" },
+            { "name": "예술/건축", "categoryId": "339059" },
+            { "name": "인문/사회", "categoryId": "340391" },
+            { "name": "역사", "categoryId": "338846" },
+            { "name": "과학/수학", "categoryId": "337110" },
+            { "name": "공학/기술/운송", "categoryId": "336887" },
+            { "name": "컴퓨터", "categoryId": "341723" },
+            { "name": "대학교재/전문서", "categoryId": "382697" },
+            { "name": "의학", "categoryId": "340087" },
+            { "name": "어학/학습/수험서", "categoryId": "338240" },
+            { "name": "종교/영성", "categoryId": "341001" },
+            { "name": "잡지", "categoryId": "341935" }
+          ]
+        },
+        {
+          "name": "IT컴퓨터",
+          "categoryId": "330855",
+          "thirdCategories": [
+            { "name": "컴퓨터수험서", "categoryId": "330856" },
+            { "name": "그래픽/멀티미디어", "categoryId": "330875" },
+            { "name": "모바일 프로그래밍", "categoryId": "330895" },
+            { "name": "컴퓨터 공학", "categoryId": "330902" },
+            { "name": "오피스", "categoryId": "330914" },
+            { "name": "프로그래밍 언어", "categoryId": "330927" },
+            { "name": "프로그래밍 개발", "categoryId": "335595" },
+            { "name": "모바일/태블릿/SNS", "categoryId": "330928" },
+            { "name": "게임", "categoryId": "330931" },
+            { "name": "웹디자인/웹개발", "categoryId": "330937" },
+            { "name": "네트워크/보안/해킹", "categoryId": "330946" },
+            { "name": "개발/OS/DB", "categoryId": "330949" },
+            { "name": "IT비즈니스", "categoryId": "330962" },
+            { "name": "컴퓨터 입문/활용", "categoryId": "330963" },
+            { "name": "PC/디지털카메라", "categoryId": "330968" },
+            { "name": "코딩/소프트웨어교육", "categoryId": "330971" }
+          ]
+        },
+        {
+          "name": "CD/LP",
+          "categoryId": "394468",
+          "thirdCategories": [
+            { "name": "가요", "categoryId": "394469" },
+            { "name": "POP", "categoryId": "394482" },
+            { "name": "ROCK", "categoryId": "394490" },
+            { "name": "클래식", "categoryId": "394498" },
+            { "name": "OST", "categoryId": "394509" },
+            { "name": "일본음악", "categoryId": "394516" },
+            { "name": "재즈", "categoryId": "394523" },
+            { "name": "뉴에이지", "categoryId": "394529" },
+            { "name": "유아/어린이", "categoryId": "394536" },
+            { "name": "태교/명상/치유", "categoryId": "394544" },
+            { "name": "국악", "categoryId": "394547" },
+            { "name": "종교음악", "categoryId": "394551" },
+            { "name": "월드뮤직", "categoryId": "394556" },
+            { "name": "굿즈/스타샵", "categoryId": "394561" },
+            { "name": "성인음반(19)", "categoryId": "394562" }
+          ]
+        },
+        {
+          "name": "DVD/블루레이",
+          "categoryId": "401489",
+          "thirdCategories": [
+            { "name": "장르별영화", "categoryId": "401490" },
+            { "name": "교양/다큐멘터리", "categoryId": "401506" },
+            { "name": "뮤직", "categoryId": "401507" },
+            { "name": "한국TV드라마", "categoryId": "401512" },
+            { "name": "해외TV드라마", "categoryId": "401513" },
+            { "name": "유아동 교육", "categoryId": "401514" },
+            { "name": "성인 교육", "categoryId": "401532" },
+            { "name": "건강/취미/스포츠", "categoryId": "401533" },
+            { "name": "방송/연예인굿즈", "categoryId": "445858" },
+            { "name": "성인(19)", "categoryId": "401540" }
+          ]
+        }
+      ]
+    }
+  ]
+}

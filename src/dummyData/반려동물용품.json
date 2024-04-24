@@ -1,0 +1,170 @@
+{
+  "firstCategories": [
+    {
+      "name": "반려동물용품",
+      "categoryId": "115674",
+      "secondCategories": [
+        {
+          "name": "강아지 사료",
+          "categoryId": "445725",
+          "thirdCategories": [
+            { "name": "건식사료", "categoryId": "445726" },
+            { "name": "소프트사료", "categoryId": "445727" },
+            { "name": "습식사료", "categoryId": "445728" },
+            { "name": "건조/생식사료", "categoryId": "445729" },
+            { "name": "화식사료", "categoryId": "445730" },
+            { "name": "분유", "categoryId": "445731" },
+            { "name": "기능성사료", "categoryId": "509024" },
+            { "name": "처방식 사료", "categoryId": "510526" }
+          ]
+        },
+        {
+          "name": "강아지 간식",
+          "categoryId": "118900",
+          "thirdCategories": [
+            { "name": "캔/파우치", "categoryId": "118975" },
+            { "name": "덴탈껌", "categoryId": "385001" },
+            { "name": "건조간식/육포", "categoryId": "385002" },
+            { "name": "동결건조간식", "categoryId": "385003" },
+            { "name": "비스켓/시리얼/쿠키", "categoryId": "118974" },
+            { "name": "캔디/젤리", "categoryId": "225063" },
+            { "name": "빵/케이크", "categoryId": "225064" },
+            { "name": "테린/화식", "categoryId": "445733" },
+            { "name": "져키/트릿", "categoryId": "385004" },
+            { "name": "음료", "categoryId": "118980" }
+          ]
+        },
+        {
+          "name": "강아지 영양제",
+          "categoryId": "486318",
+          "thirdCategories": [
+            { "name": "영양제", "categoryId": "486319" },
+            { "name": "건강보조제", "categoryId": "486328" },
+            { "name": "처방보조/보충식", "categoryId": "510524" }
+          ]
+        },
+        {
+          "name": "강아지 용품",
+          "categoryId": "118876",
+          "thirdCategories": [
+            { "name": "하우스/울타리", "categoryId": "118920" },
+            { "name": "급식기/급수기", "categoryId": "118919" },
+            { "name": "의류/패션", "categoryId": "118926" },
+            { "name": "배변용품", "categoryId": "118916" },
+            { "name": "미용/목욕", "categoryId": "118917" },
+            { "name": "장난감/훈련용품", "categoryId": "118923" },
+            { "name": "펫캠/가전용품", "categoryId": "486542" },
+            { "name": "이동장/외출용품", "categoryId": "118922" },
+            { "name": "건강 관리", "categoryId": "373649" },
+            { "name": "강아지도서", "categoryId": "225106" }
+          ]
+        },
+        {
+          "name": "고양이 사료",
+          "categoryId": "445859",
+          "thirdCategories": [
+            { "name": "건식사료", "categoryId": "445860" },
+            { "name": "습식/소프트사료", "categoryId": "445861" },
+            { "name": "건조생식사료", "categoryId": "445862" },
+            { "name": "화식사료", "categoryId": "445863" },
+            { "name": "분유", "categoryId": "446151" },
+            { "name": "기능성사료", "categoryId": "509026" },
+            { "name": "처방식 사료", "categoryId": "510527" }
+          ]
+        },
+        {
+          "name": "고양이 간식",
+          "categoryId": "119402",
+          "thirdCategories": [
+            { "name": "캔", "categoryId": "119522" },
+            { "name": "파우치", "categoryId": "119499" },
+            { "name": "동결/건조간식", "categoryId": "120216" },
+            { "name": "수제간식", "categoryId": "119501" },
+            { "name": "져키/스틱", "categoryId": "119502" },
+            { "name": "통살/소시지", "categoryId": "119503" },
+            { "name": "스낵", "categoryId": "119504" },
+            { "name": "캣닢/캣글라스", "categoryId": "119505" },
+            { "name": "음료", "categoryId": "119506" },
+            { "name": "껌", "categoryId": "120217" },
+            { "name": "테린/화식", "categoryId": "445864" }
+          ]
+        },
+        {
+          "name": "고양이 영양제",
+          "categoryId": "486331",
+          "thirdCategories": [
+            { "name": "영양제", "categoryId": "486332" },
+            { "name": "건강보조제", "categoryId": "486342" },
+            { "name": "처방보조/보충식", "categoryId": "510525" }
+          ]
+        },
+        {
+          "name": "고양이 용품",
+          "categoryId": "118878",
+          "thirdCategories": [
+            { "name": "캣타워/스크래쳐", "categoryId": "119567" },
+            { "name": "하우스/방석", "categoryId": "119562" },
+            { "name": "급식기/급수기", "categoryId": "119561" },
+            { "name": "의류/패션", "categoryId": "157054" },
+            { "name": "모래/화장실", "categoryId": "119558" },
+            { "name": "미용/목욕", "categoryId": "385076" },
+            { "name": "장난감", "categoryId": "119568" },
+            { "name": "펫캠/가전용품", "categoryId": "486545" },
+            { "name": "이동장/외출용품", "categoryId": "119564" },
+            { "name": "건강 관리", "categoryId": "119559" },
+            { "name": "고양이 도서", "categoryId": "225107" }
+          ]
+        },
+        {
+          "name": "펫티켓 산책용품",
+          "categoryId": "381522",
+          "thirdCategories": [
+            { "name": "배변봉투/삽", "categoryId": "381523" },
+            { "name": "물티슈/크리너", "categoryId": "381526" },
+            { "name": "기저귀/매너벨트", "categoryId": "381527" },
+            { "name": "입마개", "categoryId": "381528" },
+            { "name": "가슴줄/하네스", "categoryId": "381529" },
+            { "name": "목줄", "categoryId": "381532" },
+            { "name": "리드줄", "categoryId": "381535" },
+            { "name": "자동줄", "categoryId": "381538" },
+            { "name": "인식표/목걸이", "categoryId": "381539" },
+            { "name": "이동가방/캐리어", "categoryId": "381540" }
+          ]
+        },
+        {
+          "name": "관상어 용품",
+          "categoryId": "118879",
+          "thirdCategories": [
+            { "name": "사료", "categoryId": "119922" },
+            { "name": "수초/재배용품", "categoryId": "384981" },
+            { "name": "수조/어항", "categoryId": "384995" },
+            { "name": "약품/수질측정", "categoryId": "119925" },
+            { "name": "모터/여과용품", "categoryId": "119926" },
+            { "name": "수조장식/바닥재", "categoryId": "119927" },
+            { "name": "히터/온도계", "categoryId": "119928" },
+            { "name": "청소도구", "categoryId": "119929" },
+            { "name": "조명", "categoryId": "119932" },
+            { "name": "부화용품/급여기", "categoryId": "119933" },
+            { "name": "관상어 도서", "categoryId": "225108" }
+          ]
+        },
+        {
+          "name": "소동물/가축용품",
+          "categoryId": "121391",
+          "thirdCategories": [
+            { "name": "조류용품", "categoryId": "118880" },
+            { "name": "토끼/기니피그", "categoryId": "402289" },
+            { "name": "햄스터 용품", "categoryId": "118882" },
+            { "name": "고슴도치용품", "categoryId": "118883" },
+            { "name": "페럿용품", "categoryId": "118886" },
+            { "name": "거북이/달팽이용품", "categoryId": "118885" },
+            { "name": "파충류용품", "categoryId": "118881" },
+            { "name": "장수풍뎅이/곤충용품", "categoryId": "118884" },
+            { "name": "가축사료/용품", "categoryId": "225990" },
+            { "name": "소동물 도서", "categoryId": "225109" }
+          ]
+        }
+      ]
+    }
+  ]
+}

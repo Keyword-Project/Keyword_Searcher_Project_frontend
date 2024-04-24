@@ -1,0 +1,152 @@
+{
+  "firstCategories": [
+    {
+      "name": "뷰티",
+      "categoryId": "176522",
+      "secondCategories": [
+        {
+          "name": "스킨케어",
+          "categoryId": "176530",
+          "thirdCategories": [
+            { "name": "스킨", "categoryId": "486248" },
+            { "name": "로션", "categoryId": "486249" },
+            { "name": "에센스/세럼/앰플", "categoryId": "486250" },
+            { "name": "미스트", "categoryId": "486251" },
+            { "name": "오일", "categoryId": "486252" },
+            { "name": "크림/올인원", "categoryId": "486253" },
+            { "name": "기초세트", "categoryId": "486254" },
+            { "name": "마스크/팩", "categoryId": "176554" },
+            { "name": "선케어/태닝", "categoryId": "176563" }
+          ]
+        },
+        {
+          "name": "클린/비건뷰티",
+          "categoryId": "509393",
+          "thirdCategories": [
+            { "name": "스킨케어", "categoryId": "509394" },
+            { "name": "메이크업", "categoryId": "509395" },
+            { "name": "네일&툴", "categoryId": "509396" }
+          ]
+        },
+        {
+          "name": "클렌징/필링",
+          "categoryId": "486551",
+          "thirdCategories": [
+            { "name": "클렌징 폼", "categoryId": "486559" },
+            { "name": "클렌징 젤/파우더", "categoryId": "486560" },
+            { "name": "클렌징 비누", "categoryId": "486561" },
+            { "name": "클렌징 오일", "categoryId": "486562" },
+            { "name": "클렌징 워터", "categoryId": "486563" },
+            { "name": "립/아이리무버", "categoryId": "486564" },
+            { "name": "클렌징 티슈/시트", "categoryId": "486565" },
+            { "name": "클렌징 로션/크림", "categoryId": "486566" },
+            { "name": "클렌징세트", "categoryId": "486567" },
+            { "name": "스크럽/필링", "categoryId": "486568" }
+          ]
+        },
+        {
+          "name": "메이크업",
+          "categoryId": "176573",
+          "thirdCategories": [
+            { "name": "베이스 메이크업", "categoryId": "176587" },
+            { "name": "아이 메이크업", "categoryId": "176574" },
+            { "name": "립 메이크업", "categoryId": "176581" },
+            { "name": "치크메이크업", "categoryId": "176594" },
+            { "name": "멀티메이크업", "categoryId": "405199" },
+            { "name": "바디메이크업", "categoryId": "405203" }
+          ]
+        },
+        {
+          "name": "향수",
+          "categoryId": "176598",
+          "thirdCategories": [
+            { "name": "여성 향수", "categoryId": "176599" },
+            { "name": "남성향수", "categoryId": "176600" },
+            { "name": "남녀공용향수", "categoryId": "509383" },
+            { "name": "고체향수", "categoryId": "509384" },
+            { "name": "드레스퍼 퓸", "categoryId": "176601" }
+          ]
+        },
+        {
+          "name": "남성화장품",
+          "categoryId": "176839",
+          "thirdCategories": [
+            { "name": "남성스킨케어", "categoryId": "176840" },
+            { "name": "남성메이크업", "categoryId": "176843" },
+            { "name": "남성화장품세트", "categoryId": "176846" },
+            { "name": "남성 헤어케어", "categoryId": "176847" },
+            { "name": "남성 바디케어", "categoryId": "176850" },
+            { "name": "남성 쉐이빙 케어", "categoryId": "176854" }
+          ]
+        },
+        {
+          "name": "네일",
+          "categoryId": "176763",
+          "thirdCategories": [
+            { "name": "네일팁/페디팁/스티커", "categoryId": "427310" },
+            { "name": "일반네일", "categoryId": "176767" },
+            { "name": "젤네일", "categoryId": "176772" },
+            { "name": "케어/영양/리무버", "categoryId": "176764" },
+            { "name": "네일케어도구", "categoryId": "176780" },
+            { "name": "네일아트소품/도구", "categoryId": "176789" },
+            { "name": "네일세트", "categoryId": "176806" }
+          ]
+        },
+        {
+          "name": "뷰티소품",
+          "categoryId": "176807",
+          "thirdCategories": [
+            { "name": "화장솜/면봉", "categoryId": "176808" },
+            { "name": "아이소품", "categoryId": "176811" },
+            { "name": "페이스소품", "categoryId": "176817" },
+            { "name": "클렌징소품", "categoryId": "176822" },
+            { "name": "헤어소품", "categoryId": "176826" },
+            { "name": "피부관리기", "categoryId": "281731" },
+            { "name": "용기/거울/기타소품", "categoryId": "176832" }
+          ]
+        },
+        {
+          "name": "어린이화장품",
+          "categoryId": "403012",
+          "thirdCategories": [
+            { "name": "메이크업", "categoryId": "403013" },
+            { "name": "향수", "categoryId": "403014" },
+            { "name": "네일케어", "categoryId": "403015" },
+            { "name": "세트/키트", "categoryId": "403016" }
+          ]
+        },
+        {
+          "name": "헤어",
+          "categoryId": "176602",
+          "thirdCategories": [
+            { "name": "샴푸", "categoryId": "403017" },
+            { "name": "린스/컨디셔너", "categoryId": "403024" },
+            { "name": "트리트먼트/팩/앰플", "categoryId": "176631" },
+            { "name": "헤어에센스/오일", "categoryId": "403030" },
+            { "name": "헤어스타일링", "categoryId": "403031" },
+            { "name": "헤어세트", "categoryId": "403032" },
+            { "name": "염색/파마", "categoryId": "176653" }
+          ]
+        },
+        {
+          "name": "바디",
+          "categoryId": "176699",
+          "thirdCategories": [
+            { "name": "샤워/입욕용품", "categoryId": "176700" },
+            { "name": "바디로션/크림", "categoryId": "176710" },
+            { "name": "핸드/풋/데오", "categoryId": "176719" },
+            { "name": "제모/슬리밍/청결제", "categoryId": "176744" }
+          ]
+        },
+        {
+          "name": "선물세트/키트",
+          "categoryId": "176963",
+          "thirdCategories": [
+            { "name": "선물세트", "categoryId": "176964" },
+            { "name": "여행용키트", "categoryId": "176974" }
+          ]
+        }
+      ]
+    }
+  ]
+}

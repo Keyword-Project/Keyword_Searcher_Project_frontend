@@ -1,0 +1,229 @@
+{
+  "firstCategories": [
+    {
+      "name": "문구/오피스",
+      "categoryId": "177295",
+      "secondCategories": [
+        {
+          "name": "사무용품 전문관",
+          "categoryId": "408063",
+          "thirdCategories": [
+            { "name": "사무용문구", "categoryId": "408064" },
+            { "name": "파일/바인더", "categoryId": "408126" },
+            { "name": "사무용지/복사지", "categoryId": "408145" },
+            { "name": "데스크정리소품", "categoryId": "408179" },
+            { "name": "보드/칠판/광고", "categoryId": "408193" },
+            { "name": "봉투/포장용품", "categoryId": "408209" },
+            { "name": "디지털/사무기기", "categoryId": "408225" },
+            { "name": "사무용가구/수납", "categoryId": "408275" }
+          ]
+        },
+        {
+          "name": "미술/화방용품",
+          "categoryId": "401900",
+          "thirdCategories": [
+            { "name": "수채화", "categoryId": "401901" },
+            { "name": "유화", "categoryId": "401909" },
+            { "name": "아크릴화", "categoryId": "401926" },
+            { "name": "디자인/구성", "categoryId": "401939" },
+            { "name": "동양화/서예", "categoryId": "401947" },
+            { "name": "조소/도예/판화", "categoryId": "401964" },
+            { "name": "지류/스케치북", "categoryId": "401991" },
+            { "name": "캔버스/판넬", "categoryId": "402011" },
+            { "name": "드로잉/채색도구", "categoryId": "402016" },
+            { "name": "붓", "categoryId": "402059" },
+            { "name": "파스텔/콩테/목탄", "categoryId": "402074" },
+            { "name": "캘리그라피", "categoryId": "402081" },
+            { "name": "애니메이션/만화", "categoryId": "402092" },
+            { "name": "제도용품", "categoryId": "402099" },
+            { "name": "미술보조용품", "categoryId": "402109" },
+            { "name": "만들기재료", "categoryId": "402135" },
+            { "name": "유아미술재료", "categoryId": "402190" },
+            { "name": "미술서적/가이드", "categoryId": "402216" }
+          ]
+        },
+        {
+          "name": "캐릭터 문구",
+          "categoryId": "359731",
+          "thirdCategories": [
+            { "name": "카카오프렌즈", "categoryId": "359732" },
+            { "name": "핑크퐁", "categoryId": "379723" },
+            { "name": "뽀로로", "categoryId": "359733" },
+            { "name": "리락쿠마", "categoryId": "359736" },
+            { "name": "엉덩이탐정", "categoryId": "443129" },
+            { "name": "디즈니", "categoryId": "359735" },
+            { "name": "포켓몬스터", "categoryId": "359745" },
+            { "name": "짱구는 못말려", "categoryId": "443130" },
+            { "name": "헬로키티", "categoryId": "359734" },
+            { "name": "BT21", "categoryId": "443131" },
+            { "name": "마블/DC", "categoryId": "366893" },
+            { "name": "에비츄", "categoryId": "359750" },
+            { "name": "빨강머리 앤", "categoryId": "359740" },
+            { "name": "무민", "categoryId": "359738" },
+            { "name": "콩순이", "categoryId": "443132" },
+            { "name": "구데타마", "categoryId": "359742" },
+            { "name": "츄츄", "categoryId": "359743" },
+            { "name": "라인프렌즈", "categoryId": "443133" },
+            { "name": "스튜디오 지브리", "categoryId": "359751" },
+            { "name": "스누피", "categoryId": "443134" }
+          ]
+        },
+        {
+          "name": "학용품/수업준비",
+          "categoryId": "178098",
+          "thirdCategories": [
+            { "name": "필기용품", "categoryId": "373322" },
+            { "name": "노트", "categoryId": "178100" },
+            { "name": "메모지/수첩", "categoryId": "373365" },
+            { "name": "학용품세트", "categoryId": "178113" },
+            { "name": "파일", "categoryId": "373372" },
+            { "name": "네임스티커/명찰", "categoryId": "178114" },
+            { "name": "지구본/지도", "categoryId": "178123" },
+            { "name": "과학시간", "categoryId": "382074" },
+            { "name": "수학시간", "categoryId": "178151" },
+            { "name": "미술시간", "categoryId": "178167" },
+            { "name": "음악시간", "categoryId": "178226" },
+            { "name": "체육시간", "categoryId": "178242" },
+            { "name": "학년별 준비물", "categoryId": "373384" },
+            { "name": "교사용 준비물", "categoryId": "373433" }
+          ]
+        },
+        {
+          "name": "필기류",
+          "categoryId": "177297",
+          "thirdCategories": [
+            { "name": "펜/리필심", "categoryId": "177299" },
+            { "name": "연필", "categoryId": "177306" },
+            { "name": "샤프", "categoryId": "177315" },
+            { "name": "만년필", "categoryId": "177319" },
+            { "name": "형광펜", "categoryId": "177328" },
+            { "name": "사인펜/매직", "categoryId": "177329" },
+            { "name": "색연필", "categoryId": "177334" },
+            { "name": "붓펜/캘리그라피펜", "categoryId": "177335" },
+            { "name": "분필/보드마카", "categoryId": "177340" },
+            { "name": "지우개/수정액", "categoryId": "177346" },
+            { "name": "필통/파우치", "categoryId": "177356" }
+          ]
+        },
+        {
+          "name": "노트/메모지",
+          "categoryId": "401541",
+          "thirdCategories": [
+            { "name": "유선/무선노트", "categoryId": "435837" },
+            { "name": "학습/과목노트", "categoryId": "435838" },
+            { "name": "초등학생노트", "categoryId": "435839" },
+            { "name": "노트커버/패드", "categoryId": "435840" },
+            { "name": "수첩", "categoryId": "435841" },
+            { "name": "가계부/캐쉬북", "categoryId": "435842" },
+            { "name": "일기장", "categoryId": "435843" },
+            { "name": "기록노트", "categoryId": "435844" },
+            { "name": "메모패드/리갈패드", "categoryId": "435845" },
+            { "name": "메모지/체크리스트", "categoryId": "435846" },
+            { "name": "점착메모지/포스트잇", "categoryId": "435847" },
+            { "name": "인덱스/플래그", "categoryId": "401571" }
+          ]
+        },
+        {
+          "name": "다이어리/플래너",
+          "categoryId": "401572",
+          "thirdCategories": [
+            { "name": "다이어리", "categoryId": "401573" },
+            { "name": "다이어리소품", "categoryId": "401577" },
+            { "name": "스케쥴러", "categoryId": "401581" },
+            { "name": "캘린더", "categoryId": "401582" },
+            { "name": "프로젝트플래너", "categoryId": "401588" }
+          ]
+        },
+        {
+          "name": "바인더/파일",
+          "categoryId": "177419",
+          "thirdCategories": [
+            { "name": "바인더", "categoryId": "177421" },
+            { "name": "파일", "categoryId": "177427" },
+            { "name": "클립보드/결재판", "categoryId": "177442" }
+          ]
+        },
+        {
+          "name": "파티/이벤트",
+          "categoryId": "401805",
+          "thirdCategories": [
+            { "name": "테이블웨어", "categoryId": "401806" },
+            { "name": "초/티라이트", "categoryId": "401813" },
+            { "name": "풍선", "categoryId": "401818" },
+            { "name": "파티모자/머리띠", "categoryId": "401829" },
+            { "name": "파티장식/가 랜드", "categoryId": "401834" },
+            { "name": "홈파티세트", "categoryId": "401840" },
+            { "name": "꽃잎/폭죽/불꽃놀이", "categoryId": "401841" },
+            { "name": "가발/가면/안경", "categoryId": "401847" },
+            { "name": "의상/분장용품", "categoryId": "401851" },
+            { "name": "응원/페스티벌", "categoryId": "401857" },
+            { "name": "마술용품", "categoryId": "401866" },
+            { "name": "기타파티소품", "categoryId": "401873" }
+          ]
+        },
+        {
+          "name": "데코/포장용품",
+          "categoryId": "178035",
+          "thirdCategories": [
+            { "name": "선물/포장용품", "categoryId": "178037" },
+            { "name": "스티커", "categoryId": "178060" },
+            { "name": "스탬프/씰링", "categoryId": "178068" },
+            { "name": "모양펀치", "categoryId": "178073" },
+            { "name": "데코테이프", "categoryId": "178074" }
+          ]
+        },
+        {
+          "name": "카드/엽서/봉투",
+          "categoryId": "178005",
+          "thirdCategories": [
+            { "name": "카드", "categoryId": "178007" },
+            { "name": "엽서", "categoryId": "178015" },
+            { "name": "편지지", "categoryId": "178021" },
+            { "name": "봉투", "categoryId": "178022" }
+          ]
+        },
+        {
+          "name": "앨범",
+          "categoryId": "401781",
+          "thirdCategories": [
+            { "name": "일반포토앨범", "categoryId": "401782" },
+            { "name": "폴라로이드앨범", "categoryId": "401783" },
+            { "name": "티켓/영화앨범", "categoryId": "401784" },
+            { "name": "출산/성장앨범", "categoryId": "401785" },
+            { "name": "기타스크랩북", "categoryId": "401786" }
+          ]
+        },
+        {
+          "name": "복사용품/라벨지",
+          "categoryId": "177453",
+          "thirdCategories": [
+            { "name": "복사용지", "categoryId": "177455" },
+            { "name": "출력라벨지", "categoryId": "177456" },
+            { "name": "전용지", "categoryId": "177471" },
+            { "name": "잉크/토너", "categoryId": "177482" }
+          ]
+        },
+        {
+          "name": "보드/칠판/광고",
+          "categoryId": "401787",
+          "thirdCategories": [
+            { "name": "화이트보드/게시판", "categoryId": "401788" },
+            { "name": "블랙/칼라보드/게시판", "categoryId": "401789" },
+            { "name": "칠판보드/게시판", "categoryId": "401790" },
+            { "name": "콜크보드/게시판", "categoryId": "401791" },
+            { "name": "융보드/게시판", "categoryId": "401792" },
+            { "name": "메모보드", "categoryId": "401793" },
+            { "name": "타공판/메쉬보드", "categoryId": "401794" },
+            { "name": "보드/게시판소품", "categoryId": "401795" },
+            { "name": "메뉴판", "categoryId": "401799" },
+            { "name": "쇼카드", "categoryId": "401800" },
+            { "name": "아크릴꽂이/집게", "categoryId": "401801" },
+            { "name": "아크릴사인/표지판", "categoryId": "401802" },
+            { "name": "마네킹", "categoryId": "401803" },
+            { "name": "기타매장/진열용품", "categoryId": "401804" }
+          ]
+        }
+      ]
+    }
+  ]
+}

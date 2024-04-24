@@ -1,0 +1,365 @@
+{
+  "firstCategories": [
+    {
+      "name": "가전디지털",
+      "categoryId": "178255",
+      "secondCategories": [
+        {
+          "name": "TV/영상가전",
+          "categoryId": "178454",
+          "thirdCategories": [
+            { "name": "TV", "categoryId": "178456" },
+            { "name": "미러링/스트리밍", "categoryId": "509601" },
+            { "name": "TV 액세서리", "categoryId": "178462" },
+            { "name": "블루레이/DVD/DivX", "categoryId": "178475" },
+            { "name": "빔/프로젝터/스크린", "categoryId": "178481" }
+          ]
+        },
+        {
+          "name": "냉장고",
+          "categoryId": "403245",
+          "thirdCategories": [
+            { "name": "3/4도어냉장고", "categoryId": "403246" },
+            { "name": "양문형냉장고", "categoryId": "403247" },
+            { "name": "일반냉장고", "categoryId": "403248" },
+            { "name": "미니냉장고", "categoryId": "403249" },
+            { "name": "김치냉장고", "categoryId": "403250" },
+            { "name": "냉동고", "categoryId": "403251" },
+            { "name": "전용냉장고", "categoryId": "403252" }
+          ]
+        },
+        {
+          "name": "세탁기/건조기",
+          "categoryId": "486733",
+          "thirdCategories": [
+            { "name": "세탁기건조기세트", "categoryId": "509624" },
+            { "name": "세탁기", "categoryId": "486734" },
+            { "name": "건조기", "categoryId": "486735" },
+            { "name": "의류관리기", "categoryId": "486736" },
+            { "name": "신발건조기", "categoryId": "486737" },
+            { "name": "탈수기", "categoryId": "486738" },
+            { "name": "액세서리", "categoryId": "486739" }
+          ]
+        },
+        {
+          "name": "생활가전",
+          "categoryId": "178627",
+          "thirdCategories": [
+            { "name": "공기청정기", "categoryId": "178663" },
+            { "name": "다리미/재봉/보풀", "categoryId": "178658" },
+            { "name": "도어록/비디오폰", "categoryId": "178667" },
+            { "name": "비데/온수기", "categoryId": "178673" },
+            { "name": "전동칫솔/살균기", "categoryId": "178685" },
+            { "name": "학습용 스탠드", "categoryId": "178702" },
+            { "name": "전화기/무전기", "categoryId": "178703" }
+          ]
+        },
+        {
+          "name": "청소기",
+          "categoryId": "413352",
+          "thirdCategories": [
+            { "name": "스틱청소기", "categoryId": "413353" },
+            { "name": "진공청소기", "categoryId": "413354" },
+            { "name": "로봇청소기", "categoryId": "413355" },
+            { "name": "물걸레청소기", "categoryId": "413356" },
+            { "name": "침구청소기", "categoryId": "413357" },
+            { "name": "핸디청소기", "categoryId": "413358" },
+            { "name": "스팀청소기", "categoryId": "413359" },
+            { "name": "차량용청소기", "categoryId": "413360" },
+            { "name": "업소용청소기", "categoryId": "413361" },
+            { "name": "필터/액세서리", "categoryId": "413362" }
+          ]
+        },
+        {
+          "name": "계절가전",
+          "categoryId": "227812",
+          "thirdCategories": [
+            { "name": "공기청정기", "categoryId": "238887" },
+            { "name": "선풍기", "categoryId": "388046" },
+            { "name": "에어컨", "categoryId": "227820" },
+            { "name": "제습기", "categoryId": "238886" },
+            { "name": "서큘레이터", "categoryId": "306335" },
+            { "name": "냉풍기", "categoryId": "388055" },
+            { "name": "건조기/탈수기", "categoryId": "227847" },
+            { "name": "모기/해충 퇴치기", "categoryId": "227853" },
+            { "name": "가습기/ 에어워셔", "categoryId": "247567" },
+            { "name": "전기요/매트", "categoryId": "247548" },
+            { "name": "냉온수매트", "categoryId": "228864" },
+            { "name": "히터/온풍기", "categoryId": "247553" },
+            { "name": " 손난로/발난로", "categoryId": "247564" }
+          ]
+        },
+        {
+          "name": "뷰티/헤어가전",
+          "categoryId": "333478",
+          "thirdCategories": [
+            { "name": "헤어드라이어", "categoryId": "486670" },
+            { "name": "고데기/매직기", "categoryId": "486673" },
+            { "name": "헤어스타일러", "categoryId": "333479" },
+            { "name": "두피/헤어관리", "categoryId": "333492" },
+            { "name": "피부관리기기", "categoryId": "333496" },
+            { "name": "면도기/이발기", "categoryId": "333519" },
+            { "name": "제모기", "categoryId": "333522" },
+            { "name": "눈썹/네일관리", "categoryId": "333527" }
+          ]
+        },
+        {
+          "name": "건강가전",
+          "categoryId": "178713",
+          "thirdCategories": [
+            { "name": "안마의자", "categoryId": "509621" },
+            { "name": "안마/찜질기", "categoryId": "178715" },
+            { "name": "전동칫솔/구강가전", "categoryId": "178722" },
+            { "name": "비데", "categoryId": "178739" },
+            { "name": "건강측정/의료기", "categoryId": "178744" },
+            { "name": "살균/소독기", "categoryId": "466380" },
+            { "name": "손건조기/소독기", "categoryId": "178751" }
+          ]
+        },
+        {
+          "name": "주방가전",
+          "categoryId": "445736",
+          "thirdCategories": [
+            { "name": "전기밥솥", "categoryId": "445737" },
+            { "name": "전자레인지", "categoryId": "445743" },
+            { "name": "오븐", "categoryId": "445744" },
+            { "name": "가스레인지", "categoryId": "445747" },
+            { "name": "전기레인지", "categoryId": "445748" },
+            { "name": "식기세척/건조기", "categoryId": "445753" },
+            { "name": "믹서기/블렌더", "categoryId": "445758" },
+            { "name": "커피메이커/머신", "categoryId": "445770" },
+            { "name": "빙수기/제빙기", "categoryId": "445779" },
+            { "name": "전기포트", "categoryId": "445784" },
+            { "name": "에어프라이어", "categoryId": "510536" },
+            { "name": "튀김기", "categoryId": "465013" },
+            { "name": "토스터", "categoryId": "445793" },
+            { "name": "간식메이커", "categoryId": "445796" },
+            { "name": "전기그릴/팬", "categoryId": "445802" },
+            { "name": "전기쿠커", "categoryId": "445803" },
+            { "name": "정수기/냉온수기", "categoryId": "445809" },
+            { "name": "식품건조기", "categoryId": "465014" },
+            { "name": "진공포장기", "categoryId": "465015" },
+            { "name": "음식물처리기", "categoryId": "465016" },
+            { "name": "약탕기/영양식제조", "categoryId": "445819" },
+            { "name": "환풍기/레인지후드", "categoryId": "445824" },
+            { "name": "측정계량/기타가전", "categoryId": "445827" },
+            { "name": "업소용 주방가전", "categoryId": "445835" },
+            { "name": "설치 주방가전", "categoryId": "445844" }
+          ]
+        },
+        { "name": "노트북", "categoryId": "497135", "thirdCategories": [] },
+        {
+          "name": "데스크탑",
+          "categoryId": "497136",
+          "thirdCategories": [
+            { "name": "브랜드PC", "categoryId": "497137" },
+            { "name": "일체형PC", "categoryId": "497138" },
+            { "name": "조립PC", "categoryId": "497139" },
+            { "name": "미니PC", "categoryId": "497140" }
+          ]
+        },
+        {
+          "name": "모니터",
+          "categoryId": "510541",
+          "thirdCategories": []
+        },
+        { "name": "휴대폰", "categoryId": "497244", "thirdCategories": [] },
+        {
+          "name": "태블릿PC",
+          "categoryId": "497245",
+          "thirdCategories": [
+            { "name": "태블릿PC", "categoryId": "497246" },
+            { "name": "액세서리", "categoryId": "497247" }
+          ]
+        },
+        {
+          "name": "스마트워치/밴드",
+          "categoryId": "497252",
+          "thirdCategories": [
+            { "name": "스마트워치", "categoryId": "497253" },
+            { "name": "스마트밴드", "categoryId": "497254" },
+            { "name": "액세서리", "categoryId": "503019" }
+          ]
+        },
+        {
+          "name": "게임",
+          "categoryId": "395267",
+          "thirdCategories": [
+            { "name": "마우스/키보드/헤드셋", "categoryId": "395274" },
+            { "name": "그래픽카드/메인보드", "categoryId": "395288" },
+            { "name": "PC타이틀/주변기기", "categoryId": "395291" },
+            { "name": "플레이스테이션", "categoryId": "395299" },
+            { "name": "닌텐도", "categoryId": "395306" },
+            { "name": "XBOX", "categoryId": "395311" },
+            { "name": "레트로/기타게임", "categoryId": "395322" },
+            { "name": "휴대폰게임", "categoryId": "395326" }
+          ]
+        },
+
+        {
+          "name": "키보드/마우스",
+          "categoryId": "497142",
+          "thirdCategories": [
+            { "name": "마우스", "categoryId": "497143" },
+            { "name": "키보드", "categoryId": "497146" },
+            { "name": "키보드+마우스세트", "categoryId": "497149" },
+            { "name": "타블렛(디지타이저)", "categoryId": "497152" },
+            { "name": "마우스패드/손목받침", "categoryId": "497153" },
+            { "name": "프리젠터(19)", "categoryId": "497157" },
+            { "name": "터치패드", "categoryId": "497158" }
+          ]
+        },
+
+        {
+          "name": "저장장치",
+          "categoryId": "497159",
+          "thirdCategories": [
+            { "name": "외장하드", "categoryId": "497160" },
+            { "name": "외장SSD", "categoryId": "497161" },
+            { "name": "외장 케이스", "categoryId": "497162" },
+            { "name": "NAS", "categoryId": "497163" },
+            { "name": "HDD", "categoryId": "497164" },
+            { "name": "SSD", "categoryId": "497165" },
+            { "name": "USB메모리", "categoryId": "497166" },
+            { "name": "메모리카드", "categoryId": "497167" },
+            { "name": "리더기", "categoryId": "497173" },
+            { "name": "ODD", "categoryId": "497178" },
+            { "name": "공디스크", "categoryId": "497179" },
+            { "name": "CD케이스", "categoryId": "497180" }
+          ]
+        },
+
+        {
+          "name": "프린터/복합기",
+          "categoryId": "497181",
+          "thirdCategories": [
+            { "name": "잉크젯 복합기", "categoryId": "497182" },
+            { "name": "잉크젯 프린터", "categoryId": "497183" },
+            { "name": "레이저 복합기", "categoryId": "497184" },
+            { "name": "레이저 프린터", "categoryId": "497185" },
+            { "name": "잉크/토너", "categoryId": "497186" },
+            { "name": "포토프린터", "categoryId": "497191" },
+            { "name": "포토용지/인화지", "categoryId": "497192" },
+            { "name": "라벨/바코드 프린터", "categoryId": "497193" },
+            { "name": "스캐너", "categoryId": "497194" },
+            { "name": "복사기", "categoryId": "497195" },
+            { "name": "POS/바코드스캔", "categoryId": "497196" },
+            { "name": "기타프린터", "categoryId": "497197" }
+          ]
+        },
+
+        {
+          "name": "PC부품",
+          "categoryId": "497198",
+          "thirdCategories": [
+            { "name": "CPU", "categoryId": "497199" },
+            { "name": "RAM", "categoryId": "497200" },
+            { "name": "그래픽카드", "categoryId": "497203" },
+            { "name": "메인보드", "categoryId": "497204" },
+            { "name": "케이스/파워", "categoryId": "497208" },
+            { "name": "쿨러", "categoryId": "497212" },
+            { "name": "ODD", "categoryId": "497215" },
+            { "name": "USB허브/케이블/젠더", "categoryId": "497216" }
+          ]
+        },
+
+        {
+          "name": "PC주변기기",
+          "categoryId": "497220",
+          "thirdCategories": [
+            { "name": "헤드셋/스피커", "categoryId": "497221" },
+            { "name": "웹캠", "categoryId": "497225" },
+            { "name": "공유기/네트워크", "categoryId": "497226" },
+            { "name": "소프트웨어", "categoryId": "497233" },
+            { "name": "액세서리", "categoryId": "497240" }
+          ]
+        },
+
+        {
+          "name": "음향기기",
+          "categoryId": "178399",
+          "thirdCategories": [
+            { "name": "이어폰", "categoryId": "178401" },
+            { "name": "헤드폰", "categoryId": "178405" },
+            { "name": "스피커", "categoryId": "178409" },
+            { "name": "홈시어터/오디오", "categoryId": "178413" },
+            { "name": "라디오/카세트/MP3", "categoryId": "178423" },
+            { "name": "녹음/어학/사전", "categoryId": "178432" },
+            { "name": "PA/마이크/레코딩", "categoryId": "178438" },
+            { "name": "음향 액세서리", "categoryId": "178447" }
+          ]
+        },
+
+        {
+          "name": "카메라",
+          "categoryId": "178548",
+          "thirdCategories": [
+            { "name": "DSLR", "categoryId": "178550" },
+            { "name": "DSLR 렌즈", "categoryId": "178551" },
+            { "name": "미러리스", "categoryId": "178552" },
+            { "name": "미러리스 렌즈", "categoryId": "178553" },
+            { "name": "하이엔드/컴팩트", "categoryId": "178554" },
+            { "name": "카메라 액세서리", "categoryId": "178555" },
+            { "name": "액션캠/캠코더", "categoryId": "178599" },
+            { "name": "즉석/기타카메라", "categoryId": "178605" },
+            { "name": "포토프린터/용지", "categoryId": "178616" }
+          ]
+        },
+
+        {
+          "name": "전동킥보드/자전거",
+          "categoryId": "497256",
+          "thirdCategories": [
+            { "name": "전동킥보드", "categoryId": "497257" },
+            { "name": "전동휠", "categoryId": "497258" },
+            { "name": "전기자전거", "categoryId": "497259" },
+            { "name": "배터리/충전기", "categoryId": "497260" }
+          ]
+        },
+
+        {
+          "name": "차량용 디지털",
+          "categoryId": "178489",
+          "thirdCategories": [
+            { "name": "내비게이션", "categoryId": "178491" },
+            { "name": "블랙박스", "categoryId": "178495" },
+            { "name": "하이패스", "categoryId": "178499" },
+            { "name": "후방카메라/감지기", "categoryId": "178503" },
+            { "name": "경보기/스마트키", "categoryId": "178507" },
+            { "name": "차량용음향기기", "categoryId": "178516" },
+            { "name": "차량용거치대", "categoryId": "178534" },
+            { "name": "차량용 충전기", "categoryId": "178539" }
+          ]
+        },
+
+        {
+          "name": "1인방송 전문관",
+          "categoryId": "429603",
+          "thirdCategories": [
+            { "name": "카메라", "categoryId": "429604" },
+            { "name": "마이크/믹서", "categoryId": "429618" },
+            { "name": "삼각대/셀카봉", "categoryId": "429623" },
+            { "name": "조명/배경", "categoryId": "429628" },
+            { "name": "저장장치/배터리", "categoryId": "429633" }
+          ]
+        },
+
+        {
+          "name": "휴대폰 액세서리",
+          "categoryId": "497261",
+          "thirdCategories": [
+            { "name": "휴대폰 케이스", "categoryId": "497262" },
+            { "name": "보호필름", "categoryId": "497270" },
+            { "name": "셀카봉/거치대", "categoryId": "497271" },
+            { "name": "보조배터리", "categoryId": "497275" },
+            { "name": "케이블/충전기", "categoryId": "497278" },
+            { "name": "메모리카드", "categoryId": "497284" },
+            { "name": "방수팩/방수케이스", "categoryId": "497287" },
+            { "name": "USIM칩", "categoryId": "497288" },
+            { "name": "기타 액세서리", "categoryId": "497289" }
+          ]
+        }
+      ]
+    }
+  ]
+}
