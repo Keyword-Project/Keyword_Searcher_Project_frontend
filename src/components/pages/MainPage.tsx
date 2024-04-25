@@ -170,9 +170,14 @@ export default function MainPage() {
         onChange={searchSizeChange}
         disabled={isFetching}
       />
-    <button onClick={() => { navigate('/category?v=46YNAP5Gg3k') }}>
-  어바웃 페이지로 이동하기
-</button>
+      <button
+        onClick={() => {
+          navigate("/category?v=46YNAP5Gg3k");
+        }}
+      >
+        어바웃 페이지로 이동하기
+      </button>
+
       <SearchResultWord>상품 검색 결과</SearchResultWord>
 
       {resultVisible ? (

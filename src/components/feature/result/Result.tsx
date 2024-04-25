@@ -1,7 +1,6 @@
-import SpinnerBox from "components/feature/result/SpinnerBox";
+import SkeletonContainer from "components/feature/result/SkeletonContainer";
 import ExcelDownloader from "./ExcelDownloader";
 import ResultTable from "./ResultTable";
-
 
 interface sortedData {
   dataIsRocket: boolean;
@@ -25,14 +24,12 @@ export interface QueryData {
 }
 
 export default function Result({ problemData, isFetching, error }) {
-  if (isFetching) return <SpinnerBox></SpinnerBox>;
+  if (isFetching) return <SkeletonContainer></SkeletonContainer>;
 
   if (error) return "An error has occurred: " + error.message;
 
   return (
     <>
-      {}
-
       <ExcelDownloader problemData={problemData} />
       <ResultTable problemData={problemData} />
     </>
