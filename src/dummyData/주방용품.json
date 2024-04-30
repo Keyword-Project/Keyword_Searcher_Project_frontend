@@ -1,0 +1,213 @@
+{
+  "firstCategories": [
+    {
+      "name": "주방용품",
+      "categoryId": "185669",
+      "secondCategories": [
+        {
+          "name": "주방가전",
+          "categoryId": "186504",
+          "thirdCategories": [
+            { "name": "전기밥솥", "categoryId": "186506" },
+            { "name": "전자레인지", "categoryId": "445266" },
+            { "name": "오븐", "categoryId": "445267" },
+            { "name": "가스레인지", "categoryId": "384889" },
+            { "name": "전기레인지", "categoryId": "384890" },
+            { "name": "식기세척/건조기", "categoryId": "186585" },
+            { "name": "믹서기/블렌더", "categoryId": "186543" },
+            { "name": "커피메이커/머신", "categoryId": "186533" },
+            { "name": "빙수기/제빙기", "categoryId": "427583" },
+            { "name": "전기포트", "categoryId": "384907" },
+            { "name": "에어프라이어", "categoryId": "445272" },
+            { "name": "튀김기", "categoryId": "445273" },
+            { "name": "토스터", "categoryId": "445278" },
+            { "name": "간식메이커", "categoryId": "445279" },
+            { "name": "전기그릴/팬", "categoryId": "446016" },
+            { "name": "전기쿠커", "categoryId": "446017" },
+            { "name": "정수기/냉온수기", "categoryId": "186526" },
+            { "name": "식품건조기", "categoryId": "445970" },
+            { "name": "진공포장기", "categoryId": "445971" },
+            { "name": "음식물처리기", "categoryId": "445972" },
+            { "name": "약탕기/영양식제조", "categoryId": "186574" },
+            { "name": "환풍기/레인지후드", "categoryId": "186591" },
+            { "name": "측정계량/기타가전", "categoryId": "186595" },
+            { "name": "업소용 주방가전", "categoryId": "446023" },
+            { "name": "설치 주방가전", "categoryId": "446088" }
+          ]
+        },
+        {
+          "name": "냄비/프라이팬",
+          "categoryId": "185671",
+          "thirdCategories": [
+            { "name": "냄비/뚝배기", "categoryId": "185673" },
+            { "name": "프라이팬", "categoryId": "185686" },
+            { "name": "냄비/프라이팬세트", "categoryId": "185705" },
+            { "name": "찜솥/들통", "categoryId": "185722" },
+            { "name": "압력솥/가마솥", "categoryId": "185729" }
+          ]
+        },
+        {
+          "name": "주방조리도구",
+          "categoryId": "185976",
+          "thirdCategories": [
+            { "name": "조리도구", "categoryId": "186012" },
+            { "name": "조리도구세트", "categoryId": "186038" },
+            { "name": "가위/슬라이서/스퀴져", "categoryId": "186045" },
+            { "name": "믹싱볼/대야", "categoryId": "186059" },
+            { "name": "채반/소쿠리", "categoryId": "186063" },
+            { "name": "다지기/절구/밀대", "categoryId": "186067" },
+            { "name": "석쇠/버너/화로", "categoryId": "486528" },
+            { "name": "야채탈수기", "categoryId": "186085" },
+            { "name": "간식/도시락조리도구", "categoryId": "407524" },
+            { "name": "베이킹용품", "categoryId": "509037" },
+            { "name": "칼", "categoryId": "509166" },
+            { "name": "도마", "categoryId": "508986" }
+          ]
+        },
+        {
+          "name": "그릇/홈세트",
+          "categoryId": "185735",
+          "thirdCategories": [
+            { "name": "식기홈세트", "categoryId": "185737" },
+            { "name": "그릇/식기", "categoryId": "185744" },
+            { "name": "접시/플레이트", "categoryId": "185782" },
+            { "name": "식탁보/테이블매트", "categoryId": "486307" },
+            { "name": "쟁반/베드트레이", "categoryId": "185792" },
+            { "name": "이유/유아식기", "categoryId": "185764" },
+            { "name": "제기/제수용품", "categoryId": "509147" }
+          ]
+        },
+        {
+          "name": "수저/커트러리",
+          "categoryId": "185823",
+          "thirdCategories": [
+            { "name": "수저/커트러리세트", "categoryId": "185825" },
+            { "name": "숟가락/티스푼", "categoryId": "185831" },
+            { "name": "젓가락", "categoryId": "185837" },
+            { "name": "포크/디저트포크", "categoryId": "185841" },
+            { "name": "나이프", "categoryId": "185846" },
+            { "name": "유아동수저", "categoryId": "185852" },
+            { "name": "서빙스푼/스쿱", "categoryId": "185863" },
+            { "name": "수저통/수저받침", "categoryId": "185867" }
+          ]
+        },
+        {
+          "name": "컵/텀블러/와인용품",
+          "categoryId": "185797",
+          "thirdCategories": [
+            { "name": "머그/드링크자", "categoryId": "185799" },
+            { "name": "커피잔/찻잔", "categoryId": "185805" },
+            { "name": "텀블러/콜드컵", "categoryId": "185804" },
+            { "name": "유아동컵/빨대컵", "categoryId": "509280" },
+            { "name": "물컵/주스컵", "categoryId": "185803" },
+            { "name": "유리컵/맥주잔", "categoryId": "185811" },
+            { "name": "와인용품", "categoryId": "508998" },
+            { "name": "주류용품", "categoryId": "509134" },
+            { "name": "컵소품", "categoryId": "185819" }
+          ]
+        },
+        {
+          "name": "주전자/커피/티용품",
+          "categoryId": "186412",
+          "thirdCategories": [
+            { "name": "주전자/티포트", "categoryId": "508880" },
+            { "name": "커피용품", "categoryId": "186414" },
+            { "name": "티용품", "categoryId": "186440" }
+          ]
+        },
+        {
+          "name": "주방수납/정리",
+          "categoryId": "186147",
+          "thirdCategories": [
+            { "name": "공간별수납/정리", "categoryId": "384929" },
+            { "name": "식기건조대/선반", "categoryId": "186149" },
+            { "name": "주방정리소품", "categoryId": "403183" },
+            { "name": "교자상", "categoryId": "509117" }
+          ]
+        },
+        {
+          "name": "밀폐저장/도시락",
+          "categoryId": "185872",
+          "thirdCategories": [
+            { "name": "밀폐보관용기", "categoryId": "185874" },
+            { "name": "특수저장용기", "categoryId": "185884" },
+            { "name": "양념통/오일병", "categoryId": "185896" },
+            { "name": "쌀통/잡곡통/항아리", "categoryId": "185907" },
+            { "name": "김치통/진공항아리", "categoryId": "185913" },
+            { "name": "물병/물통/텀블러", "categoryId": "185914" },
+            { "name": "도시락통/가방/찬합", "categoryId": "185940" },
+            { "name": "이유식조리보관", "categoryId": "509268" },
+            { "name": "유아동물병/도시락", "categoryId": "509273" }
+          ]
+        },
+        {
+          "name": "주방잡화",
+          "categoryId": "399678",
+          "thirdCategories": [
+            { "name": "수세미/세척솔", "categoryId": "399679" },
+            { "name": "고무장갑", "categoryId": "399685" },
+            { "name": "행주", "categoryId": "399686" },
+            { "name": "앞치마/오븐장갑", "categoryId": "399689" },
+            { "name": "주방매트/다용도매트", "categoryId": "399696" },
+            { "name": "식탁보/테이블매트", "categoryId": "399700" },
+            { "name": "음식물쓰레기통", "categoryId": "399705" },
+            { "name": "싱크대용품", "categoryId": "399708" },
+            { "name": "아트보드/렌지가드", "categoryId": "399712" },
+            { "name": "계량/저울/타이머", "categoryId": "399716" },
+            { "name": "덮개/받침", "categoryId": "399723" },
+            { "name": "냅킨/주방수건", "categoryId": "399732" },
+            { "name": "오프너/병따개", "categoryId": "399736" },
+            { "name": "아이디어주방/잡화", "categoryId": "399741" }
+          ]
+        },
+        {
+          "name": "일회용품/종이컵",
+          "categoryId": "186260",
+          "thirdCategories": [
+            { "name": "랩/호일/유산지", "categoryId": "186262" },
+            { "name": "키친타올", "categoryId": "276482" },
+            { "name": "일회용장갑", "categoryId": "186273" },
+            { "name": "위생백/비닐봉투", "categoryId": "186277" },
+            { "name": "일회용컵", "categoryId": "186285" },
+            { "name": "일회용수저", "categoryId": "186298" },
+            { "name": "일회용용기/도시락", "categoryId": "186305" },
+            { "name": "배달일회용용품", "categoryId": "497112" },
+            { "name": "빨대/스트로우", "categoryId": "186315" },
+            { "name": "기타주방일회용품", "categoryId": "186322" }
+          ]
+        },
+        {
+          "name": "보온/보냉용품",
+          "categoryId": "185955",
+          "thirdCategories": [
+            { "name": "보온/보냉병", "categoryId": "185957" },
+            { "name": "보온/보냉도시락", "categoryId": "185958" },
+            { "name": "보온죽통/푸드자", "categoryId": "185962" },
+            { "name": "보온/보냉텀블러", "categoryId": "185963" },
+            { "name": "보온/보냉주전자", "categoryId": "185964" },
+            { "name": "아이스박스/아이스팩", "categoryId": "185965" },
+            { "name": "아이스물통/워터저그", "categoryId": "185969" },
+            { "name": "쿨러백/보온보냉소품", "categoryId": "185970" }
+          ]
+        },
+        {
+          "name": "1인가구 주방용품",
+          "categoryId": "429840",
+          "thirdCategories": [
+            { "name": "샐러드볼/시리얼볼", "categoryId": "429842" },
+            { "name": "홈바", "categoryId": "429847" },
+            { "name": "전자레인지", "categoryId": "429853" },
+            { "name": "에어프라이어", "categoryId": "429855" },
+            { "name": "멀티포트/티포트", "categoryId": "429856" },
+            { "name": "핸드블렌더", "categoryId": "429857" },
+            { "name": "토스터", "categoryId": "429858" },
+            { "name": "냄비/프라이팬", "categoryId": "429859" },
+            { "name": "칼/가위/도마", "categoryId": "429862" },
+            { "name": "조리도구", "categoryId": "429867" },
+            { "name": "밀폐용기/반찬통", "categoryId": "429871" }
+          ]
+        }
+      ]
+    }
+  ]
+}

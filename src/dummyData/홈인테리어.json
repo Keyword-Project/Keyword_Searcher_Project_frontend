@@ -1,0 +1,287 @@
+{
+  "firstCategories": [
+    {
+      "name": "홈인테리어",
+      "categoryId": "184555",
+      "secondCategories": [
+        {
+          "name": "봄침구샵",
+          "categoryId": "374594",
+          "thirdCategories": [
+            { "name": "이불/침구세트", "categoryId": "374603" },
+            { "name": "패드/토퍼", "categoryId": "374599" },
+            { "name": "침구커버", "categoryId": "374607" },
+            { "name": "베개/바디필로우", "categoryId": "374613" },
+            { "name": "커튼/블라인드", "categoryId": "374620" },
+            { "name": "소파패드/쿠션", "categoryId": "464878" },
+            { "name": "카페트/거실화", "categoryId": "374647" },
+            { "name": "유아동침구", "categoryId": "374651" }
+          ]
+        },
+        {
+          "name": "싱글하우스",
+          "categoryId": "413976",
+          "thirdCategories": [
+            { "name": "침대/매트리스", "categoryId": "413977" },
+
+            { "name": "러그/카페트/거실화", "categoryId": "413986" },
+            { "name": "커튼/블라인드", "categoryId": "413989" },
+            { "name": "책상/테이블", "categoryId": "413994" },
+            { "name": "의자/소파", "categoryId": "414006" },
+            { "name": "화장대", "categoryId": "414014" },
+            { "name": "조명/스탠드", "categoryId": "414018" },
+            { "name": "인테리어소품", "categoryId": "414022" },
+            { "name": "행거", "categoryId": "414033" },
+            { "name": "선반/수납장", "categoryId": "414038" },
+            { "name": "리빙박스/정리용품", "categoryId": "414046" }
+          ]
+        },
+        {
+          "name": "홈데코",
+          "categoryId": "417542",
+          "thirdCategories": [
+            { "name": "캔들/캔들홀더", "categoryId": "417543" },
+            { "name": "디퓨저/방향제", "categoryId": "417572" },
+            { "name": "화병/화분", "categoryId": "417607" },
+            { "name": "조화/드라이플라워", "categoryId": "417615" },
+            { "name": "홈데코 소품", "categoryId": "417622" },
+            { "name": "시계", "categoryId": "417644" },
+            { "name": "거울", "categoryId": "417650" },
+            { "name": "액자", "categoryId": "417656" },
+            { "name": "그림/사진", "categoryId": "417657" },
+            { "name": "시트지/스티커", "categoryId": "417663" },
+
+            { "name": "선반/장식장", "categoryId": "417677" }
+          ]
+        },
+        {
+          "name": "가구",
+          "categoryId": "184557",
+          "thirdCategories": [
+            { "name": "침실가구", "categoryId": "184559" },
+            { "name": "드레스룸", "categoryId": "434922" },
+            { "name": "거실가구", "categoryId": "184621" },
+            { "name": "주방가구", "categoryId": "184674" },
+            { "name": "학생/사무용가구", "categoryId": "184699" },
+            { "name": "유아동가구", "categoryId": "184749" },
+            { "name": "야외가구", "categoryId": "184780" },
+            { "name": "수납가구", "categoryId": "434961" }
+          ]
+        },
+        {
+          "name": "수납/정리",
+          "categoryId": "184791",
+          "thirdCategories": [
+            { "name": "행거", "categoryId": "184793" },
+            { "name": "옷걸이/도어훅", "categoryId": "184799" },
+            { "name": "리빙박스", "categoryId": "184805" },
+            { "name": "바구니/바스켓", "categoryId": "403222" },
+            { "name": "압축팩/커버", "categoryId": "403223" },
+            { "name": "틈새서랍/정리함", "categoryId": "184812" },
+            { "name": "선반/정리대", "categoryId": "184817" },
+            { "name": "기타정리용품", "categoryId": "184823" },
+            { "name": "휴지통", "categoryId": "379727" }
+          ]
+        },
+        {
+          "name": "침구",
+          "categoryId": "400472",
+          "thirdCategories": [
+            { "name": "이불", "categoryId": "400473" },
+            { "name": "요/패드", "categoryId": "400481" },
+            { "name": "매트", "categoryId": "400491" },
+            { "name": "이불솜/속", "categoryId": "400495" },
+            { "name": "침구커버", "categoryId": "400501" },
+            { "name": "침구세트", "categoryId": "400507" },
+            { "name": "유아동침구", "categoryId": "400512" },
+            { "name": "베개", "categoryId": "400534" },
+            { "name": "롱쿠션/바디필로우", "categoryId": "400543" },
+            { "name": "담요", "categoryId": "400546" },
+            { "name": "죽부인", "categoryId": "400547" },
+            { "name": "쿨매트", "categoryId": "400548" },
+            { "name": "전기/온수매트", "categoryId": "400549" }
+          ]
+        },
+        {
+          "name": "커튼/블라인드",
+          "categoryId": "185101",
+          "thirdCategories": [
+            { "name": "커튼", "categoryId": "185103" },
+            { "name": "블라인드/쉐이드", "categoryId": "185110" },
+            { "name": "롤스크린", "categoryId": "185119" },
+            { "name": "버티칼", "categoryId": "185120" },
+            { "name": "문발", "categoryId": "185121" },
+            { "name": "커튼부자재", "categoryId": "185127" },
+            { "name": "난방텐트", "categoryId": "185149" },
+            { "name": "모기장/캐노피", "categoryId": "185142" }
+          ]
+        },
+        {
+          "name": "카페트/쿠션/거실화",
+          "categoryId": "185150",
+          "thirdCategories": [
+            { "name": "러그/카페트", "categoryId": "185152" },
+            { "name": "발매트/주방매트", "categoryId": "197131" },
+            { "name": "놀이/다용도매트", "categoryId": "185158" },
+            { "name": "원목/대자리", "categoryId": "197132" },
+            { "name": "쿠션/방석", "categoryId": "400899" },
+            { "name": "거실화", "categoryId": "400928" },
+            { "name": "소파패드/커버", "categoryId": "400929" },
+            { "name": "가전/가구커버", "categoryId": "400932" },
+            { "name": "홈패브릭", "categoryId": "400952" }
+          ]
+        },
+        {
+          "name": "수예/수선",
+          "categoryId": "400554",
+          "thirdCategories": [
+            { "name": "원단", "categoryId": "400555" },
+            { "name": "실", "categoryId": "400562" },
+            { "name": "바늘", "categoryId": "400572" },
+            { "name": "반짇고리세트", "categoryId": "400586" },
+            { "name": "재봉틀 용품", "categoryId": "400587" },
+            { "name": "수선/재단도구", "categoryId": "400596" },
+            { "name": "단추/레이스", "categoryId": "400620" },
+            { "name": "장식/부자재", "categoryId": "400637" },
+            { "name": "솜/보충재", "categoryId": "400654" },
+            { "name": "뜨개질용품", "categoryId": "400663" },
+            { "name": "자수/십자수", "categoryId": "400677" },
+            { "name": "가죽공예", "categoryId": "400703" },
+            { "name": "퀼트", "categoryId": "400748" },
+            { "name": "펠트", "categoryId": "400812" },
+            { "name": "DIY 패키지", "categoryId": "400864" },
+            { "name": "도서", "categoryId": "400892" }
+          ]
+        },
+        {
+          "name": "욕실용품",
+          "categoryId": "419692",
+          "thirdCategories": [
+            { "name": "샤워기/헤드", "categoryId": "419693" },
+            { "name": "목욕/샤워용품", "categoryId": "419700" },
+            { "name": "수건/타월", "categoryId": "419711" },
+            { "name": "욕실수납/정리", "categoryId": "419719" },
+            { "name": "욕실화", "categoryId": "419729" },
+            { "name": "욕실매트/발판", "categoryId": "419730" },
+            { "name": "욕조", "categoryId": "419735" },
+            { "name": "세면대/세면기", "categoryId": "419741" },
+            { "name": "변기/비데용품", "categoryId": "419744" },
+            { "name": "욕실거울", "categoryId": "419751" },
+            { "name": "욕실용품/잡화", "categoryId": "419752" },
+
+            { "name": "수전용품", "categoryId": "419761" },
+            { "name": "욕실보수용품", "categoryId": "419765" },
+            { "name": "욕실청소용품", "categoryId": "419772" }
+          ]
+        },
+        {
+          "name": "조명/스탠드",
+          "categoryId": "407567",
+          "thirdCategories": [
+            { "name": "장스탠드", "categoryId": "407569" },
+            { "name": "단스탠드", "categoryId": "407570" },
+            { "name": "무드등", "categoryId": "407571" },
+            { "name": "줄조명", "categoryId": "407572" },
+            { "name": "학생스탠드", "categoryId": "407573" },
+            { "name": "북라이트", "categoryId": "407574" },
+            { "name": "LED캔들", "categoryId": "407575" },
+            { "name": "천장등/벽등", "categoryId": "407576" },
+            { "name": "전구/형광등", "categoryId": "407583" },
+            { "name": "네온사인", "categoryId": "445241" },
+            { "name": "퍽라이트", "categoryId": "445242" }
+          ]
+        },
+        {
+          "name": "셀프인테리어",
+          "categoryId": "280701",
+          "thirdCategories": [
+            { "name": "벽지/도배용품", "categoryId": "280743" },
+            { "name": "페인트/핸디코트", "categoryId": "280702" },
+            { "name": "장판/바닥재", "categoryId": "280728" },
+            { "name": "시트지/스티커", "categoryId": "280757" },
+            { "name": "폼블럭/타일/벽돌", "categoryId": "280770" },
+            { "name": "조명인테리어", "categoryId": "280779" },
+            { "name": "보수용품", "categoryId": "280800" },
+            { "name": "공구/자재", "categoryId": "280808" },
+            { "name": "인테리어소품", "categoryId": "280824" },
+            { "name": "인테리어도서", "categoryId": "280856" },
+            { "name": "건전지/멀티탭", "categoryId": "509364" }
+          ]
+        },
+        {
+          "name": "원예/가드닝",
+          "categoryId": "384621",
+          "thirdCategories": [
+            { "name": "꽃다발/꽃선물", "categoryId": "418920" },
+            { "name": "다육이/선인장", "categoryId": "384622" },
+            { "name": "식물/나무", "categoryId": "384625" },
+            { "name": "조화/비누꽃", "categoryId": "384644" },
+            { "name": "드라이플라워", "categoryId": "384656" },
+            { "name": "화분/화병", "categoryId": "384660" },
+            { "name": "씨앗/텃밭세트", "categoryId": "384669" },
+            { "name": "숯화분/석부작", "categoryId": "384682" },
+            { "name": "흙/영양제/살 충", "categoryId": "384685" },
+            { "name": "원예도구", "categoryId": "384693" },
+            { "name": "야외가구/소품", "categoryId": "384702" },
+            { "name": "잔디/농기구", "categoryId": "384715" }
+          ]
+        },
+        {
+          "name": "생활 전기용품",
+          "categoryId": "510083",
+          "thirdCategories": [
+            { "name": "멀티탭/연장선", "categoryId": "510084" },
+            { "name": "전구/램프", "categoryId": "510089" },
+            { "name": "조명기구/부속", "categoryId": "510096" },
+            { "name": "건전지/배터리", "categoryId": "510106" }
+          ]
+        },
+        {
+          "name": "공구/철물/DIY",
+          "categoryId": "510113",
+          "thirdCategories": [
+            { "name": "전동/정밀공구", "categoryId": "510114" },
+            { "name": "수공구/절단도구", "categoryId": "510126" },
+            { "name": "공구함", "categoryId": "510142" },
+            { "name": "측정/측량도구", "categoryId": "510143" },
+            { "name": "배관/건축자재", "categoryId": "510155" },
+            { "name": "사다리/운반용품", "categoryId": "510179" },
+            { "name": "모터/에어공구", "categoryId": "510184" },
+            { "name": "나사/못/체결도구", "categoryId": "510193" },
+            { "name": "접착/보수용품", "categoryId": "510203" },
+            { "name": "토치/용접공구", "categoryId": "510216" },
+            { "name": "페인트/도구", "categoryId": "510222" }
+          ]
+        },
+        {
+          "name": "안전/호신용품",
+          "categoryId": "510239",
+          "thirdCategories": [
+            { "name": "소화기/화재안전", "categoryId": "510240" },
+            { "name": "호신용품", "categoryId": "510248" },
+            { "name": "방범/잠금장치", "categoryId": "510255" },
+            { "name": "산업안전용품", "categoryId": "510265" },
+            { "name": "목장갑/안전장갑", "categoryId": "510275" },
+            { "name": "안전표지/경고등", "categoryId": "510279" },
+            { "name": "안전바/안전테이프", "categoryId": "510286" },
+            { "name": "재난/방역용품", "categoryId": "510295" }
+          ]
+        },
+        {
+          "name": "세탁/청소용품",
+          "categoryId": "510332",
+          "thirdCategories": [
+            { "name": "청소용품", "categoryId": "510333" },
+            { "name": "밀대/청소포", "categoryId": "510345" },
+            { "name": "빨래건조대", "categoryId": "510349" },
+            { "name": "빨래용품", "categoryId": "510350" },
+            { "name": "휴지통", "categoryId": "510354" },
+            { "name": "분리수거함", "categoryId": "510355" },
+            { "name": "먼지제거/클리너", "categoryId": "510358" },
+            { "name": "세탁/다림용품", "categoryId": "510364" }
+          ]
+        }
+      ]
+    }
+  ]
+}

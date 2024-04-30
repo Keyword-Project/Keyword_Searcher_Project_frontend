@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "lib/FetchSlice";
-import React from "react";
+import React, { useCallback } from "react";
 import Magnifier from "assets/icons/magnifier.svg?react";
-import { useOutletContext } from "react-router-dom";
+import { debounce } from "lodash";
 
 const InputDiv = styled.div`
   position: relative;
@@ -37,13 +37,21 @@ const Input = styled.input`
 `;
 
 export default function KeywordInput() {
+  const dispatch = useDispatch();
 
-  const isFetching = useOutletContext();
+  const debouncedKeywordNameChange = useCallback(
+    debounce((value: string) => {
+      dispatch(pathNameFetch(value));
+      console.log("디바운스 적용");
+    }, 300), // Debounce delay set to 300 milliseconds
+    []
+  );
 
   const keywordNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(pathNameFetch(e.target.value));
+    const { value } = e.target;
+
+    debouncedKeywordNameChange(value);
   };
-  const dispatch = useDispatch();
 
   return (
     <>

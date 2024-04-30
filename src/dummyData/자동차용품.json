@@ -1,0 +1,151 @@
+{
+  "firstCategories": [
+    {
+      "name": "자동차용품",
+      "categoryId": "184060",
+      "secondCategories": [
+        {
+          "name": "봄철 차량관리",
+          "categoryId": "414817",
+          "thirdCategories": [
+            { "name": "세차용품", "categoryId": "414818" },
+            { "name": "공기정화용품", "categoryId": "414833" },
+            { "name": "유리 관리용품", "categoryId": "414838" },
+            { "name": "실내관리", "categoryId": "414845" }
+          ]
+        },
+        {
+          "name": "인테리어",
+          "categoryId": "401027",
+          "thirdCategories": [
+            { "name": "방향제/공기청정", "categoryId": "401028" },
+            { "name": "바닥매트/트렁크매트", "categoryId": "497870" },
+            { "name": "시트/쿠션", "categoryId": "401035" },
+            { "name": "차박매트", "categoryId": "497873" },
+            { "name": "핸들용품", "categoryId": "401045" },
+            { "name": "커버/몰딩", "categoryId": "497877" },
+            { "name": "수납/정리용품", "categoryId": "401049" },
+            { "name": "편의용품/액세서리", "categoryId": "486490" },
+            { "name": "햇빛가리개/썬팅", "categoryId": "503231" }
+          ]
+        },
+        {
+          "name": "익스테리어",
+          "categoryId": "401098",
+          "thirdCategories": [
+            { "name": "스티커/앰블 럼", "categoryId": "401103" },
+            { "name": "문콕방지/몰딩", "categoryId": "401106" },
+            { "name": "썬바이저", "categoryId": "401115" },
+            { "name": "번호판스티커/프레임", "categoryId": "401123" },
+            { "name": "안테나/볼", "categoryId": "401120" },
+            { "name": "루프/캐리어용품", "categoryId": "401117" },
+            { "name": "미러용품", "categoryId": "503239" },
+            { "name": "주유구캡/혼유방지링", "categoryId": "503240" }
+          ]
+        },
+        {
+          "name": "세차/카케어",
+          "categoryId": "401394",
+          "thirdCategories": [
+            { "name": "세차용품세트", "categoryId": "401395" },
+            { "name": "카샴푸/세정제", "categoryId": "401396" },
+            { "name": "타월/스펀지", "categoryId": "401401" },
+            { "name": "세차호스/거품분사기", "categoryId": "401413" },
+            { "name": "세차박스/스텝박스", "categoryId": "401416" },
+            { "name": "물왁스/퀵디테일러", "categoryId": "401412" },
+            { "name": "차량용청소기", "categoryId": "401410" },
+            { "name": "먼지털이개", "categoryId": "401406" },
+            { "name": "유리발수코팅제", "categoryId": "503250" },
+            { "name": "실내세정제", "categoryId": "503251" },
+            { "name": "흠집제거/복원", "categoryId": "503252" },
+            { "name": "광택", "categoryId": "503260" },
+            { "name": "바디커버", "categoryId": "503267" },
+            { "name": "성에/김서림방지", "categoryId": "497883" },
+            { "name": "기타청소용품", "categoryId": "401418" }
+          ]
+        },
+        {
+          "name": "차량용 전자기기",
+          "categoryId": "401207",
+          "thirdCategories": [
+            { "name": "HUD/계기판", "categoryId": "503299" },
+            { "name": "무선충전 거치대", "categoryId": "497774" },
+            { "name": "일반거치대", "categoryId": "497775" },
+            { "name": "차량용충전기", "categoryId": "401212" },
+            { "name": "멀티소켓", "categoryId": "401225" },
+            { "name": "블랙박스", "categoryId": "401214" },
+            { "name": "하이패스", "categoryId": "401217" },
+            { "name": "내비게이션", "categoryId": "401220" },
+            { "name": "후방카메라/감지기", "categoryId": "401226" },
+            { "name": "음향기기/AV", "categoryId": "401229" },
+            { "name": "차량용가전", "categoryId": "487217" },
+            { "name": "전기차 충전기/악세서리", "categoryId": "510523" }
+          ]
+        },
+        {
+          "name": "차량관리/소모품",
+          "categoryId": "486447",
+          "thirdCategories": [
+            { "name": "와이퍼", "categoryId": "503246" },
+            { "name": "워셔액", "categoryId": "486448" },
+            { "name": "에어컨필터", "categoryId": "486449" },
+            { "name": "엔진오일", "categoryId": "497749" },
+            { "name": "첨가제", "categoryId": "497753" },
+            { "name": "냉각수/부동액", "categoryId": "497759" },
+            { "name": "요소수", "categoryId": "509507" },
+            { "name": "초순수/정제수", "categoryId": "509508" },
+            { "name": "기타 오일/필터", "categoryId": "497767" },
+            { "name": "점프스타터", "categoryId": "497760" },
+            { "name": "배터리용품", "categoryId": "497761" },
+            { "name": "타이어/휠", "categoryId": "503268" },
+            { "name": "스노우체인", "categoryId": "503284" },
+            { "name": "램프/LED/HID", "categoryId": "503290" },
+            { "name": "전기차 충전기/악세서리", "categoryId": "510522" }
+          ]
+        },
+        {
+          "name": "RV/아웃도어",
+          "categoryId": "503300",
+          "thirdCategories": [
+            { "name": "캠핑용품", "categoryId": "503301" },
+            { "name": "차박매트", "categoryId": "503306" },
+            { "name": "인버터/멀티소켓", "categoryId": "503307" },
+            { "name": "루프/캐리어용품", "categoryId": "503310" }
+          ]
+        },
+        {
+          "name": "부품/안전/공구",
+          "categoryId": "497290",
+          "thirdCategories": [
+            { "name": "정전기방지용품", "categoryId": "497308" },
+            { "name": "안전삼각대/소화기", "categoryId": "497309" },
+            { "name": "방음재", "categoryId": "503314" },
+            { "name": "차량용리프트", "categoryId": "503317" },
+            { "name": "고임목/버팀목", "categoryId": "503318" },
+            { "name": "카본/레자시트지", "categoryId": "503319" },
+            { "name": "차량용접착제/테이프", "categoryId": "503320" },
+            { "name": "차량용공구/장비", "categoryId": "503321" },
+            { "name": "부품/튜닝용품", "categoryId": "503322" },
+            { "name": "전기용품", "categoryId": "503364" }
+          ]
+        },
+        {
+          "name": "오토바이용품",
+          "categoryId": "401438",
+          "thirdCategories": [
+            { "name": "오토바이/스쿠터", "categoryId": "401439" },
+            { "name": "헬멧/고글", "categoryId": "401443" },
+            { "name": "오토바이의류", "categoryId": "401447" },
+            { "name": "오토바이장갑", "categoryId": "497791" },
+            { "name": "오토바이부츠/잡화", "categoryId": "497794" },
+            { "name": "오토바이보호장비", "categoryId": "401462" },
+            { "name": "배달가방/탑박스", "categoryId": "497799" },
+            { "name": "오토바이액세서리", "categoryId": "503368" },
+            { "name": "오토바이부품/튜닝/정비", "categoryId": "401472" },
+            { "name": "오토바이전자기기", "categoryId": "401484" }
+          ]
+        }
+      ]
+    }
+  ]
+}

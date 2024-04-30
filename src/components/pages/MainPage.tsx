@@ -3,12 +3,13 @@ import CustomCalendar from "components/feature/filter/CustomCalendar";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Result from "components/feature/result/Result";
-import { useLocation, Outlet } from "react-router-dom";
+import { useLocation, Outlet, useNavigate } from "react-router-dom";
 import { RootState } from "main";
 import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import EmptyResult from "components/feature/result/EmptyResult";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -55,12 +56,8 @@ const InquiryButton = styled.button`
   background-color: var(--Gray700);
 `;
 
-const ResultDiv = styled.div`
-  width: 100%;
-  height: 400px;
-`;
-
 export default function MainPage() {
+  const [resultVisible, setResultVisible] = useState(false);
   const { error, data, refetch, isFetching } = useQuery({
     queryKey: ["repoData"],
     queryFn: async () => {
@@ -71,6 +68,13 @@ export default function MainPage() {
     refetchOnWindowFocus: false,
     enabled: false,
   });
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    // 쿼리 문자열 업데이트
+    history.push("/watch?v=46YNAP5Gg3k");
+  };
 
   const problemData = data;
 
@@ -126,17 +130,19 @@ export default function MainPage() {
   }
 
   const handleSearch = () => {
-    refetch();
+    if (pathName == "") {
+      console.log("keyword를 입력하세요");
+    } else {
+      setResultVisible(true);
+      refetch();
+    }
   };
-
-  const [resultVisible, setResultVisible] = useState(false);
 
   return (
     <>
-      <Outlet  context={{isFetching}} />
+      <Outlet context={{ isFetching }} />
       <FilterBox>
         <CustomCalendar />
-
         <ItemSearchCount isFetching={isFetching} />
         <PriceRange
           minPrice={minPrice}
@@ -149,7 +155,6 @@ export default function MainPage() {
         <InquiryButton
           disabled={isFetching}
           onClick={() => {
-            setResultVisible(true);
             handleSearch();
           }}
         >
@@ -165,18 +170,25 @@ export default function MainPage() {
         onChange={searchSizeChange}
         disabled={isFetching}
       />
+      <button
+        onClick={() => {
+          navigate("/category?v=46YNAP5Gg3k");
+        }}
+      >
+        어바웃 페이지로 이동하기
+      </button>
 
       <SearchResultWord>상품 검색 결과</SearchResultWord>
 
-      <ResultDiv>
-        {resultVisible && (
-          <Result
-            problemData={problemData}
-            error={error}
-            isFetching={isFetching}
-          />
-        )}
-      </ResultDiv>
+      {resultVisible ? (
+        <Result
+          problemData={problemData}
+          error={error}
+          isFetching={isFetching}
+        />
+      ) : (
+        <EmptyResult />
+      )}
     </>
   );
 }

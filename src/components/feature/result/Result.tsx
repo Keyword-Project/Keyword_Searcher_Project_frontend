@@ -1,5 +1,4 @@
-import { useSearchParams } from "react-router-dom";
-import SpinnerBox from "components/feature/result/SpinnerBox";
+import SkeletonContainer from "components/feature/result/SkeletonContainer";
 import ExcelDownloader from "./ExcelDownloader";
 import ResultTable from "./ResultTable";
 
@@ -24,31 +23,15 @@ export interface QueryData {
   los: string;
 }
 
-export default function Result( {problemData, isFetching, error }) {
-  const [keywordObj, setKeywordObj] = useSearchParams();
-  // console.log(keywordObj, "result 컴포넌트 리 렌더링 확인용");
-  // console.log(queryData, 'queryData -> 도대체 뭐 떄문에 리렌더링이 나는거야 열받게')
-
-  // setKeywordObj({
-  //   q: queryData.pathName,
-  //   minPrice: queryData.minPrice,
-  //   maxPrice: queryData.maxPrice,
-  //   searchSize: queryData.searchSize,
-  //   startDate: queryData.startDate,
-  //   los: queryData.los,
-  // });
-
-
-  if (isFetching) return <SpinnerBox></SpinnerBox>;
+export default function Result({ problemData, isFetching, error }) {
+  if (isFetching) return <SkeletonContainer></SkeletonContainer>;
 
   if (error) return "An error has occurred: " + error.message;
 
   return (
     <>
-      <>
-        <ExcelDownloader problemData={problemData} />
-        <ResultTable problemData={problemData} />
-      </>
+      <ExcelDownloader problemData={problemData} />
+      <ResultTable problemData={problemData} />
     </>
   );
 }

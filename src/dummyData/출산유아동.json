@@ -1,0 +1,300 @@
+{
+  "firstCategories": [
+    {
+      "name": "출산/유아동",
+      "categoryId": "221934",
+      "secondCategories": [
+        {
+          "name": "유아동패션",
+          "categoryId": "508565",
+          "thirdCategories": [
+            { "name": "베이비", "categoryId": "508566" },
+            { "name": "여아", "categoryId": "508592" },
+            { "name": "남아", "categoryId": "508663" }
+          ]
+        },
+        {
+          "name": "기저귀",
+          "categoryId": "485952",
+          "thirdCategories": [
+            { "name": "일회용기저귀", "categoryId": "485953" },
+            { "name": "수영장기저귀", "categoryId": "485957" },
+            { "name": "천기저귀/액세서리", "categoryId": "485958" },
+            { "name": "배변훈련팬티", "categoryId": "485962" },
+            { "name": "기저귀케익", "categoryId": "485963" },
+            { "name": "기저귀크림/파우더", "categoryId": "485964" },
+            { "name": "기저귀정리함", "categoryId": "485968" },
+            { "name": "기저귀매트", "categoryId": "485969" },
+            { "name": "기저귀통/봉투", "categoryId": "485973" },
+            { "name": "기저귀가방", "categoryId": "485976" }
+          ]
+        },
+        {
+          "name": "물티슈",
+          "categoryId": "485979",
+          "thirdCategories": [
+            { "name": "물티슈", "categoryId": "485980" },
+            { "name": "건티슈", "categoryId": "485981" },
+            { "name": "물티슈액세서리", "categoryId": "485982" }
+          ]
+        },
+        {
+          "name": "분유/어린이식품",
+          "categoryId": "221939",
+          "thirdCategories": [
+            { "name": "분유", "categoryId": "221995" },
+            { "name": "이유식", "categoryId": "446135" },
+            { "name": "미음/죽/분말", "categoryId": "222036" },
+            { "name": "양념/식재료", "categoryId": "222043" },
+            { "name": "국/반찬", "categoryId": "222050" },
+            { "name": "간식/음료", "categoryId": "403082" },
+            { "name": "대용식", "categoryId": "510531" }
+          ]
+        },
+        {
+          "name": "어린이 건강식품",
+          "categoryId": "509025",
+          "thirdCategories": [
+            { "name": "비타 민/미네랄", "categoryId": "509028" },
+            { "name": "홍삼", "categoryId": "509029" },
+            { "name": "칼슘", "categoryId": "509030" },
+            { "name": "유산균/초유", "categoryId": "509031" },
+            { "name": "오메가", "categoryId": "509032" },
+            { "name": "기타 건강식품", "categoryId": "509033" }
+          ]
+        },
+        {
+          "name": "수유용품",
+          "categoryId": "221943",
+          "thirdCategories": [
+            { "name": "젖병", "categoryId": "485989" },
+            { "name": "젖꼭지", "categoryId": "485992" },
+            { "name": "노리개젖꼭지", "categoryId": "371307" },
+            { "name": "치발기", "categoryId": "371311" },
+            { "name": "모유저장팩", "categoryId": "486184" },
+            { "name": "분유케이 스/저장팩", "categoryId": "486186" },
+            { "name": "젖병세척용품", "categoryId": "371319" },
+            { "name": "젖병소독기/건조대", "categoryId": "371324" },
+            { "name": "분유보관용기", "categoryId": "371327" },
+            { "name": "수유패드", "categoryId": "371328" },
+            { "name": "유축기", "categoryId": "371329" },
+            { "name": "모유촉진제", "categoryId": "371330" },
+            { "name": "유두보호/젖몸살용품", "categoryId": "371331" },
+            { "name": "보틀워머/보온병", "categoryId": "371332" },
+            { "name": "수유복/가리개", "categoryId": "371336" },
+            { "name": "수유쿠션/시트", "categoryId": "371342" },
+            { "name": "수유등", "categoryId": "371345" },
+            { "name": "분유포트", "categoryId": "382689" }
+          ]
+        },
+        {
+          "name": "이유용품/유아식기",
+          "categoryId": "334841",
+          "thirdCategories": [
+            { "name": "이유식용품", "categoryId": "334842" },
+            { "name": "턱받이", "categoryId": "334871" },
+            { "name": "빨대컵/유아컵", "categoryId": "371346" },
+            { "name": "유아식기/캐릭터식기", "categoryId": "446109" },
+            { "name": "도시락/물병/보냉백", "categoryId": "446119" },
+            { "name": "스푼/포크/젓가락", "categoryId": "334854" },
+            { "name": "유아식탁/부스터", "categoryId": "334873" }
+          ]
+        },
+        {
+          "name": "매트/안전용품",
+          "categoryId": "221946",
+          "thirdCategories": [
+            { "name": "놀이방매트", "categoryId": "509106" },
+            { "name": "퍼즐매트", "categoryId": "509107" },
+            { "name": "폴더매트", "categoryId": "509108" },
+            { "name": "벽매트", "categoryId": "509109" },
+            { "name": "DIY/시공매트", "categoryId": "509110" },
+            { "name": "유아안전문", "categoryId": "222433" },
+            { "name": "모서리/코너보호대", "categoryId": "222436" },
+            { "name": "손낌방지용품", "categoryId": "222437" },
+            { "name": "잠금장치/커 버", "categoryId": "222440" },
+            { "name": "미끄럼방지용품", "categoryId": "222443" },
+            { "name": "침대가드", "categoryId": "222444" },
+            { "name": "뒤집기방지쿠션", "categoryId": "222445" },
+            { "name": "머 리/무릎보호대", "categoryId": "222446" },
+            { "name": "미아방지용품", "categoryId": "222450" },
+            { "name": "아기모니터", "categoryId": "222456" }
+          ]
+        },
+        {
+          "name": "유모차/웨건",
+          "categoryId": "381650",
+          "thirdCategories": [
+            { "name": "디럭스유모차", "categoryId": "381651" },
+            { "name": "절충형유모차", "categoryId": "381652" },
+            { "name": "휴대용유모차", "categoryId": "381653" },
+            { "name": "쌍둥이유모차", "categoryId": "381654" },
+            { "name": "웨건", "categoryId": "381655" },
+            { "name": "유모차/웨건액세서리", "categoryId": "381656" }
+          ]
+        },
+        {
+          "name": "카시트",
+          "categoryId": "381697",
+          "thirdCategories": [
+            { "name": "신생아바구니카시트", "categoryId": "381698" },
+            { "name": "영유아카시트", "categoryId": "381699" },
+            { "name": "주니어카시트", "categoryId": "381700" },
+            { "name": "부스터카시트", "categoryId": "381701" },
+            { "name": "카시트액세서리", "categoryId": "381702" }
+          ]
+        },
+        {
+          "name": "아기띠/외출용품",
+          "categoryId": "381717",
+          "thirdCategories": [
+            { "name": "아기띠", "categoryId": "509152" },
+            { "name": "올인원 아기띠", "categoryId": "509153" },
+            { "name": "힙시트", "categoryId": "509154" },
+            { "name": "트레킹캐리어", "categoryId": "509155" },
+            { "name": "포대기/처네", "categoryId": "381723" },
+            { "name": "슬링", "categoryId": "381724" },
+            { "name": "아기띠액세서리", "categoryId": "381725" },
+            { "name": "기저귀가방", "categoryId": "403105" },
+            { "name": "기저귀/약파우치", "categoryId": "403106" },
+            { "name": "보냉백/런치백", "categoryId": "403107" }
+          ]
+        },
+        {
+          "name": "욕실용품/스킨케어",
+          "categoryId": "221944",
+          "thirdCategories": [
+            { "name": "유아워시/샴푸", "categoryId": "222358" },
+            { "name": "유아구강케어", "categoryId": "222371" },
+            { "name": "유아스킨케어", "categoryId": "222352" },
+            { "name": "기저귀크림/파우더", "categoryId": "222367" },
+            { "name": "유아욕조/목욕의자", "categoryId": "403072" },
+            { "name": "유아목욕용품", "categoryId": "222377" },
+            { "name": "유아 타올", "categoryId": "403075" },
+            { "name": "유아변기", "categoryId": "403076" },
+            { "name": "선케어/야외활동케어", "categoryId": "222395" },
+            { "name": "어린이화장품", "categoryId": "222399" }
+          ]
+        },
+        {
+          "name": "위생/건강/세제",
+          "categoryId": "221945",
+          "thirdCategories": [
+            { "name": "위생용품", "categoryId": "222402" },
+            { "name": "유아항균지퍼팩", "categoryId": "403108" },
+            { "name": "배변훈련팬티", "categoryId": "403109" },
+            { "name": "건강용품", "categoryId": "222417" },
+            { "name": "유아구강용품", "categoryId": "403110" },
+            { "name": "유아세제/세정제", "categoryId": "222408" },
+            { "name": "야외활동용품", "categoryId": "403111" }
+          ]
+        },
+        {
+          "name": "유아동침구",
+          "categoryId": "221942",
+          "thirdCategories": [
+            { "name": "낮잠이불", "categoryId": "222195" },
+            { "name": "겉싸개/속싸개", "categoryId": "222196" },
+            { "name": "유아이불", "categoryId": "222200" },
+            { "name": "베개/바디필로우", "categoryId": "222204" },
+            { "name": "유아담요/블랭킷", "categoryId": "222211" },
+            { "name": "유아 요/방수요", "categoryId": "222212" },
+            { "name": "침구세트", "categoryId": "222216" }
+          ]
+        },
+        {
+          "name": "유아가구/인테리어",
+          "categoryId": "221947",
+          "thirdCategories": [
+            { "name": "유아동침대", "categoryId": "222457" },
+            { "name": "유 아의자/소파", "categoryId": "222464" },
+            { "name": "수납/정리함", "categoryId": "222471" },
+            { "name": "공부상/책상", "categoryId": "222479" },
+            { "name": "유아책장/책꽂이", "categoryId": "222482" },
+            { "name": "수면등/수유등", "categoryId": "222485" },
+            { "name": "유아키재기스티커", "categoryId": "311382" }
+          ]
+        },
+        {
+          "name": "완구/교구",
+          "categoryId": "349657",
+          "thirdCategories": [
+            { "name": "캐릭터별완구", "categoryId": "349665" },
+            { "name": "신생아/영아완구", "categoryId": "349686" },
+            { "name": "블록놀이", "categoryId": "349793" },
+            { "name": "역할놀이", "categoryId": "349825" },
+            { "name": "로봇/작동완구", "categoryId": "349745" },
+            { "name": "인형", "categoryId": "349808" },
+            { "name": "물놀이/계절완구", "categoryId": "350139" },
+            { "name": "승용완구", "categoryId": "350057" },
+            { "name": "실내대형완구", "categoryId": "350044" },
+            { "name": "스포츠/야외완구", "categoryId": "350077" },
+            { "name": "STEAM/학습완구", "categoryId": "349876" },
+            { "name": "보드게임", "categoryId": "349983" },
+            { "name": "퍼즐", "categoryId": "496486" }
+          ]
+        },
+        {
+          "name": "유아동도서",
+          "categoryId": "346878",
+          "thirdCategories": [
+            { "name": "그림책", "categoryId": "346879" },
+            { "name": "어린이 문학", "categoryId": "346890" },
+            { "name": "초점책/영아책", "categoryId": "346898" },
+            { "name": "놀이책/토이북", "categoryId": "346902" },
+            { "name": "학습/교양", "categoryId": "346913" },
+            { "name": "만화/애니메이션", "categoryId": "346972" },
+            { "name": "전집/세트", "categoryId": "346978" },
+            { "name": "초등참고서", "categoryId": "346988" },
+            { "name": "어린이 잡지", "categoryId": "346993" },
+            { "name": "유아동 해외도서", "categoryId": "346994" },
+            { "name": "음반/DVD", "categoryId": "347271" },
+            { "name": "누리과정 주제", "categoryId": "371586" },
+            { "name": "교과서수록도서", "categoryId": "371592" }
+          ]
+        },
+        {
+          "name": "출산준비물/선물",
+          "categoryId": "418893",
+          "thirdCategories": [
+            { "name": "그림책", "categoryId": "346879" },
+            { "name": "어린이 문학", "categoryId": "346890" },
+            { "name": "초점책/영아책", "categoryId": "346898" },
+            { "name": "놀이책/토이북", "categoryId": "346902" },
+            { "name": "학습/교양", "categoryId": "346913" },
+            { "name": "만화/애니메이션", "categoryId": "346972" },
+            { "name": "전집/세트", "categoryId": "346978" },
+            { "name": "초등참고서", "categoryId": "346988" },
+            { "name": "어린이 잡지", "categoryId": "346993" },
+            { "name": "유아동 해외도서", "categoryId": "346994" },
+            { "name": "음반/DVD", "categoryId": "347271" },
+            { "name": "누리과정 주제", "categoryId": "371586" },
+            { "name": "교과서수록도서", "categoryId": "371592" }
+          ]
+        },
+        {
+          "name": "임부/태교용품",
+          "categoryId": "221950",
+          "thirdCategories": [
+            { "name": "임신초기(~15주)", "categoryId": "226334" },
+            { "name": "임신중기(16~27주)", "categoryId": "226365" },
+            { "name": "임신후기(28~40주)", "categoryId": "226414" },
+            { "name": "산욕기(산후 6주)", "categoryId": "226449" },
+            { "name": "임부복", "categoryId": "222877" },
+            { "name": "임부속옷", "categoryId": "403118" },
+            { "name": "임산부화장품", "categoryId": "222916" },
+            { "name": "임산부보조식품", "categoryId": "222923" },
+            { "name": "임산부보호용품", "categoryId": "222928" },
+            { "name": "산모방석", "categoryId": "403132" },
+            { "name": "바디필로우", "categoryId": "403133" },
+            { "name": "산모패드", "categoryId": "403134" },
+            { "name": "태교도서/음반", "categoryId": "222932" },
+            { "name": "육아도서/백과", "categoryId": "227437" },
+            { "name": "태교DIY", "categoryId": "315892" },
+            { "name": "임신/배란테스트기", "categoryId": "222967" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "firstCategories": [
+    {
+      "name": "생활용품",
+      "categoryId": "115673",
+      "secondCategories": [
+        {
+          "name": "헤어",
+          "categoryId": "123111",
+          "thirdCategories": [
+            { "name": "샴푸/린스", "categoryId": "123139" },
+            { "name": "트리트먼트/팩/앰플", "categoryId": "123170" },
+            { "name": "스타일링/케어/세트", "categoryId": "126790" },
+            { "name": "염색/파마", "categoryId": "126791" }
+          ]
+        },
+        {
+          "name": "바디/세안",
+          "categoryId": "509357",
+          "thirdCategories": [
+            { "name": "샤워/입욕용품", "categoryId": "509358" },
+            { "name": "바디로션/크림", "categoryId": "509509" },
+            { "name": "핸드/풋/데오", "categoryId": "509518" },
+            { "name": "제모/슬리밍/청결제", "categoryId": "509543" },
+            { "name": "클렌징/필링", "categoryId": "509562" }
+          ]
+        },
+        {
+          "name": "구강/면도",
+          "categoryId": "114471",
+          "thirdCategories": [
+            { "name": "면도기/날", "categoryId": "114563" },
+            { "name": "면도크림/젤", "categoryId": "114564" },
+            { "name": "치약", "categoryId": "114565" },
+            { "name": "칫솔", "categoryId": "114566" },
+            { "name": "전동칫솔/칫솔모", "categoryId": "281742" },
+            { "name": "치약/칫솔 세트", "categoryId": "159429" },
+            { "name": "구강청결제", "categoryId": "114567" },
+            { "name": "치실/치간칫솔", "categoryId": "114568" },
+            { "name": "치아미백제", "categoryId": "114569" },
+            { "name": "구강보조용품", "categoryId": "114570" }
+          ]
+        },
+        {
+          "name": "화장지/물티슈",
+          "categoryId": "465071",
+          "thirdCategories": [
+            { "name": "화장지", "categoryId": "465073" },
+            { "name": "갑티슈/여행용티슈", "categoryId": "465074" },
+            { "name": "물티슈/비데티슈", "categoryId": "465075" },
+            { "name": "키친타올", "categoryId": "465076" }
+          ]
+        },
+        {
+          "name": "생리대/성인기저귀",
+          "categoryId": "465072",
+          "thirdCategories": [
+            { "name": "일반생리대", "categoryId": "465077" },
+            { "name": "오버나이트", "categoryId": "465078" },
+            { "name": "팬티라이너", "categoryId": "465079" },
+            { "name": "체내형/ 생리컵", "categoryId": "465080" },
+            { "name": "면 생리대", "categoryId": "465081" },
+            { "name": "산모/임산부패드", "categoryId": "465083" },
+            { "name": "위생/생리팬티", "categoryId": "465084" },
+            { "name": "성인기저귀", "categoryId": "465082" },
+            { "name": "여성청결제", "categoryId": "465085" }
+          ]
+        },
+        {
+          "name": "기저귀",
+          "categoryId": "502258",
+          "thirdCategories": [
+            { "name": "일회용기저귀", "categoryId": "502259" },
+            { "name": "수영장기저귀", "categoryId": "502263" },
+            { "name": "천기저귀/액세서리", "categoryId": "502264" },
+            { "name": "배변훈련팬티", "categoryId": "502268" },
+            { "name": "기저귀케익", "categoryId": "502269" },
+            { "name": "기저귀크림/파우더", "categoryId": "502270" },
+            { "name": "기저귀정리함", "categoryId": "502274" },
+            { "name": "기저귀매트", "categoryId": "502275" },
+            { "name": "기저귀통/ 봉투", "categoryId": "502279" },
+            { "name": "기저귀가방", "categoryId": "502282" }
+          ]
+        },
+        {
+          "name": "세탁세제",
+          "categoryId": "399742",
+          "thirdCategories": [
+            { "name": "액체세제", "categoryId": "399743" },
+            { "name": "분말세제", "categoryId": "399744" },
+            { "name": "캡슐세제", "categoryId": "399745" },
+            { "name": "시트세제", "categoryId": "498014" },
+            { "name": "섬유유연제", "categoryId": "498015" },
+            { "name": "울세제/홈드라이세제", "categoryId": "498016" },
+            { "name": "향기지속제", "categoryId": "399747" },
+            { "name": "표백제", "categoryId": "399748" },
+            { "name": "세탁비누", "categoryId": "399750" },
+            { "name": "얼룩/찌든때 제거제", "categoryId": "399751" },
+            { "name": "운동화/가죽크리너", "categoryId": "399752" },
+            { "name": "유아세제/섬유유연제", "categoryId": "399753" },
+            { "name": "세제선물세트", "categoryId": "399757" }
+          ]
+        },
+        {
+          "name": "청소/주방세제",
+          "categoryId": "399758",
+          "thirdCategories": [
+            { "name": "친환경/천연세제", "categoryId": "498021" },
+            { "name": "청소세제", "categoryId": "399760" },
+            { "name": "주방세제", "categoryId": "399773" },
+            { "name": "세제선물세트", "categoryId": "399783" }
+          ]
+        },
+        {
+          "name": "탈취/방향/살충",
+          "categoryId": "114472",
+          "thirdCategories": [
+            { "name": "탈취제", "categoryId": "114596" },
+            { "name": "제습제", "categoryId": "154294" },
+            { "name": "방향제", "categoryId": "114597" },
+            { "name": "캔들/디퓨저", "categoryId": "154289" },
+            { "name": "살충제/벌레약", "categoryId": "363658" },
+            { "name": "야외활동케어", "categoryId": "363664" },
+            { "name": "방충용품", "categoryId": "363669" },
+            { "name": "곰팡이/진드기", "categoryId": "363677" }
+          ]
+        },
+        {
+          "name": "건강/의료용품",
+          "categoryId": "114473",
+          "thirdCategories": [
+            { "name": "마스크", "categoryId": "114642" },
+            { "name": "의약외품/상비용품", "categoryId": "114650" },
+            { "name": "눈/렌즈용품", "categoryId": "114641" },
+            { "name": "코/수면용품", "categoryId": "114646" },
+            { "name": "자세교정/보호대", "categoryId": "114643" },
+            { "name": "마사지용품", "categoryId": "373491" },
+            { "name": "한방/찜질용품", "categoryId": "114645" },
+            { "name": "건강측정용품", "categoryId": "114644" },
+            { "name": "전문의료용품", "categoryId": "114651" },
+            { "name": "건강액세서리", "categoryId": "114648" },
+            { "name": "활동보조용품", "categoryId": "114647" }
+          ]
+        },
+        {
+          "name": "성인용품(19)",
+          "categoryId": "174692",
+          "thirdCategories": [
+            { "name": "콘돔", "categoryId": "219159" },
+            { "name": "러브젤", "categoryId": "510373" },
+            { "name": "마사지젤/오일", "categoryId": "403213" },
+            { "name": "성인 완구/게임(19)", "categoryId": "219162" },
+            { "name": "성인용품세트(19)", "categoryId": "305527" },
+            { "name": "성인 란제리(19)", "categoryId": "174704" },
+            { "name": "성인 코스튬(19)", "categoryId": "247512" },
+            { "name": "성인 가구(19)", "categoryId": "219171" },
+            { "name": "구속/처벌 용품(19)", "categoryId": "219172" },
+            { "name": "성인 도서/DVD(19)", "categoryId": "174714" },
+            { "name": "금연/흡연용품(19)", "categoryId": "379778" }
+          ]
+        },
+        {
+          "name": "세탁/청소용품",
+          "categoryId": "225844",
+          "thirdCategories": [
+            { "name": "청소용품", "categoryId": "225845" },
+            { "name": "밀대/청소포", "categoryId": "225852" },
+            { "name": "빨래건조대", "categoryId": "225865" },
+            { "name": "빨래용품", "categoryId": "225861" },
+            { "name": "휴지통", "categoryId": "225871" },
+            { "name": "분리수거함", "categoryId": "225866" },
+            { "name": "먼지제거/클리너", "categoryId": "225872" },
+            { "name": "세탁/다림용품", "categoryId": "225878" }
+          ]
+        },
+        {
+          "name": "욕실용품",
+          "categoryId": "419509",
+          "thirdCategories": [
+            { "name": "샤워기/헤드", "categoryId": "419510" },
+            { "name": "목욕/샤워용품", "categoryId": "419523" },
+            { "name": "수건/타월", "categoryId": "419534" },
+            { "name": "욕실수납/정리", "categoryId": "419547" },
+            { "name": "욕실화", "categoryId": "419557" },
+            { "name": "욕실매트/발판", "categoryId": "419542" },
+            { "name": "욕조", "categoryId": "419517" },
+            { "name": "세면대/세면기", "categoryId": "419559" },
+            { "name": "변기/비데용품", "categoryId": "419562" },
+            { "name": "욕실거울", "categoryId": "419558" },
+            { "name": "욕실용품/잡화", "categoryId": "419569" },
+            { "name": "수전용품", "categoryId": "419578" },
+            { "name": "욕실보수용품", "categoryId": "419582" },
+            { "name": "욕실청소용품", "categoryId": "419589" }
+          ]
+        },
+        {
+          "name": "생활전기용품",
+          "categoryId": "399909",
+          "thirdCategories": [
+            { "name": "멀티 탭/연장선", "categoryId": "399910" },
+            { "name": "전구/램프", "categoryId": "399915" },
+            { "name": "조명기구/부속", "categoryId": "399922" },
+            { "name": "전선정리용품", "categoryId": "399932" },
+            { "name": "전기설비/자재", "categoryId": "399937" },
+            { "name": "건전지/배터리", "categoryId": "399946" }
+          ]
+        },
+        {
+          "name": "수납/정리",
+          "categoryId": "114727",
+          "thirdCategories": [
+            { "name": "선반/진열대", "categoryId": "115136" },
+            { "name": "리빙박스", "categoryId": "115133" },
+            { "name": "이사박스/종이박스", "categoryId": "403207" },
+            { "name": "수납장/서랍장", "categoryId": "115135" },
+            { "name": "바구니/칸막이", "categoryId": "115134" },
+            { "name": "행거", "categoryId": "115131" },
+            { "name": "옷걸이", "categoryId": "115132" },
+            { "name": "압축팩/커버", "categoryId": "115172" },
+            { "name": "슈즈렉/우산꽂이", "categoryId": "156717" },
+            { "name": "수납케이스", "categoryId": "224851" },
+            { "name": "욕실정리용품", "categoryId": "225886" },
+            { "name": "휴지통/분리수거함", "categoryId": "225895" }
+          ]
+        },
+        {
+          "name": "주방 수납/잡화",
+          "categoryId": "105903",
+          "thirdCategories": [
+            { "name": "주방수납", "categoryId": "105905" },
+            { "name": "주방세척도구", "categoryId": "105916" },
+            { "name": "주방잡화", "categoryId": "105931" },
+            { "name": "주방일회용품", "categoryId": "105975" }
+          ]
+        },
+        {
+          "name": "생활잡화",
+          "categoryId": "114729",
+          "thirdCategories": [
+            { "name": "생활테이프", "categoryId": "115351" },
+            { "name": "비닐/포장용품", "categoryId": "156861" },
+            { "name": "장바구니/카트", "categoryId": "115321" },
+            { "name": "걸이/집게/캡", "categoryId": "115324" },
+            { "name": "돗자리/코일매트", "categoryId": "115317" },
+            { "name": "발판/신발관련용품", "categoryId": "115320" },
+            { "name": "온도계/측정도구", "categoryId": "115433" },
+            { "name": "국기/깃발/깃봉", "categoryId": "224865" },
+            { "name": "방풍잡화/열차단잡화", "categoryId": "115318" },
+            { "name": "핫팩/아이스팩", "categoryId": "115429" },
+            { "name": " 기타생활용품", "categoryId": "115325" }
+          ]
+        },
+        {
+          "name": "공구/철물/DIY",
+          "categoryId": "399784",
+          "thirdCategories": [
+            { "name": "전동/정밀공구", "categoryId": "399785" },
+            { "name": "수공구/절단도구", "categoryId": "399797" },
+            { "name": "공구함", "categoryId": "399813" },
+            { "name": "측정/측량도구", "categoryId": "399814" },
+            { "name": "배관/건축자재", "categoryId": "399825" },
+            { "name": "사다리/운반용품", "categoryId": "399849" },
+            { "name": "모터/에어공구", "categoryId": "399854" },
+            { "name": "나사/못/체결도구", "categoryId": "399863" },
+            { "name": "접착/보수용품", "categoryId": "399873" },
+            { "name": "토치/용접공구", "categoryId": "399886" },
+            { "name": "페인트/도구", "categoryId": "399892" }
+          ]
+        },
+        {
+          "name": "안전/호신용품",
+          "categoryId": "156862",
+          "thirdCategories": [
+            { "name": "소화기/화재안전", "categoryId": "115327" },
+            { "name": "호신용품", "categoryId": "115328" },
+            { "name": "방범/잠금장치", "categoryId": "115481" },
+            { "name": "산업안전용품", "categoryId": "115484" },
+            { "name": "목장갑/안전장갑", "categoryId": "115485" },
+            { "name": "안전표지/경고등", "categoryId": "115483" },
+            { "name": "안전바/안전테이프", "categoryId": "115482" },
+            { "name": "재난/방역용품", "categoryId": "503180" }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "firstCategories": [
+    {
+      "name": "패션의류/잡화",
+      "categoryId": "",
+      "secondCategories": [
+        {
+          "name": "여성패션",
+          "categoryId": "186764",
+          "thirdCategories": [
+            { "name": "의류", "categoryId": "498704" },
+            { "name": "속옷/잠옷", "categoryId": "498775" },
+            { "name": "신발", "categoryId": "498797" },
+            { "name": "가방/잡화", "categoryId": "498828" }
+          ]
+        },
+        {
+          "name": "남성패션",
+          "categoryId": "187069",
+          "thirdCategories": [
+            { "name": "의류", "categoryId": "498917" },
+            { "name": "속옷/잠옷", "categoryId": "498962" },
+            { "name": "신발", "categoryId": "498974" },
+            { "name": "가방/잡화", "categoryId": "499007" }
+          ]
+        },
+        {
+          "name": "남여 공용 의류",
+          "categoryId": "310655",
+          "thirdCategories": [
+            { "name": "티셔츠", "categoryId": "502994" },
+            { "name": "맨투맨/후드티", "categoryId": "502995" },
+            { "name": "셔츠", "categoryId": "502998" },
+            { "name": "바지", "categoryId": "502999" },
+            { "name": "트레이닝복", "categoryId": "503000" },
+            { "name": "후드집업/집업류", "categoryId": "503001" },
+            { "name": "니트류/조끼", "categoryId": "503002" },
+            { "name": "아우터", "categoryId": "503006" },
+            { "name": "테마의류", "categoryId": "503010" },
+            { "name": "커플룩/패밀리룩", "categoryId": "503013" },
+            { "name": "빅사이즈", "categoryId": "509288" }
+          ]
+        },
+        {
+          "name": "유아동패션",
+          "categoryId": "213201",
+          "thirdCategories": [
+            { "name": "베이비", "categoryId": "499090" },
+            { "name": "여아", "categoryId": "499116" },
+            { "name": "남아", "categoryId": "499186" }
+          ]
+        }
+      ]
+    }
+  ]
+}

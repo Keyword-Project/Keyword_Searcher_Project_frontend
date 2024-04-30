@@ -91,7 +91,6 @@ export default function CustomCalendar() {
       // value가 [ValuePiece, ValuePiece] 인 경우
       dispatch(
         dateFetch({
-          // 필요에 따라 Nullish Coalescing 추가
           startDate: value[0]?.toISOString(),
           endDate: value[1]?.toISOString(),
         })

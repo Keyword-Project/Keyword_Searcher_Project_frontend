@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import KeywordInput from "components/feature/filter/KeywordInput";
-import NotFound from "components/page/NotFound.tsx";
-import MainPage from "components/page/MainPage";
+import NotFound from "components/pages/NotFound";
+import MainPage from "components/pages/MainPage";
 import Layout from "Layout";
 import CategoryContainer from "components/feature/filter/CategoryContainer";
 
