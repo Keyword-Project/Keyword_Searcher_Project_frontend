@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import Hamburger from "assets/icons/hamburger.svg?react";
 
-const ButtonContainer = styled.div`
+interface ButtonContainerProps {
+  BackGroundColor: string;
+  borderColor: string;
+}
+
+const ButtonContainer = styled.div<ButtonContainerProps>`
   display: inline-flex;
   height: 2.5625rem;
   padding: 0.5rem 0.875rem 0.625rem 0.875rem;
@@ -11,13 +16,13 @@ const ButtonContainer = styled.div`
   flex-shrink: 0;
   background-color: ${(props) => props.BackGroundColor};
   border-radius: 0.625rem;
-border: 1.5px solid ${(props) => props.borderColor};
-&:hover {
-  cursor: pointer;
-}
+  border: 1.5px solid ${(props) => props.borderColor};
+  &:hover {
+    cursor: pointer;
+  }
 
-/* ButtonShadow1 */
-box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.10);
+  /* ButtonShadow1 */
+  box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.1);
 `;
 
 const ButtonTitle = styled.span`
@@ -27,10 +32,13 @@ const ButtonTitle = styled.span`
   margin-left: 6px;
 `;
 
-export default function Button(props) {
+export default function Button({ ...props }) {
   return (
     <>
-      <ButtonContainer BackGroundColor={props.BackGroundColor} borderColor={props.borderColor}>
+      <ButtonContainer
+        BackGroundColor={props.BackGroundColor}
+        borderColor={props.borderColor}
+      >
         <Hamburger width="18" height="18" />
         <ButtonTitle color={props.color}>{props.title}</ButtonTitle>
       </ButtonContainer>

@@ -25,7 +25,7 @@ const Item = styled.p`
 // `;
 
 
-export default function ItemSearchCount({ isFetching }) {
+export default function ItemSearchCount({ isFetching } : {isFetching : boolean}) {
   const dropdownList = ['30개씩 보기', '50개씩 보기','100개씩 보기',]
   return (
     <>

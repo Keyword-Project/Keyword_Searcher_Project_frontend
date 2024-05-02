@@ -7,9 +7,11 @@ import { useLocation, Outlet, useNavigate } from "react-router-dom";
 import { RootState } from "main";
 import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import EmptyResult from "components/feature/result/EmptyResult";
+import { createPortal } from "react-dom";
+import ModalContent from "components/feature/filter/ModalContent";
+
+import FetchData from "api/route";
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -56,38 +58,31 @@ const InquiryButton = styled.button`
   background-color: var(--Gray700);
 `;
 
-export default function MainPage() {
+export default function SearchPage() {
   const [resultVisible, setResultVisible] = useState(false);
-  const { error, data, refetch, isFetching } = useQuery({
-    queryKey: ["repoData"],
-    queryFn: async () => {
-      const res = await axios.get(url);
-      console.log(res.data);
-      return res.data;
-    },
-    refetchOnWindowFocus: false,
-    enabled: false,
-  });
+  const [maxPrice, setMaxPrice] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [searchSize, setSearchSize] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const searchSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchSize(e.target.value);
+  };
 
   const navigate = useNavigate();
 
-  const handleButtonClick = () => {
-    // 쿼리 문자열 업데이트
-    history.push("/watch?v=46YNAP5Gg3k");
-  };
-
-  const problemData = data;
-
-  let pathName: string | number = "";
+  const { startDate, los } = useSelector(
+    (state: RootState) => state.queryString.date
+  );
 
   const keywordInputValue = useSelector(
     (state: RootState) => state.queryString.pathName
   );
-
+  let pathName: string | number = "";
   const { pathname } = useLocation();
-  // console.log(pathname);
+
   const slug = pathname.split("/")[2];
-  // console.log(slug);
 
   if (slug == undefined) {
     pathName = keywordInputValue;
@@ -95,44 +90,35 @@ export default function MainPage() {
     pathName = Number(slug);
   }
 
-  const [maxPrice, setMaxPrice] = useState("");
-  const [minPrice, setMinPrice] = useState("");
-  const [searchSize, setSearchSize] = useState("");
+  const commonURL = `${pathName}${startDate ? `&startDate=${startDate}` : ""}&${
+    los ? `&los=${los}` : ""
+  }${minPrice ? `&minPrice=${minPrice}` : ""}${
+    maxPrice ? `&maxPrice=${maxPrice}` : ""
+  }${searchSize ? `&searchSize=${searchSize}` : ""}`;
 
-  const date = useSelector((state: RootState) => state.queryString.date);
+  let apiURL = "";
+  let queryURL = "";
 
-  const startDate = date.startDate.split("T")[0];
-  const startDateByLos = new Date(date.startDate.split("T")[0]);
-
-  const endDate = new Date(date.endDate.split("T")[0]);
-
-  const differenceMs = Math.abs(endDate.valueOf() - startDateByLos.valueOf());
-
-  const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
-
-  const searchSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchSize(e.target.value);
-  };
-
-  let url = "";
   if (typeof pathName == "string") {
-    url = `http://localhost:3000/api/v1/keyword?q=${pathName}${
-      startDate ? `&startDate=${startDate}` : ""
-    }&${los ? `&los=${los}` : ""}${minPrice ? `&minPrice=${minPrice}` : ""}${
-      maxPrice ? `&maxPrice=${maxPrice}` : ""
-    }${searchSize ? `&searchSize=${searchSize}` : ""}`;
+    apiURL = "http://localhost:3000/api/v1/keyword?q=" + `${commonURL}`;
+    queryURL = "keyword?q=" + `${commonURL}`;
   } else if (typeof pathName == "number") {
-    url = `http://localhost:3000/api/v1/categories/${pathName}?${
-      startDate ? `&startDate=${startDate}` : ""
-    }&${los ? `&los=${los}` : ""}${minPrice ? `&minPrice=${minPrice}` : ""}${
-      maxPrice ? `&maxPrice=${maxPrice}` : ""
-    }${searchSize ? `&searchSize=${searchSize}` : ""}`;
+    apiURL = "http://localhost:3000/api/v1/categories/" + `${commonURL}`;
+    queryURL = "categories/" + `${commonURL}`;
   }
+
+  const { data, refetch, isFetching } = FetchData(apiURL);
+
+  const searchData = data;
 
   const handleSearch = () => {
     if (pathName == "") {
-      console.log("keyword를 입력하세요");
-    } else {
+      setShowModal(true);
+      setErrorMessage("keyword를 입력하세요");
+    } else if (Number(maxPrice) < Number(minPrice)) {
+      setErrorMessage("최대가격이 최소가격보다 커야합니다.");
+      setShowModal(true);
+    } else if (maxPrice >= minPrice && pathName != "") {
       setResultVisible(true);
       refetch();
     }
@@ -156,11 +142,21 @@ export default function MainPage() {
           disabled={isFetching}
           onClick={() => {
             handleSearch();
+            navigate(queryURL);
           }}
         >
-          {isFetching ? "로딩중.." : "상품조회"}
+          {isFetching ? "검색 중.." : "상품조회"}
         </InquiryButton>
       </FilterBox>
+
+      {showModal &&
+        createPortal(
+          <ModalContent
+            onClose={() => setShowModal(false)}
+            errorMessage={errorMessage}
+          />,
+          document.body
+        )}
 
       <Input
         placeholder="상품 검색 개수"
@@ -170,22 +166,11 @@ export default function MainPage() {
         onChange={searchSizeChange}
         disabled={isFetching}
       />
-      <button
-        onClick={() => {
-          navigate("/category?v=46YNAP5Gg3k");
-        }}
-      >
-        어바웃 페이지로 이동하기
-      </button>
 
       <SearchResultWord>상품 검색 결과</SearchResultWord>
 
       {resultVisible ? (
-        <Result
-          problemData={problemData}
-          error={error}
-          isFetching={isFetching}
-        />
+        <Result searchData={searchData} isFetching={isFetching} />
       ) : (
         <EmptyResult />
       )}

@@ -7,8 +7,7 @@ export const NotEnterdDescription = styled.p`
   margin-top: 5px;
   color: var(--Gray500);
   font-size: var(--font-size-small);
-
-`
+`;
 
 const InputTitle = styled.p`
   font-size: var(--font-size-primary);
@@ -37,20 +36,27 @@ export default function PriceRange({
   maxPrice,
   setMaxPrice,
   isFetching,
+}: {
+  minPrice: string;
+  setMinPrice: React.Dispatch<React.SetStateAction<string>>;
+  maxPrice: string;
+  setMaxPrice: React.Dispatch<React.SetStateAction<string>>;
+  isFetching: boolean;
 }) {
   const maxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let inputValue = e.target.value;
+    // let inputValue = e.target.value;
 
-    inputValue = inputValue.replace(/[^0-9]/g, "");
+    // inputValue = inputValue.replace(/[^0-9]/g, "");
 
-    setMaxPrice(inputValue);
+    setMaxPrice(e.target.value);
   };
   const minPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let inputValue = e.target.value;
+    // let inputValue = e.target.value;
 
-    inputValue = inputValue.replace(/[^0-9]/g, "");
+    // inputValue = inputValue.replace(/[^0-9]/g, "");
 
-    setMinPrice(inputValue);
+    setMinPrice(e.target.value);
+
   };
 
   return (
@@ -65,12 +71,22 @@ export default function PriceRange({
           placeholder="최소 가격"
           disabled={isFetching}
           maxLength={12}
-          onKeyUp="this.value=this.value.replace(/[^0-9]/g,'')"
+          onKeyUp={(e) =>
+            (e.currentTarget.value = e.currentTarget.value.replace(
+              /[^0-9]/g,
+              ""
+            ))
+          }
         ></Input>
         <span> - </span>
         <Input
           type="text"
-          onKeyUp="this.value=this.value.replace(/[^0-9]/g,'')"
+          onKeyUp={(e) =>
+            (e.currentTarget.value = e.currentTarget.value.replace(
+              /[^0-9]/g,
+              ""
+            ))
+          }
           name="maxPrice"
           maxLength={12}
           value={maxPrice}
@@ -78,7 +94,9 @@ export default function PriceRange({
           placeholder="최대 가격"
           disabled={isFetching}
         ></Input>
-        <NotEnterdDescription>미입력 시 10000~무한 범위 내 <br></br> 조회됩니다.</NotEnterdDescription>
+        <NotEnterdDescription>
+          미입력 시 10000~무한 범위 내 <br></br> 조회됩니다.
+        </NotEnterdDescription>
       </PriceContainer>
     </>
   );

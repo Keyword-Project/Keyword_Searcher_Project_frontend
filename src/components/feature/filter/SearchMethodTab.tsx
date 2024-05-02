@@ -2,6 +2,16 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
 
+interface MenuItemUnderlineProps {
+  active?: boolean;
+}
+
+interface MenuItemProps {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
 const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
@@ -14,7 +24,7 @@ const AppContainer = styled.div`
   display: flex;
   margin-left: 15%;
   align-items: flex-end;
-  height : 48%;
+  height: 48%;
 `;
 
 const MenuItemContainer = styled.div`
@@ -23,7 +33,7 @@ const MenuItemContainer = styled.div`
   position: relative;
 `;
 
-const MenuItemUnderline = styled.div`
+const MenuItemUnderline = styled.div<MenuItemUnderlineProps>`
   content: "";
   display: block;
   width: 100%;
@@ -39,21 +49,19 @@ const MenuItemUnderline = styled.div`
 export default function SearchMethodTab() {
   const [activeMenu, setActiveMenu] = useState("home");
 
-  const handleMenuClick = (name) => {
+  const handleMenuClick = (name: string) => {
     setActiveMenu(name);
   };
 
   return (
     <AppContainer>
       <MenuItem
-        name="home"
         active={activeMenu === "home"}
         onClick={() => handleMenuClick("home")}
       >
-        <StyledLink to="/category">카테고리 검색</StyledLink>
+        <StyledLink to="/categories">카테고리 검색</StyledLink>
       </MenuItem>
       <MenuItem
-        name="about"
         active={activeMenu === "about"}
         onClick={() => handleMenuClick("about")}
       >
@@ -63,7 +71,7 @@ export default function SearchMethodTab() {
   );
 }
 
-const MenuItem = ({ name, active, onClick, children }) => {
+const MenuItem = ({ active, onClick, children } : MenuItemProps) => {
   return (
     <MenuItemContainer onClick={onClick}>
       {children}

@@ -1,16 +1,15 @@
 import styled from "styled-components";
 import data from "dummyData/CategoriesData.json";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Arrow_Forward from "assets/icons/arrow_forward.svg?react";
-
-
+import { Link } from "react-router-dom";
+import { Dispatch, UnknownAction } from "@reduxjs/toolkit";
 
 const StyledArrow_Forward = styled(Arrow_Forward)`
-position: absolute;
-top: 10px;
-right: 12px;
-opacity: ${props => props.show ? '1' : '0'};
-
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  opacity: ${(props) => (props.show ? "1" : "0")};
 `;
 
 const ClassifiedCategoriesField = styled.div`
@@ -61,16 +60,15 @@ const Category = styled.div`
   width: 100%;
   height: 36px;
   padding: 7px 8px;
-  position : relative;
+  position: relative;
   &:hover {
-    
     background-color: white;
     p {
       color: var(--Orange500);
       cursor: pointer;
       text-decoration: underline;
+    }
   }
-}
 `;
 
 const CategoryTitle = styled.p`
@@ -86,19 +84,17 @@ export default function CategoryList() {
   const [thirdCategory, setThirdCategory] = useState([]);
   const [IsArrowVisible, setIsArrowVisible] = useState(null);
 
-
-  
-  const arrowVisibleHandler = (index, func) => {
+  const arrowVisibleHandler = (index: number, func) => {
     func(index);
   };
 
-  const secondCateSelectHandler = (index) => {
+  const secondCateSelectHandler = (index: number) => {
     setSecondCategory(
       (prev) => (prev = data.firstCategories[index].secondCategories)
     );
   };
 
-  const thirdCateSelectHandler = (index) => {
+  const thirdCateSelectHandler = (index: number) => {
     setThirdCategory((prev) => (prev = secondCategory[index].thirdCategories));
   };
 
@@ -125,9 +121,7 @@ export default function CategoryList() {
     <>
       <CategoryContainer onMouseLeave={() => everyCategoryFieldClose()}>
         <ButtonBox
-          onMouseOver={() => setFirstIsHovered(true)
-            
-          }
+          onMouseOver={() => setFirstIsHovered(true)}
           onMouseLeave={() => leaveCategoryButton()}
         >
           <button>실험용 버튼</button>
@@ -142,15 +136,20 @@ export default function CategoryList() {
           >
             {data.firstCategories.map((item, index) => {
               return (
-                <Category key={index} onMouseEnter={()=> arrowVisibleHandler(index, setIsArrowVisible)} onMouseLeave={()=> setIsArrowVisible(null)}>
+                <Category
+                  key={index}
+                  onMouseEnter={() =>
+                    arrowVisibleHandler(index, setIsArrowVisible)
+                  }
+                  onMouseLeave={() => setIsArrowVisible(null)}
+                >
                   <CategoryTitle
                     onMouseEnter={() => secondCateSelectHandler(index)}
                     color="white"
-                   
                   >
-                    {item.name}
+                    <Link to={item.categoryId}>{item.name}</Link>
                   </CategoryTitle>
-                  <StyledArrow_Forward  show={IsArrowVisible === index}/>
+                  <StyledArrow_Forward show={IsArrowVisible === index} />
                 </Category>
               );
             })}
@@ -167,14 +166,20 @@ export default function CategoryList() {
         >
           {secondCategory?.map((item, index) => {
             return (
-              <Category key={index} onMouseEnter={()=> arrowVisibleHandler(index, setIsArrowVisible)} onMouseLeave={()=> setIsArrowVisible(null)}>
+              <Category
+                key={index}
+                onMouseEnter={() =>
+                  arrowVisibleHandler(index, setIsArrowVisible)
+                }
+                onMouseLeave={() => setIsArrowVisible(null)}
+              >
                 <CategoryTitle
                   color="black"
                   onMouseEnter={() => thirdCateSelectHandler(index)}
                 >
-                  {item.name}
+                  <Link to={item.categoryId}>{item.name}</Link>
                 </CategoryTitle>
-                <StyledArrow_Forward show={IsArrowVisible === index}/>
+                <StyledArrow_Forward show={IsArrowVisible === index} />
               </Category>
             );
           })}
@@ -189,9 +194,18 @@ export default function CategoryList() {
           {" "}
           {thirdCategory?.map((item, index) => {
             return (
-              <Category key={index} onMouseEnter={()=> arrowVisibleHandler(index, setIsArrowVisible)} onMouseLeave={()=> setIsArrowVisible(null)}>
-                <CategoryTitle color="black">{item.name}</CategoryTitle>
-                <StyledArrow_Forward  show={IsArrowVisible === index}/>
+              <Category
+                key={index}
+                onMouseEnter={() =>
+                  arrowVisibleHandler(index, setIsArrowVisible)
+                }
+                onMouseLeave={() => setIsArrowVisible(null)}
+              >
+                <CategoryTitle color="black">
+                  {" "}
+                  <Link to={item.categoryId}>{item.name}</Link>
+                </CategoryTitle>
+                <StyledArrow_Forward show={IsArrowVisible === index} />
               </Category>
             );
           })}

@@ -2,6 +2,11 @@ import styled from "styled-components";
 import UpArrow from "assets/icons/upArrow.svg?react";
 import { useState } from "react";
 
+interface DropdownProps {
+  List : string[]
+   isFetching : boolean
+}
+
 const StyledFieldset = styled.fieldset`
   position: relative;
   display: flex;
@@ -23,7 +28,7 @@ const StyledArrowIcon = styled(UpArrow)`
   display: block;
   padding: 0;
   transition: all ease 0.5s;
-  transform: ${(props) => (props.showCate == true ? "rotate(180deg)" : "")};
+  transform: ${(props) => (props.showCategory == true ? "rotate(180deg)" : "")};
 `;
 
 const StyledSelect = styled.select`
@@ -43,19 +48,19 @@ const StyledSelect = styled.select`
   box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.1);
 `;
 
-export default function Dropdown({List, isFetching}) {
-  const [showCate, setShowCate] = useState<boolean>(false);
+export default function Dropdown({List, isFetching} : DropdownProps) {
+  const [showCategory, setShowCategory] = useState<boolean>(false);
 
   return (
     <>
-      <StyledFieldset onClick={() => setShowCate(!showCate)}>
+      <StyledFieldset onClick={() => setShowCategory(!showCategory)}>
         <StyledSelectArea>
           <StyledSelect disabled={isFetching}>
-            {List.map((item) => {
-              return <option value="30">{item}</option>;
+            {List.map((item, idx) => {
+              return <option key={idx} value="30">{item}</option>;
             })}
           </StyledSelect>
-          <StyledArrowIcon width="18" height="18" showCate={showCate} />
+          <StyledArrowIcon width="18" height="18" showCategory={showCategory} />
         </StyledSelectArea>
       </StyledFieldset>
     </>

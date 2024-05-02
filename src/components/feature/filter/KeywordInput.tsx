@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { pathNameFetch } from "lib/FetchSlice";
-import React, { useCallback } from "react";
+import { useEffect, useRef } from "react";
 import Magnifier from "assets/icons/magnifier.svg?react";
-import { debounce } from "lodash";
 
 const InputDiv = styled.div`
   position: relative;
@@ -38,27 +37,22 @@ const Input = styled.input`
 
 export default function KeywordInput() {
   const dispatch = useDispatch();
+  const keywordRef = useRef("");
+  useEffect(() => {
+    keywordRef.current.focus();
+  }, []);
 
-  const debouncedKeywordNameChange = useCallback(
-    debounce((value: string) => {
-      dispatch(pathNameFetch(value));
-      console.log("디바운스 적용");
-    }, 300), // Debounce delay set to 300 milliseconds
-    []
-  );
-
-  const keywordNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-
-    debouncedKeywordNameChange(value);
+  const keywordNameChange = () => {
+    dispatch(pathNameFetch(keywordRef.current.value));
   };
 
   return (
     <>
       <InputDiv>
         <Input
+          ref={keywordRef}
           placeholder="검색할 상품/키워드를 입력해주세요."
-          onChange={keywordNameChange}
+          onBlur={keywordNameChange}
         />
         <StyledMagnifier width="22" height="22" />
       </InputDiv>

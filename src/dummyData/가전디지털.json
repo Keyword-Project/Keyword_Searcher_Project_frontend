@@ -161,7 +161,10 @@
         {
           "name": "모니터",
           "categoryId": "510541",
-          "thirdCategories": []
+          "thirdCategories": [
+            { "name": "일반 모니터", "categoryId": "510542" }
+       
+          ]
         },
         { "name": "휴대폰", "categoryId": "497244", "thirdCategories": [] },
         {

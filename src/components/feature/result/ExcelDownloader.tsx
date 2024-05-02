@@ -2,8 +2,7 @@ import { CSVLink } from "react-csv";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { sortedData } from "type/resultData";
-
+import { SearchData } from "type/searchData";
 
 const ExcelDownloadBtnDiv = styled.div`
   display: flex;
@@ -25,13 +24,15 @@ const StyledCSVLink = styled(CSVLink)`
   text-decoration-line: none;
 `;
 
-export default function ExcelDownloader( {problemData} ) {
-
-
+export default function ExcelDownloader({
+  searchData,
+}: {
+  searchData: SearchData;
+}) {
   let transformedData;
 
-  if ( problemData?.body  != undefined) {
-    transformedData = problemData?.body.map((item: sortedData) => ({
+  if (searchData?.body != undefined) {
+    transformedData = searchData?.body.map((item) => ({
       키워드: item.name,
       가격: item.priceValue,
       "총 리뷰 수": item.ratingTotalCount,
