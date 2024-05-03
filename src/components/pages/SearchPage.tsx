@@ -10,8 +10,8 @@ import PriceRange from "components/feature/filter/PriceRange";
 import EmptyResult from "components/feature/result/EmptyResult";
 import { createPortal } from "react-dom";
 import ModalContent from "components/feature/filter/ModalContent";
-
 import FetchData from "api/route";
+
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -107,7 +107,7 @@ export default function SearchPage() {
     queryURL = "categories/" + `${commonURL}`;
   }
 
-  const { data, refetch, isFetching } = FetchData(apiURL);
+  const { isError, data, refetch, isFetching } = FetchData(apiURL);
 
   const searchData = data;
 
@@ -170,7 +170,11 @@ export default function SearchPage() {
       <SearchResultWord>상품 검색 결과</SearchResultWord>
 
       {resultVisible ? (
-        <Result searchData={searchData} isFetching={isFetching} />
+        <Result
+          isError={isError}
+          searchData={searchData}
+          isFetching={isFetching}
+        />
       ) : (
         <EmptyResult />
       )}
