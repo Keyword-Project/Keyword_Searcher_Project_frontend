@@ -13,9 +13,9 @@ const ButtonContainer = styled.div<ButtonContainerProps>`
   justify-content: center;
   align-items: center;
   gap: 0.375rem;
+  width: 10rem;
   flex-shrink: 0;
   background-color: ${(props) => props.BackGroundColor};
-  border-radius: 0.625rem;
   border: 1.5px solid ${(props) => props.borderColor};
   &:hover {
     cursor: pointer;

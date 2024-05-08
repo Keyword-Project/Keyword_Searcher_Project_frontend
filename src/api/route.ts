@@ -11,6 +11,7 @@ const FetchData = (url: string) => {
     },
     refetchOnWindowFocus: false,
     enabled: false,
+    
   });
   return { isError, data, refetch, isFetching };
 };

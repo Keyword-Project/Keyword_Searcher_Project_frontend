@@ -91,7 +91,7 @@ export default function CustomCalendar() {
   };
 
   const onCalendarClose = () => {
-    if (isValuePieceArray(value)) {
+    if (isValuePieceArray(value)  && value[0] && value[1]) {
       // value가 [ValuePiece, ValuePiece] 인 경우
 
       const startDate = value[0]?.toISOString().split("T")[0];

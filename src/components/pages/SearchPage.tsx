@@ -12,7 +12,6 @@ import { createPortal } from "react-dom";
 import ModalContent from "components/feature/filter/ModalContent";
 import FetchData from "api/route";
 
-
 const SearchResultWord = styled.p`
   margin-top: 10px;
   font-size: var(--font-size-medium);
@@ -168,7 +167,6 @@ export default function SearchPage() {
       />
 
       <SearchResultWord>상품 검색 결과</SearchResultWord>
-
       {resultVisible ? (
         <Result
           isError={isError}

@@ -26,12 +26,12 @@ const Item = styled.p`
 
 
 export default function ItemSearchCount({ isFetching } : {isFetching : boolean}) {
-  const dropdownList = ['30개씩 보기', '50개씩 보기','100개씩 보기',]
+ 
   return (
     <>
        <InputBox>
           <Item>상품 조회 개수</Item>
-          <Dropdown List={dropdownList} isFetching={isFetching} />
+          <Dropdown  isFetching={isFetching} List={[]} />
         <NotEnterdDescription>미입력 시 30개의 상품이 조회됩니다.</NotEnterdDescription>
         </InputBox>
     </>

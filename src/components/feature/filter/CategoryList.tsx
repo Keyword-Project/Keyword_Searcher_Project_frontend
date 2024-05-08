@@ -1,23 +1,39 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import styled from "styled-components";
 import data from "dummyData/CategoriesData.json";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import Arrow_Forward from "assets/icons/arrow_forward.svg?react";
 import { Link } from "react-router-dom";
-import { Dispatch, UnknownAction } from "@reduxjs/toolkit";
+import Button from "components/common/Button";
 
-const StyledArrow_Forward = styled(Arrow_Forward)`
+const StyledArrow_Forward = styled(Arrow_Forward)<{show : boolean}>`
   position: absolute;
   top: 10px;
   right: 12px;
   opacity: ${(props) => (props.show ? "1" : "0")};
 `;
 
-const ClassifiedCategoriesField = styled.div`
+interface Category {
+  name: string;
+  categoryId: string;
+  thirdCategories: Category[];
+}
+
+interface ClassifiedCategoriesFieldProps {
+  backgroundColor: string;
+  left: string;
+  borderRadius: string;
+  borderRight: string;
+  isVisible: boolean;
+}
+
+const ClassifiedCategoriesField = styled.div<ClassifiedCategoriesFieldProps>`
   overflow: auto;
   width: 216px;
   z-index: 2;
-  top: 25px;
-  height: 456px;
+  top: 2.5rem;
+  opacity: 1;
+  height: 30rem;
   left: ${(props) => props.left};
   background-color: ${(props) => props.backgroundColor};
   border-radius: ${(props) => props.borderRadius};
@@ -56,41 +72,42 @@ const CategoryContainer = styled.div`
   width: 3px;
 `;
 
+const CategoryListLink = styled(Link)`
+  text-decoration-line: none;
+  color: ${(props) => props.color};
+`;
 const Category = styled.div`
   width: 100%;
   height: 36px;
   padding: 7px 8px;
   position: relative;
   &:hover {
-    background-color: white;
-    p {
+    background-color: var(--Gray200);
+    cursor: pointer;
+    ${CategoryListLink} {
       color: var(--Orange500);
-      cursor: pointer;
       text-decoration: underline;
     }
   }
 `;
 
-const CategoryTitle = styled.p`
-  color: ${(props) => props.color};
-  font-size: var(--font-size-primary);
-`;
 
 export default function CategoryList() {
   const [firstIsHovered, setFirstIsHovered] = useState(false);
   const [secondIsHovered, setSecondIsHovered] = useState(false);
   const [thirdIsHovered, setThirdIsHovered] = useState(false);
-  const [secondCategory, setSecondCategory] = useState([]);
-  const [thirdCategory, setThirdCategory] = useState([]);
-  const [IsArrowVisible, setIsArrowVisible] = useState(null);
+  const [secondCategory, setSecondCategory] = useState<Category[]>([]);
+  const [thirdCategory, setThirdCategory] = useState<Category[]>([]);
+  const [IsArrowVisible, setIsArrowVisible] = useState<number | null>(null);
 
-  const arrowVisibleHandler = (index: number, func) => {
+  const arrowVisibleHandler = (index: number, func: (index: number) => void) => {
     func(index);
   };
 
   const secondCateSelectHandler = (index: number) => {
     setSecondCategory(
-      (prev) => (prev = data.firstCategories[index].secondCategories)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      (prev) => (prev = data.firstCategories[index].secondCategories as Category[])
     );
   };
 
@@ -124,11 +141,16 @@ export default function CategoryList() {
           onMouseOver={() => setFirstIsHovered(true)}
           onMouseLeave={() => leaveCategoryButton()}
         >
-          <button>실험용 버튼</button>
+          <Button
+            title="카테고리"
+            BackGroundColor="var(--Orange500)"
+            color="white"
+            borderColor="var(--Orange500)"
+          />
 
           <ClassifiedCategoriesField
             backgroundColor="var(--Orange500)"
-            borderRadius="10px 0px 0px 10px"
+            borderRadius="0px 0px 0px 10px"
             borderRight="none"
             left="0px"
             isVisible={firstIsHovered}
@@ -138,17 +160,20 @@ export default function CategoryList() {
               return (
                 <Category
                   key={index}
-                  onMouseEnter={() =>
-                    arrowVisibleHandler(index, setIsArrowVisible)
-                  }
+                  onMouseEnter={() => {
+                    arrowVisibleHandler(index, setIsArrowVisible);
+                    secondCateSelectHandler(index);
+                  }}
                   onMouseLeave={() => setIsArrowVisible(null)}
                 >
-                  <CategoryTitle
-                    onMouseEnter={() => secondCateSelectHandler(index)}
+                  <CategoryListLink
+                    to={item.categoryId}
+                    onClick={() => everyCategoryFieldClose()}
                     color="white"
                   >
-                    <Link to={item.categoryId}>{item.name}</Link>
-                  </CategoryTitle>
+                    {item.name}
+                  </CategoryListLink>
+
                   <StyledArrow_Forward show={IsArrowVisible === index} />
                 </Category>
               );
@@ -157,7 +182,7 @@ export default function CategoryList() {
         </ButtonBox>
 
         <ClassifiedCategoriesField
-          backgroundColor="white"
+          backgroundColor="var(--Gray200)"
           borderRadius="0px"
           borderRight="2px solid var(--Gray700)"
           left="216px"
@@ -168,24 +193,27 @@ export default function CategoryList() {
             return (
               <Category
                 key={index}
-                onMouseEnter={() =>
-                  arrowVisibleHandler(index, setIsArrowVisible)
-                }
+                onMouseEnter={() => {
+                  arrowVisibleHandler(index, setIsArrowVisible);
+                  thirdCateSelectHandler(index);
+                }}
                 onMouseLeave={() => setIsArrowVisible(null)}
               >
-                <CategoryTitle
+                <CategoryListLink
+                  to={item.categoryId}
+                  onClick={() => everyCategoryFieldClose()}
                   color="black"
-                  onMouseEnter={() => thirdCateSelectHandler(index)}
                 >
-                  <Link to={item.categoryId}>{item.name}</Link>
-                </CategoryTitle>
+                  {item.name}
+                </CategoryListLink>
+
                 <StyledArrow_Forward show={IsArrowVisible === index} />
               </Category>
             );
           })}
         </ClassifiedCategoriesField>
         <ClassifiedCategoriesField
-          backgroundColor="white"
+          backgroundColor="var(--Gray200)"
           borderRight="none"
           borderRadius="0px 10px 10px 0px"
           left="432px"
@@ -201,10 +229,14 @@ export default function CategoryList() {
                 }
                 onMouseLeave={() => setIsArrowVisible(null)}
               >
-                <CategoryTitle color="black">
-                  {" "}
-                  <Link to={item.categoryId}>{item.name}</Link>
-                </CategoryTitle>
+                <CategoryListLink
+                  onClick={() => everyCategoryFieldClose()}
+                  to={item.categoryId}
+                  color="black"
+                >
+                  {item.name}
+                </CategoryListLink>
+
                 <StyledArrow_Forward show={IsArrowVisible === index} />
               </Category>
             );

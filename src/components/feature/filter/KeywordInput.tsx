@@ -7,27 +7,31 @@ import Magnifier from "assets/icons/magnifier.svg?react";
 const InputDiv = styled.div`
   position: relative;
   height: 41px;
-  width: 690px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 const StyledMagnifier = styled(Magnifier)`
   position: absolute;
   top: 10px;
-  right: 12px;
-  & :hover {
-    cursor: pointer;
-  }
+  right: 6.5rem;
 `;
 
 const Input = styled.input`
-  border-radius: 10px;
-  width: 100%;
+  border-radius: 1rem;
+  width: 80%;
   height: 41px;
-  border-width: 2px;
-  padding: 8px 16px 10px 14px;
-  padding-left: 15px;
-  border-color: var(--Orange500);
-
+  outline: none;
+  border: 2px solid var(--Gray500);
+  padding: 8px 16px 10px 15px;
+  &:focus {
+    border: 2px solid var(--Orange500);
+    background-color: var(--Gray200);
+  }
+  &:hover {
+    background-color: var(--Gray200);
+  }
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -37,13 +41,13 @@ const Input = styled.input`
 
 export default function KeywordInput() {
   const dispatch = useDispatch();
-  const keywordRef = useRef("");
+  const keywordRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
-    keywordRef.current.focus();
+    keywordRef.current?.focus();
   }, []);
 
   const keywordNameChange = () => {
-    dispatch(pathNameFetch(keywordRef.current.value));
+    dispatch(pathNameFetch(keywordRef.current?.value || ""));
   };
 
   return (

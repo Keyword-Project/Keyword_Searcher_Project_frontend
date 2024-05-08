@@ -4,7 +4,7 @@ import KeywordInput from "components/feature/filter/KeywordInput";
 import NotFound from "components/pages/NotFound";
 import SearchPage from "components/pages/SearchPage";
 import Layout from "Layout";
-import CategoryContainer from "components/feature/filter/CategoryContainer";
+import CategoryList from "components/feature/filter/CategoryList";
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<SearchPage />}>
             <Route path="keyword" element={<KeywordInput />}></Route>
-            <Route path="/categories/*" element={<CategoryContainer />}></Route>
+            <Route path="/categories/*" element={<CategoryList />}></Route>
           </Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

@@ -3,8 +3,8 @@ import UpArrow from "assets/icons/upArrow.svg?react";
 import { useState } from "react";
 
 interface DropdownProps {
-  List : string[]
-   isFetching : boolean
+  List: string[];
+  isFetching: boolean;
 }
 
 const StyledFieldset = styled.fieldset`
@@ -48,7 +48,7 @@ const StyledSelect = styled.select`
   box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.1);
 `;
 
-export default function Dropdown({List, isFetching} : DropdownProps) {
+export default function Dropdown({ isFetching }: DropdownProps) {
   const [showCategory, setShowCategory] = useState<boolean>(false);
 
   return (
@@ -56,9 +56,9 @@ export default function Dropdown({List, isFetching} : DropdownProps) {
       <StyledFieldset onClick={() => setShowCategory(!showCategory)}>
         <StyledSelectArea>
           <StyledSelect disabled={isFetching}>
-            {List.map((item, idx) => {
-              return <option key={idx} value="30">{item}</option>;
-            })}
+            <option value="direct">직접입력</option>;<option value="30">30개</option>;
+            <option value="50">50개</option>;<option value="80">80개</option>;
+            <option value="100">100개</option>;
           </StyledSelect>
           <StyledArrowIcon width="18" height="18" showCategory={showCategory} />
         </StyledSelectArea>
