@@ -24,7 +24,7 @@ const StlyedDateRangePicker = styled(DateRangePicker)`
     padding: 0px 5px;
     width: 220px;
     font-size: 12px;
-    box-shadow: 0px 4px 10px 0px  rgba(34, 39, 47, 0.1);
+    box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.1);
   }
   .react-calendar {
     border-radius: 5px;
@@ -86,13 +86,24 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function CustomCalendar() {
+  const CalculateDateGap = (startDate : Date, endDate : Date) => {
+    return Math.abs(startDate.valueOf() - endDate.valueOf());
+  };
+
   const onCalendarClose = () => {
-    if (isValuePieceArray(value)) {
+    if (isValuePieceArray(value)  && value[0] && value[1]) {
       // value가 [ValuePiece, ValuePiece] 인 경우
+
+      const startDate = value[0]?.toISOString().split("T")[0];
+
+      const differenceMs = CalculateDateGap(value[0], value[1]);
+
+      const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
+
       dispatch(
         dateFetch({
-          startDate: value[0]?.toISOString(),
-          endDate: value[1]?.toISOString(),
+          startDate: startDate,
+          los: los,
         })
       );
     }

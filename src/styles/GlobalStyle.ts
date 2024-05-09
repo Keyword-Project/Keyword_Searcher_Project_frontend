@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import PaytoneOne from 'assets/fonts/PaytoneOne.woff'
+import PaytoneOne from "assets/fonts/PaytoneOne.woff";
 export const GlobalStyles = createGlobalStyle`
 
 @font-face {
@@ -16,7 +16,8 @@ export const GlobalStyles = createGlobalStyle`
         --Orange500: #FF782B;
         --Gray700 :  #747578;
         --Gray500 : #BDBDBD;
-        --Gray800 :  #5E5F63;
+        --Gray800 : #5E5F63;
+        --Gray200 : #f9fafb;
 
         --white-color-100: #fff;
         --white-color-200: #f4f4f4;

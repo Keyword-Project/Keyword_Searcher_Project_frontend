@@ -1,5 +1,11 @@
 import styled from "styled-components";
 import SearchMethodTab from "components/feature/filter/SearchMethodTab";
+import { ReactNode } from "react";
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
 const LayoutBox = styled.div`
   padding: 50px 20% 0px 20%;
   background-color: #f5f8fb;
@@ -7,10 +13,9 @@ const LayoutBox = styled.div`
 
 const Header = styled.div`
   width: 100%;
-  height: 20.125rem;
+  height: 16rem;
   border-bottom: 1px solid #f0f0f0;
   background: #fcfcfc;
-  padding-top: 2.4rem;
 `;
 
 const Title = styled.p`
@@ -20,9 +25,9 @@ const Title = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: -0.18rem;
   text-align: center;
   font-family: PaytoneOne;
+  margin-top: 2rem;
 `;
 
 const Subtitle = styled.p`
@@ -32,19 +37,17 @@ const Subtitle = styled.p`
   font-weight: bold;
 `;
 
-
-
-export default function Layout(props) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header>
+        <SearchMethodTab />
         <Title>Digging</Title>
         <Subtitle>
           쿠팡 리뷰 수 기반으로 쉽고 똑똑하게 판매아이템 발굴하자!
         </Subtitle>
-        <SearchMethodTab />
       </Header>
-      <LayoutBox>{props.children}</LayoutBox>
+      <LayoutBox>{children}</LayoutBox>
     </>
   );
 }

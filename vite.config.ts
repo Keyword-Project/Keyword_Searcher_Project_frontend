@@ -1,11 +1,14 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import path from "path";
 import tsconfigPaths from "vite-tsconfig-paths";
 import reactRefresh from "@vitejs/plugin-react-refresh";
 import svgr from "vite-plugin-svgr";
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
+  test: {
+    globals: true,
+  },
   plugins: [
     reactRefresh(),
     tsconfigPaths(),

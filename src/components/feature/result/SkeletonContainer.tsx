@@ -29,7 +29,7 @@ const SkeletonInfo = styled.div`
   margin: 0px 70px;
 `;
 
-const SkeletonEmail = styled.p`
+const SkeletonRow = styled.p`
   width: 100%;
   height: 50px;
   background: #f2f2f2;
@@ -52,10 +52,10 @@ export default function SkeletonContainer() {
   return (
     <SkeletonItem>
       <SkeletonInfo>
-        <SkeletonEmail />
-        <SkeletonEmail />
-        <SkeletonEmail />
-        <SkeletonEmail />
+        <SkeletonRow />
+        <SkeletonRow />
+        <SkeletonRow />
+        <SkeletonRow />
       </SkeletonInfo>
     </SkeletonItem>
   );

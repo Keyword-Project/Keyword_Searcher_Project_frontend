@@ -3,10 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Table from "react-bootstrap/esm/Table";
 import styled from "styled-components";
-import { sortedData } from "type/resultData";
-
-
-
+import { SearchData } from "type/searchData";
 
 const TitleTh = styled.th<{ width: string }>`
   width: ${(props) => props.width};
@@ -25,8 +22,6 @@ const KeywordAtag = styled.a`
     text-decoration-line: underline;
   }
 `;
-
-
 
 const StyledTitleTr = styled.tr`
   border-top-width: thick;
@@ -59,11 +54,11 @@ const StyleResultdTd = styled.td`
   }
 `;
 
-
-export default function ResultTable( {problemData} ) {
-
-
-
+export default function ResultTable({
+  searchData,
+}: {
+  searchData: SearchData;
+}) {
   const [sortBy, setSortBy] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState("asc");
 
@@ -76,34 +71,30 @@ export default function ResultTable( {problemData} ) {
     }
   };
 
-  const sortedData = problemData?.body
-    ?.slice()
-    .sort((a: sortedData, b: sortedData) => {
-      // console.log("problemData body 의 a", a);
-      // console.log("problemData body 의 b", b);
-      const aValue = sortBy ? a[sortBy] : null;
-      const bValue = sortBy ? b[sortBy] : null;
+  const sortedData = searchData?.body?.slice().sort((a, b) => {
+    const aValue = sortBy ? a[sortBy] : null;
+    const bValue = sortBy ? b[sortBy] : null;
 
-      if (sortBy === "상품경쟁력") {
-        const aCompetitiveness = (a.ratingVipCount / a.ratingTotalCount) * 100;
-        const bCompetitiveness = (b.ratingVipCount / b.ratingTotalCount) * 100;
+    if (sortBy === "상품경쟁력") {
+      const aCompetitiveness = (a.ratingVipCount / a.ratingTotalCount) * 100;
+      const bCompetitiveness = (b.ratingVipCount / b.ratingTotalCount) * 100;
 
-        return sortOrder === "asc"
-          ? aCompetitiveness - bCompetitiveness
-          : bCompetitiveness - aCompetitiveness;
-      }
+      return sortOrder === "asc"
+        ? aCompetitiveness - bCompetitiveness
+        : bCompetitiveness - aCompetitiveness;
+    }
 
-      if (aValue === bValue) {
-        return 0;
-      }
+    if (aValue === bValue) {
+      return 0;
+    }
 
-      if (sortOrder === "asc") {
-        return aValue < bValue ? -1 : 1;
-      } else {
-        return aValue > bValue ? -1 : 1;
-      }
-    });
-    
+    if (sortOrder === "asc") {
+      return aValue < bValue ? -1 : 1;
+    } else {
+      return aValue > bValue ? -1 : 1;
+    }
+  });
+
   return (
     <>
       <Table responsive>
@@ -145,7 +136,7 @@ export default function ResultTable( {problemData} ) {
           </StyledTitleTr>
         </thead>
         <tbody>
-          {sortedData?.map((item: sortedData, idx: number) => {
+          {sortedData?.map((item, idx) => {
             const ItemPower = (
               (item.ratingVipCount / item.ratingTotalCount) *
               100

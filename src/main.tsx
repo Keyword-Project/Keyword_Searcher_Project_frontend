@@ -10,7 +10,10 @@ export type RootState = ReturnType<typeof store.getState>;
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: {},
+    queries: {
+      retry: 0,
+     
+    },
   },
 });
 
