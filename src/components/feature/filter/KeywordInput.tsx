@@ -3,25 +3,22 @@ import { useDispatch } from "react-redux";
 import { pathNameFetch } from "lib/FetchSlice";
 import { useEffect, useRef } from "react";
 import Magnifier from "assets/icons/magnifier.svg?react";
-
 const InputDiv = styled.div`
   position: relative;
   height: 41px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 85%;
 `;
 
 const StyledMagnifier = styled(Magnifier)`
   position: absolute;
   top: 10px;
-  right: 6.5rem;
+  right: 11.5rem;
 `;
 
 const Input = styled.input`
   border-radius: 1rem;
   width: 80%;
-  height: 41px;
+  height: 2.5rem;
   outline: none;
   border: 2px solid var(--Gray500);
   padding: 8px 16px 10px 15px;
@@ -52,6 +49,7 @@ export default function KeywordInput() {
 
   return (
     <>
+     
       <InputDiv>
         <Input
           ref={keywordRef}

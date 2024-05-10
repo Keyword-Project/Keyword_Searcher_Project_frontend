@@ -1,26 +1,20 @@
 import SkeletonContainer from "components/feature/result/SkeletonContainer";
 import ExcelDownloader from "./ExcelDownloader";
 import ResultTable from "./ResultTable";
-import { SearchData } from "type/searchData";
-import ErrorField from "./ErrorField";
+import { ResultProps } from "type/result";
+
+
 
 export default function Result({
   searchData,
   isFetching,
   isError,
-}: {
-  searchData: SearchData;
-  isFetching: boolean;
-  isError: boolean;
-}) {
+  error,
+}: ResultProps) {
   if (isFetching) return <SkeletonContainer></SkeletonContainer>;
 
   if (isError) {
-    return (
-      <div>
-        <ErrorField />
-      </div>
-    );
+    throw error;
   }
   return (
     <>

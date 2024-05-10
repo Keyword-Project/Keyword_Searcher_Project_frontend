@@ -1,4 +1,4 @@
-export interface SearchDataProps {
+interface SearchDataProps {
     dataIsRocket: boolean;
     dataProductId: string;
     name: string;

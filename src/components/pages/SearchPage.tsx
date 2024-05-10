@@ -3,7 +3,7 @@ import CustomCalendar from "components/feature/filter/CustomCalendar";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Result from "components/feature/result/Result";
-import { useLocation, Outlet, useNavigate } from "react-router-dom";
+import { useLocation, Outlet } from "react-router-dom";
 import { RootState } from "main";
 import ItemSearchCount from "components/feature/filter/ItemSearchCount";
 import PriceRange from "components/feature/filter/PriceRange";
@@ -11,6 +11,15 @@ import EmptyResult from "components/feature/result/EmptyResult";
 import { createPortal } from "react-dom";
 import ModalContent from "components/feature/filter/ModalContent";
 import FetchData from "api/route";
+import { QueryErrorResetBoundary } from "@tanstack/react-query";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorField from "components/feature/result/ErrorField";
+import SearchButton from "components/feature/filter/SearchButton";
+
+const ButtonNSearchField = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const SearchResultWord = styled.p`
   margin-top: 10px;
@@ -21,40 +30,8 @@ const SearchResultWord = styled.p`
 const FilterBox = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: #f5f8fb;
-  padding-top: 40px;
+  padding-top: 3rem;
   width: 100%;
-`;
-
-const Input = styled.input`
-  border-radius: 10px;
-  width: 97px;
-  height: 41px;
-  border-color: #bdbdbd;
-  border-style: solid;
-  border-width: 2px;
-  padding-left: 8px;
-  font-weight: 500;
-  font-size: var(--font-size-primary);
-  box-shadow: 0px 4px 10px 0px gray;
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-`;
-
-const InquiryButton = styled.button`
-  border-radius: 10px;
-  color: white;
-  font-size: 15px;
-  margin-top: 40px;
-  padding: 0px 10px;
-  width: 100px;
-  font-weight: bold;
-  height: 41px;
-  border: none;
-  background-color: var(--Gray700);
 `;
 
 export default function SearchPage() {
@@ -65,12 +42,6 @@ export default function SearchPage() {
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const searchSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchSize(e.target.value);
-  };
-
-  const navigate = useNavigate();
-
   const { startDate, los } = useSelector(
     (state: RootState) => state.queryString.date
   );
@@ -80,7 +51,7 @@ export default function SearchPage() {
   );
   let pathName: string | number = "";
   const { pathname } = useLocation();
-
+console.log('pathname', pathname)
   const slug = pathname.split("/")[2];
 
   if (slug == undefined) {
@@ -106,16 +77,33 @@ export default function SearchPage() {
     queryURL = "categories/" + `${commonURL}`;
   }
 
-  const { isError, data, refetch, isFetching } = FetchData(apiURL);
+  const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
 
   const searchData = data;
+
+
+
+
+
+  const seperate = () => {
+
+    if (pathname == '/keyword') {
+      pathName = keywordInputValue;
+    } else if (pathname == '/categories') {
+      pathName = Number(slug);
+    }
+
+    const content = pathname == '/keyword' ? "💡keyword를 입력하세요💡" : "💡💡최대가격이 최소가격보다 커야합니다."
+
+    return {content,  apiURL}
+  }
 
   const handleSearch = () => {
     if (pathName == "") {
       setShowModal(true);
-      setErrorMessage("keyword를 입력하세요");
+      setErrorMessage("💡💡keyword를 입력하세요");
     } else if (Number(maxPrice) < Number(minPrice)) {
-      setErrorMessage("최대가격이 최소가격보다 커야합니다.");
+      setErrorMessage("💡💡최대가격이 최소가격보다 커야합니다.");
       setShowModal(true);
     } else if (maxPrice >= minPrice && pathName != "") {
       setResultVisible(true);
@@ -125,10 +113,20 @@ export default function SearchPage() {
 
   return (
     <>
-      <Outlet context={{ isFetching }} />
+      <ButtonNSearchField>
+        <Outlet context={{ isFetching }} />
+        <SearchButton
+          isFetching={isFetching}
+          handleSearch={handleSearch}
+          queryURL={queryURL}
+        />
+      </ButtonNSearchField>
       <FilterBox>
         <CustomCalendar />
-        <ItemSearchCount isFetching={isFetching} />
+        <ItemSearchCount
+          setSearchSize={setSearchSize}
+          isFetching={isFetching}
+        />
         <PriceRange
           minPrice={minPrice}
           setMinPrice={setMinPrice}
@@ -136,16 +134,6 @@ export default function SearchPage() {
           setMaxPrice={setMaxPrice}
           isFetching={isFetching}
         />
-
-        <InquiryButton
-          disabled={isFetching}
-          onClick={() => {
-            handleSearch();
-            navigate(queryURL);
-          }}
-        >
-          {isFetching ? "검색 중.." : "상품조회"}
-        </InquiryButton>
       </FilterBox>
 
       {showModal &&
@@ -156,23 +144,32 @@ export default function SearchPage() {
           />,
           document.body
         )}
-
-      <Input
-        placeholder="상품 검색 개수"
-        type="number"
-        name="itemSize"
-        value={searchSize}
-        onChange={searchSizeChange}
-        disabled={isFetching}
-      />
-
       <SearchResultWord>상품 검색 결과</SearchResultWord>
       {resultVisible ? (
-        <Result
-          isError={isError}
-          searchData={searchData}
-          isFetching={isFetching}
-        />
+        <QueryErrorResetBoundary>
+          {({ reset }) => (
+            <ErrorBoundary
+              onReset={() => {
+                reset();
+              }}
+              FallbackComponent={({ resetErrorBoundary }) => (
+                <div>
+                  <ErrorField
+                    resetErrorBoundary={resetErrorBoundary}
+                    setResultVisible={setResultVisible}
+                  />
+                </div>
+              )}
+            >
+              <Result
+                isError={isError}
+                searchData={searchData}
+                isFetching={isFetching}
+                error={error}
+              />
+            </ErrorBoundary>
+          )}
+        </QueryErrorResetBoundary>
       ) : (
         <EmptyResult />
       )}

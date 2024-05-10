@@ -1,16 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { useState } from "react";
+import { MenuItemUnderlineProps, MenuItemProps } from "type/searchMethodTab";
 
-interface MenuItemUnderlineProps {
-  active?: boolean;
-}
-
-interface MenuItemProps {
-  active: boolean;
-  onClick: () => void;
-  children: React.ReactNode;
-}
 
 const StyledLink = styled(Link)<{ color: boolean }>`
   color: ${({ color }) => (color ? "black" : "var(--Gray500)")};
@@ -61,32 +52,29 @@ const MenuItemUnderline = styled.div<MenuItemUnderlineProps>`
   left: 0;
 `;
 
+
 export default function SearchMethodTab() {
-  const [activeMenu, setActiveMenu] = useState("");
   const { pathname } = useLocation();
 
   const link = [
     { to: "categories", name: "카테고리 검색", key: 0 },
-    { to: "keyword", name: "키워드 검색", key: 0 },
+    { to: "keyword", name: "키워드 검색", key: 1 },
   ];
-  const handleMenuClick = (name: string) => {
-    setActiveMenu(name);
-  };
+
 
   return (
     <AppContainer>
       <Title to='/'>Digging</Title>
       {link.map((item) => {
-        const isActiveColor = pathname === `/${item.to}`;
+        const isActive = pathname === `/${item.to}`;
+    
         return (
           <MenuItem
             key={item.key}
-            active={activeMenu === item.to}
-            onClick={() => {
-              handleMenuClick(item.to);
-            }}
+            active={isActive}
+           
           >
-            <StyledLink to={`/${item.to}`} color={isActiveColor}>
+            <StyledLink to={`/${item.to}`} color={isActive}>
               {item.name}
             </StyledLink>
           </MenuItem>
@@ -96,9 +84,9 @@ export default function SearchMethodTab() {
   );
 }
 
-const MenuItem = ({ active, onClick, children }: MenuItemProps) => {
+const MenuItem = ({ active, children }: MenuItemProps) => {
   return (
-    <MenuItemContainer onClick={onClick}>
+    <MenuItemContainer >
       {children}
       <MenuItemUnderline active={active} />
     </MenuItemContainer>

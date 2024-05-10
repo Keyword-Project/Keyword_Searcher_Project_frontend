@@ -34,6 +34,7 @@ const SkeletonRow = styled.p`
   height: 50px;
   background: #f2f2f2;
   margin-top: 10px;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
 

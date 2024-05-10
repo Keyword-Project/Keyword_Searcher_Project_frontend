@@ -21,7 +21,6 @@ export const FetchSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { pathNameFetch, dateFetch } = FetchSlice.actions;
 
 export default FetchSlice.reducer;

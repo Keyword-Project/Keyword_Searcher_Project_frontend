@@ -1,18 +1,13 @@
-export interface ThirdCategory {
+export interface Category {
   name: string;
   categoryId: string;
+  thirdCategories: Category[];
 }
 
-export interface SecondCategory {
-  name: string;
-  categoryId: string;
-  thirdCategories: ThirdCategory[];
+export interface ClassifiedCategoriesFieldProps {
+  backgroundColor: string;
+  left: string;
+  borderRadius: string;
+  borderRight: string;
+  isVisible: boolean;
 }
-
-export interface FirstCategory {
-  name: string;
-  categoryId: string;
-  secondCategories: SecondCategory[];
-}
-
-
