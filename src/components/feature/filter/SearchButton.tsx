@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useNavigate } from "react-router-dom";
 import { ButtonProps } from 'type/button';
 const StyledButton = styled.button`
   padding: 0px 10px;
@@ -39,8 +38,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const SearchButton = ({isFetching, handleSearch, queryURL}: ButtonProps) => {
-    const navigate = useNavigate();
+const SearchButton = ({isFetching, fetchHandler}: ButtonProps) => {
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
     const { x, y, width, height } = target.getBoundingClientRect();
@@ -60,8 +58,7 @@ const SearchButton = ({isFetching, handleSearch, queryURL}: ButtonProps) => {
 
   return <StyledButton disabled={isFetching} onClick={(e)=>{
     onClick(e);
-    handleSearch();
-    navigate(queryURL);
+    fetchHandler();
   }}>{isFetching ? "검색 중.." : "상품조회"}</StyledButton>;
 };
 

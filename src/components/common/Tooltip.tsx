@@ -44,7 +44,7 @@ const StyledDiv = styled.div`
   //글귀 나오는 곳
   &::after {
     background: #3e474f;
-    border-radius: 0.25em;
+    border-radius: 1rem;
     bottom: 180%;
     color: var(--white-color-300);
     font-size: var(--font-size-small);

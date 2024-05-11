@@ -4,12 +4,13 @@ import styled from "styled-components";
 import UpArrow from "assets/icons/upArrow.svg?react";
 import { DropdownProps } from "type/dropdown";
 
-const DropdownSeletor = styled.div`
+const DropdownSeletor = styled.div<{ dropdownVisibility: boolean }>`
   border-radius: 0.625rem;
   width: 8rem;
   position: relative;
   height: 2.5rem;
-  border-color: #bdbdbd;
+  border-color: ${(props) =>
+    props.dropdownVisibility == true ? "var(--Orange500)" : "var(--Gray500)"};
   border-style: solid;
   line-height: 2.5rem;
   border-width: 2px;
@@ -33,7 +34,7 @@ const StyledArrowIcon = styled(UpArrow)<{ dropdownVisibility: boolean }>`
 
 const StyledUl = styled.ul`
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid var(--Orange500);
   border-radius: 10px;
   padding-left: 1rem;
 `;
@@ -43,6 +44,7 @@ const StyledLi = styled.li`
   &:hover {
     font-weight: bold;
     cursor: pointer;
+    color: var(--Orange500);
   }
 `;
 
@@ -60,6 +62,7 @@ const SearchDropdown = ({
   return (
     <div>
       <DropdownSeletor
+        dropdownVisibility={dropdownVisibility}
         onClick={() => {
           if (!isFetching) {
             setDropdownVisibility(!dropdownVisibility);

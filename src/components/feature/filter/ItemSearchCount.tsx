@@ -50,7 +50,9 @@ export default function ItemSearchCount({
 
   const searchSizeChangeByInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setDomain(e.target.value);
-    setSearchSize(domain);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    setSearchSize((prev) => prev = domain);
+
     console.log("input 입력 시 domain", domain);
   };
   return (

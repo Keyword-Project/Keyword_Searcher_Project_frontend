@@ -15,6 +15,7 @@ import { QueryErrorResetBoundary } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorField from "components/feature/result/ErrorField";
 import SearchButton from "components/feature/filter/SearchButton";
+import { useNavigate } from "react-router-dom";
 
 const ButtonNSearchField = styled.div`
   display: flex;
@@ -49,77 +50,74 @@ export default function SearchPage() {
   const keywordInputValue = useSelector(
     (state: RootState) => state.queryString.pathName
   );
-  let pathName: string | number = "";
+
   const { pathname } = useLocation();
-console.log('pathname', pathname)
-  const slug = pathname.split("/")[2];
+  console.log(pathname);
+  const navigate = useNavigate();
 
-  if (slug == undefined) {
-    pathName = keywordInputValue;
-  } else if (typeof slug == "string") {
-    pathName = Number(slug);
-  }
-
-  const commonURL = `${pathName}${startDate ? `&startDate=${startDate}` : ""}&${
+  const commonURL = `${startDate ? `startDate=${startDate}` : ""}${
     los ? `&los=${los}` : ""
   }${minPrice ? `&minPrice=${minPrice}` : ""}${
     maxPrice ? `&maxPrice=${maxPrice}` : ""
   }${searchSize ? `&searchSize=${searchSize}` : ""}`;
 
   let apiURL = "";
-  let queryURL = "";
 
-  if (typeof pathName == "string") {
-    apiURL = "http://localhost:3000/api/v1/keyword?q=" + `${commonURL}`;
-    queryURL = "keyword?q=" + `${commonURL}`;
-  } else if (typeof pathName == "number") {
-    apiURL = "http://localhost:3000/api/v1/categories/" + `${commonURL}`;
-    queryURL = "categories/" + `${commonURL}`;
+  if (
+    /^\/categories\/\d+$/.test(pathname) &&
+    Number(maxPrice) >= Number(minPrice)
+  ) {
+    apiURL = `http://localhost:3000/api/v1${pathname}?` + `${commonURL}`;
+  } else if (pathname == "/keyword" && Number(maxPrice) >= Number(minPrice)) {
+    apiURL =
+      `http://localhost:3000/api/v1/keyword?q=${keywordInputValue}` +
+      `${commonURL}`;
   }
 
   const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
 
-  const searchData = data;
-
-
-
-
-
-  const seperate = () => {
-
-    if (pathname == '/keyword') {
-      pathName = keywordInputValue;
-    } else if (pathname == '/categories') {
-      pathName = Number(slug);
+  const fetchHandler = () => {
+    let queryURL = "";
+    if (pathname == "/categories") {
+      setShowModal(true);
+      setErrorMessage("카테고리 목록을 선택해주세요");
+    } else if (/^\/categories\/\d+$/.test(pathname)) {
+      if (Number(maxPrice) < Number(minPrice)) {
+        setShowModal(true);
+        setErrorMessage("💡최대가격이 최소가격보다 커야합니다.💡");
+      } else {
+        queryURL = `${pathname}?${commonURL}`;
+        navigate(queryURL);
+        setResultVisible(true);
+        refetch();
+      }
     }
 
-    const content = pathname == '/keyword' ? "💡keyword를 입력하세요💡" : "💡💡최대가격이 최소가격보다 커야합니다."
-
-    return {content,  apiURL}
-  }
-
-  const handleSearch = () => {
-    if (pathName == "") {
-      setShowModal(true);
-      setErrorMessage("💡💡keyword를 입력하세요");
-    } else if (Number(maxPrice) < Number(minPrice)) {
-      setErrorMessage("💡💡최대가격이 최소가격보다 커야합니다.");
-      setShowModal(true);
-    } else if (maxPrice >= minPrice && pathName != "") {
-      setResultVisible(true);
-      refetch();
+    if (pathname == "/keyword") {
+      if (keywordInputValue === "") {
+        setShowModal(true);
+        setErrorMessage("키워드를 입력해주세요.");
+      } else {
+        if (Number(maxPrice) < Number(minPrice)) {
+          setShowModal(true);
+          setErrorMessage("💡최대가격이 최소가격보다 커야합니다.💡");
+        } else {
+          queryURL = `keyword?q=${keywordInputValue}` + `${commonURL}`;
+          navigate(queryURL);
+          setResultVisible(true);
+          refetch();
+        }
+      }
     }
   };
+
+  const searchData = data;
 
   return (
     <>
       <ButtonNSearchField>
         <Outlet context={{ isFetching }} />
-        <SearchButton
-          isFetching={isFetching}
-          handleSearch={handleSearch}
-          queryURL={queryURL}
-        />
+        <SearchButton isFetching={isFetching} fetchHandler={fetchHandler} />
       </ButtonNSearchField>
       <FilterBox>
         <CustomCalendar />

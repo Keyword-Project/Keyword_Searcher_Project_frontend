@@ -5,7 +5,7 @@ export interface ButtonContainerProps {
 
   export interface ButtonProps {
     isFetching: boolean;
-    handleSearch: () => void;
-    queryURL: string;
+    fetchHandler: () => void;
+ 
   }
 

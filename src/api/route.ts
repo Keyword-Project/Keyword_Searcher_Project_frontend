@@ -6,7 +6,7 @@ const FetchData = (url: string) => {
     queryKey: ["repoData"],
     queryFn: async () => {
       const res = await axios.get(url);
-      console.log(res.data);
+      console.log('data', res.data);
       return res.data;
     },
     refetchOnWindowFocus: false,
