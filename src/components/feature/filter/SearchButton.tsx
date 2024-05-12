@@ -1,18 +1,20 @@
 import styled from 'styled-components';
-
+import { ButtonProps } from 'type/button';
 const StyledButton = styled.button`
-  padding: 1rem 5rem;
+  padding: 0px 10px;
   border-radius: 9px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #eaeaea;
   font-weight: bold;
-  background-color: #ff2e63;
+  background-color: var(--Orange500);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.5);
   border: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   --a: initial;
+  width: 15%;
+   height: 41px;
 
   &:after {
     content: "";
@@ -36,24 +38,28 @@ const StyledButton = styled.button`
   }
 `;
 
-const RippleButton = () => {
-  const onClick = (e) => {
-    const { x, y, width, height } = e.target.getBoundingClientRect();
+const SearchButton = ({isFetching, fetchHandler}: ButtonProps) => {
+  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const target = e.target as HTMLButtonElement;
+    const { x, y, width, height } = target.getBoundingClientRect();
     const radius = Math.sqrt(width * width + height * height);
-    e.target.style.setProperty("--diameter", radius * 2 + "px");
+    target.style.setProperty("--diameter", radius * 2 + "px");
     const { clientX, clientY } = e;
     const left = ((clientX - x - radius) / width) * 100 + "%";
     const top = ((clientY - y - radius) / height) * 100 + "%";
 
-    e.target.style.setProperty("--left", left);
-    e.target.style.setProperty("--top", top);
-    e.target.style.setProperty("--a", "");
+    target.style.setProperty("--left", left);
+    target.style.setProperty("--top", top);
+    target.style.setProperty("--a", "");
     setTimeout(() => {
-      e.target.style.setProperty("--a", "ripple-effect 500ms linear");
+      target.style.setProperty("--a", "ripple-effect 500ms linear");
     }, 5);
   };
 
-  return <StyledButton onClick={onClick}>CLICK</StyledButton>;
+  return <StyledButton disabled={isFetching} onClick={(e)=>{
+    onClick(e);
+    fetchHandler();
+  }}>{isFetching ? "검색 중.." : "상품조회"}</StyledButton>;
 };
 
-export default RippleButton;
+export default SearchButton;

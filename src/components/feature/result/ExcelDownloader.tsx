@@ -15,12 +15,14 @@ const ExcelButton = styled.button`
   width: 140px;
   height: 30px;
   font-size: 12px;
+  border-radius: 0.625rem;
   font-weight: bold;
 `;
 
 const StyledCSVLink = styled(CSVLink)`
   color: black;
   margin-left: 5px;
+
   text-decoration-line: none;
 `;
 

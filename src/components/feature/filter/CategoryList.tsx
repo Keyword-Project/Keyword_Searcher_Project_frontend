@@ -4,32 +4,19 @@ import data from "dummyData/CategoriesData.json";
 import { useState } from "react";
 import Arrow_Forward from "assets/icons/arrow_forward.svg?react";
 import { Link } from "react-router-dom";
-import Button from "components/common/Button";
+import CategoryButton from "components/common/CategoryButton";
+import { Category, ClassifiedCategoriesFieldProps } from "type/categoryList";
 
-const StyledArrow_Forward = styled(Arrow_Forward)<{show : boolean}>`
+const StyledArrow_Forward = styled(Arrow_Forward)<{ show: boolean }>`
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 0.8rem;
+  right: 2.5rem;
   opacity: ${(props) => (props.show ? "1" : "0")};
 `;
 
-interface Category {
-  name: string;
-  categoryId: string;
-  thirdCategories: Category[];
-}
-
-interface ClassifiedCategoriesFieldProps {
-  backgroundColor: string;
-  left: string;
-  borderRadius: string;
-  borderRight: string;
-  isVisible: boolean;
-}
-
 const ClassifiedCategoriesField = styled.div<ClassifiedCategoriesFieldProps>`
   overflow: auto;
-  width: 216px;
+  width: 15rem;
   z-index: 2;
   top: 2.5rem;
   opacity: 1;
@@ -91,7 +78,6 @@ const Category = styled.div`
   }
 `;
 
-
 export default function CategoryList() {
   const [firstIsHovered, setFirstIsHovered] = useState(false);
   const [secondIsHovered, setSecondIsHovered] = useState(false);
@@ -100,14 +86,18 @@ export default function CategoryList() {
   const [thirdCategory, setThirdCategory] = useState<Category[]>([]);
   const [IsArrowVisible, setIsArrowVisible] = useState<number | null>(null);
 
-  const arrowVisibleHandler = (index: number, func: (index: number) => void) => {
+  const arrowVisibleHandler = (
+    index: number,
+    func: (index: number) => void
+  ) => {
     func(index);
   };
 
   const secondCateSelectHandler = (index: number) => {
     setSecondCategory(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      (prev) => (prev = data.firstCategories[index].secondCategories as Category[])
+      (prev) =>
+        (prev = data.firstCategories[index].secondCategories as Category[])
     );
   };
 
@@ -141,7 +131,7 @@ export default function CategoryList() {
           onMouseOver={() => setFirstIsHovered(true)}
           onMouseLeave={() => leaveCategoryButton()}
         >
-          <Button
+          <CategoryButton
             title="카테고리"
             BackGroundColor="var(--Orange500)"
             color="white"

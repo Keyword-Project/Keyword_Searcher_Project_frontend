@@ -1,10 +1,8 @@
 import styled from "styled-components";
 import Hamburger from "assets/icons/hamburger.svg?react";
+import { ButtonContainerProps } from "type/button";
 
-interface ButtonContainerProps {
-  BackGroundColor: string;
-  borderColor: string;
-}
+
 
 const ButtonContainer = styled.div<ButtonContainerProps>`
   display: inline-flex;
@@ -28,11 +26,12 @@ const ButtonContainer = styled.div<ButtonContainerProps>`
 const ButtonTitle = styled.span`
   font-weight: 500;
   font-size: var(--font-size-primary);
+  font-weight: bold;
   color: ${(props) => props.color};
   margin-left: 6px;
 `;
 
-export default function Button({ ...props }) {
+export default function CategoryButton({ ...props }) {
   return (
     <>
       <ButtonContainer
