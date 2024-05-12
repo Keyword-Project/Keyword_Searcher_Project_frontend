@@ -12,12 +12,14 @@ const loadingAnimation = keyframes`
 
 const SkeletonItem = styled.li`
   display: flex;
+  border-radius: 2rem;
+  height: 28.125rem;
   align-items: center;
+   background-color: white;
   margin-top: 15px;
   margin-bottom: 40px;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 4px;
   position: relative;
 `;
 
@@ -34,7 +36,7 @@ const SkeletonRow = styled.p`
   height: 50px;
   background: #f2f2f2;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 2rem;
   position: relative;
   overflow: hidden;
 

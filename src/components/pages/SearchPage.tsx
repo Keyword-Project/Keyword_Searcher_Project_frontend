@@ -52,7 +52,6 @@ export default function SearchPage() {
   );
 
   const { pathname } = useLocation();
-  console.log(pathname);
   const navigate = useNavigate();
 
   const commonURL = `${startDate ? `startDate=${startDate}` : ""}${
@@ -80,11 +79,11 @@ export default function SearchPage() {
     let queryURL = "";
     if (pathname == "/categories") {
       setShowModal(true);
-      setErrorMessage("카테고리 목록을 선택해주세요");
+      setErrorMessage("카테고리 목록을 선택해주세요.");
     } else if (/^\/categories\/\d+$/.test(pathname)) {
       if (Number(maxPrice) < Number(minPrice)) {
         setShowModal(true);
-        setErrorMessage("💡최대가격이 최소가격보다 커야합니다.💡");
+        setErrorMessage("최대가격이 최소가격보다 커야합니다.");
       } else {
         queryURL = `${pathname}?${commonURL}`;
         navigate(queryURL);
@@ -100,7 +99,7 @@ export default function SearchPage() {
       } else {
         if (Number(maxPrice) < Number(minPrice)) {
           setShowModal(true);
-          setErrorMessage("💡최대가격이 최소가격보다 커야합니다.💡");
+          setErrorMessage("최대가격이 최소가격보다 커야합니다.");
         } else {
           queryURL = `keyword?q=${keywordInputValue}` + `${commonURL}`;
           navigate(queryURL);
@@ -155,6 +154,7 @@ export default function SearchPage() {
                   <ErrorField
                     resetErrorBoundary={resetErrorBoundary}
                     setResultVisible={setResultVisible}
+                    
                   />
                 </div>
               )}

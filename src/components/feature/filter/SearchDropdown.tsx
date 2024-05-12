@@ -34,7 +34,7 @@ const StyledArrowIcon = styled(UpArrow)<{ dropdownVisibility: boolean }>`
 
 const StyledUl = styled.ul`
   width: 100%;
-  border: 1px solid var(--Orange500);
+  border: 2px solid var(--Orange500);
   border-radius: 10px;
   padding-left: 1rem;
 `;

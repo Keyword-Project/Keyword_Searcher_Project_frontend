@@ -101,7 +101,6 @@ export default function PriceRange({
           placeholder="최대 가격"
           disabled={isFetching}
         ></Input>
-     
       </PriceContainer>
     </>
   );

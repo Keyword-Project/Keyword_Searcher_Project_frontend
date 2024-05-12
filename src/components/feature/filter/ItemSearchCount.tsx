@@ -1,7 +1,7 @@
 import SearchDropdown from "components/feature/filter/SearchDropdown";
 import styled from "styled-components";
 import { ItemSearchCountProps } from "type/itemSearchCount";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tooltip from "components/common/Tooltip";
 
 const InputBox = styled.div`
@@ -47,14 +47,18 @@ export default function ItemSearchCount({
 }: ItemSearchCountProps) {
   const [domain, setDomain] = useState("");
   const [isInputDisable, setIsInputDisable] = useState(false);
-
-  const searchSizeChangeByInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDomain(e.target.value);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    setSearchSize((prev) => prev = domain);
-
-    console.log("input 입력 시 domain", domain);
+  const searchSizeChangeByInput = (e?: React.ChangeEvent<HTMLInputElement>) => {
+    if (e) {
+      setDomain(e.target.value);
+    }
+    setSearchSize(domain);
+   
   };
+useEffect(() =>{
+  searchSizeChangeByInput()
+},[domain])
+
+  
   return (
     <>
       <InputBox>

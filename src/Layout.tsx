@@ -7,7 +7,7 @@ interface LayoutProps {
 }
 
 const LayoutBox = styled.div`
-  padding: 50px 20% 0px 20%;
+  padding: 50px 20% 5% 20%;
   background-color: #f5f8fb;
 `;
 
@@ -37,6 +37,12 @@ const Subtitle = styled.p`
   font-weight: bold;
 `;
 
+const Footer = styled.div`
+  width: 100%;
+  height: 10rem;
+  background: var(--white-color-400);
+`;
+
 export default function Layout({ children }: LayoutProps) {
   return (
     <>
@@ -48,6 +54,7 @@ export default function Layout({ children }: LayoutProps) {
         </Subtitle>
       </Header>
       <LayoutBox>{children}</LayoutBox>
+      <Footer />
     </>
   );
 }

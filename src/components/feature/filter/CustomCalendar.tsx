@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
 import "react-calendar/dist/Calendar.css";
@@ -121,16 +121,28 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export default function CustomCalendar() {
-  const CalculateDateGap = (startDate: Date, endDate: Date) => {
-    return Math.abs(startDate.valueOf() - endDate.valueOf());
-  };
+  const dispatch = useDispatch();
+  const [value, onChange] = useState<Value>([new Date(), new Date()]);
+  const today = new Date();
 
-  const onCalendarClose = () => {
+
+  useEffect(() => {
+    const CalculateDateGap = (startDate: Date, endDate: Date) => {
+    
+      return Math.abs(startDate.getTime() - endDate.getTime());
+    };
+
+    function formatDate(date: Date): string {
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1; 
+      const day = date.getDate();
+      return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+    }
+
+
     if (isValuePieceArray(value) && value[0] && value[1]) {
       // value가 [ValuePiece, ValuePiece] 인 경우
-
-      const startDate = value[0]?.toISOString().split("T")[0];
-
+      const startDate = formatDate(value[0]);
       const differenceMs = CalculateDateGap(value[0], value[1]);
 
       const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
@@ -142,11 +154,7 @@ export default function CustomCalendar() {
         })
       );
     }
-  };
-
-  const dispatch = useDispatch();
-  const [value, onChange] = useState<Value>([new Date(), new Date()]);
-  const today = new Date();
+  }, [value]);
 
   return (
     <CalendarBox>
@@ -178,11 +186,10 @@ export default function CustomCalendar() {
         rangeDivider={"-"}
         //날짜 사이 기호
         required={false}
-        //>??
+        //??
         showLeadingZeros={true}
         //옵션이 "true"로 설정된 경우 날짜가 "2022-01-05"와 같이 두 자리 수로 표시됩니다. 하지만 이 옵션이 "false"로 설정된 경우 날짜가 "2022-1-5"와 같이 한 자리 수로 표시됩니다.
         maxDate={today}
-        onCalendarClose={onCalendarClose}
       />
     </CalendarBox>
   );

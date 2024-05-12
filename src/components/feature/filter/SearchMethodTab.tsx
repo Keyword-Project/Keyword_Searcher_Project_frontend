@@ -66,7 +66,12 @@ export default function SearchMethodTab() {
     <AppContainer>
       <Title to='/'>Digging</Title>
       {link.map((item) => {
-        const isActive = pathname === `/${item.to}`;
+        let isActive = false
+        if(pathname === item.to){
+          isActive = true;
+        } else if (pathname.split('/')[1] === item.to) {
+          isActive = true;
+        }
     
         return (
           <MenuItem
