@@ -23,7 +23,6 @@ const ButtonNSearchField = styled.div`
 `;
 
 const SearchResultWord = styled.p`
-  margin-top: 10px;
   font-size: var(--font-size-medium);
   font-weight: bold;
 `;
@@ -69,7 +68,7 @@ export default function SearchPage() {
     apiURL = `http://localhost:3000/api/v1${pathname}?` + `${commonURL}`;
   } else if (pathname == "/keyword" && Number(maxPrice) >= Number(minPrice)) {
     apiURL =
-      `http://localhost:3000/api/v1/keyword?q=${keywordInputValue}` +
+      `http://localhost:3000/api/v1/keyword?q=${keywordInputValue}&` +
       `${commonURL}`;
   }
 
@@ -154,7 +153,6 @@ export default function SearchPage() {
                   <ErrorField
                     resetErrorBoundary={resetErrorBoundary}
                     setResultVisible={setResultVisible}
-                    
                   />
                 </div>
               )}
