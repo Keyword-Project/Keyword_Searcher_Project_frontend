@@ -32,7 +32,7 @@ const Input = styled.input`
   }
   font-weight: 500;
   font-size: var(--font-size-primary);
-  box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.1);
+
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
     -webkit-appearance: none;

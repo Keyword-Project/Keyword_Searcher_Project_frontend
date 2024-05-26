@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { ButtonProps } from 'type/button';
+import styled from "styled-components";
+import { ButtonProps } from "type/button";
 const StyledButton = styled.button`
   padding: 0px 10px;
   border-radius: 9px;
@@ -7,14 +7,13 @@ const StyledButton = styled.button`
   color: #eaeaea;
   font-weight: bold;
   background-color: var(--Orange500);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.5);
   border: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   --a: initial;
   width: 15%;
-   height: 41px;
+  height: 41px;
 
   &:after {
     content: "";
@@ -38,7 +37,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const SearchButton = ({isFetching, fetchHandler}: ButtonProps) => {
+const SearchButton = ({ isFetching, fetchHandler }: ButtonProps) => {
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
     const { x, y, width, height } = target.getBoundingClientRect();
@@ -56,10 +55,17 @@ const SearchButton = ({isFetching, fetchHandler}: ButtonProps) => {
     }, 5);
   };
 
-  return <StyledButton disabled={isFetching} onClick={(e)=>{
-    onClick(e);
-    fetchHandler();
-  }}>{isFetching ? "검색 중.." : "상품조회"}</StyledButton>;
+  return (
+    <StyledButton
+      disabled={isFetching}
+      onClick={(e) => {
+        onClick(e);
+        fetchHandler();
+      }}
+    >
+      {isFetching ? "검색 중.." : "상품조회"}
+    </StyledButton>
+  );
 };
 
 export default SearchButton;

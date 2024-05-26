@@ -29,7 +29,6 @@ const StlyedDateRangePicker = styled(DateRangePicker)`
     padding: 0px 5px;
     width: 15rem;
     font-size: 12px;
-    box-shadow: 0px 4px 10px 0px rgba(34, 39, 47, 0.1);
     &:hover {
       cursor: pointer;
     }
@@ -107,7 +106,6 @@ const StlyedDateRangePicker = styled(DateRangePicker)`
 `;
 
 const CalendarBox = styled.div`
-  margin-bottom: 40px;
   width: 250px;
   height: 64px;
 `;
@@ -125,20 +123,19 @@ export default function CustomCalendar() {
   const [value, onChange] = useState<Value>([new Date(), new Date()]);
   const today = new Date();
 
-
   useEffect(() => {
     const CalculateDateGap = (startDate: Date, endDate: Date) => {
-    
       return Math.abs(startDate.getTime() - endDate.getTime());
     };
 
     function formatDate(date: Date): string {
       const year = date.getFullYear();
-      const month = date.getMonth() + 1; 
+      const month = date.getMonth() + 1;
       const day = date.getDate();
-      return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+      return `${year}-${month.toString().padStart(2, "0")}-${day
+        .toString()
+        .padStart(2, "0")}`;
     }
-
 
     if (isValuePieceArray(value) && value[0] && value[1]) {
       // value가 [ValuePiece, ValuePiece] 인 경우

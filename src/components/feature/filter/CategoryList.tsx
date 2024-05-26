@@ -85,6 +85,12 @@ export default function CategoryList() {
   const [secondCategory, setSecondCategory] = useState<Category[]>([]);
   const [thirdCategory, setThirdCategory] = useState<Category[]>([]);
   const [IsArrowVisible, setIsArrowVisible] = useState<number | null>(null);
+  const [selectedFirstCategory, setSelectedFirstCategory] =
+    useState<string>("");
+  const [selectedSecondCategory, setSelectedSecondCategory] =
+    useState<string>("");
+  const [selectedThirdCategory, setSelectedThirdCategory] =
+    useState<string>("");
 
   const arrowVisibleHandler = (
     index: number,
@@ -99,10 +105,14 @@ export default function CategoryList() {
       (prev) =>
         (prev = data.firstCategories[index].secondCategories as Category[])
     );
+    setSelectedFirstCategory(data.firstCategories[index].name);
+    console.log(selectedFirstCategory);
   };
 
   const thirdCateSelectHandler = (index: number) => {
     setThirdCategory((prev) => (prev = secondCategory[index].thirdCategories));
+    setSelectedSecondCategory(secondCategory[index].name);
+    console.log(selectedSecondCategory);
   };
 
   const secondCateFieldOpen = () => {
@@ -147,6 +157,10 @@ export default function CategoryList() {
             onMouseEnter={() => secondCateFieldOpen()}
           >
             {data.firstCategories.map((item, index) => {
+              const aaa = () => {
+                secondCateSelectHandler(index);
+                arrowVisibleHandler(index, setIsArrowVisible);
+              };
               return (
                 <Category
                   key={index}
@@ -184,7 +198,6 @@ export default function CategoryList() {
               <Category
                 key={index}
                 onMouseEnter={() => {
-                  arrowVisibleHandler(index, setIsArrowVisible);
                   thirdCateSelectHandler(index);
                 }}
                 onMouseLeave={() => setIsArrowVisible(null)}
@@ -214,9 +227,6 @@ export default function CategoryList() {
             return (
               <Category
                 key={index}
-                onMouseEnter={() =>
-                  arrowVisibleHandler(index, setIsArrowVisible)
-                }
                 onMouseLeave={() => setIsArrowVisible(null)}
               >
                 <CategoryListLink
