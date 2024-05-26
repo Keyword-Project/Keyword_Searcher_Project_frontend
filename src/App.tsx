@@ -14,7 +14,9 @@ function App() {
           <Route path="/" element={<Navigate replace to="/categories" />} />
           <Route path="/" element={<SearchPage />}>
             <Route path="keyword" element={<KeywordInput />} />
-            <Route path="categories" element={<CategoryList />} />
+            <Route path="categories" element={<CategoryList />}>
+            <Route path=":categoryId" element={<></>} />
+            </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

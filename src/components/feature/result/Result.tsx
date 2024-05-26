@@ -11,7 +11,7 @@ export default function Result({
   isError,
   error,
 }: ResultProps) {
-  if (isFetching) return <SkeletonContainer></SkeletonContainer>;
+  if (isFetching) return <SkeletonContainer />;
 
   if (isError) {
     throw error;
