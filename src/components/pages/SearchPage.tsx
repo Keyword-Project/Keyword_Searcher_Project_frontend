@@ -36,8 +36,8 @@ const FilterBox = styled.div`
 
 export default function SearchPage() {
   const [resultVisible, setResultVisible] = useState(false);
-  const [maxPrice, setMaxPrice] = useState("");
-  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState(0);
+  const [minPrice, setMinPrice] = useState(0);
   const [searchSize, setSearchSize] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -124,9 +124,7 @@ export default function SearchPage() {
           isFetching={isFetching}
         />
         <PriceRange
-          minPrice={minPrice}
           setMinPrice={setMinPrice}
-          maxPrice={maxPrice}
           setMaxPrice={setMaxPrice}
           isFetching={isFetching}
         />
