@@ -27,6 +27,8 @@ const ModalContext = styled.p`
   font-size: 1rem;
   font-weight: bold;
   color: var(--Gray800);
+  white-space: pre;
+  text-align: center;
 `;
 const ModalButton = styled.button`
   width: 100%;
