@@ -65,18 +65,15 @@ const InputTitleField = styled.div`
 export default function PriceRange({
   setMinPrice,
   setMaxPrice,
-  isFetching,
 }: {
   setMinPrice: React.Dispatch<React.SetStateAction<number>>;
 
   setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
-  isFetching: boolean;
 }) {
   const { register, watch } = useForm<FormValues>();
 
   const a: number = watch("a");
   const b: number = watch("b");
-
 
   return (
     <>
@@ -90,7 +87,6 @@ export default function PriceRange({
           type="text"
           {...register("a")}
           placeholder="최소 가격"
-          disabled={isFetching}
           onKeyUp={(e) => {
             e.currentTarget.value = e.currentTarget.value.replace(
               /[^0-9]/g,
@@ -103,9 +99,8 @@ export default function PriceRange({
         <Input
           id="b"
           type="text"
-          {...register('b')}
+          {...register("b")}
           placeholder="최대 가격"
-          disabled={isFetching}
           onKeyUp={(e) => {
             e.currentTarget.value = e.currentTarget.value.replace(
               /[^0-9]/g,
@@ -113,9 +108,8 @@ export default function PriceRange({
             );
             setMaxPrice(b);
           }}
-
         ></Input>
-        
+
         {!Number(a) && Number(b) && Number(b) < 10000 ? (
           <ErrorMessage>
             최소가격 미 입력시 <br />

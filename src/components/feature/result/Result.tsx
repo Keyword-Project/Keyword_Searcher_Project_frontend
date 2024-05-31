@@ -1,16 +1,38 @@
 import SkeletonContainer from "components/feature/result/SkeletonContainer";
 import ExcelDownloader from "./ExcelDownloader";
 import ResultTable from "./ResultTable";
-import { ResultProps } from "type/result";
+import FetchData from "api/route";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 
-export default function Result({
-  searchData,
-  isFetching,
-  isError,
-  error,
-}: ResultProps) {
+export default function Result({resultVisible, setResultVisible}) {
+ 
+  const { pathname } = useLocation();
+  const url = new URL(window.location.href);
+  const queryString = url.search
+
+  
+
+
+  const apiURL = `http://localhost:3000/api/v1${pathname}${queryString}`;
+  console.log(apiURL)
+
+
+  const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
+  useEffect(() => {
+    refetch();
+    setResultVisible(true);
+    console.log(queryString)
+  }, [queryString]);
+  
+
+
+
+
+const searchData = data
+
   if (isFetching) return <SkeletonContainer />;
 
   if (isError) {
@@ -18,8 +40,8 @@ export default function Result({
   }
   return (
     <>
-      <ExcelDownloader searchData={searchData} />
-      <ResultTable searchData={searchData} />
+     {resultVisible &&  <> <ExcelDownloader searchData={searchData} />
+      <ResultTable searchData={searchData} /></> }
     </>
   );
 }

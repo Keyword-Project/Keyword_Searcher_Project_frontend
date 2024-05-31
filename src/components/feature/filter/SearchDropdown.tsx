@@ -49,7 +49,6 @@ const StyledLi = styled.li`
 `;
 
 const SearchDropdown = ({
-  isFetching,
   setSearchSize,
   setIsInputDisable,
   domain,
@@ -64,9 +63,7 @@ const SearchDropdown = ({
       <DropdownSeletor
         dropdownVisibility={dropdownVisibility}
         onClick={() => {
-          if (!isFetching) {
-            setDropdownVisibility(!dropdownVisibility);
-          }
+          setDropdownVisibility(!dropdownVisibility);
         }}
       >
         {selectedItem}

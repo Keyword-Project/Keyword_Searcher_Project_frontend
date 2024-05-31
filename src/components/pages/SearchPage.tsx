@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CustomCalendar from "components/feature/filter/CustomCalendar";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
@@ -10,13 +10,12 @@ import PriceRange from "components/feature/filter/PriceRange";
 import EmptyResult from "components/feature/result/EmptyResult";
 import { createPortal } from "react-dom";
 import ModalContent from "components/feature/filter/ModalContent";
-import FetchData from "api/route";
-import { QueryErrorResetBoundary } from "@tanstack/react-query";
-import { ErrorBoundary } from "react-error-boundary";
-import ErrorField from "components/feature/result/ErrorField";
 import SearchButton from "components/feature/filter/SearchButton";
 import { useNavigate } from "react-router-dom";
 import media from "styles/media";
+import { QueryErrorResetBoundary } from "@tanstack/react-query";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorField from "components/feature/result/ErrorField";
 
 const ButtonNSearchField = styled.div`
   display: flex;
@@ -58,6 +57,15 @@ export default function SearchPage() {
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const url = new URL(window.location.href);
+  const queryString = url.search
+
+  useEffect(()=>{
+    if(queryString){
+      setResultVisible(true)
+    }
+  },[queryString])
+
   const { startDate, los } = useSelector(
     (state: RootState) => state.queryString.date
   );
@@ -75,21 +83,6 @@ export default function SearchPage() {
     maxPrice ? `&maxPrice=${maxPrice}` : ""
   }${searchSize ? `&searchSize=${searchSize}` : ""}`;
 
-  let apiURL = "";
-
-  if (
-    /^\/categories\/\d+$/.test(pathname) &&
-    Number(maxPrice) >= Number(minPrice)
-  ) {
-    apiURL = `http://localhost:3000/api/v1${pathname}?` + `${commonURL}`;
-  } else if (pathname == "/keyword" && Number(maxPrice) >= Number(minPrice)) {
-    apiURL =
-      `http://localhost:3000/api/v1/keyword?q=${keywordInputValue}&` +
-      `${commonURL}`;
-  }
-
-  const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
-
   const fetchHandler = () => {
     let queryURL = "";
     if (pathname == "/categories") {
@@ -99,19 +92,17 @@ export default function SearchPage() {
       if (Number(maxPrice) < Number(minPrice)) {
         setShowModal(true);
         setErrorMessage("최대가격이 최소가격보다 커야합니다.");
-      } 
-      else if (!Number(minPrice) && Number(maxPrice)) {
+      } else if (!Number(minPrice) && Number(maxPrice)) {
         if (Number(maxPrice) < 10000) {
           setShowModal(true);
-          setErrorMessage("최소가격 미 입력 시\n최대가격이 10000보다 커야합니다.");
+          setErrorMessage(
+            "최소가격 미 입력 시\n최대가격이 10000보다 커야합니다."
+          );
         }
-                }       
-      
-      else {
+      } else {
         queryURL = `${pathname}?${commonURL}`;
         navigate(queryURL);
         setResultVisible(true);
-        refetch();
       }
     }
 
@@ -124,42 +115,31 @@ export default function SearchPage() {
           setShowModal(true);
           setErrorMessage("최대가격이 최소가격보다 커야합니다.");
         } else if (!Number(minPrice) && Number(maxPrice)) {
-if (Number(maxPrice) < 10000) {
-  setShowModal(true);
-  setErrorMessage("최소가격 미 입력 시\n최대가격이 10000보다 커야합니다.");
-}
-        } 
-        
-        
-        else {
+          if (Number(maxPrice) < 10000) {
+            setShowModal(true);
+            setErrorMessage(
+              "최소가격 미 입력 시\n최대가격이 10000보다 커야합니다."
+            );
+          }
+        } else {
           queryURL = `keyword?q=${keywordInputValue}` + `${commonURL}`;
           navigate(queryURL);
           setResultVisible(true);
-          refetch();
         }
       }
     }
   };
 
-  const searchData = data;
-
   return (
     <>
       <ButtonNSearchField>
-        <Outlet context={{ isFetching }} />
-        <SearchButton isFetching={isFetching} fetchHandler={fetchHandler} />
+        <Outlet />
+        <SearchButton fetchHandler={fetchHandler} />
       </ButtonNSearchField>
       <FilterBox>
         <CustomCalendar />
-        <ItemSearchCount
-          setSearchSize={setSearchSize}
-          isFetching={isFetching}
-        />
-        <PriceRange
-          setMinPrice={setMinPrice}
-          setMaxPrice={setMaxPrice}
-          isFetching={isFetching}
-        />
+        <ItemSearchCount setSearchSize={setSearchSize} />
+        <PriceRange setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} />
       </FilterBox>
 
       {showModal &&
@@ -171,34 +151,28 @@ if (Number(maxPrice) < 10000) {
           document.body
         )}
       <SearchResultWord>상품 검색 결과</SearchResultWord>
-      {resultVisible ? (
-        <QueryErrorResetBoundary>
-          {({ reset }) => (
-            <ErrorBoundary
-              onReset={() => {
-                reset();
-              }}
-              FallbackComponent={({ resetErrorBoundary }) => (
-                <div>
-                  <ErrorField
-                    resetErrorBoundary={resetErrorBoundary}
-                    setResultVisible={setResultVisible}
-                  />
-                </div>
-              )}
-            >
-              <Result
-                isError={isError}
-                searchData={searchData}
-                isFetching={isFetching}
-                error={error}
-              />
-            </ErrorBoundary>
-          )}
-        </QueryErrorResetBoundary>
-      ) : (
-        <EmptyResult />
-      )}
+      {resultVisible ? 
+       <QueryErrorResetBoundary>
+       {({ reset }) => (
+         <ErrorBoundary
+           onReset={() => {
+             reset();
+           }}
+           FallbackComponent={({ resetErrorBoundary }) => (
+             <div>
+               <ErrorField
+                 resetErrorBoundary={resetErrorBoundary}
+                 setResultVisible={setResultVisible}
+               />
+             </div>
+           )}
+         >
+    <Result resultVisible={resultVisible} setResultVisible={setResultVisible} /> 
+         </ErrorBoundary>
+       )}
+     </QueryErrorResetBoundary>
+      : <EmptyResult /> }
+     
     </>
   );
 }
