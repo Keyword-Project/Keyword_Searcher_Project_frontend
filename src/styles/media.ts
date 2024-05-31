@@ -5,8 +5,8 @@ type sizesType = {
 }
 
 const sizes: sizesType = {
-  mobile: 375,
-  tablet: 1024,
+  mobile: 486,
+  tablet: 1025,
 };
 
 interface Media {

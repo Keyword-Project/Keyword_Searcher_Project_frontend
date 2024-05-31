@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Tooltip from "components/common/Tooltip";
 import { useForm } from "react-hook-form";
+import media from "styles/media";
 interface FormValues {
   a: number;
   b: number;
@@ -8,6 +9,12 @@ interface FormValues {
 
 const PriceContainer = styled.div`
   width: 250px;
+  ${media.tablet`
+margin-bottom : 2rem;
+  `}
+  ${media.mobile`
+margin-bottom : 2rem;
+  `}
 `;
 export const NotEnterdDescription = styled.p`
   color: var(--Gray500);

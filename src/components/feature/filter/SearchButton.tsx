@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styles/media";
 import { ButtonProps } from "type/button";
 const StyledButton = styled.button`
   padding: 0px 10px;
@@ -14,6 +15,11 @@ const StyledButton = styled.button`
   --a: initial;
   width: 15%;
   height: 41px;
+
+  ${media.mobile`
+  font-size: var(--font-size-small)
+  `}
+
 
   &:after {
     content: "";
@@ -35,6 +41,8 @@ const StyledButton = styled.button`
       opacity: 0;
     }
   }
+
+ 
 `;
 
 const SearchButton = ({ isFetching, fetchHandler }: ButtonProps) => {

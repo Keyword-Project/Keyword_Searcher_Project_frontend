@@ -12,6 +12,9 @@ const StyledLink = styled(Link)<{ color: boolean }>`
   &:hover {
     color: black;
   }
+  ${media.mobile`
+  font-size: var(--font-size-small);
+  `}
 `;
 
 const AppContainer = styled.div`
@@ -37,9 +40,8 @@ const Title = styled.p`
   font-family: PaytoneOne;
   margin-right: 1rem;
   margin-bottom: 0.7rem;
-  ${media.tablet`
-    padding: 1.6rem 1.4rem;
-    max-width: 100%;
+${media.mobile`
+  font-size: var(--font-size-small);
   `}
 `;
 

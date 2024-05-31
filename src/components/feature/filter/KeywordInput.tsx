@@ -3,16 +3,29 @@ import { useDispatch } from "react-redux";
 import { pathNameFetch } from "lib/FetchSlice";
 import { useEffect, useRef } from "react";
 import Magnifier from "assets/icons/magnifier.svg?react";
+import media from "styles/media";
+
+
+
+
+
 const InputDiv = styled.div`
   position: relative;
   height: 41px;
   width: 85%;
+  ${media.mobile`
+  width: 100%;
+  height: 31px;
+  `}
 `;
 
 const StyledMagnifier = styled(Magnifier)`
   position: absolute;
   top: 10px;
   right: 11.5rem;
+  ${media.mobile`
+  right: 1rem;
+  `}
 `;
 
 const Input = styled.input`
@@ -34,6 +47,12 @@ const Input = styled.input`
     -webkit-appearance: none;
     margin: 0;
   }
+  ${media.mobile`
+  width: 100%;
+  &::placeholder {
+   font-size: var(--font-size-small)
+  }
+  `}
 `;
 
 export default function KeywordInput() {

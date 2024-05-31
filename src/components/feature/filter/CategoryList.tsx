@@ -5,7 +5,7 @@ import { useState } from "react";
 import Arrow_Forward from "assets/icons/arrow_forward.svg?react";
 import { Link } from "react-router-dom";
 import CategoryButton from "components/common/CategoryButton";
-import { Category, ClassifiedCategoriesFieldProps } from "type/categoryList";
+import { CategoryType, ClassifiedCategoriesFieldProps } from "type/categoryList";
 
 const StyledArrow_Forward = styled(Arrow_Forward)<{ show: boolean }>`
   position: absolute;
@@ -82,8 +82,8 @@ export default function CategoryList() {
   const [firstIsHovered, setFirstIsHovered] = useState(false);
   const [secondIsHovered, setSecondIsHovered] = useState(false);
   const [thirdIsHovered, setThirdIsHovered] = useState(false);
-  const [secondCategory, setSecondCategory] = useState<Category[]>([]);
-  const [thirdCategory, setThirdCategory] = useState<Category[]>([]);
+  const [secondCategory, setSecondCategory] = useState<CategoryType[]>([]);
+  const [thirdCategory, setThirdCategory] = useState<CategoryType[]>([]);
   const [IsArrowVisible, setIsArrowVisible] = useState<number | null>(null);
   const [selectedFirstCategory, setSelectedFirstCategory] =
     useState<string>("");
@@ -103,7 +103,7 @@ export default function CategoryList() {
     setSecondCategory(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       (prev) =>
-        (prev = data.firstCategories[index].secondCategories as Category[])
+        (prev = data.firstCategories[index].secondCategories as CategoryType[])
     );
     setSelectedFirstCategory(data.firstCategories[index].name);
     console.log(selectedFirstCategory);
