@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { MenuItemUnderlineProps, MenuItemProps } from "type/searchMethodTab";
-
+import media from "styles/media";
 
 const StyledLink = styled(Link)<{ color: boolean }>`
   color: ${({ color }) => (color ? "black" : "var(--Gray500)")};
@@ -12,6 +12,9 @@ const StyledLink = styled(Link)<{ color: boolean }>`
   &:hover {
     color: black;
   }
+  ${media.mobile`
+  font-size: var(--font-size-small);
+  `}
 `;
 
 const AppContainer = styled.div`
@@ -25,7 +28,7 @@ const MenuItemContainer = styled.div`
   cursor: pointer;
   position: relative;
 `;
-const Title = styled(Link)`
+const Title = styled.p`
   color: var(--Orange500);
   text-decoration-line : none;
   text-shadow: 2px 4px 6px rgba(37, 36, 62, 0.15);
@@ -37,6 +40,9 @@ const Title = styled(Link)`
   font-family: PaytoneOne;
   margin-right: 1rem;
   margin-bottom: 0.7rem;
+${media.mobile`
+  font-size: var(--font-size-small);
+  `}
 `;
 
 const MenuItemUnderline = styled.div<MenuItemUnderlineProps>`
@@ -64,7 +70,7 @@ export default function SearchMethodTab() {
 
   return (
     <AppContainer>
-      <Title to='/'>Digging</Title>
+      <Title>Digging</Title>
       {link.map((item) => {
         let isActive = false
         if(pathname === item.to){

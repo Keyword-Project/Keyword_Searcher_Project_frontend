@@ -16,15 +16,24 @@ import { ErrorBoundary } from "react-error-boundary";
 import ErrorField from "components/feature/result/ErrorField";
 import SearchButton from "components/feature/filter/SearchButton";
 import { useNavigate } from "react-router-dom";
+import media from "styles/media";
 
 const ButtonNSearchField = styled.div`
   display: flex;
   justify-content: space-between;
+  ${media.mobile`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  `}
 `;
 
 const SearchResultWord = styled.p`
   font-size: var(--font-size-medium);
   font-weight: bold;
+  ${media.mobile`
+margin-top: 1rem;
+  `}
 `;
 
 const FilterBox = styled.div`
@@ -32,6 +41,13 @@ const FilterBox = styled.div`
   justify-content: space-between;
   padding-top: 3rem;
   width: 100%;
+  ${media.mobile`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  `}
+  flex-wrap: wrap;
+  gap: 2rem;
 `;
 
 export default function SearchPage() {
@@ -83,7 +99,15 @@ export default function SearchPage() {
       if (Number(maxPrice) < Number(minPrice)) {
         setShowModal(true);
         setErrorMessage("최대가격이 최소가격보다 커야합니다.");
-      } else {
+      } 
+      else if (!Number(minPrice) && Number(maxPrice)) {
+        if (Number(maxPrice) < 10000) {
+          setShowModal(true);
+          setErrorMessage("최소가격 미 입력 시\n최대가격이 10000보다 커야합니다.");
+        }
+                }       
+      
+      else {
         queryURL = `${pathname}?${commonURL}`;
         navigate(queryURL);
         setResultVisible(true);
@@ -99,7 +123,15 @@ export default function SearchPage() {
         if (Number(maxPrice) < Number(minPrice)) {
           setShowModal(true);
           setErrorMessage("최대가격이 최소가격보다 커야합니다.");
-        } else {
+        } else if (!Number(minPrice) && Number(maxPrice)) {
+if (Number(maxPrice) < 10000) {
+  setShowModal(true);
+  setErrorMessage("최소가격 미 입력 시\n최대가격이 10000보다 커야합니다.");
+}
+        } 
+        
+        
+        else {
           queryURL = `keyword?q=${keywordInputValue}` + `${commonURL}`;
           navigate(queryURL);
           setResultVisible(true);

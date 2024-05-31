@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SearchMethodTab from "components/feature/filter/SearchMethodTab";
 import { ReactNode } from "react";
-
+import media from "styles/media";
 interface LayoutProps {
   children: ReactNode;
 }
@@ -9,6 +9,9 @@ interface LayoutProps {
 const LayoutBox = styled.div`
   padding: 50px 20% 5% 20%;
   background-color: #f5f8fb;
+  ${media.mobile`
+  padding: 50px 2rem 5% 2rem;
+  `}
 `;
 
 const Header = styled.div`
@@ -28,6 +31,9 @@ const Title = styled.p`
   text-align: center;
   font-family: PaytoneOne;
   margin-top: 2rem;
+  ${media.mobile`
+  font-size: var(--font-size-large);
+  `}
 `;
 
 const Subtitle = styled.p`
@@ -35,6 +41,9 @@ const Subtitle = styled.p`
   font-size: 1rem;
   text-align: center;
   font-weight: bold;
+  ${media.mobile`
+  font-size: var(--font-size-small);
+  `}
 `;
 
 const Footer = styled.div`

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Tooltip from "components/common/Tooltip";
 import { useForm } from "react-hook-form";
+import media from "styles/media";
 interface FormValues {
   a: number;
   b: number;
@@ -8,6 +9,12 @@ interface FormValues {
 
 const PriceContainer = styled.div`
   width: 250px;
+  ${media.tablet`
+margin-bottom : 2rem;
+  `}
+  ${media.mobile`
+margin-bottom : 2rem;
+  `}
 `;
 export const NotEnterdDescription = styled.p`
   color: var(--Gray500);
@@ -30,7 +37,7 @@ const InputTitle = styled.p`
 
 const Input = styled.input`
   border-radius: 10px;
-  width: 6rem;
+  width: 7.25rem;
   outline: none;
   height: 2.5rem;
   border: 2px solid var(--Gray500);
@@ -65,7 +72,7 @@ export default function PriceRange({
   setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
   isFetching: boolean;
 }) {
-  const { register, watch,  formState: { errors } } = useForm<FormValues>();
+  const { register, watch } = useForm<FormValues>();
 
   const a: number = watch("a");
   const b: number = watch("b");
@@ -76,7 +83,7 @@ export default function PriceRange({
       <PriceContainer>
         <InputTitleField>
           <InputTitle>상품 가격</InputTitle>
-          <Tooltip content="가격을 입력하면 해당 범위 내 키워드가 조회됩니다. 최소 가격을 설정하지 않으면 10000원부터 조회됩니다." />
+          <Tooltip content="가격을 입력하면 해당 범위 내 키워드가 조회됩니다.최소 가격을 설정하지 않으면 10000원부터 조회됩니다." />
         </InputTitleField>
         <Input
           id="a"
@@ -96,7 +103,7 @@ export default function PriceRange({
         <Input
           id="b"
           type="text"
-          {...register("b") }
+          {...register('b')}
           placeholder="최대 가격"
           disabled={isFetching}
           onKeyUp={(e) => {
@@ -108,6 +115,7 @@ export default function PriceRange({
           }}
 
         ></Input>
+        
         {!Number(a) && Number(b) && Number(b) < 10000 ? (
           <ErrorMessage>
             최소가격 미 입력시 <br />

@@ -1,7 +1,7 @@
-export interface Category {
+export interface CategoryType {
   name: string;
   categoryId: string;
-  thirdCategories: Category[];
+  thirdCategories: CategoryType[];
 }
 
 export interface ClassifiedCategoriesFieldProps {

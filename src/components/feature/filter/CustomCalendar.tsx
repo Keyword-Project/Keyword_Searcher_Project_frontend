@@ -158,7 +158,7 @@ export default function CustomCalendar() {
       <CalendarTitleField>
         <Calendar>조회 기간</Calendar>
 
-        <Tooltip content="기간을 선택하면 해당 기간의 키워드가 출력됩니다. 기간 미 선택 시 최근 14일 키워드가 출력됩니다." />
+        <Tooltip content="기간을 선택하면 해당 기간의 키워드가 출력됩니다. 기간 미 선택 시 최근 14일 키워드가 조회됩니다." />
       </CalendarTitleField>
 
       <StlyedDateRangePicker
