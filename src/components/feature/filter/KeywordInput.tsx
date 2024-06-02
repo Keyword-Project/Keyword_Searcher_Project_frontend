@@ -22,9 +22,12 @@ const InputDiv = styled.div`
 const StyledMagnifier = styled(Magnifier)`
   position: absolute;
   top: 10px;
-  right: 11.5rem;
+  right: 10.5rem;
   ${media.mobile`
   right: 1rem;
+  `}
+  ${media.tablet`
+  right:7.5rem;
   `}
 `;
 

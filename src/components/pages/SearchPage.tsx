@@ -67,15 +67,21 @@ export default function SearchPage() {
   const [clickedThirdCategory, setClickedThirdCategory] = useState(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
+
+
   const url = new URL(window.location.href);
   const queryString = url.search
   const { pathname } = useLocation();
-  console.log(pathname)
   useEffect(()=>{
     if(queryString){
       setResultVisible(true)
     }
   },[queryString])
+
+  useEffect(() =>{
+      setResultVisible(false)
+  },[pathname])
+
 
   const { startDate, los } = useSelector(
     (state: RootState) => state.queryString.date
