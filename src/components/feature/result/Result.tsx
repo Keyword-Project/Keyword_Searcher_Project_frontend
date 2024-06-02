@@ -17,14 +17,12 @@ export default function Result({resultVisible, setResultVisible} : {resultVisibl
 
 
   const apiURL = `http://localhost:3000/api/v1${pathname}${queryString}`;
-  console.log(apiURL)
 
 
   const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
   useEffect(() => {
     refetch();
     setResultVisible(true);
-    console.log(queryString)
   }, [queryString]);
   
 
