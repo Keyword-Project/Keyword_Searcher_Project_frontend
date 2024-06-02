@@ -100,8 +100,7 @@ export default function ResultTable({
       <Table responsive>
         <thead>
           <StyledTitleTr>
-            <TitleTh width="10%">순위</TitleTh>
-            <TitleTh width="30%">키워드</TitleTh>
+            <TitleTh width="40%">키워드</TitleTh>
             <TitleTh
               width="10%"
               // cursor="pointer"
@@ -143,7 +142,6 @@ export default function ResultTable({
             ).toFixed(1);
             return (
               <StyledResultTr key={idx}>
-                <StyleResultdTd>{idx + 1}</StyleResultdTd>
                 <StyleResultdTd>
                   <KeywordAtag
                     href={`https://www.coupang.com${item.uri}`}

@@ -42,7 +42,6 @@ display : flex;
 `
 
 export default function ItemSearchCount({
-  isFetching,
   setSearchSize,
 }: ItemSearchCountProps) {
   const [domain, setDomain] = useState("");
@@ -81,7 +80,6 @@ useEffect(() =>{
           ></StyledInput>
           <SearchDropdown
             setSearchSize={setSearchSize}
-            isFetching={isFetching}
             setIsInputDisable={setIsInputDisable}
             domain={domain}
             setDomain={setDomain}

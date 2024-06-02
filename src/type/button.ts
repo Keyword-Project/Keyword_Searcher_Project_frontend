@@ -4,7 +4,6 @@ export interface ButtonContainerProps {
   }
 
   export interface ButtonProps {
-    isFetching: boolean;
     fetchHandler: () => void;
  
   }

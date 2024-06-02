@@ -4,7 +4,6 @@ export interface DropdownWrapProps {
 }
 
 export interface DropdownProps {
-    isFetching: boolean, 
     setSearchSize: React.Dispatch<React.SetStateAction<string>>, 
      setIsInputDisable: React.Dispatch<React.SetStateAction<boolean>>, 
      domain: string,

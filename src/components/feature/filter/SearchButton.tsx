@@ -45,7 +45,7 @@ const StyledButton = styled.button`
  
 `;
 
-const SearchButton = ({ isFetching, fetchHandler }: ButtonProps) => {
+const SearchButton = ({ fetchHandler }: ButtonProps) => {
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
     const { x, y, width, height } = target.getBoundingClientRect();
@@ -65,13 +65,12 @@ const SearchButton = ({ isFetching, fetchHandler }: ButtonProps) => {
 
   return (
     <StyledButton
-      disabled={isFetching}
       onClick={(e) => {
         onClick(e);
         fetchHandler();
       }}
     >
-      {isFetching ? "검색 중.." : "상품조회"}
+      상품조회
     </StyledButton>
   );
 };
