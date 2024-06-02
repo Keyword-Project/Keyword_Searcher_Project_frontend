@@ -1,5 +1,5 @@
 interface SearchDataProps {
-  [key: string]: string| number|boolean;
+  [key: string]: string| number | boolean;
     dataIsRocket: boolean;
     dataProductId: string;
     name: string;
