@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 
 
-export default function Result({resultVisible, setResultVisible}) {
+export default function Result({resultVisible, setResultVisible} : {resultVisible: boolean, setResultVisible: (value: boolean) => void}) {
  
   const { pathname } = useLocation();
   const url = new URL(window.location.href);

@@ -37,6 +37,11 @@ export default function CategoryButton({ ...props }) {
       <ButtonContainer
         BackGroundColor={props.BackGroundColor}
         borderColor={props.borderColor}
+        onMouseOver={() => {
+          props.setSelectedFirstCategory(props.data)
+          props.setSelectedSecondCategory(null)
+          props.setHoveredFirstCategory(null)
+        }}
       >
         <Hamburger width="18" height="18" />
         <ButtonTitle color={props.color}>{props.title}</ButtonTitle>

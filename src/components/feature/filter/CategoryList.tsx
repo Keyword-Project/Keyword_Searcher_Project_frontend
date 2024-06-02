@@ -5,13 +5,14 @@ import { useState } from "react";
 import Arrow_Forward from "assets/icons/arrow_forward.svg?react";
 import { Link } from "react-router-dom";
 import CategoryButton from "components/common/CategoryButton";
-import { CategoryType, ClassifiedCategoriesFieldProps } from "type/categoryList";
+import {  ClassifiedCategoriesFieldProps } from "type/categoryList";
 
 const StyledArrow_Forward = styled(Arrow_Forward)<{ show: boolean }>`
   position: absolute;
   top: 0.8rem;
   right: 2.5rem;
   opacity: ${(props) => (props.show ? "1" : "0")};
+  background-color: black;
 `;
 
 const ClassifiedCategoriesField = styled.div<ClassifiedCategoriesFieldProps>`
@@ -79,170 +80,148 @@ const Category = styled.div`
 `;
 
 export default function CategoryList() {
-  const [firstIsHovered, setFirstIsHovered] = useState(false);
-  const [secondIsHovered, setSecondIsHovered] = useState(false);
-  const [thirdIsHovered, setThirdIsHovered] = useState(false);
-  const [secondCategory, setSecondCategory] = useState<CategoryType[]>([]);
-  const [thirdCategory, setThirdCategory] = useState<CategoryType[]>([]);
-  const [IsArrowVisible, setIsArrowVisible] = useState<number | null>(null);
-  const [selectedFirstCategory, setSelectedFirstCategory] =
-    useState<string>("");
-  const [selectedSecondCategory, setSelectedSecondCategory] =
-    useState<string>("");
-  const [selectedThirdCategory, setSelectedThirdCategory] =
-    useState<string>("");
 
-  const arrowVisibleHandler = (
-    index: number,
-    func: (index: number) => void
-  ) => {
-    func(index);
-  };
+    const [selectedFirstCategory, setSelectedFirstCategory] = useState(null);
+    const [selectedSecondCategory, setSelectedSecondCategory] = useState(null);
+    const [selectedThirdCategory, setSelectedThirdCategory] = useState(null);
+    // selected는 카테고리가 존재하느냐 아니냐 판단하는 변수
+    // 카테고리가 존재하면 렌더링, null값이면 존재하지 않으면 사라짐
+    const [hoveredFirstCategory, setHoveredFirstCategory] = useState(null);
+    const [hoveredSecondCategory, setHoveredSecondCategory] = useState(null);
+    const [hoveredThirdCategory, setHoveredThirdCategory] = useState(null);
+      // hovered는 마우스가 올라가있는 카테고리에 화살표 아이콘을 띄우는 함수
+      //null값이면 화살표 아이콘이 띄워지지 않음
 
-  const secondCateSelectHandler = (index: number) => {
-    setSecondCategory(
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      (prev) =>
-        (prev = data.firstCategories[index].secondCategories as CategoryType[])
-    );
-    setSelectedFirstCategory(data.firstCategories[index].name);
-    console.log(selectedFirstCategory);
-  };
 
-  const thirdCateSelectHandler = (index: number) => {
-    setThirdCategory((prev) => (prev = secondCategory[index].thirdCategories));
-    setSelectedSecondCategory(secondCategory[index].name);
-    console.log(selectedSecondCategory);
-  };
 
-  const secondCateFieldOpen = () => {
-    setSecondIsHovered(true);
-    if (thirdCategory.length > 0) {
-      setThirdIsHovered(false);
-    }
-  };
 
-  const leaveCategoryButton = () => {
-    if (secondCategory.length == 0) {
-      setFirstIsHovered(false);
-    }
-  };
 
-  const everyCategoryFieldClose = () => {
-    setFirstIsHovered(false);
-    setSecondIsHovered(false);
-    setThirdIsHovered(false);
+  const closeEveryCategoryField = () => {
+    setSelectedFirstCategory(null);
+    setSelectedSecondCategory(null);
+    setSelectedThirdCategory(null);
+    setHoveredFirstCategory(null)
+    setHoveredSecondCategory(null)
+    setHoveredThirdCategory(null)
   };
 
   return (
     <>
-      <CategoryContainer onMouseLeave={() => everyCategoryFieldClose()}>
-        <ButtonBox
-          onMouseOver={() => setFirstIsHovered(true)}
-          onMouseLeave={() => leaveCategoryButton()}
-        >
+      <CategoryContainer onMouseLeave={() => closeEveryCategoryField()}>
           <CategoryButton
             title="카테고리"
             BackGroundColor="var(--Orange500)"
             color="white"
             borderColor="var(--Orange500)"
+            setSelectedFirstCategory={setSelectedFirstCategory}
+            setSelectedSecondCategory={setSelectedSecondCategory}
+            setHoveredFirstCategory={setHoveredFirstCategory}
+            data={data}
+           
           />
-
-          <ClassifiedCategoriesField
+ <ClassifiedCategoriesField
             backgroundColor="var(--Orange500)"
             borderRadius="0px 0px 0px 10px"
             borderRight="none"
             left="0px"
-            isVisible={firstIsHovered}
-            onMouseEnter={() => secondCateFieldOpen()}
+            isVisible={selectedFirstCategory !== null}
+            onMouseOver={() => {setSelectedThirdCategory(null)
+            }}
           >
             {data.firstCategories.map((item, index) => {
-              const aaa = () => {
-                secondCateSelectHandler(index);
-                arrowVisibleHandler(index, setIsArrowVisible);
-              };
               return (
                 <Category
                   key={index}
                   onMouseEnter={() => {
-                    arrowVisibleHandler(index, setIsArrowVisible);
-                    secondCateSelectHandler(index);
+                    setSelectedSecondCategory(item)
+                    setHoveredFirstCategory(item)
+                    setHoveredSecondCategory(null)
                   }}
-                  onMouseLeave={() => setIsArrowVisible(null)}
+                
+                 
                 >
                   <CategoryListLink
                     to={item.categoryId}
-                    onClick={() => everyCategoryFieldClose()}
+                    onClick={() => closeEveryCategoryField()}
                     color="white"
                   >
                     {item.name}
                   </CategoryListLink>
-
-                  <StyledArrow_Forward show={IsArrowVisible === index} />
+                  <StyledArrow_Forward show={hoveredFirstCategory === item} />
                 </Category>
               );
             })}
           </ClassifiedCategoriesField>
-        </ButtonBox>
-
-        <ClassifiedCategoriesField
+   
+<ClassifiedCategoriesField
           backgroundColor="var(--Gray200)"
           borderRadius="0px"
           borderRight="2px solid var(--Gray700)"
           left="216px"
-          isVisible={secondIsHovered}
-          onMouseEnter={() => setThirdIsHovered(true)}
+          isVisible={selectedSecondCategory !== null}
         >
-          {secondCategory?.map((item, index) => {
+          {selectedSecondCategory?.secondCategories?.map((item, index) => {
             return (
               <Category
                 key={index}
                 onMouseEnter={() => {
-                  thirdCateSelectHandler(index);
+                  setSelectedThirdCategory(item)
+                  setHoveredSecondCategory(item)
                 }}
-                onMouseLeave={() => setIsArrowVisible(null)}
+                onMouseLeave={() => {
+                  if(!selectedThirdCategory) {
+                    setHoveredSecondCategory(null)
+                  }
+                 
+                }}
+              
               >
                 <CategoryListLink
                   to={item.categoryId}
-                  onClick={() => everyCategoryFieldClose()}
+                  onClick={() => closeEveryCategoryField()}
                   color="black"
                 >
                   {item.name}
                 </CategoryListLink>
-
-                <StyledArrow_Forward show={IsArrowVisible === index} />
+                <StyledArrow_Forward show={hoveredSecondCategory === item} />
               </Category>
             );
           })}
         </ClassifiedCategoriesField>
-        <ClassifiedCategoriesField
+   <ClassifiedCategoriesField
           backgroundColor="var(--Gray200)"
           borderRight="none"
           borderRadius="0px 10px 10px 0px"
           left="432px"
-          isVisible={thirdIsHovered}
+          isVisible={selectedThirdCategory !== null}
         >
-          {" "}
-          {thirdCategory?.map((item, index) => {
+      
+          {selectedThirdCategory?.thirdCategories?.map((item, index) => {
             return (
               <Category
                 key={index}
-                onMouseLeave={() => setIsArrowVisible(null)}
+                onMouseEnter={() =>
+                  setHoveredThirdCategory(index)
+                }
+                onMouseLeave={() => {
+                  setHoveredThirdCategory(null)
+                }}
               >
                 <CategoryListLink
-                  onClick={() => everyCategoryFieldClose()}
+                  onClick={() => closeEveryCategoryField()}
                   to={item.categoryId}
                   color="black"
                 >
                   {item.name}
                 </CategoryListLink>
 
-                <StyledArrow_Forward show={IsArrowVisible === index} />
+                <StyledArrow_Forward show={hoveredThirdCategory === index} />
               </Category>
             );
           })}
         </ClassifiedCategoriesField>
       </CategoryContainer>
+       
     </>
   );
 }
