@@ -1,4 +1,5 @@
 interface SearchDataProps {
+  [key: string]: string| number|boolean;
     dataIsRocket: boolean;
     dataProductId: string;
     name: string;
@@ -11,5 +12,4 @@ interface SearchDataProps {
 
   export  interface SearchData {
     body : SearchDataProps[]
-    statusCode : string
   }
