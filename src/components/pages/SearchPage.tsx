@@ -35,6 +35,12 @@ margin-top: 1rem;
   `}
 `;
 
+const SelectedCategory = styled.span`
+font-size: var(--font-size-primary);
+font-weight: bold;
+padding-bottom: 1rem;
+`;
+
 const FilterBox = styled.div`
   display: flex;
   justify-content: space-between;
@@ -56,10 +62,15 @@ export default function SearchPage() {
   const [searchSize, setSearchSize] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [clickedFirstCategory, setClickedFirstCategory] = useState(null);
+  const [clickedSecondCategory, setClickedSecondCategory] = useState(null);
+  const [clickedThirdCategory, setClickedThirdCategory] = useState(null);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
   const url = new URL(window.location.href);
   const queryString = url.search
-
+  const { pathname } = useLocation();
+  console.log(pathname)
   useEffect(()=>{
     if(queryString){
       setResultVisible(true)
@@ -74,7 +85,6 @@ export default function SearchPage() {
     (state: RootState) => state.queryString.pathName
   );
 
-  const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const commonURL = `${startDate ? `startDate=${startDate}` : ""}${
@@ -133,7 +143,7 @@ export default function SearchPage() {
   return (
     <>
       <ButtonNSearchField>
-        <Outlet />
+        <Outlet context={{setClickedFirstCategory, setClickedSecondCategory, setClickedThirdCategory, setSelectedCategoryId}}/>
         <SearchButton fetchHandler={fetchHandler} />
       </ButtonNSearchField>
       <FilterBox>
@@ -151,6 +161,11 @@ export default function SearchPage() {
           document.body
         )}
       <SearchResultWord>상품 검색 결과</SearchResultWord>
+      {selectedCategoryId == pathname.split("/")[2] && <div>
+        {clickedFirstCategory && <SelectedCategory>{clickedFirstCategory}</SelectedCategory>}
+        {clickedSecondCategory && <SelectedCategory> {">"} {clickedSecondCategory}</SelectedCategory>}
+        {clickedThirdCategory && <SelectedCategory> {">"} {clickedThirdCategory}</SelectedCategory>}
+      </div>}
       {resultVisible ? 
        <QueryErrorResetBoundary>
        {({ reset }) => (
