@@ -89,9 +89,9 @@ export default function ResultTable({
     }
 
     if (sortOrder === "asc") {
-      return aValue < bValue ? -1 : 1;
+      return aValue && bValue ? aValue < bValue ? -1 : 1 : 0;
     } else {
-      return aValue > bValue ? -1 : 1;
+      return aValue && bValue ? aValue > bValue ? -1 : 1 : 0;
     }
   });
 
