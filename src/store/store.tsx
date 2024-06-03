@@ -5,5 +5,5 @@ export default configureStore({
   reducer: {
     queryString: FetchSlice,
   },
-});
+});    
       
