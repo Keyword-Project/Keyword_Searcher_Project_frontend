@@ -1,30 +1,166 @@
-# React + TypeScript + Vite
+# 🔍 쿠팡 크롤링 기반 상품 경쟁력 분석 플랫폼 Digggle
+ 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이미지 (피그마에서 만들기)
 
-Currently, two official plugins are available:
+[서비스 링크](https://keyword-searcher-project-frontend-keyword-project.vercel.app/categories)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+링크 도메인 구매 후 다시 첨부할 것
 
-## Expanding the ESLint configuration
+<br>
+<br>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 프로젝트 소개
+- 어쩌구
+- 어쩌구
+- 
+
+<br>
+<br>
+
+## 프로젝트 개요
+> 사용자가 상품 키워드 혹은 카테고리 검색 시 쿠팡 크롤링을 통해 상품 경쟁력을 분석한 후 데이터를 제공하는 플랫폼
+> 
+> 기간 : 2024-04 ~ 2024-05 (약 2**개월**)
+> 
+> **인원** : 프론트엔드(1명) : 변재정 / 백엔드(1명) : 오찬솔 / 디자인(1명) : 조승효
+
+
+<br>
+<br>
+
+### 역할 분담
+
+**변재정(프론트엔드)**
+- 어쩌구 저쩌구 ㅇ아아아
+
+
+**오찬솔(백엔드)**
+- 어쩌구 저쩌구 ㅇ아아아
+
+**조승효(디자인)**
+- 어쩌구 저쩌구 ㅇ아아아
+
+
+
+
+<br>
+<br>
+
+
+### Stacks(프론트엔드)
+
+`React`
+
+- 다양한 rendering 패턴(CSR, SSR, ISR, SSG)을 제공하며 프로젝트 협업에 적합
+- CSR SSR ISR SSG등 다양한 rendering 패턴을 제공하는 React framework로 프로젝트 협업에 적합
+- 폴더 기반 라우팅, SEO, 확장된 fetch caching, Middleware Cookie 등 다양한 기능 지원
+
+
+ `Typescript`
+
+ - 안정적인 개발과 높은 수준의 코드 품질을 유지
+ - 손쉽게 버그를 예방할 수 있는 
+ - 강력한 타입 시스템 기반 컴파일, 버그 예방 및 손쉬운 디버깅
+ - 높은 생산성과 호환성
+
+
+`Styled Components`
+
+- Radix UI와 ARIA design system으로 Web Accessibility 제공 가능
+- 기본 스타일 제공 및 디자인 시스템, 스타일 커스텀 적용 가능
+- 필요한 UI 컴포넌트만 설치하여 번들 사이즈 최적화
+
+`Vite`
+
+- dfjkds
+- ㄻㄴ라ㅓ
+
+
+
+ `Redux`
+ 
+- 작은 번들 사이즈 
+- 여타 다른 전역 상태관리 라이브러리 대비 적은 보일러 플레이드 코드로 팀의 러닝 커브를 낯추어 빠르게 도입 가능
+- provider 가 필요하지 않아 불필요한 리렌더링 방지
+- redux devtools 적용 가능
+
+ 
+ `react-hook-form`
+
+- 런타임 환경에서 각각의 폼에 대한 스키마구성 및 동적 타입 검증 가능
+- 각 Form마다 구조적인 검증 Schema 관리 필요
+- 비제어 컴포넌트 기반 폼으로 리렌더링 최소화
+- 번들 사이즈가 매우 작고 지속적인 업데이트 중
+
+`React-Query`
+
+ - Shadcn/ui가 Tailwind CSS를 사용하여 한번 더 재가공해서 제공하기 때문에 채택
+ - 제로 런타임으로 동작하며 속도, 유연성. 생산성의 이점
+ - 추상화 수준 제공으로 코드 길이 감소 및 커스터마이징 용이
+
+   
+ `Vercel`
+ 
+- Nextjs 배포에 최적화된 배포 플랫폼
+- 빌트인 CI/CD, Live Preview, Analytics, 사이트 성능 측정 제공
+
+<br>
+<br>
+<br>
+
+### 서비스 아키텍쳐
+
+
+<br>
+<br>
+
+### 와이어프레임 및 화면설계서
+
+
+
+<br><br>
+
+
+
+<br>
+<br>
+
+### Key Features
+
+- **홈 화면** : 키워드 기반 검색, 카테고리 기반 검색
+- **상품조회** : 사용자가 선택한 상품 출력
+- **상품조회 필터링** : 날짜, 상품개수, 상품 가격 필더링 기능 구현
+- **상품페이지 접속** : 조회된 상품 상세페이지 접속 가능
+
+  
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+## 화면 구성 및 주요 기능 시현 영상 및 설명
+
+
+
+<br>
+<br>
+<br>
+
+
+
+## 트러블 슈팅
+
+
+
