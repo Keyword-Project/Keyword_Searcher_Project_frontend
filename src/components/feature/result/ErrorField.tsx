@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Error_triangle from "assets/icons/error_triangle.svg?react";
+import { useLocation, useNavigate } from "react-router-dom";
 const ErrorContainer = styled.div`
   width: 100%;
   height: 28.125rem;
@@ -47,7 +48,11 @@ const ErrorField = ({
   const handleClose = () => {
     resetErrorBoundary();
     setResultVisible(false);
+    navigate(pathname);
   };
+
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <ErrorContainer>

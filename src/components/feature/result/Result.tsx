@@ -16,13 +16,17 @@ export default function Result({
   const url = new URL(window.location.href);
   const queryString = url.search;
 
-  const apiURL = `http://keywordloadbalancing-508301448.ap-northeast-2.elb.amazonaws.com/api/v1${pathname}${queryString}`;
+  const apiURL = `https://keywordloadbalancing-508301448.ap-northeast-2.elb.amazonaws.com/api/v1${pathname}${queryString}`;
 
   const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
   useEffect(() => {
     refetch();
     setResultVisible(true);
   }, [queryString]);
+
+  useEffect(() => {
+    refetch();
+  }, []);
 
   const searchData = data;
 
@@ -35,7 +39,6 @@ export default function Result({
     <>
       {resultVisible && (
         <>
-          {" "}
           <ExcelDownloader searchData={searchData} />
           <ResultTable searchData={searchData} />
         </>
