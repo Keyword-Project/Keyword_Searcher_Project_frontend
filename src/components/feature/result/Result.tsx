@@ -16,7 +16,9 @@ export default function Result({
   const url = new URL(window.location.href);
   const queryString = url.search;
 
-  const apiURL = `https://keywordloadbalancing-508301448.ap-northeast-2.elb.amazonaws.com/api/v1${pathname}${queryString}`;
+ 
+
+  const apiURL = `https://ec2-3-36-65-192.ap-northeast-2.compute.amazonaws.com/api/v1${pathname}${queryString}`;
 
   const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
   useEffect(() => {
