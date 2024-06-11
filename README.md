@@ -1,6 +1,5 @@
 # 🔍 쿠팡 크롤링 기반 상품 경쟁력 분석 플랫폼 Digggle
- 
-
+      
 이미지 (피그마에서 만들기)
 
 [서비스 링크](https://keyword-searcher-project-frontend-keyword-project.vercel.app/categories)
