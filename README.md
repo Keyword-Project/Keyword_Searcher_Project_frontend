@@ -156,8 +156,6 @@
 
 ## 화면 구성 및 주요 기능 시현 영상 및 설명
 
-<br>
-
 ### 카테고리 컴포넌트 렌더링 로직 구현
 
 - 1차, 2차, 3차 카테고리 컴포넌트 구현
@@ -169,7 +167,7 @@
 
 ![카테고리컴포넌트구현](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/28834772-431d-4b0a-96ef-0ef3b6111da2)
 
-
+<br>
 
 ### input 숫자만 입력 가능
 
@@ -178,9 +176,11 @@
 
 ![input숫자만입력가능](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/b01b710e-63b5-48ee-877b-984263346565)
 
-
+<br>
 
 ### 기간, 상품개수, 상품 가격 선택 후 쿼리스트링으로 서버에 데이터 전달
+
+<br>
 
 ### Tooltip 구현
 
@@ -189,7 +189,7 @@
 
 ![툴팁구현](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/a50b520d-d141-4088-af94-4d9868d5883f)
 
-
+<br>
 
 ### React Hook Form 활용 실시간 유효성 검증
 
@@ -198,10 +198,15 @@
 
 ![리액트훅폼유효성검증](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/1fa06e0c-460a-4e0a-8461-d01139c02f5a)
 
+<br>
 
 ### 데이터 엑셀 저장 기능
 
+<br>
+
 ### React Query 활용 데이터 재호출 및 중복호출 방지
+
+<br>
 
 ### 검색방법 및 가격 입력값에 따른 동적 Modal창을 이용한 구현 및 에러 핸들링
 
@@ -217,6 +222,7 @@
 ![키워드에러핸들링](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/5064be35-ac00-4ab2-ab2d-47cede4f2f95)
 
 
+<br>
 
 ### 버튼 클릭 시 애니메이션 구현
 
@@ -238,11 +244,12 @@
 
 드롭박스 ->  컴포넌트 hover 방식 (reference : [쿠팡](https://www.coupang.com/) )
 
+<br>
 
 ### 2. 쿼리 스트링 값 기반 데이터 조회 가능
 
 
-
+<br>
 
 ### 3. 로딩창 spinner -> skeleton UI 변경
 
