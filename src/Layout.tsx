@@ -57,7 +57,7 @@ export default function Layout({ children }: LayoutProps) {
     <>
       <Header>
         <SearchMethodTab />
-        <Title>Digging</Title>
+        <Title>Digggging</Title>
         <Subtitle>
           쿠팡 리뷰 수 기반으로 쉽고 똑똑하게 판매아이템 발굴하자!
         </Subtitle>
