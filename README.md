@@ -156,20 +156,74 @@
 
 ## 화면 구성 및 주요 기능 시현 영상 및 설명
 
+<br>
+
 ### 카테고리 컴포넌트 렌더링 로직 구현
 
+- 1차, 2차, 3차 카테고리 컴포넌트 구현
+- 상위 카테고리 값에 따라 하위 카테고리 컴포넌트 목록이 동적으로 달라지도록 구현
+- 상위 -> 하위 카테고리 이동 시 해당 카테고리 값 화살표 아이콘 고정 표시
+- 1차 카테고리 컴포넌트 hover -> 2차 카테고리 컴포넌트 렌더링, 2차 카테고리 컴포넌트 hover -> 3차 카테고리 컴포넌트 hover
+- 2차 -> 1차 카테고리 hover 시 3차 카테고리 컴포넌트 unmount
+- 카테고리 컨포넌트 영역 이탈 시 모든 컴포넌트 unmount
+
+![카테고리컴포넌트구현](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/28834772-431d-4b0a-96ef-0ef3b6111da2)
+
+
+
 ### input 숫자만 입력 가능
+
+- 정규표현식을 활용해 숫자 외 값 입력시 공백으로 즉시 변환
+- 자연수 외 값을 입력 후 데이터 조회 시 에러를 발생시키므로 에러 사전 차단
+
+![input숫자만입력가능](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/b01b710e-63b5-48ee-877b-984263346565)
+
+
 
 ### 기간, 상품개수, 상품 가격 선택 후 쿼리스트링으로 서버에 데이터 전달
 
 ### Tooltip 구현
 
+- transition, transform 속성을 이용한 애니메이션 적용
+- pseudo-element 를 활용해 툴팁 content 제작
+
+![툴팁구현](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/a50b520d-d141-4088-af94-4d9868d5883f)
+
+
+
 ### React Hook Form 활용 실시간 유효성 검증
+
+- React Hook Form 을 통해 비제어 컴포넌트 형식으로 실시간 유효성 검증
+- register, watch 함수를 이용해 실시간 input값 감시
+
+![리액트훅폼유효성검증](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/1fa06e0c-460a-4e0a-8461-d01139c02f5a)
+
 
 ### 데이터 엑셀 저장 기능
 
 ### React Query 활용 데이터 재호출 및 중복호출 방지
 
+### 검색방법 및 가격 입력값에 따른 동적 Modal창을 이용한 구현 및 에러 핸들링
+
+- createPortal을 이용해 Modal 창을 DOM의 다른 부분에서 렌더링 되도록 구현
+
+- dd
+
+![카테고리에러핸들링](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/4f8b302a-3fca-4ae0-b90e-bec7d8d8e827)
+
+
+- ㅇㅇ
+
+![키워드에러핸들링](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/5064be35-ac00-4ab2-ab2d-47cede4f2f95)
+
+
+
+### 버튼 클릭 시 애니메이션 구현
+
+- 버튼 클릭 시 물파장 애니메이션 구현
+- keyframes 활용
+
+![버튼클릭시물파장](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/b512b875-6d76-4173-85f5-076185ce520c)
 
 
 <br>
