@@ -210,14 +210,21 @@
 
 ### 검색방법 및 가격 입력값에 따른 동적 Modal창을 이용한 구현 및 에러 핸들링
 
-- createPortal을 이용해 Modal 창을 DOM의 다른 부분에서 렌더링 되도록 구현
+- createPortal을 이용해 Modal 창을 DOM의 다른 위치에서 렌더링 되도록 구현
+- 부모 컴포넌트의 DOM 구조를 벗어나 특정 DOM 엘리먼트에 직접 렌더링
 
-- dd
+<br>
+
+- 카테고리 미선택 시 알림창 렌더링
+- 최소가격이 최대가격보다 클 경우 알림창 렌더링
+- 최소가격 미입력, 최대가격이 10000보다 작을 경우 알림창 렌더링 
 
 ![카테고리에러핸들링](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/4f8b302a-3fca-4ae0-b90e-bec7d8d8e827)
 
+- 키워드 미입력시 알림창 렌더링
+- 최소가격이 최대가격보다 클 경우 알림창 렌더링
+- 최소가격 미입력, 최대가격이 10000보다 작을 경우 알림창 렌더링 
 
-- ㅇㅇ
 
 ![키워드에러핸들링](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/5064be35-ac00-4ab2-ab2d-47cede4f2f95)
 
@@ -227,7 +234,7 @@
 ### 버튼 클릭 시 애니메이션 구현
 
 - 버튼 클릭 시 물파장 애니메이션 구현
-- keyframes 활용
+- keyframes, pseudo-element 를 활용해 클릭 이벤트 발생 시 동적 애니메이션 구현
 
 ![버튼클릭시물파장](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/b512b875-6d76-4173-85f5-076185ce520c)
 
@@ -240,19 +247,35 @@
 
 ## 트러블 슈팅
 
-### 1. 키테고리목록 구현 방식 변경
+### 1. 카테고리 값 선택 방법 변경
 
-드롭박스 ->  컴포넌트 hover 방식 (reference : [쿠팡](https://www.coupang.com/) )
 
-<br>
-
-### 2. 쿼리 스트링 값 기반 데이터 조회 가능
-
+- 드롭박스 ->  컴포넌트 hover 방식 (reference : [쿠팡](https://www.coupang.com/) )
+- 드롭박스 UI는 너무 단조롭고 별도로 클릭해야하기에 사용자가 번거로움을 느낄 수 있다 판단해 hover 방식으로 리팩토링을 진행했습니다.
+- onMouseOver, onMouseLeavee 등 커서 이벤트 관련 함수를 공부하며 새로운 기술적 도전을 이룩할 수 있었습니다. 
 
 <br>
 
-### 3. 로딩창 spinner -> skeleton UI 변경
+### 2. 쿼리스트링 기반 데이터 조회 가능
 
+**문제점**
+
+- 쿼리스트링으로 데이터조회필터링값이 전달되지만 해당 url을 복사 후 새창에서 열면 데이터를 불러오지않는 문제 발생
+- 필터링값들을 쿼리스트링으로 전달하기만 할뿐 데이터를 불러오는 컴포넌트가 Result가 아닌 것이 문제
+- 부모컴포넌트에서 데이터를 조회 한 후 props 로 전달하는 방식이라 생긴 문제
+
+**해결방법**
+
+- 상품조회 버튼 클릭시 필터링 값을 쿼리스트링으로 전달
+- url파라미터 값이 변경되면 Result 컴포넌트가 재렌더링되도록 useEffect 의존성 배열에 쿼리스트링값을 넣어줬습니다. 
+
+<br>
+
+### 3. 비동기함수 호출 시 로딩창 변경
+
+- spinner 컴포넌트 -> skeleton UI 변경
+- BootStrap에서 가져온 `spinner` 컴포넌트를 로딩창으로 사용하다 너무 단조롭다 생각해 동적이미지인 `skeleton UI`를 도입하기로 했습니다. 
+- 불러오는 데이터를 Table 형식으로 보여주는 것에 맞춰 커스터마이징한 `skeleton UI`를 제작하면서 가상요소에 대한 기술적 도전 및 학습하는 시간을 가졌습니다. 
 
 
 <br>
