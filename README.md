@@ -1,4 +1,8 @@
-![엑셀다운로드](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/6ddece0c-f30f-4658-8f72-f1849b5630a8)# 🔍 쿠팡 크롤링 기반 상품 경쟁력 분석 플랫폼 Diggggle
+
+
+
+
+# 🔍 쿠팡 크롤링 기반 상품 경쟁력 분석 플랫폼 Diggggle
       
 
 
