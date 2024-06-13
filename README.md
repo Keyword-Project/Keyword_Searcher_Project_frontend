@@ -186,6 +186,7 @@
 
 - transition, transform 속성을 이용한 애니메이션 적용
 - pseudo-element 를 활용해 툴팁 content 제작
+- content를 props로 전달해 동적 메시지 구현
 
 ![툴팁구현](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/a50b520d-d141-4088-af94-4d9868d5883f)
 
@@ -216,6 +217,7 @@
 
 - createPortal을 이용해 Modal 창을 DOM의 다른 위치에서 렌더링 되도록 구현
 - 부모 컴포넌트의 DOM 구조를 벗어나 특정 DOM 엘리먼트에 직접 렌더링
+- Modal content값을 props로 넘겨 동적 메시지 렌더링
 
 <br>
 
