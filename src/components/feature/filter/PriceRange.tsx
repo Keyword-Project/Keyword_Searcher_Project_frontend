@@ -66,14 +66,14 @@ export default function PriceRange({
   setMinPrice,
   setMaxPrice,
 }: {
-  setMinPrice: React.Dispatch<React.SetStateAction<number>>;
+  setMinPrice: React.Dispatch<React.SetStateAction<string | number>>;
 
-  setMaxPrice: React.Dispatch<React.SetStateAction<number>>;
+  setMaxPrice: React.Dispatch<React.SetStateAction<string | number>>;
 }) {
   const { register, watch } = useForm<FormValues>();
 
-  const a: number = watch("a");
-  const b: number = watch("b");
+  const a: string | number = watch("a");
+  const b: string | number = watch("b");
 
   return (
     <>

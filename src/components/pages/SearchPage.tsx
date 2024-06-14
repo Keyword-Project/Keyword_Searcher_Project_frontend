@@ -46,7 +46,7 @@ const FilterBox = styled.div`
   justify-content: space-between;
   padding-top: 3rem;
   width: 100%;
-  ${media.mobile`
+  ${media.mobile`  
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -57,8 +57,8 @@ const FilterBox = styled.div`
 
 export default function SearchPage() {
   const [resultVisible, setResultVisible] = useState(false);
-  const [maxPrice, setMaxPrice] = useState(0);
-  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState<string | number>('');
+  const [minPrice, setMinPrice] = useState<string | number>('');
   const [searchSize, setSearchSize] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -71,17 +71,22 @@ export default function SearchPage() {
 
   const url = new URL(window.location.href);
   const queryString = url.search
+  console.log(queryString)
+ 
   const { pathname } = useLocation();
   useEffect(()=>{
     if(queryString){
       setResultVisible(true)
+      console.log(resultVisible)
     }
   },[queryString])
 
-  useEffect(() =>{
-      setResultVisible(false)
-  },[pathname])
 
+useEffect(() =>{
+if(!queryString){
+  setResultVisible(false)
+}
+},[pathname])
 
   const { startDate, los } = useSelector(
     (state: RootState) => state.queryString.date
@@ -95,10 +100,6 @@ export default function SearchPage() {
 
   const newSearchParams = new URLSearchParams()
 
-useEffect(()=>{
-
-
-},[queryString])
 
 
   const setQuery = () => {
@@ -107,14 +108,19 @@ useEffect(()=>{
     if (minPrice) newSearchParams.set("minPrice", minPrice.toString());
     if (maxPrice) newSearchParams.set("maxPrice", maxPrice.toString());
     if (searchSize) newSearchParams.set("searchSize", searchSize.toString());
-  }
+    if(!minPrice)  newSearchParams.delete('minPrice')
+    if(!maxPrice)  newSearchParams.delete('maxPrice')
+    if (!searchSize) newSearchParams.delete("searchSize");
+    if (!startDate) newSearchParams.delete("startdt");
+    if (!los) newSearchParams.delete("los");
+   }
 
   const fetchHandler = () => {
     if (pathname == "/categories") {
       setShowModal(true);
       setErrorMessage("카테고리 목록을 선택해주세요.");
     } else if (/^\/categories\/\d+$/.test(pathname)) {
-      if (Number(maxPrice) < Number(minPrice)) {
+      if (Number(maxPrice) != 0 && Number(maxPrice) < Number(minPrice)) {
         setShowModal(true);
         setErrorMessage("최대가격이 최소가격보다 커야합니다.");
       } else if (!Number(minPrice) && Number(maxPrice)) {
@@ -137,7 +143,7 @@ useEffect(()=>{
         setShowModal(true);
         setErrorMessage("키워드를 입력해주세요.");
       } else {
-        if (Number(maxPrice) < Number(minPrice)) {
+        if ( Number(maxPrice) != 0 && Number(maxPrice) < Number(minPrice)) {
           setShowModal(true);
           setErrorMessage("최대가격이 최소가격보다 커야합니다.");
         } else if (!Number(minPrice) && Number(maxPrice)) {
