@@ -70,7 +70,7 @@ export default function SearchMethodTab() {
 
   return (
     <AppContainer>
-      <Title>Digging</Title>
+      <Title>Diggggle</Title>
       {link.map((item) => {
         let isActive = false
         if(pathname === item.to){
@@ -83,7 +83,6 @@ export default function SearchMethodTab() {
           <MenuItem
             key={item.key}
             active={isActive}
-           
           >
             <StyledLink to={`/${item.to}`} color={isActive}>
               {item.name}

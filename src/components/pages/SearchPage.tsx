@@ -95,8 +95,14 @@ export default function SearchPage() {
 
   const newSearchParams = new URLSearchParams()
 
+useEffect(()=>{
+
+
+},[queryString])
+
+
   const setQuery = () => {
-    if (startDate) newSearchParams.set("startDate", startDate);
+    if (startDate) newSearchParams.set("startdt", startDate);
     if (los) newSearchParams.set("los", los.toString());
     if (minPrice) newSearchParams.set("minPrice", minPrice.toString());
     if (maxPrice) newSearchParams.set("maxPrice", maxPrice.toString());

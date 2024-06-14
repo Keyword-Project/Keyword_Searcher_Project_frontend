@@ -18,8 +18,7 @@ export default function Result({
   console.log("pathname", pathname);
   console.log("queryString", queryString);
 
-  const apiURL = `https://ec2-43-202-48-111.ap-northeast-2.compute.amazonaws.com/api/v1${pathname}${queryString}`;
-
+  const apiURL = `https://ec2-43-203-122-113.ap-northeast-2.compute.amazonaws.com/api/v1${pathname}${queryString}`;
 
   const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
   useEffect(() => {
