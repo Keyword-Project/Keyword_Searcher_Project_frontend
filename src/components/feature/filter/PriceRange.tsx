@@ -80,7 +80,7 @@ export default function PriceRange({
       <PriceContainer>
         <InputTitleField>
           <InputTitle>상품 가격</InputTitle>
-          <Tooltip content="가격을 입력하면 해당 범위 내 키워드가 조회됩니다.최소 가격을 설정하지 않으면 10000원부터 조회됩니다." />
+          <Tooltip content="가격을 입력하면 해당 범위 내 키워드가 조회됩니다. 최소 가격을 설정하지 않으면 10000원부터 조회됩니다." />
         </InputTitleField>
         <Input
           id="a"

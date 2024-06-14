@@ -93,14 +93,23 @@ export default function SearchPage() {
 
   const navigate = useNavigate();
 
-  const commonURL = `${startDate ? `startDate=${startDate}` : ""}${
-    los ? `&los=${los}` : ""
-  }${minPrice ? `&minPrice=${minPrice}` : ""}${
-    maxPrice ? `&maxPrice=${maxPrice}` : ""
-  }${searchSize ? `&searchSize=${searchSize}` : ""}`;
+  const newSearchParams = new URLSearchParams()
+
+useEffect(()=>{
+
+
+},[queryString])
+
+
+  const setQuery = () => {
+    if (startDate) newSearchParams.set("startdt", startDate);
+    if (los) newSearchParams.set("los", los.toString());
+    if (minPrice) newSearchParams.set("minPrice", minPrice.toString());
+    if (maxPrice) newSearchParams.set("maxPrice", maxPrice.toString());
+    if (searchSize) newSearchParams.set("searchSize", searchSize.toString());
+  }
 
   const fetchHandler = () => {
-    let queryURL = "";
     if (pathname == "/categories") {
       setShowModal(true);
       setErrorMessage("카테고리 목록을 선택해주세요.");
@@ -116,8 +125,9 @@ export default function SearchPage() {
           );
         }
       } else {
-        queryURL = `${pathname}?${commonURL}`;
-        navigate(queryURL);
+        setQuery()
+        const updatedPathname = `${pathname}?${newSearchParams.toString()}`;
+        navigate(updatedPathname);
         setResultVisible(true);
       }
     }
@@ -138,8 +148,10 @@ export default function SearchPage() {
             );
           }
         } else {
-          queryURL = `keyword?q=${keywordInputValue}` + `${commonURL}`;
-          navigate(queryURL);
+          setQuery();
+ 
+          const updatedPathname = `keyword?q=${keywordInputValue}&${newSearchParams.toString()}`;
+          navigate(updatedPathname);
           setResultVisible(true);
         }
       }

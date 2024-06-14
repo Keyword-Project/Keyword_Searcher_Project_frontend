@@ -58,7 +58,7 @@ const ErrorField = ({
     <ErrorContainer>
       <Error_triangle width="5rem" height="5rem" />
       <ErrorTitle>서비스 에러가 발생했습니다.</ErrorTitle>
-      <ErrorMessage>잠시 후 다시 시도해보세요.</ErrorMessage>
+      <ErrorMessage>잠시 후 다시 시도하세요.</ErrorMessage>
       <Button onClick={handleClose}>돌아가기</Button>
     </ErrorContainer>
   );
