@@ -13,8 +13,6 @@ export default function Result({
   const { pathname } = useLocation();
   const url = new URL(window.location.href);
   const queryString = url.search;
-  console.log("pathname", pathname);
-  console.log("queryString", queryString);
 
 
 
@@ -25,17 +23,9 @@ export default function Result({
     if(queryString) {
       refetch();
       setResultVisible(true);
-      console.log('result컴포넌트 쿼리 존재할경우 실행되는 useEffect 로직')
     }
-    console.log('result 컴포넌트 uesEffect 로직 ')
-  
   }, [queryString]);
 
-
-  useEffect(() => {
-    refetch();
-    console.log('result 컴포넌트 의존성 배열없는 useEffect 로직')
-  }, [])
 
   const searchData = data;
 
