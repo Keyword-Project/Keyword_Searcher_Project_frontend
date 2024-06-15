@@ -37,19 +37,21 @@ const ErrorTitle = styled.h1`
 const ErrorMessage = styled.p`
   margin-bottom: 2rem;
 `;
-
 const ErrorField = ({
   resetErrorBoundary,
   setResultVisible,
 }: {
   resetErrorBoundary: () => void;
   setResultVisible: (visible: boolean) => void;
+
 }) => {
   const handleClose = () => {
     resetErrorBoundary();
-    setResultVisible(false);
-    navigate(pathname);
+    setResultVisible(false)
+    navigate(pathname)
   };
+
+
 
   const { pathname } = useLocation();
   const navigate = useNavigate();

@@ -13,7 +13,7 @@ import ModalContent from "components/feature/filter/ModalContent";
 import SearchButton from "components/feature/filter/SearchButton";
 import { useNavigate } from "react-router-dom";
 import media from "styles/media";
-import { QueryErrorResetBoundary } from "@tanstack/react-query";
+import { useQueryErrorResetBoundary } from "@tanstack/react-query";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorField from "components/feature/result/ErrorField";
 
@@ -36,9 +36,9 @@ margin-top: 1rem;
 `;
 
 const SelectedCategory = styled.span`
-font-size: var(--font-size-primary);
-font-weight: bold;
-padding-bottom: 1rem;
+  font-size: var(--font-size-primary);
+  font-weight: bold;
+  padding-bottom: 1rem;
 `;
 
 const FilterBox = styled.div`
@@ -57,8 +57,8 @@ const FilterBox = styled.div`
 
 export default function SearchPage() {
   const [resultVisible, setResultVisible] = useState(false);
-  const [maxPrice, setMaxPrice] = useState<string | number>('');
-  const [minPrice, setMinPrice] = useState<string | number>('');
+  const [maxPrice, setMaxPrice] = useState<string | number>("");
+  const [minPrice, setMinPrice] = useState<string | number>("");
   const [searchSize, setSearchSize] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -67,26 +67,25 @@ export default function SearchPage() {
   const [clickedThirdCategory, setClickedThirdCategory] = useState(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
-
-
   const url = new URL(window.location.href);
-  const queryString = url.search
-  console.log(queryString)
- 
+  const queryString = url.search;
+  console.log(queryString);
+
   const { pathname } = useLocation();
-  useEffect(()=>{
-    if(queryString){
-      setResultVisible(true)
-      console.log(resultVisible)
+  useEffect(() => {
+    if (queryString) {
+      setResultVisible(true);
+      console.log(resultVisible);
     }
-  },[queryString])
+  }, [queryString]);
 
+  const { reset } = useQueryErrorResetBoundary();
 
-useEffect(() =>{
-if(!queryString){
-  setResultVisible(false)
-}
-},[pathname])
+  useEffect(() => {
+    if (!queryString) {
+      setResultVisible(false);
+    }
+  }, [pathname]);
 
   const { startDate, los } = useSelector(
     (state: RootState) => state.queryString.date
@@ -98,9 +97,7 @@ if(!queryString){
 
   const navigate = useNavigate();
 
-  const newSearchParams = new URLSearchParams()
-
-
+  const newSearchParams = new URLSearchParams();
 
   const setQuery = () => {
     if (startDate) newSearchParams.set("startdt", startDate);
@@ -108,12 +105,12 @@ if(!queryString){
     if (minPrice) newSearchParams.set("minPrice", minPrice.toString());
     if (maxPrice) newSearchParams.set("maxPrice", maxPrice.toString());
     if (searchSize) newSearchParams.set("searchSize", searchSize.toString());
-    if(!minPrice)  newSearchParams.delete('minPrice')
-    if(!maxPrice)  newSearchParams.delete('maxPrice')
+    if (!minPrice) newSearchParams.delete("minPrice");
+    if (!maxPrice) newSearchParams.delete("maxPrice");
     if (!searchSize) newSearchParams.delete("searchSize");
     if (!startDate) newSearchParams.delete("startdt");
     if (!los) newSearchParams.delete("los");
-   }
+  };
 
   const fetchHandler = () => {
     if (pathname == "/categories") {
@@ -131,7 +128,7 @@ if(!queryString){
           );
         }
       } else {
-        setQuery()
+        setQuery();
         const updatedPathname = `${pathname}?${newSearchParams.toString()}`;
         navigate(updatedPathname);
         setResultVisible(true);
@@ -143,7 +140,7 @@ if(!queryString){
         setShowModal(true);
         setErrorMessage("키워드를 입력해주세요.");
       } else {
-        if ( Number(maxPrice) != 0 && Number(maxPrice) < Number(minPrice)) {
+        if (Number(maxPrice) != 0 && Number(maxPrice) < Number(minPrice)) {
           setShowModal(true);
           setErrorMessage("최대가격이 최소가격보다 커야합니다.");
         } else if (!Number(minPrice) && Number(maxPrice)) {
@@ -155,7 +152,7 @@ if(!queryString){
           }
         } else {
           setQuery();
- 
+
           const updatedPathname = `keyword?q=${keywordInputValue}&${newSearchParams.toString()}`;
           navigate(updatedPathname);
           setResultVisible(true);
@@ -167,7 +164,14 @@ if(!queryString){
   return (
     <>
       <ButtonNSearchField>
-        <Outlet context={{setClickedFirstCategory, setClickedSecondCategory, setClickedThirdCategory, setSelectedCategoryId}}/>
+        <Outlet
+          context={{
+            setClickedFirstCategory,
+            setClickedSecondCategory,
+            setClickedThirdCategory,
+            setSelectedCategoryId,
+          }}
+        />
         <SearchButton fetchHandler={fetchHandler} />
       </ButtonNSearchField>
       <FilterBox>
@@ -185,33 +189,46 @@ if(!queryString){
           document.body
         )}
       <SearchResultWord>상품 검색 결과</SearchResultWord>
-      {selectedCategoryId == pathname.split("/")[2] && <div>
-        {clickedFirstCategory && <SelectedCategory>{clickedFirstCategory}</SelectedCategory>}
-        {clickedSecondCategory && <SelectedCategory> {">"} {clickedSecondCategory}</SelectedCategory>}
-        {clickedThirdCategory && <SelectedCategory> {">"} {clickedThirdCategory}</SelectedCategory>}
-      </div>}
-      {resultVisible ? 
-       <QueryErrorResetBoundary>
-       {({ reset }) => (
-         <ErrorBoundary
-           onReset={() => {
-             reset();
-           }}
-           FallbackComponent={({ resetErrorBoundary }) => (
-             <div>
-               <ErrorField
-                 resetErrorBoundary={resetErrorBoundary}
-                 setResultVisible={setResultVisible}
-               />
-             </div>
-           )}
-         >
-    <Result resultVisible={resultVisible} setResultVisible={setResultVisible} /> 
-         </ErrorBoundary>
-       )}
-     </QueryErrorResetBoundary>
-      : <EmptyResult /> }
-     
+      {selectedCategoryId == pathname.split("/")[2] && (
+        <div>
+          {clickedFirstCategory && (
+            <SelectedCategory>{clickedFirstCategory}</SelectedCategory>
+          )}
+          {clickedSecondCategory && (
+            <SelectedCategory>
+              {" "}
+              {">"} {clickedSecondCategory}
+            </SelectedCategory>
+          )}
+          {clickedThirdCategory && (
+            <SelectedCategory>
+              {" "}
+              {">"} {clickedThirdCategory}
+            </SelectedCategory>
+          )}
+        </div>
+      )}
+      {resultVisible ? (
+        <ErrorBoundary
+          onReset={() => {
+            reset();
+          }}
+          FallbackComponent={({ resetErrorBoundary }) => (
+            <div>
+              <ErrorField
+                resetErrorBoundary={resetErrorBoundary}
+                setResultVisible={setResultVisible}
+              />
+            </div>
+          )}
+        >
+          <Result
+            setResultVisible={setResultVisible}
+          />
+        </ErrorBoundary>
+      ) : (
+        <EmptyResult />
+      )}
     </>
   );
 }
