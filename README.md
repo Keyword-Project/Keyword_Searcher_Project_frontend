@@ -164,6 +164,7 @@
 - 1차 카테고리 컴포넌트 hover -> 2차 카테고리 컴포넌트 렌더링, 2차 카테고리 컴포넌트 hover -> 3차 카테고리 컴포넌트 hover
 - 2차 -> 1차 카테고리 hover 시 3차 카테고리 컴포넌트 unmount
 - 카테고리 컨포넌트 영역 이탈 시 모든 컴포넌트 unmount
+- 카테고리 값 선택 시 상위 카테고리 값 같이 렌더링
 
 ![카테고리컴포넌트구현](https://github.com/Keyword-Project/keyword_searcher_project_frontend/assets/122145341/28834772-431d-4b0a-96ef-0ef3b6111da2)
 
