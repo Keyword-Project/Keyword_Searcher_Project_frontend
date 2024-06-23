@@ -14,18 +14,17 @@ export default function Result({
   const url = new URL(window.location.href);
   const queryString = url.search;
 
+  const API_KEY = import.meta.env.VITE_API_PATH;
 
-
-  const apiURL = `https://ec2-43-201-61-75.ap-northeast-2.compute.amazonaws.com/api/v1${pathname}${queryString}`;
+  const apiURL = `${API_KEY}${pathname}${queryString}`;
 
   const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
   useEffect(() => {
-    if(queryString) {
+    if (queryString) {
       refetch();
       setResultVisible(true);
     }
   }, [queryString]);
-
 
   const searchData = data;
 
@@ -36,12 +35,10 @@ export default function Result({
   }
   return (
     <>
-    
-        <>
-          <ExcelDownloader searchData={searchData} />
-          <ResultTable searchData={searchData} />
-        </>
-   
+      <>
+        <ExcelDownloader searchData={searchData} />
+        <ResultTable searchData={searchData} />
+      </>
     </>
   );
 }
