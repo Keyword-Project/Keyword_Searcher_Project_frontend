@@ -15,7 +15,7 @@ export default function Result({
   const queryString = url.search;
 
   const API_KEY = import.meta.env.VITE_API_PATH;
-
+  
   const apiURL = `${API_KEY}${pathname}${queryString}`;
 
   const { error, isError, data, refetch, isFetching } = FetchData(apiURL);
