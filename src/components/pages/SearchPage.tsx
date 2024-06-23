@@ -67,15 +67,15 @@ export default function SearchPage() {
   const [clickedThirdCategory, setClickedThirdCategory] = useState(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
 
-
-
   const url = new URL(window.location.href);
   const queryString = url.search;
+  console.log(queryString);
 
   const { pathname } = useLocation();
   useEffect(() => {
     if (queryString) {
       setResultVisible(true);
+      console.log(resultVisible);
     }
   }, [queryString]);
 
