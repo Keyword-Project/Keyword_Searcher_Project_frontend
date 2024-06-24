@@ -69,13 +69,11 @@ export default function SearchPage() {
 
   const url = new URL(window.location.href);
   const queryString = url.search;
-  console.log(queryString);
 
   const { pathname } = useLocation();
   useEffect(() => {
     if (queryString) {
       setResultVisible(true);
-      console.log(resultVisible);
     }
   }, [queryString]);
 
@@ -222,9 +220,7 @@ export default function SearchPage() {
             </div>
           )}
         >
-          <Result
-            setResultVisible={setResultVisible}
-          />
+          <Result setResultVisible={setResultVisible} />
         </ErrorBoundary>
       ) : (
         <EmptyResult />
