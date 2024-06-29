@@ -59,7 +59,7 @@ const SearchDropdown = ({
   const List = ["직접 입력", "30", "50", "70", "100"];
 
   return (
-    <div>
+    <>
       <DropdownSeletor
         dropdownVisibility={dropdownVisibility}
         onClick={() => {
@@ -98,7 +98,7 @@ const SearchDropdown = ({
           })}
         </StyledUl>
       </SearchDropdownWrap>
-    </div>
+    </>
   );
 };
 

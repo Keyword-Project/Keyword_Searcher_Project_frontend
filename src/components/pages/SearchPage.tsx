@@ -10,7 +10,7 @@ import PriceRange from "components/feature/filter/PriceRange";
 import EmptyResult from "components/feature/result/EmptyResult";
 import { createPortal } from "react-dom";
 import ModalContent from "components/feature/filter/ModalContent";
-import SearchButton from "components/feature/filter/SearchButton";
+import QueryButton from "components/feature/filter/QueryButton";
 import { useNavigate } from "react-router-dom";
 import media from "styles/media";
 import { useQueryErrorResetBoundary } from "@tanstack/react-query";
@@ -170,7 +170,7 @@ export default function SearchPage() {
             setSelectedCategoryId,
           }}
         />
-        <SearchButton fetchHandler={fetchHandler} />
+        <QueryButton fetchHandler={fetchHandler} />
       </ButtonNSearchField>
       <FilterBox>
         <CustomCalendar />
