@@ -1,8 +1,7 @@
-import SearchDropdown from "components/feature/filter/SearchDropdown";
 import styled from "styled-components";
-import { ItemSearchCountProps } from "type/itemSearchCount";
-import { useEffect, useState } from "react";
 import Tooltip from "components/common/Tooltip";
+import SearchDropdown from "./SearchDropdown";
+import { ItemSearchSizeProps } from "type/itemSearchSize";
 
 const InputBox = styled.div`
   width: 300px;
@@ -41,26 +40,10 @@ const CountItemTitleField = styled.div`
 display : flex;
 `
 
-export default function ItemSearchCount({
-  setSearchSize,
-}: ItemSearchCountProps) {
-  const [domain, setDomain] = useState("");
-  const [isInputDisable, setIsInputDisable] = useState(false);
-  const searchSizeChangeByInput = (e?: React.ChangeEvent<HTMLInputElement>) => {
-    if (e) {
-      setDomain(e.target.value);
-    }
-    setSearchSize(domain);
-   
-  };
-useEffect(() =>{
-  searchSizeChangeByInput()
-},[domain])
-
-  
+export default function ItemSearchSize({isInputDisable, domain, setDomain, setSearchSize, searchSizeChangeByInput, setIsInputDisable}: ItemSearchSizeProps) {
   return (
     <>
-      <InputBox>
+          <InputBox>
         <CountItemTitleField>
           <Item>조회 개수</Item>
          <Tooltip content="개수를 선택하면 해당 개수만큼 키워드가 조회됩니다. 설정하지 않으면 30개의 키워드가 조회됩니다."/>
@@ -85,9 +68,7 @@ useEffect(() =>{
             setDomain={setDomain}
           />
         </SearchCountField>
-
-      
       </InputBox>
     </>
-  );
+  )
 }

@@ -8,8 +8,8 @@ import ModalContent from "components/feature/filter/ModalContent";
 import QueryButton from "components/feature/filter/QueryButton";
 import { useNavigate } from "react-router-dom";
 import media from "styles/media";
-import SubFilterField from "components/feature/filter/SubFilterField";
-import CategoryBadge from "components/feature/filter/CategoryBadge";
+import SubFilterField from "components/feature/filter/subFilter/SubFilterField";
+import CategoryBadge from "components/feature/filter/mainFilter/CategoryBadge";
 import ResultField from "components/feature/result/ResultField";
 
 const MainFilter = styled.div`
@@ -25,7 +25,7 @@ const MainFilter = styled.div`
 
 
 
-export default function SearchPage() {
+export default function HomePage() {
   const [resultVisible, setResultVisible] = useState(false);
   const [maxPrice, setMaxPrice] = useState<string | number>("");
   const [minPrice, setMinPrice] = useState<string | number>("");

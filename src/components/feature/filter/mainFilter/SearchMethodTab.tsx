@@ -17,7 +17,7 @@ const StyledLink = styled(Link)<{ color: boolean }>`
   `}
 `;
 
-const AppContainer = styled.div`
+const TabContainer = styled.div`
   display: flex;
   margin-left: 15%;
   align-items: flex-end;
@@ -69,7 +69,7 @@ export default function SearchMethodTab() {
 
 
   return (
-    <AppContainer>
+    <TabContainer>
       <Title>Diggggle</Title>
       {link.map((item) => {
         let isActive = false
@@ -90,7 +90,7 @@ export default function SearchMethodTab() {
           </MenuItem>
         );
       })}
-    </AppContainer>
+    </TabContainer>
   );
 }
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchMethodTab from "components/feature/filter/SearchMethodTab";
+import SearchMethodTab from "components/feature/filter/mainFilter/SearchMethodTab";
 import { ReactNode } from "react";
 import media from "styles/media";
 interface LayoutProps {

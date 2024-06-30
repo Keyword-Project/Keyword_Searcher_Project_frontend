@@ -15,10 +15,10 @@ const StyledButton = styled.button`
   --a: initial;
   width: 15%;
   height: 41px;
-/* 
+
   ${media.mobile`
   font-size: var(--font-size-small)
-  `} */
+  `}
 
 
   &:after {

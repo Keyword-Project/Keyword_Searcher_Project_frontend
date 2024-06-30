@@ -1,8 +1,9 @@
-import ItemSearchCount from "components/feature/filter/ItemSearchCount";
-import PriceRange from "components/feature/filter/PriceRange";
-import CustomCalendar from "components/feature/filter/CustomCalendar";
+import ItemSearchSizeWrap from "components/feature/filter/subFilter/ItemSearchSizeWrap";
+import PriceRange from "components/feature/filter/subFilter/PriceRange";
+import CustomCalendarWrap from "components/feature/filter/subFilter/CustomCalendarWrap";
 import media from "styles/media";
 import { styled } from "styled-components";
+import { SubFilterProps } from "type/subFilter";
 
 const FilterBox = styled.div`
   display: flex;
@@ -22,15 +23,11 @@ export default function SubFilterField({
   setMinPrice,
   setMaxPrice,
   setSearchSize,
-}: {
-  setMinPrice: React.Dispatch<React.SetStateAction<string | number>>;
-  setMaxPrice: React.Dispatch<React.SetStateAction<string | number>>;
-  setSearchSize: React.Dispatch<React.SetStateAction<string>>;
-}) {
+}: SubFilterProps ) {
   return (
     <FilterBox>
-      <CustomCalendar />
-      <ItemSearchCount setSearchSize={setSearchSize} />
+      <CustomCalendarWrap />
+      <ItemSearchSizeWrap setSearchSize={setSearchSize} />
       <PriceRange setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} />
     </FilterBox>
   );

@@ -4,7 +4,7 @@ import data from "dummyData/CategoriesData.json";
 import { useState } from "react";
 import Arrow_Forward from "assets/icons/arrow_forward.svg?react";
 import { Link } from "react-router-dom";
-import CategoryButton from "components/common/CategoryButton";
+import CategoryButton from "components/feature/filter/mainFilter/CategoryButton";
 import {
   ClassifiedCategoriesFieldProps,
   CategoryItem,

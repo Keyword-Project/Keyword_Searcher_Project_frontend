@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import media from "styles/media";
+import { CategoryBadgeProps } from "type/CategoryBadge";
 
 const SelectedCategoryBadge = styled.span`
   font-size: var(--font-size-primary);
@@ -17,7 +18,7 @@ margin-top: 1rem;
 
 
 
-export default function CategoryBadge({selectedCategoryId, clickedFirstCategory, clickedSecondCategory, clickedThirdCategory}) {
+export default function CategoryBadge({selectedCategoryId, clickedFirstCategory, clickedSecondCategory, clickedThirdCategory}: CategoryBadgeProps) {
 
     const { pathname } = useLocation();
   return (

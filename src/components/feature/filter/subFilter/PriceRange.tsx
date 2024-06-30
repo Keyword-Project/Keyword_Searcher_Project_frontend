@@ -2,10 +2,8 @@ import styled from "styled-components";
 import Tooltip from "components/common/Tooltip";
 import { useForm } from "react-hook-form";
 import media from "styles/media";
-interface FormValues {
-  a: number;
-  b: number;
-}
+import { FormValues } from "type/priceRange";
+
 
 const PriceContainer = styled.div`
   width: 250px;
