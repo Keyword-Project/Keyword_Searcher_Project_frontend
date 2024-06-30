@@ -7,3 +7,7 @@ export type ResultProps = {
   isFetching: boolean;
 };
 
+export interface ResultFieldProps {
+  setResultVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  resultVisible: boolean;
+}

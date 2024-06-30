@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
-import DateRangePicker from "@wojtekmaj/react-daterange-picker";
-import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
-import "react-calendar/dist/Calendar.css";
-import { useDispatch } from "react-redux";
-import { dateFetch } from "lib/FetchSlice";
-import styled from "styled-components";
+import { styled } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import Tooltip from "components/common/Tooltip";
+import DateRangePicker from "@wojtekmaj/react-daterange-picker";
+import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
+import "react-calendar/dist/Calendar.css";
+import { CustomCalendarProps } from "./CustomCalendarWrap";
 
 const Calendar = styled.p`
   font-size: var(--font-size-primary);
@@ -110,50 +108,13 @@ const CalendarBox = styled.div`
   height: 64px;
 `;
 
-function isValuePieceArray(value: Value): value is [ValuePiece, ValuePiece] {
-  return Array.isArray(value);
-}
 
-type ValuePiece = Date | null;
 
-type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-export default function CustomCalendar() {
-  const dispatch = useDispatch();
-  const [value, onChange] = useState<Value>([new Date(), new Date()]);
-  const today = new Date();
 
-  useEffect(() => {
-    const CalculateDateGap = (startDate: Date, endDate: Date) => {
-      return Math.abs(startDate.getTime() - endDate.getTime());
-    };
-
-    function formatDate(date: Date): string {
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
-      return `${year}-${month.toString().padStart(2, "0")}-${day
-        .toString()
-        .padStart(2, "0")}`;
-    }
-
-    if (isValuePieceArray(value) && value[0] && value[1]) {
-      // value가 [ValuePiece, ValuePiece] 인 경우
-      const startDate = formatDate(value[0]);
-      const differenceMs = CalculateDateGap(value[0], value[1]);
-
-      const los = Math.ceil(differenceMs / (1000 * 60 * 60 * 24));
-
-      dispatch(
-        dateFetch({
-          startDate: startDate,
-          los: los,
-        })
-      );
-    }
-  }, [value]);
-
+export default function CustomCalendar({onChange, value, today}: CustomCalendarProps) {
   return (
+    <>
     <CalendarBox>
       <CalendarTitleField>
         <Calendar>조회 기간</Calendar>
@@ -189,5 +150,8 @@ export default function CustomCalendar() {
         maxDate={today}
       />
     </CalendarBox>
-  );
+
+
+    </>
+  )
 }

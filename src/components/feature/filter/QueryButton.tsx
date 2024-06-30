@@ -45,7 +45,7 @@ const StyledButton = styled.button`
  
 `;
 
-const SearchButton = ({ fetchHandler }: ButtonProps) => {
+const QueryButton = ({ fetchHandler }: ButtonProps) => {
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
     const { x, y, width, height } = target.getBoundingClientRect();
@@ -75,4 +75,4 @@ const SearchButton = ({ fetchHandler }: ButtonProps) => {
   );
 };
 
-export default SearchButton;
+export default QueryButton;

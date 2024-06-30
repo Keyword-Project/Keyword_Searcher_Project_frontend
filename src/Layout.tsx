@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SearchMethodTab from "components/feature/filter/SearchMethodTab";
+import SearchMethodTab from "components/feature/filter/mainFilter/SearchMethodTab";
 import { ReactNode } from "react";
 import media from "styles/media";
 interface LayoutProps {
@@ -16,7 +16,7 @@ const LayoutBox = styled.div`
 
 const Header = styled.div`
   width: 100%;
-  height: 16rem;
+  height: 16rem ;
   border-bottom: 1px solid #f0f0f0;
   background: #fcfcfc;
 `;
