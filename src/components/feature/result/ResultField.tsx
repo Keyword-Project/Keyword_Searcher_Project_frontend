@@ -3,11 +3,13 @@ import { ErrorBoundary } from "react-error-boundary";
 import ErrorField from "./ErrorField";
 import Result from "./Result";
 import EmptyResult from "./EmptyResult";
+import { ResultFieldProps } from "type/result";
 
 
 
 
-export default function ResultField({setResultVisible, resultVisible}) {
+
+export default function ResultField({setResultVisible, resultVisible}: ResultFieldProps) {
 
     const { reset } = useQueryErrorResetBoundary();
   return (
