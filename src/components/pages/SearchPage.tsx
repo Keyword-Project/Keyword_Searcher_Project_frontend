@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
-import CustomCalendar from "components/feature/filter/CustomCalendar";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import Result from "components/feature/result/Result";
 import { useLocation, Outlet } from "react-router-dom";
 import { RootState } from "main";
-import ItemSearchCount from "components/feature/filter/ItemSearchCount";
-import PriceRange from "components/feature/filter/PriceRange";
-import EmptyResult from "components/feature/result/EmptyResult";
 import { createPortal } from "react-dom";
 import ModalContent from "components/feature/filter/ModalContent";
 import QueryButton from "components/feature/filter/QueryButton";
 import { useNavigate } from "react-router-dom";
 import media from "styles/media";
-import { useQueryErrorResetBoundary } from "@tanstack/react-query";
-import { ErrorBoundary } from "react-error-boundary";
-import ErrorField from "components/feature/result/ErrorField";
+import SubFilterField from "components/feature/filter/SubFilterField";
+import CategoryBadge from "components/feature/filter/CategoryBadge";
+import ResultField from "components/feature/result/ResultField";
 
-const ButtonNSearchField = styled.div`
+const MainFilter = styled.div`
   display: flex;
   justify-content: space-between;
   ${media.mobile`
@@ -27,33 +22,8 @@ const ButtonNSearchField = styled.div`
   `}
 `;
 
-const SearchResultWord = styled.p`
-  font-size: var(--font-size-medium);
-  font-weight: bold;
-  ${media.mobile`
-margin-top: 1rem;
-  `}
-`;
 
-const SelectedCategory = styled.span`
-  font-size: var(--font-size-primary);
-  font-weight: bold;
-  padding-bottom: 1rem;
-`;
 
-const FilterBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding-top: 3rem;
-  width: 100%;
-  ${media.mobile`  
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  `}
-  flex-wrap: wrap;
-  gap: 2rem;
-`;
 
 export default function SearchPage() {
   const [resultVisible, setResultVisible] = useState(false);
@@ -77,7 +47,7 @@ export default function SearchPage() {
     }
   }, [queryString]);
 
-  const { reset } = useQueryErrorResetBoundary();
+
 
   useEffect(() => {
     if (!queryString) {
@@ -161,7 +131,7 @@ export default function SearchPage() {
 
   return (
     <>
-      <ButtonNSearchField>
+      <MainFilter>
         <Outlet
           context={{
             setClickedFirstCategory,
@@ -171,12 +141,9 @@ export default function SearchPage() {
           }}
         />
         <QueryButton fetchHandler={fetchHandler} />
-      </ButtonNSearchField>
-      <FilterBox>
-        <CustomCalendar />
-        <ItemSearchCount setSearchSize={setSearchSize} />
-        <PriceRange setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} />
-      </FilterBox>
+      </MainFilter>
+   
+      <SubFilterField setMinPrice={setMinPrice} setMaxPrice={setMaxPrice} setSearchSize={setSearchSize} />
 
       {showModal &&
         createPortal(
@@ -186,45 +153,10 @@ export default function SearchPage() {
           />,
           document.body
         )}
-      <SearchResultWord>상품 검색 결과</SearchResultWord>
-      {selectedCategoryId == pathname.split("/")[2] && (
-        <div>
-          {clickedFirstCategory && (
-            <SelectedCategory>{clickedFirstCategory}</SelectedCategory>
-          )}
-          {clickedSecondCategory && (
-            <SelectedCategory>
-              {" "}
-              {">"} {clickedSecondCategory}
-            </SelectedCategory>
-          )}
-          {clickedThirdCategory && (
-            <SelectedCategory>
-              {" "}
-              {">"} {clickedThirdCategory}
-            </SelectedCategory>
-          )}
-        </div>
-      )}
-      {resultVisible ? (
-        <ErrorBoundary
-          onReset={() => {
-            reset();
-          }}
-          FallbackComponent={({ resetErrorBoundary }) => (
-            <div>
-              <ErrorField
-                resetErrorBoundary={resetErrorBoundary}
-                setResultVisible={setResultVisible}
-              />
-            </div>
-          )}
-        >
-          <Result setResultVisible={setResultVisible} />
-        </ErrorBoundary>
-      ) : (
-        <EmptyResult />
-      )}
+   
+      <CategoryBadge selectedCategoryId={selectedCategoryId} clickedFirstCategory={clickedFirstCategory} clickedSecondCategory={clickedSecondCategory} clickedThirdCategory={clickedThirdCategory} />
+      <ResultField resultVisible={resultVisible} setResultVisible={setResultVisible}/>
+    
     </>
   );
 }

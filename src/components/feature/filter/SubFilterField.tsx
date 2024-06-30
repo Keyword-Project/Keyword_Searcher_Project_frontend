@@ -18,7 +18,7 @@ const FilterBox = styled.div`
   gap: 2rem;
 `;
 
-export default function FilterField({
+export default function SubFilterField({
   setMinPrice,
   setMaxPrice,
   setSearchSize,
